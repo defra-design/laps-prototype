@@ -1,1 +1,1 @@
-# laps-prototype
+The broad aim of the service is to provide Local Authorities with a way of managing waste payments based on waste disposal - the recording of this will be through another system as will the payment calculation. In the first few years all LA will receive a base payment and in subsequent years after will be able to receive larger payments based on evidence - this will be handled by a yet to be announced Scheme Administrator. # laps-prototype
