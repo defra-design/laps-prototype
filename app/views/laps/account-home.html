@@ -1,0 +1,519 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home",
+text: "Local authority list",
+active: true
+},
+{
+href: "upload",
+text: "Upload contact details"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l">Private beta</span>
+    <h1 class="govuk-heading-l">Local authority list</h1>
+<!--
+    <div class="hmcts-search">
+
+      <form action="./v1b" method="get">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label hmcts-search__label govuk-label--m" for="search">
+            Search
+          </label>
+
+          <span id="search-hint" class="govuk-hint hmcts-search__hint ">
+            Search for a local authority, for example by name or ceo
+          </span>
+
+          <input class="govuk-input hmcts-search__input " id="search" name="search" type="search"
+            aria-describedby="search-hint" value="{{ data['search'] }}">
+          <input type="hidden" name="action" value="" />
+        </div>
+
+        <button class="govuk-button hmcts-search__button " data-module="govuk-button">
+          Search
+        </button>
+
+        <a href="/v1b?search=" class="govuk-button govuk-button--secondary hmcts-search__button">Reset</a>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+-->
+
+    <!-- Tab 1 to be invited -->
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#past-day">
+            Pending invitation (40)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-month">
+            Invitees
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-week">
+            Enrolled authorities
+          </a>
+        </li>
+
+      </ul>
+      <div class="govuk-tabs__panel" id="past-day">
+
+        <span class="govuk-caption-m">Private beta</span>
+        <h2 class="govuk-heading-m">Pending invitation</h2>
+        <p class="govuk-body"><strong>Total:</strong> 40</p>
+
+
+       
+        <form action="/laps/invite">
+          {{ govukButton({
+            text: ' Send invitation'
+          }) }}
+        </form>
+
+  
+
+
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row"> <th scope="col" class="govuk-table__header">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                    value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                    All</label>
+                </div>
+              </div>
+            </th>
+              <th scope="col" class="govuk-table__header">Authority</th>
+              <th scope="col" class="govuk-table__header">Contact details</th>
+              <th scope="col" class="govuk-table__header">Role</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell"> Barnsley Borough Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: E08000016</span></td>
+              <td class="govuk-table__cell">Susan McCauley<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">susan.mccauley@cuthbertsons.com</span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell"> Birmingham City Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">Alison Proctor<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">alison.proctor@birminghamcc.gov.uk</span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+                  
+              
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell"> Bolton Borough Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">Sheena Lambert<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">slambert@boltonbc.gov.uk</span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell"> Bradford City Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">Donald Smith<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">bradfordcitycouncil.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">Calderdale Borough Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">Coventry City Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">Doncaster Borough Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">Dudley Borough Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell"> Gateshead Borough Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">Kirklees Borough Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell"> Knowsley Borough Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">Leeds City Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">Liverpool City Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">Manchester City Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>
+              
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">North Tyneside Borough Council<span
+                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">First name Last name<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
+                  <td class="govuk-table__cell">CEO</td>
+                  <td class="govuk-table__cell"></td>          
+            </tr>
+
+          </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+        <form action="/laps/invite.html">
+          {{ govukButton({
+            text: ' Send invitation'
+          }) }}
+        </form>
+
+        <!-- nav tab 1 -->
+        <nav class="govuk-pagination" role="navigation" aria-label="results">
+          <ul class="govuk-pagination__list">
+            <li class="govuk-pagination__item govuk-pagination__item--current">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                1
+              </a>
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                2
+              </a>
+            </li>
+
+          </ul>
+          <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span
+                class="govuk-pagination__link-title">Next</span> <svg
+                class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg"
+                height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path
+                  d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.CEO6v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                </path>
+              </svg></a>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Tab 2 Registered-->
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+        <span class="govuk-caption-m">Private beta</span>
+        <h2 class="govuk-heading-m">Invitees</h2>
+        <p class="govuk-body"><strong>Total:</strong> 0</p>
+        
+      </div>
+
+
+      <!-- Tab 3 Pending -->
+
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+
+        <span class="govuk-caption-m">Private beta</span>
+        <h2 class="govuk-heading-m">Enrolled authorities</h2>
+        <p class="govuk-body"><strong>Total: </strong>0</p>
+        
+       
+        
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

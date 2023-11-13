@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home",
+text: "Local authority list",
+active: true
+},
+{
+href: "upload",
+text: "Upload contact details"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <span class="govuk-caption-m">Private beta</span>
+      <h1 class="govuk-heading-l">
+        Reinvite Oldham Borough Council
+      </h1>
+
+      
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            
+            <th scope="col" class="govuk-table__header">Authority</th>
+            <th scope="col" class="govuk-table__header" style="width:400px;">Contact details</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+      
+        <tr class="govuk-table__row">
+           
+            <td class="govuk-table__cell"> Oldham Borough Councill<span
+              class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+          <td class="govuk-table__cell">David Francis<br><span
+              class="govuk-caption-m govuk-!-font-size-16">david.francis@oldhamboroughcouncil.gov.uk</span></td>
+        </tr>
+   
+        </tbody>
+    </table>
+   
+      <div class="govuk-inset-text">
+        <p>This user has already been invited but has not activated their account.</p><p>If you resend an invitation, they'll receive an email from Defra to finish setting up their account.</p>
+      </div>
+
+      <form action="/laps/success-invite">
+        {{ govukButton({
+          text: ' Continue and resend invitation'
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

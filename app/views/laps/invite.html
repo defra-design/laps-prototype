@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home",
+text: "Local authority list",
+active: true
+},
+{
+href: "upload",
+text: "Upload contact details"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m">Private beta</span>
+      <h1 class="govuk-heading-l">
+        Invite authorities
+      </h1>
+
+      <p>
+        When you send this invitation the CEOs for the selected authorities will receive an email from Defra so they can finish setting up their account.
+      </p>
+
+      <form action="/laps/success-invite">
+        {{ govukButton({
+          text: ' Confirm and send invitation'
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

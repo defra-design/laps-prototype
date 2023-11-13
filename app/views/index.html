@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+{% set serviceName %}
+  Local authority payment service
+{% endset%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}
+    </h1>
+
+    <h1 class="govuk-heading-m">Latest wireframe additions</h1>
+    <h3 class="govuk-heading-s">Whats new:</h3>
+    
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              CEO Uploads (Back office Admin)
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <p class="govuk-body">Defra Administrator needs to be able to upload and manage Local Authority CEO information in line with their corresponding Local Authority Organisation, in order to successfully invite them to the LAPs service.</p>
+          <ul class="govuk-list govuk-list--bullet">
+   
+            <li>
+              <a class="govuk-link" href="/laps/sign-in">Sign in *administrator</a>
+            </li>
+        <!--    <li>
+              <a class="govuk-link" href="#">Homepage *new</a>
+            </li> 
+            <li>
+              <a class="govuk-link" href="#">Upload CEO details</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#">Validating data</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#">Errors in data</a>
+            </li> 
+            <li>
+              <a class="govuk-link" href="#">Successful</a>
+            </li> 
+            <li>
+              <a class="govuk-link" href="#">Homepage *updated</a>
+            </li> 
+            <li>
+              <a class="govuk-link" href="#">Send invitation</a>
+            </li>  -->
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+              CEO Sign up
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+          <p class="govuk-body">Content to be added</p>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+              Account management  
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+          <p class="govuk-body">Manage users - Add, edit and delete.</p>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+              Contact us (Query)
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+          <p class="govuk-body">Placeholder.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
