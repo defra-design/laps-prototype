@@ -1,0 +1,285 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home",
+text: "Local authority list"
+
+},
+{
+href: "upload",
+text: "Upload contact details",
+active: true
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+{% if data.anerror == 'true' %}
+
+{% if data.uploaderror == '1' %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+  data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#uploadarea">You need to select a file to upload.</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<h1 class="govuk-heading-l">Upload local authority contact details</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <p class="govuk-body">Upload in a spreadsheet CSV file.</p>
+    <p class="govuk-body">Once we have validated the data, we store the file in the database. If there’s a problem, we
+      reject the upload and tell you how to fix the file.</p>
+
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>errors – you’ll need to fix all errors and re-upload your file</li>
+    </ul>
+
+
+    <h2 class="govuk-heading-m"> Upload a file</h2>
+    <p class="govuk-body">The file may take a few minutes to upload</p>
+    <p class="govuk-body">Do not close the window while the file is uploading.</p>
+
+
+    <div class="govuk-form-group govuk-form-group--error">
+      <label class="govuk-label" for="file-upload-1">
+        Upload spreadsheet in CSV format.
+      </label>
+      <p id="file-upload-1-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> You need to select a file to upload.
+      </p>
+      <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="fileUpload1" type="file"
+        aria-describedby="file-upload-1-error">
+    </div>
+
+
+    <form class="govuk-form-group" method="post">
+      <button href="#" class="govuk-button" type="submit"> Continue</button>
+    </form>
+
+  </div>
+</div>
+
+{% elif data.uploaderror == '3' %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+  data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#uploadarea">File must be in CSV format. Check it’s saved in the correct format and try again.</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<h1 class="govuk-heading-l">Upload local authority contact details</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <p class="govuk-body">Upload in a spreadsheet CSV file.</p>
+    <p class="govuk-body">Once we have validated the data, we store the file in the database. If there’s a problem, we
+      reject the upload and tell you how to fix the file.</p>
+
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>errors – you’ll need to fix all errors and re-upload your file</li>
+    </ul>
+
+
+    <h2 class="govuk-heading-m"> Upload a file</h2>
+    <p class="govuk-body">The file may take a few minutes to upload</p>
+    <p class="govuk-body">Do not close the window while the file is uploading.</p>
+
+
+    <div class="govuk-form-group govuk-form-group--error">
+      <label class="govuk-label" for="file-upload-1">
+        Upload spreadsheet in CSV format
+      </label>
+      <p id="file-upload-1-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> File must be in CSV format.
+      </p>
+      <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="fileUpload1" type="file"
+        aria-describedby="file-upload-1-error">
+    </div>
+
+    <form class="govuk-form-group" method="post">
+      <button href="#" class="govuk-button" type="submit"> Continue</button>
+    </form>
+
+  </div>
+</div>
+
+{% elif data.uploaderror == '4' %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+  data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#uploadarea">The template is missing some column headers. Review and upload again.</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<h1 class="govuk-heading-l">Upload local authority contact details</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <p class="govuk-body">Upload in a spreadsheet CSV file.</p>
+    <p class="govuk-body">Once we have validated the data, we store the file in the database. If there’s a problem, we
+      reject the upload and tell you how to fix the file.</p>
+
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>errors – you’ll need to fix all errors and re-upload your file</li>
+    </ul>
+
+
+    <h2 class="govuk-heading-m"> Upload a file</h2>
+    <p class="govuk-body">The file may take a few minutes to upload</p>
+    <p class="govuk-body">Do not close the window while the file is uploading.</p>
+
+
+    <div class="govuk-form-group govuk-form-group--error">
+      <label class="govuk-label" for="file-upload-1">
+        Upload spreadsheet in CSV format.
+      </label>
+      <p id="file-upload-1-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> The template is missing some column headers. Review and upload
+        again.
+      </p>
+      <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="fileUpload1" type="file"
+        aria-describedby="file-upload-1-error">
+    </div>
+
+
+    <form class="govuk-form-group" method="post">
+      <button href="#" class="govuk-button" type="submit"> Continue</button>
+    </form>
+
+  </div>
+</div>
+
+{% elif data.uploaderror == '5' %}
+
+<h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+
+<p class="govuk-body">Try again later.</p>
+
+{% endif %}
+
+
+
+{% else %}
+
+<h1 class="govuk-heading-l">Upload local authority contact details</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <p class="govuk-body">Upload in a spreadsheet CSV file.</p>
+    <p class="govuk-body">Once we have validated the data, we store the file in the database. If there’s a problem, we
+      reject the upload and tell you how to fix the file.</p>
+
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>errors – you’ll need to fix all errors and re-upload your file</li>
+    </ul>
+
+
+    <h2 class="govuk-heading-m"> Upload a file</h2>
+    <p class="govuk-body">The file may take a few minutes to upload</p>
+    <p class="govuk-body">Do not close the window while the file is uploading.</p>
+
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="file-upload-1">
+        Upload spreadsheet in CSV format.
+      </label>
+
+      <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+    </div>
+
+    <form class="govuk-form-group" method="post">
+      <button href="#" class="govuk-button" type="submit"> Continue</button>
+    </form>
+
+  </div>
+</div>
+{% endif %}
+
+
+
+
+<form method="post" action="#" class="for4" style=" float: left; margin-top: 50px;">
+  <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+    <option value="anerror=false&uploaderror=0&" {% if data.anerror=='false' %}selected{% endif %}>Default</option>
+
+    <option value="uploaderror=1&anerror=true&" {% if data.uploaderror=='1' and data.anerror=='true' %}selected{% endif
+      %}>Error - File not selected</option>
+    <!--
+        <option value="uploaderror=2&anerror=true&"
+                {% if data.uploaderror == '2' and  data.anerror == 'true' %}selected{% endif %}
+        >Error 2 - File not password protected</option>
+-->
+    <option value="uploaderror=3&anerror=true&" {% if data.uploaderror=='3' and data.anerror=='true' %}selected{% endif
+      %}>Error - File must be in CSV format</option>
+
+    <option value="uploaderror=4&anerror=true&" {% if data.uploaderror=='4' and data.anerror=='true' %}selected{% endif
+      %}>Error - Header validation failure</option>
+
+    <option value="uploaderror=5&anerror=true&" {% if data.uploaderror=='5' and data.anerror=='true' %}selected{% endif
+      %}>Error - Service is down</option>
+    <!--
+        <option value="uploaderror=6&anerror=false&"
+                {% if data.uploaderror == '6'  and  data.anerror == 'false'%}selected{% endif %}
+        >Error 6 - User authentication failure</option>
+-->
+    <!--
+        <option value="uploaderror=7&anerror=true&"
+                {% if data.uploaderror == '7'  and  data.anerror == 'true'%}selected{% endif %}
+        >Partial success</option>
+        -->
+
+  </select>
+</form>
+
+
+{% endblock %}
