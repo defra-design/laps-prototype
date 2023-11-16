@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBackLink({
+    href: "#",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Private beta</span>
+    <h1 class="govuk-heading-xl">Candidate details</h1>
+
+
+    <p>Use this form to set up user research testing with matching data.</p>
+
+    <form id="contact-details" method="post">
+
+    
+        <div class="govuk-form-group">
+          <label for="contacts_name">
+            <span class="govuk-label">Full name</span>
+        </label>
+        <input class="govuk-input govuk-!-width-one-half " name="contacts_name" id="contacts_name" type="text"
+          data-error="Enter a full name" value='{{data[' contacts_name']}}'>
+      </div>
+     
+        <div class="govuk-form-group">
+          <label for="contacts_email">
+            <span class="govuk-label">Email address</span>
+        </label>
+        <input class="govuk-input govuk-!-width-one-half " name="contacts_email" id="contacts_email" type="text"
+          data-error="Enter an email address" value='{{data[' contacts_email']}}'>
+      </div>
+ 
+        <div class="govuk-form-group">
+          <label for="local_authority">
+            <span class="govuk-label">Local authority</span>
+        </label>
+        <input class="govuk-input govuk-!-width-one-half " name="local_authority" id="local_authority" type="text"
+          data-error="Enter a local authority name" value='{{data[' local_authority']}}'>
+      </div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Save and continue</button>
+      </div>
+  </div>
+</div>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+  
+{% endset%}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  <p class="govuk-body">Dear {{data['contacts_name']}}</p>
+
+  <p class="govuk-body">Create an account to manage local authority payments as part of Extended Producer Responsibility for packaging (EPR).</p>
+
+  <h2 class="govuk-heading-m">Create {{data['local_authority']}}'s EPR account.</h2>
+
+  <p class="govuk-body">In this one-off task you will:</p>
+  <ol class="govuk-list govuk-list--number">
+    <li>Create your EPR account.</li>
+    <li>Choose who will manage EPR payments and waste data.</li>
+  </ol>
+
+  <p class="govuk-body">The people you choose must be your most senior colleagues with responsibility for:  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>receiving payment for packaging waste costs</li>
+    <li>submitting packaging waste data </li>
+  </ul>
+
+  <div class="govuk-inset-text">
+    We advise reading the   <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">terms and conditions (opens in new tab)</a> before you create your account.
+  </div>
+
+  <p class="govuk-body govuk-!-font-weight-bold">Make sure anyone creating the account on your behalf has access to your mailbox, as the link will not work if forwarded.</p>
+
+  <p class="govuk-body">What to do next:</p>
+  <ol class="govuk-list govuk-list--number">
+    <li>Collect the names and email addresses of the people you've chosen to manage EPR payments and waste data.</li>
+    <li>Set aside time to create your account - the session expires after 20 minutes.</li>
+    <li>Create {{data['local_authority']}}'s account.</li>
+    <li>Invite your chosen people to {{data['local_authority']}}'s EPR account.</li>
+  </ol>
+
+  <p class="govuk-body">Create your EPR account and choose people to manage it at:</p>
+    <p class="govuk-body"><a href="/laps/account/check-your-details" class="govuk-link">https://epr-local-authorities.service.gov.uk/nomi https://epr-local-authorities.service.gov.uk/nominate?=12345  </a></p>
+
+    <h2 class="govuk-heading-m">Contact us</h2>
+
+    <p class="govuk-body">If you have any questions, email <a href="mailto:#">wEPR@defra.gov.uk</a></p>
+  </div>
+  </div>
+
+{% endblock %}
+
