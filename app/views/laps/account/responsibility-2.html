@@ -39,23 +39,8 @@
         <!--  END OF ERROR LOGIC -->
 
        
-        <h1 class="govuk-heading-l"> Choose who will manage {{data['local_authority']}}'s EPR account</h1>
-        <p class="govuk-body">The people you choose must be your most senior colleagues with responsibility for:  </p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>receiving payment for packaging waste costs</li>
-            <li>submitting packaging waste data </li>
-        
-  
-          </ul><p class="govuk-body">By default they will have full administration rights and be able to:
-        </p>
-        <ul class="govuk-list govuk-list--bullet">
-     
-          <li>add and removing other users</li>
-          <li>approve waste data submissions</li>
-
-        </ul>
-        
-        <form id="who-list" method="POST">
+      
+        <form id="who-list-2" method="POST">
 
             <div class="govuk-radios govuk-!-margin-bottom-8" data-module="govuk-radios">
                 <!-- ERROR LOGIC  error class is added to whole section if error is ture  -->
@@ -72,13 +57,13 @@
                         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
                         {{ govukRadios({
-                        idPrefix: "who_list",
-                        name: "who_list",
+                        idPrefix: "who_list_2",
+                        name: "who_list_2",
                         fieldset: {
                             legend: {
                               text: "What is this person's area of responsibility?",
                               isPageHeading: true,
-                              classes: "govuk-fieldset__legend--m"
+                              classes: "govuk-fieldset__legend--l"
                             }
                         },
                         hint: {
@@ -110,40 +95,24 @@
                         hint: {
                         text: " "
                         }
-                        },
-                        {
-                            divider: "or"
-                          },
-                          {
-                            value: "cannot",
-                            text: "I cannot provide these details right now",
-                            conditional: {
-                              html: textHtml
-                            }
-                          }
-                        ],
-                        errorMessage: {
-                        text: "Select a role"
                         }
+                        ]
                         }) }}
 
                         {% else %}
                         <!--  END OF ERROR LOGIC -->
                         {% from "govuk/components/radios/macro.njk" import govukRadios %}
                         
-                        {% set textHtml %}
-                        <p class="govuk-body">You can still set up your account but you will be sent reminder emails to have roles in place before November 2024</p>
-                        {% endset -%}
-
+                       
 
                         {{ govukRadios({
-                            idPrefix: "who_list",
-                            name: "who_list",
+                            idPrefix: "who_list_2",
+                            name: "who_list_2",
                             fieldset: {
                                 legend: {
                                   text: "What is this person's area of responsibility?",
                                   isPageHeading: true,
-                                  classes: "govuk-fieldset__legend--m"
+                                  classes: "govuk-fieldset__legend--l"
                                 }
                             },
                         hint: {
@@ -176,17 +145,7 @@
                         hint: {
                         text: " "
                         }
-                        },
-                        {
-                            divider: "or"
-                          },
-                          {
-                            value: "cannot",
-                            text: "I cannot provide these details right now",
-                            conditional: {
-                              html: textHtml
-                            }
-                          }
+                        }
                         ]
                         }) }}
 
@@ -195,9 +154,10 @@
                 </div>
             </div>
             <div class="govuk-grid-column-two-thirds">
-                <button class="govuk-button govuk-body govuk-!-margin-bottom-8" type="submit">Continue</button>
+              <div class="govuk-button-group">
+                <button class="govuk-button govuk-body govuk-!-margin-bottom-8" type="submit">Continue</button> <a class="govuk-link" href="/laps/account/check-details">Cancel</a>
               <!--<p><a class="back-home" href="/laps/account/account-home">Cancel - go to your EPR account homepage</a></p>
-           -->   </div>
+           -->   </div></div>
         </form>
     </div>
 

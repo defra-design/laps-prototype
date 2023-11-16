@@ -15,16 +15,26 @@
 {% endblock %}
 
 {% block content %}
-
+<body onload="pageLoad()">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
   
-  
+        <!-- Simon -->
+        {% if data['return-completed'] != 'true' %}
+        <form id="returnCompleted" name="returnCompleted" action="#">
+            <input type="hidden" name="return-completed" value="true"/>
+            <script>
+                document.returnCompleted.submit()
+            </script>
+        </form>
+      {% endif %}
+<!-- Simon -->
   
      
       <h1 class="govuk-heading-l">Check these details</h1>
   
-  
+      
+      {% if (data['upload_another'] === 'No') %}
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list']}}</h2>
@@ -92,69 +102,141 @@
         </div>
       </div>
 
-    <!--
+      {% elif (data['upload_another'] === 'Yes') %}
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Person 2</h2>
+          <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list']}}</h2>
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                Remove <span class="govuk-visually-hidden"> delete name</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="govuk-summary-card__content">
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Details known
+                Name
               </dt>
               <dd class="govuk-summary-list__value">
-                Yes
+                {{data['d_f_name']}}  {{data['d_l_name']}} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> whether details are known</span>
+                <a class="govuk-link" href="/laps/account/role-details">
+                  Change<span class="govuk-visually-hidden"> Name</span>
                 </a>
               </dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Relationship to lead tenant
+                Role
               </dt>
               <dd class="govuk-summary-list__value">
-                Partner
+                {{data['d_role']}} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> relationship to lead tenant</span>
+                <a class="govuk-link" href="/laps/account/role-details">
+                  Change<span class="govuk-visually-hidden"> Role</span>
                 </a>
               </dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Age
+                Email address
               </dt>
               <dd class="govuk-summary-list__value">
-                42
+                {{data['d_email']}} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> age</span>
+                <a class="govuk-link" href="/laps/account/role-details">
+                  Change<span class="govuk-visually-hidden"> Email</span>
                 </a>
               </dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Working situation
+                Permission
               </dt>
               <dd class="govuk-summary-list__value">
-                Unable to work because of long-term sickness or disability
+                Full administration rights; add and remove users,
+                approve waste data submissions
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> working situation</span>
-                </a>
+               
               </dd>
             </div>
           </dl>
         </div>
       </div>
-    -->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list_2']}}</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Remove <span class="govuk-visually-hidden"> delete name</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_f_name2']}}  {{data['d_l_name2']}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/laps/account/role-details-2">
+                Change<span class="govuk-visually-hidden"> Name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Role
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_role2']}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/laps/account/role-details-2">
+                Change<span class="govuk-visually-hidden"> Role</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_email2']}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/laps/account/role-details-2">
+                Change<span class="govuk-visually-hidden"> Email</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Permission
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Full administration rights; add and remove users,
+              approve waste data submissions
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    
+    {% endif %}
     <p class="govuk-body govuk-!-margin-bottom-9">
       <a href="#" class="govuk-link">Add someone else</a>
     </p>
@@ -166,5 +248,5 @@
   </div>
  </div>
   
-  
+</body> 
   {% endblock %}
