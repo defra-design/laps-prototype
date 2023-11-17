@@ -108,11 +108,11 @@ router.post("/laps/account/responsibility-2", function (req, res) {
     res.redirect("/laps/account/role-details-2");
   }
 // Waste role
-  if (chooseAnEvent === "waste") {
+  if (chooseAnEvent === "waste data") {
     res.redirect("/laps/account/role-details-2");
   }
 // Finance and waste role 
-  if (chooseAnEvent === "finance and waste") {
+  if (chooseAnEvent === "finance and waste data") {
     res.redirect("/laps/account/role-details-2");
   }
 // Cant do this right now
