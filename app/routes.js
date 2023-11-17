@@ -46,11 +46,11 @@ router.post("/laps/account/create-password",  function(request, response) {
     res.redirect("/laps/account/role-details");
   }
 // Waste role
-  if (chooseAnEvent === "waste") {
+  if (chooseAnEvent === "waste data") {
     res.redirect("/laps/account/role-details");
   }
 // Finance and waste role 
-  if (chooseAnEvent === "finance and waste") {
+  if (chooseAnEvent === "finance and waste data") {
     res.redirect("/laps/account/role-details");
   }
 // Cant do this right now
@@ -62,7 +62,7 @@ router.post("/laps/account/create-password",  function(request, response) {
 
 
 
-// Add details
+// Add details 
 router.post("/laps/account/role-details",  function(request, response) {
   response.redirect(301, "/laps/account/add-another")
 });

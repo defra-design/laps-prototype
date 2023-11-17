@@ -26,51 +26,50 @@
     <!-- <p>Use this form to set up user research testing with matching data.</p> -->
 
     <form id="delegate-details" method="post">
-  
-    
+
         <div class="govuk-form-group">
           <label for="contacts_name">
             <span class="govuk-label">First name</span>
         </label>
-        <input class="govuk-input govuk-input--width-20" name="d_f_name" id="d_f_name" type="text"
-          data-error="Enter a first name" value='{{data[' d_f_name']}}'>
+        <input class="govuk-input govuk-input--width-20" name="d_f_name" id="d_f_name" type="text" value="{{data['d_f_name']}}"
+          data-error="Enter a first name" value="{{data['d_f_name']}}">
       </div>
 
       <div class="govuk-form-group">
         <label for="local_authority">
           <span class="govuk-label">Last name</span>
       </label>
-      <input class="govuk-input govuk-input--width-20" name="d_l_name" id="d_l_name" type="text"
-        data-error="Enter a last name" value='{{data[' d_l_name']}}'>
+      <input class="govuk-input govuk-input--width-20" name="d_l_name" id="d_l_name" type="text" value="{{data['d_l_name']}}"
+        data-error="Enter a last name" value="{{data['d_l_name']}}">
     </div>
 
     <div class="govuk-form-group">
       <label for="contacts_email">
         <span class="govuk-label">Role</span>
     </label>
-    <input class="govuk-input govuk-input--width-20 " name="d_role" id="d_role" type="text"
-      data-error="Enter a role" value='{{data[' d_role']}}'>
+    <input class="govuk-input govuk-input--width-20 " name="d_role" id="d_role" type="text" value="{{data['d_role']}}"
+      data-error="Enter a role" value="{{data['d_role']}}">
   </div>
 
         <div class="govuk-form-group">
           <label for="contacts_email">
             <span class="govuk-label">Email address</span>
         </label>
-        <input class="govuk-input govuk-input--width-30 " name="d_email" id="d_email" type="text"
-          data-error="Enter an email address" value='{{data[' d_email']}}'>
+        <input class="govuk-input govuk-input--width-30 " name="d_email" id="d_email" type="text" value="{{data['d_email']}}"
+          data-error="Enter an email address" value="{{data['d_email']}}">
       </div>
+
+
+
       <div class="govuk-button-group">
         <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
       </div>
 
-
-
-
-
+</form>
 
   </div>
 </div>
-</form>
+
 
 
 {% endblock %}

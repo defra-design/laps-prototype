@@ -39,22 +39,17 @@
         <!--  END OF ERROR LOGIC -->
 
        
-        <h1 class="govuk-heading-l"> Choose who will manage {{data['local_authority']}}'s EPR account</h1>
-        <p class="govuk-body">The people you choose must be your most senior colleagues with responsibility for:  </p>
+        <h1 class="govuk-heading-l"> Choose up to two people who will manage {{data['local_authority']}}'s EPR account</h1>
+        <p class="govuk-body">The people you choose must be responsible for:  </p>
         <ul class="govuk-list govuk-list--bullet">
             <li>receiving payment for packaging waste costs</li>
-            <li>submitting packaging waste data </li>
+            <li>approving packaging waste data </li>
         
   
-          </ul><p class="govuk-body">By default they will have full administration rights and be able to:
-        </p>
-        <ul class="govuk-list govuk-list--bullet">
-     
-          <li>add and removing other users</li>
-          <li>approve waste data submissions</li>
+          </ul><p class="govuk-body">These people will be granted full administration rights and be able to
+            add and remove other users. </p>
+       
 
-        </ul>
-        
         <form id="who-list" method="POST">
 
             <div class="govuk-radios govuk-!-margin-bottom-8" data-module="govuk-radios">
@@ -76,7 +71,7 @@
                         name: "who_list",
                         fieldset: {
                             legend: {
-                              text: "What is this person's area of responsibility?",
+                              text: "Choose person one's area of responsibility",
                               isPageHeading: true,
                               classes: "govuk-fieldset__legend--m"
                             }
@@ -95,16 +90,16 @@
                         }
                         },
                         {
-                        value: "waste",
-                        html: "Waste",
+                        value: "waste data",
+                        html: "Waste data",
 
                         hint: {
                         text: " "
                         }
                         },
                         {
-                        value: "finance and waste",
-                        html: "Both finance and waste
+                        value: "finance and waste data",
+                        html: "Both finance and waste data
                         ",
 
                         hint: {
@@ -116,7 +111,7 @@
                           },
                           {
                             value: "cannot",
-                            text: "I cannot provide these details right now",
+                            text: "I cannot choose anyone right now",
                             conditional: {
                               html: textHtml
                             }
@@ -141,7 +136,7 @@
                             name: "who_list",
                             fieldset: {
                                 legend: {
-                                  text: "What is this person's area of responsibility?",
+                                  text: "Choose person one's area of responsibility",
                                   isPageHeading: true,
                                   classes: "govuk-fieldset__legend--m"
                                 }
@@ -160,8 +155,8 @@
                         }
                         },
                         {
-                        value: "waste",
-                        html: "Waste
+                        value: "waste data",
+                        html: "Waste data
                         ",
 
                         hint: {
@@ -169,8 +164,8 @@
                         }
                         },
                         {
-                        value: "finance and waste",
-                        html: "Both finance and waste
+                        value: "finance and waste data",
+                        html: "Both finance and waste data
                         ",
 
                         hint: {
@@ -182,7 +177,7 @@
                           },
                           {
                             value: "cannot",
-                            text: "I cannot provide these details right now",
+                            text: "I cannot choose anyone right now",
                             conditional: {
                               html: textHtml
                             }

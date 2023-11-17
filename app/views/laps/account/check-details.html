@@ -15,21 +15,11 @@
 {% endblock %}
 
 {% block content %}
-<body onload="pageLoad()">
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
   
-        <!-- Simon -->
-        {% if data['return-completed'] != 'true' %}
-        <form id="returnCompleted" name="returnCompleted" action="#">
-            <input type="hidden" name="return-completed" value="true"/>
-            <script>
-                document.returnCompleted.submit()
-            </script>
-        </form>
-      {% endif %}
-<!-- Simon -->
-  
+
      
       <h1 class="govuk-heading-l">Check these details</h1>
   
@@ -55,8 +45,8 @@
                 {{data['d_f_name']}}  {{data['d_l_name']}} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/laps/account/role-details">
-                  Change<span class="govuk-visually-hidden"> Name</span>
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">Name</span>
                 </a>
               </dd>
             </div>
@@ -68,8 +58,8 @@
                 {{data['d_role']}} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/laps/account/role-details">
-                  Change<span class="govuk-visually-hidden"> Role</span>
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">Role</span>
                 </a>
               </dd>
             </div>
@@ -81,8 +71,8 @@
                 {{data['d_email']}} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/laps/account/role-details">
-                  Change<span class="govuk-visually-hidden"> Email</span>
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">Email</span>
                 </a>
               </dd>
             </div>
@@ -101,7 +91,9 @@
           </dl>
         </div>
       </div>
-
+      <p class="govuk-body govuk-!-margin-bottom-9">
+        <a href="/laps/account//add-another" class="govuk-link">Add someone else</a>
+      </p>
       {% elif (data['upload_another'] === 'Yes') %}
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
@@ -124,7 +116,7 @@
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/laps/account/role-details">
-                  Change<span class="govuk-visually-hidden"> Name</span>
+                  Change<span class="govuk-visually-hidden">Name</span>
                 </a>
               </dd>
             </div>
@@ -137,7 +129,7 @@
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/laps/account/role-details">
-                  Change<span class="govuk-visually-hidden"> Role</span>
+                  Change<span class="govuk-visually-hidden">Role</span>
                 </a>
               </dd>
             </div>
@@ -150,7 +142,7 @@
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/laps/account/role-details">
-                  Change<span class="govuk-visually-hidden"> Email</span>
+                  Change<span class="govuk-visually-hidden">Email</span>
                 </a>
               </dd>
             </div>
@@ -169,6 +161,7 @@
           </dl>
         </div>
       </div>
+
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list_2']}}</h2>
@@ -237,9 +230,7 @@
     </div>
     
     {% endif %}
-    <p class="govuk-body govuk-!-margin-bottom-9">
-      <a href="#" class="govuk-link">Add someone else</a>
-    </p>
+ 
       <form method="post">
       <div class="govuk-button-group">
         <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Confirm and continue</button>
@@ -248,5 +239,5 @@
   </div>
  </div>
   
-</body> 
+
   {% endblock %}
