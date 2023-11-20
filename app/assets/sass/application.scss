@@ -5,6 +5,27 @@
 
 // Add extra styles here
 
+.card {
+  background-color: govuk-colour("light-grey");
+  padding: 30px 30px 10px 30px;
+}
+
+.card-overview {
+  border: 2px #c7c7c7 solid;
+  background-color: white;
+}
+
+
+// ––––––––––
+
+.govuk-summary-list__card {
+  border: 1px solid #B1B4B6;
+}
+
+.govuk-summary-list__card-content {
+  padding: 15px 20px;
+}
+
 
 
 .hmcts-search {

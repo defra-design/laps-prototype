@@ -4,6 +4,36 @@
   Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "/index.html",
+  serviceName: serviceName ,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+  href: "account-home",
+  text: "Account home",
+  active: true
+  },
+  {
+    href: "#",
+    text: "Payments"
+    },
+  {
+  href: "#",
+  text: "Manage you account"
+  },
+ 
+  {
+  href: "#3",
+  text: "Sign out"
+  }
+  ]
+  }) }}
+  
+  {% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -16,70 +46,77 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">Check your details</h1>
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['contacts_name']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Local authority
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['contacts_email']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-         
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['local_authority']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        
-        </dd>
-      </div>
-   
-    </dl>
-
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          These details are incorrect
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-      Text to be provided based on business rules.</div>
-    </details>
-
-    <p class="govuk-body">By creating your account, you confirm that:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>you have read and agree to the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">terms and conditions (opens in new tab)</a></li>
-      <li>your information is correct</li>
-    </ul>
-<form method="post">
-  <div class="govuk-button-group">
-    <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Confirm and continue</button>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+   <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+    {{data['local_authority']}}
+    </h1>
   </div>
 </div>
-</form>
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-7">
+
+  <div class="govuk-grid-column-one-half">
+    <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
+      <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state">Payments</a></h2>
+      <p class="govuk-body">You can view your:</p>
+        <ul class="govuk-list govuk-list--bullet">
+         <li>extended producer responsibility (EPR) for packaging estimated payment amount and schedule</li>
+         <li>breakdown of how your EPR for packaging estimated payment is calculated</li>
+         <li>payment documents for 2024 to 2025</li>
+        </ul> 
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
+      <h2 class="govuk-heading-m"><a href="#" class="govuk-link--no-visited-state">Manage your account</a></h2>
+      <p class="govuk-body">You can:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>view your details</li>
+          <li>view your EPR team</li>
+          <li>add and remove people</li>
+          <li>delegate</li>
+        </ul> 
+        <p><br></p>
+
+    </div>
+  </div>
 </div>
-</div>
+
+
+
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-7">
+
+    <div class="govuk-grid-column-one-half">
+      <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
+        <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state">View guidance (opens in a new window)</a></h2>
+        <p class="govuk-body">You can find out how:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>payments are calculated</li>
+            <li>payments are made</li>
+            <li>the EPR scheme works</li>
+          </ul> 
+      </div>
+    </div>
+  
+    <div class="govuk-grid-column-one-half">
+      <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
+        <h2 class="govuk-heading-m"><a href="#" class="govuk-link--no-visited-state">Contact us</a></h2>
+        <p class="govuk-body">You can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>submit a query</li>
+            <li>find telephone contact details</li>
+           
+          </ul> 
+          
+  
+      </div>
+    </div>
+  </div>
+  
 
 {% endblock %}
