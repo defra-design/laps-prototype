@@ -55,7 +55,7 @@ router.post("/laps/account/create-password",  function(request, response) {
   }
 // Cant do this right now
   if (chooseAnEvent === "cannot") {
-    res.redirect("/laps/account/success-c");
+    res.redirect("/laps/account/success");
   }
 
 });
@@ -88,7 +88,7 @@ router.post("/laps/account/check-details",  function(request, response) {
 
  // Success page
  router.post("/laps/account/success",  function(request, response) {
-  response.redirect(301, "/laps/account/account-home")
+  response.redirect(301, "/laps/account/account-home-ceo")
 });
 
 //
@@ -126,6 +126,20 @@ router.post("/laps/account/responsibility-2", function (req, res) {
 router.post("/laps/account/role-details-2",  function(request, response) {
   response.redirect(301, "/laps/account/check-details")
 });
+
+
+
+// Set up
+router.post("/laps/account/set-up-acc",  function(request, response) {
+  response.redirect(301, "/laps/account/account-home-ceo")
+});
+
+
+
+
+
+
+
 
 
 

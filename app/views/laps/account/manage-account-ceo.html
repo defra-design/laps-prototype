@@ -1,0 +1,140 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Check your details – {{
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block header %} {{
+govukHeader({ homepageUrl: "/index.html", serviceName: serviceName , serviceUrl:
+"/index.html", navigation: [ { href: "account-home-ceo", text: "Account home",
+active: true }, { href: "#", text: "Payments" }, { href: "manage-account-ceo",
+text: "Manage your account" }, { href: "#3", text: "Sign out" } ] }) }} {%
+endblock %} {% block beforeContent %} {{ govukPhaseBanner({ tag: { text: "Beta"
+}, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l"> {{data['local_authority']}}</span>
+    <h1 class="govuk-heading-l">Manage account</h1>
+
+    <h2 class="govuk-heading-m">Your details</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">{{data['contacts_name']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Email</dt>
+        <dd class="govuk-summary-list__value">{{data['contacts_email']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Role</dt>
+        <dd class="govuk-summary-list__value">
+          CEO
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Permission</dt>
+        <dd class="govuk-summary-list__value">
+          Add and remove users,<br> approve waste data submissions
+        </dd>
+      </div>
+    </dl>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          These details are incorrect
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Text to be provided based on business rules.
+      </div>
+    </details>
+  </div>
+</div>
+
+{% if (data['who_list'] === 'cannot') %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Your EPR team</h2>
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Choose up to two people who will manage {{data['local_authority']}}'s'
+          EPR account.
+        </p>
+      </div>
+    </div>
+
+    <p class="govuk-body">The people you choose must be responsible for:  </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>receiving payment for packaging waste costs</li>
+      <li>approving packaging waste data</li>
+    </ul>
+
+    <div class="govuk-inset-text">
+      These people will be able to add other users.
+    </div>
+
+    <form method="post">
+      <button class="govuk-button govuk-button--secondary" type="submit">
+        Add now
+      </button>
+    </form>
+
+    <!-- Team-->
+    {% else %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Your EPR team</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Responsibility</th>
+          <th scope="col" class="govuk-table__header">Permission</th>
+          <th scope="col" class="govuk-table__header"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">{{data['d_f_name']}} {{data['d_l_name']}} <br>
+            <span class="govuk-body">{{data['d_role']}}</span><span
+              class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span></th>
+          <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td>
+          <td class="govuk-table__cell"> Add and remove users,<br> approve waste data submissions</td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Role</span>
+          </a> </td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">{{data['d_f_name2']}} {{data['d_l_name2']}} <br>
+            <span class="govuk-body">{{data['d_role']}}</span><span
+            class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span></th>
+          <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td>
+          <td class="govuk-table__cell"> Add and remove users,<br> approve waste data submissions</td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Role</span>
+          </a> </td>
+        </tr>
+     
+      </tbody>
+    </table>
+
+
+      </div>
+    </div>
+
+
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

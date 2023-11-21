@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{{data['local_authority']}} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,13 +16,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 {% block content %}
 
-
- 
+{% if (data['who_list'] === 'cannot') %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-
-
 
     <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
         <h1 class="govuk-panel__title">
@@ -31,8 +27,33 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <div class="govuk-panel__body">
           EPR account created for <br><strong>{{data['local_authority']}}</strong>
         </div>
-        
+      </h1>
 
+    </div>
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">You have not added anybody to manage the account. you will be sent reminder emails to have roles in place before November 2024</p>
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      <a href="/laps/account/account-home-ceo" class="govuk-link">Go to your EPR account home page</a>
+    </p>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link">Sign out</a>
+    </p>
+  </div>
+</div>
+
+{% else %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">
+          Success
+        </h1>
+        <div class="govuk-panel__body">
+          EPR account created for <br><strong>{{data['local_authority']}}</strong>
+        </div>
       </h1>
 
     </div>
@@ -57,7 +78,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </div> -->
 
     <p class="govuk-body govuk-!-margin-bottom-6">
-      <a href="/laps/account/account-home" class="govuk-link">Go to your EPR account home page</a>
+      <a href="/laps/account/account-home-ceo" class="govuk-link">Go to your EPR account home page</a>
     </p>
 
     <p class="govuk-body">
@@ -67,6 +88,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   </div>
 </div>
 
+
+
+    {% endif %}
+
+
+
+ 
 
 
 {% endblock %}
