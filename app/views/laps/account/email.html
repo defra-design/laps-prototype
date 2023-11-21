@@ -7,7 +7,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-  <p class="govuk-body">Dear {{data['contacts_name']}}</p>
+  <p class="govuk-body">Dear {{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</p>
 
   <p class="govuk-body">Create an account to manage local authority payments as part of Extended Producer Responsibility for packaging (EPR).</p>
 

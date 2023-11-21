@@ -60,12 +60,12 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <p class="govuk-body">We have sent emails to:</p>
     <ul class="govuk-list">
       <li>
-        {{data['d_f_name']}}  {{data['d_l_name']}} <br><span
+        {{data['d_f_name'] | capitalize }}  {{data['d_l_name'] | capitalize }} <br><span
                   class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>        
       </li>
       
       <li>
-        {{data['d_f_name2']}}  {{data['d_l_name2']}}  <br><span
+        {{data['d_f_name2'] | capitalize }}  {{data['d_l_name2'] | capitalize }}  <br><span
         class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
       </li>
     </ul>

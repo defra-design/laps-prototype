@@ -1,13 +1,53 @@
-{% extends "layouts/main.html" %} {% block pageTitle %} Check your details – {{
-serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block header %} {{
-govukHeader({ homepageUrl: "/index.html", serviceName: serviceName , serviceUrl:
-"/index.html", navigation: [ { href: "account-home-ceo", text: "Account home",
-active: true }, { href: "#", text: "Payments" }, { href: "manage-account-ceo",
-text: "Manage your account" }, { href: "#3", text: "Sign out" } ] }) }} {%
-endblock %} {% block beforeContent %} {{ govukPhaseBanner({ tag: { text: "Beta"
-}, html: 'This is a new service – your
-<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
-{% endblock %} {% block content %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "/index.html",
+  serviceName: serviceName ,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+  href: "account-home-ceo",
+  text: "Account home",
+  active: true
+  },
+  {
+    href: "#",
+    text: "Payments"
+    },
+  {
+  href: "#",
+  text: "Manage your account"
+  },
+  {
+    href: "#",
+    text: "View guidence"
+    },
+  {
+  href: "#3",
+  text: "Sign out"
+  }
+  ]
+  }) }}
+  
+  {% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -18,7 +58,7 @@ endblock %} {% block beforeContent %} {{ govukPhaseBanner({ tag: { text: "Beta"
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Name</dt>
-        <dd class="govuk-summary-list__value">{{data['contacts_name']}}</dd>
+        <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Email</dt>
@@ -66,7 +106,7 @@ endblock %} {% block beforeContent %} {{ govukPhaseBanner({ tag: { text: "Beta"
 
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
-          Choose up to two people who will manage {{data['local_authority']}}'s'
+          Choose up to two people who will manage {{data['local_authority']}}'s
           EPR account.
         </p>
       </div>
@@ -106,7 +146,7 @@ endblock %} {% block beforeContent %} {{ govukPhaseBanner({ tag: { text: "Beta"
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">{{data['d_f_name']}} {{data['d_l_name']}} <br>
+          <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} <br>
             <span class="govuk-body">{{data['d_role']}}</span><span
               class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span></th>
           <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td>
@@ -116,8 +156,8 @@ endblock %} {% block beforeContent %} {{ govukPhaseBanner({ tag: { text: "Beta"
 
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">{{data['d_f_name2']}} {{data['d_l_name2']}} <br>
-            <span class="govuk-body">{{data['d_role']}}</span><span
+          <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
+            <span class="govuk-body">{{data['d_role2']}}</span><span
             class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span></th>
           <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td>
           <td class="govuk-table__cell"> Add and remove users,<br> approve waste data submissions</td>

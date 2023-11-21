@@ -42,7 +42,7 @@
                 Name
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data['d_f_name']}}  {{data['d_l_name']}} 
+                {{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} 
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -81,7 +81,7 @@
                 Permission
               </dt>
               <dd class="govuk-summary-list__value">
-                Add and remove users,
+                Add and remove users,<br>
                 approve waste data submissions
               </dd>
               <dd class="govuk-summary-list__actions">
@@ -112,7 +112,7 @@
                 Name
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data['d_f_name']}}  {{data['d_l_name']}} 
+                {{data['d_f_name'] | capitalize }}  {{data['d_l_name'] | capitalize }} 
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/laps/account/role-details">
