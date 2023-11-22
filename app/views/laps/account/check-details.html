@@ -1,166 +1,168 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-     
-      <h1 class="govuk-heading-l">Check these details</h1>
-  
-      
-      {% if (data['upload_another'] === 'No') %}
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list']}}</h2>
-          <ul class="govuk-summary-card__actions">
-            <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-                Remove <span class="govuk-visually-hidden"> delete name</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} 
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">Name</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Role
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['d_role']}} 
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">Role</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Email address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['d_email']}} 
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">Email</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Permission
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Add and remove users,<br>
-                approve waste data submissions
-              </dd>
-              <dd class="govuk-summary-list__actions">
-               
-              </dd>
-            </div>
-          </dl>
-        </div>
+
+
+    <h1 class="govuk-heading-l">Check these details</h1>
+
+
+    {% if (data['upload_another'] === 'No') %}
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list']}}</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Remove <span class="govuk-visually-hidden"> delete name</span>
+            </a>
+          </li>
+        </ul>
       </div>
-      <p class="govuk-body govuk-!-margin-bottom-9">
-        <a href="/laps/account/add-another" class="govuk-link">Add someone else</a>
-      </p>
-      {% elif (data['upload_another'] === 'Yes') %}
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list']}}</h2>
-          <ul class="govuk-summary-card__actions">
-            <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-                Remove <span class="govuk-visually-hidden"> delete name</span>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">Name</span>
               </a>
-            </li>
-          </ul>
-        </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row ">
-              <dt class="govuk-summary-list__key ">
-                Name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['d_f_name'] | capitalize }}  {{data['d_l_name'] | capitalize }} 
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/laps/account/role-details">
-                  Change<span class="govuk-visually-hidden">Name</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Role
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['d_role']}} 
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/laps/account/role-details">
-                  Change<span class="govuk-visually-hidden">Role</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row ">
-              <dt class="govuk-summary-list__key"  >
-                Email address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['d_email']}} 
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/laps/account/role-details">
-                  Change<span class="govuk-visually-hidden">Email</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Permission
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Add and remove users,
-                approve waste data submissions
-              </dd>
-              <dd class="govuk-summary-list__actions">
-               
-              </dd>
-            </div>
-          </dl>
-        </div>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Role
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_role']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">Role</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_email']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">Email</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Permission
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Add and remove users,<br>
+              approve waste data submissions
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+        </dl>
       </div>
+    </div>
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      <a href="/laps/account/add-another" class="govuk-link">Add someone else</a>
+    </p>
+
+    {% elif (data['upload_another'] === 'Yes') %}
+    
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list']}}</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Remove <span class="govuk-visually-hidden"> delete name</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row ">
+            <dt class="govuk-summary-list__key ">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/laps/account/role-details">
+                Change<span class="govuk-visually-hidden">Name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Role
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_role']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/laps/account/role-details">
+                Change<span class="govuk-visually-hidden">Role</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row ">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_email']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/laps/account/role-details">
+                Change<span class="govuk-visually-hidden">Email</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Permission
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Add and remove users,
+              approve waste data submissions
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
@@ -179,7 +181,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['d_f_name2']}}  {{data['d_l_name2']}} 
+              {{data['d_f_name2']}} {{data['d_l_name2']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/laps/account/role-details-2">
@@ -192,7 +194,7 @@
               Role
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['d_role2']}} 
+              {{data['d_role2']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/laps/account/role-details-2">
@@ -205,7 +207,7 @@
               Email address
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['d_email2']}} 
+              {{data['d_email2']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/laps/account/role-details-2">
@@ -222,22 +224,36 @@
               approve waste data submissions
             </dd>
             <dd class="govuk-summary-list__actions">
-             
+
             </dd>
           </div>
         </dl>
       </div>
     </div>
-    
-    {% endif %}
- 
-      <form method="post">
-      <div class="govuk-button-group">
-        <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Confirm and continue</button>
-        </div>
-    </form>
-  </div>
- </div>
-  
 
-  {% endblock %}
+    {% endif %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m">Declaration</h2>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            By submitting these details you are confirming that, you have the authority to do so and to the best of your
+            knowledge, the details you are providing are correct.
+          </strong>
+        </div>
+      </div>
+    </div>
+    <form method="post">
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Accept and continue</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
