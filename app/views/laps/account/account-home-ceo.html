@@ -13,7 +13,7 @@
   navigation: [
   {
   href: "account-home-ceo",
-  text: "Account home",
+  text: "Home",
   active: true
   },
   {
@@ -50,9 +50,9 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full govuk-!-margin-top-5 govuk-!-margin-bottom-5">
-   <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
-    {{data['local_authority']}}
+  <div class="govuk-grid-column-full">
+   <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+   Home 
     </h1>
   </div>
 </div>
@@ -113,9 +113,9 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>submit a query</li>
             <li>find telephone contact details</li>
-           
           </ul> 
           
+        </div>
   
       </div>
     </div>

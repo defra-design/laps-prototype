@@ -136,9 +136,30 @@ router.post("/laps/account/set-up-acc",  function(request, response) {
 
 
 
+// CEO change user details 
+router.post("/laps/account/role-details-change",  function(request, response) {
+  response.redirect(301, "/laps/account/manage-account-ceo")
+});
 
+// CEO Remove user
+router.post("/laps/account/remove",  function(request, response) {
+  response.redirect(301, "/laps/account/manage-account-ceo-a")
+});
 
+// CEO add user
+router.post("/laps/account/manage-account-ceo-a",  function(request, response) {
+  response.redirect(301, "/laps/account/responsibility-2-ceo")
+});
 
+// CEO add user responsibility
+router.post("/laps/account/responsibility-2-ceo",  function(request, response) {
+  response.redirect(301, "/laps/account/manage-account-ceo")
+});
+
+// CEO add user details
+router.post("/laps/account/role-details-2-ceo",  function(request, response) {
+  response.redirect(301, "/laps/account/role-details-2-ceo")
+});
 
 
 

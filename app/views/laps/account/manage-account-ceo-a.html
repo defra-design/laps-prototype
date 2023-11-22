@@ -129,6 +129,7 @@
       </button>
     </form>
 
+
     <!-- Team-->
     {% else %}
     <div class="govuk-grid-row">
@@ -152,29 +153,22 @@
               class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span></th>
           <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td>
           <td class="govuk-table__cell"> Add and remove users,<br> approve waste data submissions <br></td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/role-details-change">Change<span class="govuk-visually-hidden">Change</span>
-          </a>    <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Change</span>
+          </a>    <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
           </a> </td></td>
 
         </tr>
 
-
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
-            <span class="govuk-body">{{data['d_role2']}}</span><span
-            class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span></th>
-          <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td>
-          <td class="govuk-table__cell"> Add and remove users,<br> approve waste data submissions</td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Change</span>
-          </a> </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
-          </a> </td>
-        </tr>
      
       </tbody>
     </table>
-
-
+    <p class="govuk-body">Choose up to two people who will manage Bromley County Council's EPR account.
+    </p>
+   <form method="post">
+      <button class="govuk-button govuk-button--secondary" type="submit">
+        Add another person
+      </button>
+    </form>
       </div>
     </div>
 
