@@ -86,8 +86,13 @@
                         hint: {
                         text: " "
                         }
-                        },
-                        {
+                        }
+                        ]
+                        }) }}
+
+                        {% else %}
+
+                        <!--{
                         value: "finance and waste data",
                         html: "Both finance and waste data
                         ",
@@ -95,11 +100,7 @@
                         hint: {
                         text: " "
                         }
-                        }
-                        ]
-                        }) }}
-
-                        {% else %}
+                        }-->
                         <!--  END OF ERROR LOGIC -->
                         {% from "govuk/components/radios/macro.njk" import govukRadios %}
                         
@@ -136,8 +137,13 @@
                         hint: {
                         text: " "
                         }
-                        },
-                        {
+                        }
+                        ]
+                        }) }}
+
+                        {% endif %}
+
+                        <!--{
                         value: "finance and waste data",
                         html: "Both finance and waste data
                         ",
@@ -145,11 +151,7 @@
                         hint: {
                         text: " "
                         }
-                        }
-                        ]
-                        }) }}
-
-                        {% endif %}
+                        }-->
                     </div>
                 </div>
             </div>
