@@ -35,6 +35,12 @@ router.post("/laps/account/create-password",  function(request, response) {
   response.redirect(301, "/laps/account/responsibility")
 });
 
+//  Choose up to two people to manage 's EPR account
+router.post("/laps/account/responsibility",  function(request, response) {
+  response.redirect(301, "/laps/account/role-details")
+});
+
+
 // Choose who will manage [name]'s EPR account
 //
 // What is this person's area of responsibility?
@@ -62,6 +68,7 @@ router.post("/laps/account/create-password",  function(request, response) {
 
 
 
+
 // Add details 
 router.post("/laps/account/role-details",  function(request, response) {
   response.redirect(301, "/laps/account/add-another")
@@ -73,7 +80,7 @@ router.post("/laps/account/role-details",  function(request, response) {
     console.log(req.body);
 
     if (req.session.upload_another === "Yes") {
-      res.redirect(301, "/laps/account/responsibility-2");
+      res.redirect(301, "/laps/account/role-details-2");
     }
  
     else {

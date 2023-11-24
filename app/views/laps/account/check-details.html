@@ -24,7 +24,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list']}}</h2>
+        <h2 class="govuk-summary-card__title">Area of responsibility {{data['who_list']}}</h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
               Remove <span class="govuk-visually-hidden"> delete name</span>
@@ -47,6 +47,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
+          <!--
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Role
@@ -60,6 +61,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
+          -->
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Email address
@@ -90,14 +92,14 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </div>
     
     <p class="govuk-body govuk-!-margin-bottom-6">
-      <a href="/laps/account/add-another" class="govuk-link">Add someone else</a>
+      <a href="#" class="govuk-link">Add someone else</a>
     </p>
 
     {% elif (data['upload_another'] === 'Yes') %}
     
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list']}}</h2>
+        <h2 class="govuk-summary-card__title">Area of responsibility {{data['who_list']}}</h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
               Remove <span class="govuk-visually-hidden"> delete name</span>
@@ -120,6 +122,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
+          <!--
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Role
@@ -133,6 +136,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
+          -->
           <div class="govuk-summary-list__row ">
             <dt class="govuk-summary-list__key">
               Email address
@@ -164,7 +168,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Person responsible for {{data['who_list_2']}}</h2>
+        <h2 class="govuk-summary-card__title">Area of responsibility {{data['who_list_2']}}</h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
               Remove <span class="govuk-visually-hidden"> delete name</span>
@@ -187,6 +191,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
+          <!--
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Role
@@ -200,6 +205,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
+          -->
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Email address
@@ -233,17 +239,11 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
-        <h2 class="govuk-heading-m">Declaration</h2>
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            By submitting these details you are confirming that, you have the authority to do so and to the best of your
-            knowledge, the details you are providing are correct.
-          </strong>
-        </div>
+        <h2 class="govuk-heading-m">What to do next</h2>
+        <p class="govuk-body">Confirm these details to finish the process. </p>
       </div>
     </div>
+  
     <form method="post">
       <div class="govuk-button-group">
         <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Accept and continue</button>
