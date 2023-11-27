@@ -76,7 +76,7 @@
       <input class="govuk-input govuk-input--width-20" name="d_l_name" id="d_l_name" type="text" value="{{data['d_l_name']}}"
         data-error="Enter a last name" value="{{data['d_l_name']}}">
     </div>
-
+<!--
     <div class="govuk-form-group">
       <label for="contacts_email">
         <span class="govuk-label">Role</span>
@@ -84,7 +84,7 @@
     <input class="govuk-input govuk-input--width-20 " name="d_role" id="d_role" type="text" value="{{data['d_role']}}"
       data-error="Enter a role" value="{{data['d_role']}}">
   </div>
-
+-->
         <div class="govuk-form-group">
           <label for="contacts_email">
             <span class="govuk-label">Email address</span>
@@ -93,43 +93,40 @@
           data-error="Enter an email address" value="{{data['d_email']}}">
       </div>
 
+      {{ govukRadios({
+        idPrefix: "who_list",
+        name: "who_list",
+        fieldset: {
+            legend: {
+              text: "What does this person do? ",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+        },
+    hint: {
+    text: ""
+    },
+    items: [
+    {
+    value: "receives payment for packaging waste costs",
+    html: "receives payment for packaging waste costs
+    ",
 
-         {{ govukRadios({
-          idPrefix: "who_list",
-          name: "who_list",
-          fieldset: {
-              legend: {
-                text: "Area of responsibility",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-          },
-      hint: {
-      text: ""
-      },
-      items: [
-      {
-      value: "finance",
-      html: "Finance
-      ",
+    hint: {
+    text: ""
+    }
+    },
+    {
+    value: "approves packaging waste data",
+    html: "approves packaging waste data 
+    ",
 
-      hint: {
-      text: ""
-      }
-      },
-      {
-      value: "waste data",
-      html: "Waste data
-      ",
-
-      hint: {
-      text: " "
-      }
-      }
-      ]
-      }) }}
-
-  
+    hint: {
+    text: " "
+    }
+    }
+    ]
+    }) }}
 
 
 
