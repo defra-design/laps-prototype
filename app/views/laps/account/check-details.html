@@ -48,7 +48,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
-          <!--
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Role
@@ -62,7 +62,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
-          -->
+        
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Email address
@@ -81,10 +81,12 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Permission
             </dt>
             <dd class="govuk-summary-list__value">
-              
+              {{data['who_list'] | capitalize }} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              {{data['who_list'] | capitalize }}
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">Email</span>
+              </a>
             </dd>
           </div>
         </dl>
@@ -122,7 +124,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
-          <!--
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Role
@@ -136,7 +138,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
-          -->
+      
           <div class="govuk-summary-list__row ">
             <dt class="govuk-summary-list__key">
               Email address
@@ -190,7 +192,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
-          <!--
+        
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Role
@@ -204,7 +206,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               </a>
             </dd>
           </div>
-          -->
+         
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Email address
