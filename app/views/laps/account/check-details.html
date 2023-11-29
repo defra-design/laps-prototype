@@ -18,13 +18,14 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l">Create account</span>
     <h1 class="govuk-heading-l">Check these details</h1>
 
     {% if (data['upload_another'] === 'No') %}
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Responsibility: {{data['who_list']}}</h2>
+        <h2 class="govuk-summary-card__title">Person 1 <!--{{data['who_list']}}--></h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
               Remove <span class="govuk-visually-hidden"> delete name</span>
@@ -80,8 +81,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Permission
             </dt>
             <dd class="govuk-summary-list__value">
-              Add and remove users,<br>
-              approve waste data submissions
+              Full admin
             </dd>
             <dd class="govuk-summary-list__actions">
 
@@ -99,7 +99,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Responsibility: {{data['who_list']}}</h2>
+        <h2 class="govuk-summary-card__title">Person 1 <!-- {{data['who_list']}} --></h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
               Remove <span class="govuk-visually-hidden"> delete name</span>
@@ -155,8 +155,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Permission
             </dt>
             <dd class="govuk-summary-list__value">
-              Add and remove users,
-              approve waste data submissions
+              Full admin
             </dd>
             <dd class="govuk-summary-list__actions">
 
@@ -168,7 +167,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Responsibility: {{data['who_list_2']}}</h2>
+        <h2 class="govuk-summary-card__title">Person 2 <!-- {{data['who_list_2']}} --></h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
               Remove <span class="govuk-visually-hidden"> delete name</span>
@@ -224,8 +223,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Permission
             </dt>
             <dd class="govuk-summary-list__value">
-              Add and remove users,
-              approve waste data submissions
+              Full admin
             </dd>
             <dd class="govuk-summary-list__actions">
 

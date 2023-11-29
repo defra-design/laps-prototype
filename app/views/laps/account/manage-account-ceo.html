@@ -73,7 +73,7 @@
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Permission</dt>
         <dd class="govuk-summary-list__value">
-          Add and remove users,<br> approve waste data submissions
+          Full admin
         </dd>
       </div>
     </dl>
@@ -138,14 +138,14 @@
       <caption class="govuk-table__caption govuk-table__caption--m">Your EPR team</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header" width="50%">Name</th>
 
-         <th scope="col" class="govuk-table__header">Responsibility</th> 
+      <!--  <th scope="col" class="govuk-table__header">Responsibility</th> -->
 
           <th scope="col" class="govuk-table__header">Permission</th>
-          <th scope="col" class="govuk-table__header">Status<span class="govuk-visually-hidden">Change</span></th>
-          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th>
-          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Change</span></th>
+     <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
         
         </tr>
       </thead>
@@ -155,15 +155,16 @@
             <span class="govuk-body">{{data['d_role']}}</span>
             <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>
      
-              <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> 
+        <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
           
-              <td class="govuk-table__cell"> Add and remove users,<br> approve waste data submissions <br></td>
+              <td class="govuk-table__cell">Full admin</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/role-details-change">Change<span class="govuk-visually-hidden">Change</span>
-          </a>    <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
-          </a> </td></td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/role-details-change">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
+          </a></td>    
+     <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
+          </a> </td>-->
 
         </tr>
 
@@ -173,16 +174,16 @@
             <span class="govuk-body">{{data['d_role2']}}</span>
             <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
         
-             <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> 
+        <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
           
-        <td class="govuk-table__cell"> Add and remove users,<br> approve waste data submissions</td>
+        <td class="govuk-table__cell">Full admin</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Change</span>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
           </a> </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
-          </a> </td>
+       <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
+          </a> </td> -->
         </tr>
      
       </tbody>
