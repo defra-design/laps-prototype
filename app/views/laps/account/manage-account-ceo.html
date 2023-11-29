@@ -55,28 +55,39 @@
     <h1 class="govuk-heading-l">Manage account</h1>
 
     <h2 class="govuk-heading-m">Your details</h2>
-    <dl class="govuk-summary-list">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Name</dt>
         <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</dd>
       </div>
+
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Role</dt>
         <dd class="govuk-summary-list__value">
           CEO
         </dd>
       </div>
+  
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Email</dt>
         <dd class="govuk-summary-list__value" >{{data['contacts_email']}}</dd>
       </div>
      
+
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Permission</dt>
         <dd class="govuk-summary-list__value">
           CEO admin
         </dd>
       </div>
+  
+    </dl>
+
+
+    <dl class="govuk-summary-list">
+    
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Password</dt>
         <dd class="govuk-summary-list__value">
@@ -89,7 +100,6 @@
         </dd>
       </div>
     </dl>
-
 
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
@@ -175,7 +185,7 @@
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/role-details-change">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
           </a></td>    
      <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
           </a> </td>-->

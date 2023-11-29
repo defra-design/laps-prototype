@@ -44,13 +44,6 @@
         data-error="Enter a last name" value="{{data['d_l_name2']}}">
     </div>
 
-    <div class="govuk-form-group">
-      <label for="contacts_email">
-        <span class="govuk-label">Role</span>
-    </label>
-    <input class="govuk-input govuk-input--width-20 " name="d_role2" id="d_role2" type="text" value="{{data['d_role2']}}"
-      data-error="Enter a role" value="{{data['d_role2']}}">
-  </div>
 
         <div class="govuk-form-group">
           <label for="contacts_email">
@@ -59,14 +52,21 @@
         <input class="govuk-input govuk-input--width-30 " name="d_email2" id="d_email2" type="text" value="{{data['d_email2']}}"
           data-error="Enter an email address" value="{{data['d_email2']}}">
       </div>
-
+      <div class="govuk-form-group">
+        <label for="contacts_email">
+          <span class="govuk-label">Role</span>
+      </label>
+      <input class="govuk-input govuk-input--width-20 " name="d_role2" id="d_role2" type="text" value="{{data['d_role2']}}"
+        data-error="Enter a role" value="{{data['d_role2']}}">
+    </div>
+  
 
       {{ govukRadios({
         idPrefix: "who_list_2",
         name: "who_list_2",
         fieldset: {
             legend: {
-              text: "What does this person do? ",
+              text: "What permissions should they have? ",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }

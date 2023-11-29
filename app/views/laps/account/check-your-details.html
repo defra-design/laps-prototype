@@ -31,6 +31,8 @@
         </dd>
 
       </div>
+
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Role
@@ -38,8 +40,18 @@
         <dd class="govuk-summary-list__value">
           CEO
         </dd>
-       
       </div>
+
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['contacts_email']}} 
+        </dd>
+      </div>
+   
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Local authority
@@ -49,16 +61,7 @@
         </dd>
    
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['contacts_email']}} 
-        </dd>
-   
-      </div>
-   
+
     </dl>
 
     <details class="govuk-details" data-module="govuk-details">
