@@ -61,22 +61,35 @@
         <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Email</dt>
-        <dd class="govuk-summary-list__value">{{data['contacts_email']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Role</dt>
         <dd class="govuk-summary-list__value">
           CEO
         </dd>
       </div>
       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Email</dt>
+        <dd class="govuk-summary-list__value" >{{data['contacts_email']}}</dd>
+      </div>
+     
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Permission</dt>
         <dd class="govuk-summary-list__value">
-          Full admin
+          CEO admin
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Password</dt>
+        <dd class="govuk-summary-list__value">
+          *****************
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">password</span>
+          </a>
         </dd>
       </div>
     </dl>
+
 
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
@@ -90,6 +103,7 @@
     </details>
   </div>
 </div>
+
 
 {% if (data['who_list'] === 'cannot') %}
 <div class="govuk-grid-row">
@@ -138,7 +152,7 @@
       <caption class="govuk-table__caption govuk-table__caption--m">Your EPR team</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header" width="50%">Name</th>
+          <th scope="col" class="govuk-table__header" width="45%">Name</th>
 
       <!--  <th scope="col" class="govuk-table__header">Responsibility</th> -->
 
@@ -157,7 +171,7 @@
      
         <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
           
-              <td class="govuk-table__cell">Full admin</td>
+              <td class="govuk-table__cell"> {{data['who_list'] | capitalize }}</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
@@ -176,11 +190,12 @@
         
         <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
           
-        <td class="govuk-table__cell">Full admin</td>
+        <td class="govuk-table__cell"> {{data['who_list_2'] | capitalize }}</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">
+            Cancel invitation<span class="govuk-visually-hidden">password</span>
           </a> </td>
        <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
           </a> </td> -->

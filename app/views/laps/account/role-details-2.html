@@ -19,8 +19,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <span class="govuk-caption-l">Create account</span>
-    <h1 class="govuk-heading-l">Enter person two's details </h1>
+      <span class="govuk-caption-l">Register for Local Authority Payments</span>
+    <h1 class="govuk-heading-l">Enter person 2's details </h1>
 
 
     <!-- <p>Use this form to set up user research testing with matching data.</p> -->
@@ -60,7 +60,7 @@
           data-error="Enter an email address" value="{{data['d_email2']}}">
       </div>
 
-<!--
+
       {{ govukRadios({
         idPrefix: "who_list_2",
         name: "who_list_2",
@@ -71,31 +71,32 @@
               classes: "govuk-fieldset__legend--m"
             }
         },
-    hint: {
-    text: ""
-    },
-    items: [
-    {
-    value: "receives payment for packaging waste costs",
-    html: "receives payment for packaging waste costs
-    ",
-
-    hint: {
-    text: ""
-    }
-    },
-    {
-    value: "approves packaging waste data",
-    html: "approves packaging waste data 
-    ",
-
-    hint: {
-    text: " "
-    }
-    }
-    ]
-    }) }}
-  -->
+        hint: {
+          text: ""
+          },
+          items: [
+          {
+          value: "finance admin",
+          html: "Finance admin
+          ",
+      
+          hint: {
+          text: "Managing finance relating to
+          waste"
+          }
+          },
+          {
+          value: "waste admin",
+          html: "Waste admin 
+          ",
+      
+          hint: {
+          text: "Managing waste data submissions"
+          }
+          }
+          ]
+          }) }}
+ 
 <!--
       <div class="govuk-inset-text">
         This person will get admin permissions. Once they set up their account, they will be able to add standard users. 

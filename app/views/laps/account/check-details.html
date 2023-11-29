@@ -18,7 +18,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-l">Create account</span>
+    <span class="govuk-caption-l">Register for Local Authority Payments</span>
     <h1 class="govuk-heading-l">Check these details</h1>
 
     {% if (data['upload_another'] === 'No') %}
@@ -81,10 +81,10 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Permission
             </dt>
             <dd class="govuk-summary-list__value">
-              Full admin
+              
             </dd>
             <dd class="govuk-summary-list__actions">
-
+              {{data['who_list'] | capitalize }}
             </dd>
           </div>
         </dl>
@@ -155,7 +155,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Permission
             </dt>
             <dd class="govuk-summary-list__value">
-              Full admin
+              {{data['who_list'] | capitalize }}
             </dd>
             <dd class="govuk-summary-list__actions">
 
@@ -223,7 +223,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Permission
             </dt>
             <dd class="govuk-summary-list__value">
-              Full admin
+              {{data['who_list_2'] | capitalize }}
             </dd>
             <dd class="govuk-summary-list__actions">
 

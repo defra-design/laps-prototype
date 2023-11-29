@@ -19,7 +19,7 @@ Enter person’s details   – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <span class="govuk-caption-l">Create account</span>
+      <span class="govuk-caption-l">Register for Local Authority Payments</span>
     <h1 class="govuk-heading-l">Enter person’s details  </h1>
 
   
@@ -57,13 +57,13 @@ Enter person’s details   – {{ serviceName }} – GOV.UK Prototype Kit
           data-error="Enter an email address" value="{{data['d_email']}}">
       </div>
 
-   <!--
+   
       {{ govukRadios({
         idPrefix: "who_list",
         name: "who_list",
         fieldset: {
             legend: {
-              text: "What does this person do? ",
+              text: "What permissions should they have? ",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -73,27 +73,28 @@ Enter person’s details   – {{ serviceName }} – GOV.UK Prototype Kit
     },
     items: [
     {
-    value: "receives payment for packaging waste costs",
-    html: "receives payment for packaging waste costs
+    value: "finance admin",
+    html: "Finance admin
     ",
 
     hint: {
-    text: ""
+    text: "Managing finance relating to
+    waste"
     }
     },
     {
-    value: "approves packaging waste data",
-    html: "approves packaging waste data 
+    value: "waste admin",
+    html: "Waste admin 
     ",
 
     hint: {
-    text: " "
+    text: "Managing waste data submissions"
     }
     }
     ]
     }) }}
     
-    -->
+  
 <!--
     <div class="govuk-inset-text">
       This person will get admin permissions. Once they set up their account, they will be able to add standard users. 
