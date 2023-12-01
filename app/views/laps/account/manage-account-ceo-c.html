@@ -63,7 +63,7 @@
   <div class="govuk-notification-banner__content">
     <p class="govuk-notification-banner__heading">You cancelled the invitation to {{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }}.
     </p>
-   
+    <p class="govuk-body">They will receive an email informing them of this change.</p>
   
   </div>
 </div>
@@ -142,6 +142,11 @@
 
 <h3 class="govuk-heading-m">
   Your EPR team</h3>
+  <p class="govuk-body">Choose up to two people who will manage {{data['local_authority']}}'s EPR account.
+  </p>
+  <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    <a href="/laps/account/role-details-2-ceo" class="govuk-link">Add another person</a>
+  </p>
   
 <table class="govuk-table">
   
@@ -183,11 +188,6 @@
  
   </tbody>
 </table>
-<p class="govuk-body">Choose up to two people who will manage Bromley County Council's EPR account.
-</p>
-<p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-  <a href="/laps/account/role-details-2-ceo" class="govuk-link">Add another person</a>
-</p>
 
 
   </div>

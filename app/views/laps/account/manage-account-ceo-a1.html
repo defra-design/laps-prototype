@@ -49,6 +49,23 @@
 
 {% block content %}
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+aria-labelledby="govuk-notification-banner-title"
+data-module="govuk-notification-banner">
+<div class="govuk-notification-banner__header">
+  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    Success
+  </h2>
+</div>
+<div class="govuk-notification-banner__content">
+  <p class="govuk-notification-banner__heading">You invited {{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} to your EPR team.
+  </p>
+  <p class="govuk-body">They will receive an email asking them to create their account.</p>
+
+</div>
+</div>
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l"> {{data['local_authority']}}</span>
@@ -163,7 +180,7 @@
  
   </tbody>
 </table>
-<p class="govuk-body">Choose up to two people who will manage Bromley County Council's EPR account.
+<p class="govuk-body">Choose up to two people who will manage {{data['local_authority']}}'s EPR account.
 </p>
 <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
   <a href="/laps/account/role-details-2-ceo" class="govuk-link">Add another person</a>
