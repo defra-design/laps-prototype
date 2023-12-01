@@ -1,0 +1,247 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBackLink({
+    href: "#",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Private beta</span>
+    <h1 class="govuk-heading-xl">Acc details for UR session</h1>
+
+
+    <!--<p>Use this form to set up user research testing with matching CEO data.</p>-->
+    <h2 class="govuk-heading-m">CEO details</h2>
+    
+    
+    <form id="contact-details" method="post">
+
+    
+      <div class="govuk-form-group">
+        <label for="contacts_name">
+          <span class="govuk-label">First name</span>
+      </label>
+      <input class="govuk-input govuk-!-width-one-half " name="contacts_fname" id="contacts_fname" type="text"
+        data-error="Enter a first name" value='{{data["contacts_fname"]}}'>
+    </div>
+    <div class="govuk-form-group">
+      <label for="contacts_name">
+        <span class="govuk-label">Last name</span>
+    </label>
+    <input class="govuk-input govuk-!-width-one-half " name="contacts_lname" id="contacts_nlame" type="text"
+      data-error="Enter a last name" value='{{data["contacts_lname"]}}'>
+  </div>
+        <div class="govuk-form-group">
+          <label for="contacts_email">
+            <span class="govuk-label">Email address</span>
+        </label>
+        <input class="govuk-input govuk-input--width-30 " name="contacts_email" id="contacts_email" type="text"
+          data-error="Enter an email address" value='{{data[' contacts_email']}}'>
+      </div>
+ 
+        <div class="govuk-form-group">
+          <label for="local_authority">
+            <span class="govuk-label">Local authority</span>
+        </label>
+        <input class="govuk-input govuk-input--width-30 " name="local_authority" id="local_authority" type="text"
+          data-error="Enter a local authority name" value='{{data[' local_authority']}}'>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+
+      <h2 class="govuk-heading-m">Person 1 details</h2>
+      <div class="govuk-form-group">
+        <label for="contacts_name">
+          <span class="govuk-label">First name</span>
+      </label>
+      <input class="govuk-input govuk-input--width-20" name="d_f_name" id="d_f_name" type="text" value="James"
+        data-error="Enter a first name" value="{{data['d_f_name']}}">
+    </div>
+
+      <div class="govuk-form-group">
+        <label for="local_authority">
+          <span class="govuk-label">Last name</span>
+      </label>
+      <input class="govuk-input govuk-input--width-20" name="d_l_name" id="d_l_name" type="text" value="Willimson"
+        data-error="Enter a last name" value="{{data['d_l_name']}}">
+    </div>
+
+    <div class="govuk-form-group">
+      <label for="contacts_email">
+        <span class="govuk-label">Email address</span>
+    </label>
+    <input class="govuk-input govuk-input--width-30 " name="d_email" id="d_email" type="text" value="james.williamson@local-authority.gov.uk"
+      data-error="Enter an email address" value="{{data['d_email']}}">
+  </div>
+
+    <div class="govuk-form-group">
+      <label for="contacts_email">
+        <span class="govuk-label">Role</span>
+    </label>
+    <input class="govuk-input govuk-input--width-20 " name="d_role" id="d_role" type="text" value="CFO"
+      data-error="Enter a role" value="{{data['d_role']}}">
+  </div>
+  {{ govukRadios({
+    idPrefix: "who_list",
+    name: "who_list",
+    fieldset: {
+        legend: {
+          text: "What permissions should they have? ",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+    },
+hint: {
+text: ""
+},
+items: [
+{
+value: "finance admin",
+html: "Finance admin
+",
+
+hint: {
+text: "Managing finance relating to
+waste"
+}
+},
+{
+value: "waste admin",
+html: "Waste admin 
+",
+
+hint: {
+text: "Managing waste data submissions"
+}
+}
+]
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+
+      <h2 class="govuk-heading-m">Person 2 details</h2>
+
+      <div class="govuk-form-group">
+        <label for="contacts_name">
+          <span class="govuk-label">First name</span>
+      </label>
+      <input class="govuk-input govuk-input--width-20" name="d_f_name2" id="d_f_name2" type="text" value="Amanda"
+        data-error="Enter a first name" value="{{data['d_f_name2']}}">
+    </div>
+
+    <div class="govuk-form-group">
+      <label for="local_authority">
+        <span class="govuk-label">Last name</span>
+    </label>
+    <input class="govuk-input govuk-input--width-20" name="d_l_name2" id="d_l_name2" type="text" value="Johnson"
+      data-error="Enter a last name" value="{{data['d_l_name2']}}">
+  </div>
+  <div class="govuk-form-group">
+    <label for="contacts_email">
+      <span class="govuk-label">Email address</span>
+  </label>
+  <input class="govuk-input govuk-input--width-30 " name="d_email2" id="d_email2" type="text" value="amanda.johnson@local-authority.gov.uk"
+    data-error="Enter an email address" value="{{data['d_email2']}}">
+</div>
+
+  <div class="govuk-form-group">
+    <label for="contacts_email">
+      <span class="govuk-label">Role</span>
+  </label>
+  <input class="govuk-input govuk-input--width-20 " name="d_role2" id="d_role2" type="text" value="CWO"
+    data-error="Enter a role" value="{{data['d_role2']}}">
+</div>
+
+
+{{ govukRadios({
+  idPrefix: "who_list_2",
+  name: "who_list_2",
+  fieldset: {
+      legend: {
+        text: "What permissions should they have? ",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+      }
+  },
+  hint: {
+    text: ""
+    },
+    items: [
+    {
+    value: "finance admin",
+    html: "Finance admin
+    ",
+
+    hint: {
+    text: "Managing finance relating to
+    waste"
+    }
+    },
+    {
+    value: "waste admin",
+    html: "Waste admin 
+    ",
+
+    hint: {
+    text: "Managing waste data submissions"
+    }
+    }
+    ]
+    }) }}
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Include details for</h2>
+
+
+    <div class="govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios" >
+      <div class="govuk-radios__item" data-target="upload_another">
+        <input class="govuk-radios__input" id="Yes" type="radio" name="upload_another" value="Yes">
+        <label class="govuk-label govuk-radios__label" for="doc_upload">
+          Person 1 and 2
+        </label>
+      </div>
+    
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="No" type="radio" name="upload_another" value="No">
+        <label class="govuk-label govuk-radios__label" for="upload_another">
+          Person 1 only
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="No" type="radio" name="upload_another" value="">
+        <label class="govuk-label govuk-radios__label" for="upload_another">
+          Neither
+        </label>
+      </div>
+    </div>
+    <div class="govuk-button-group">
+      <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+    </div>
+
+  </div>
+</div>
+</form>
+
+
+{% endblock %}

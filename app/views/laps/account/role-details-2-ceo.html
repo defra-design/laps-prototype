@@ -4,6 +4,39 @@
   Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "/index.html",
+  serviceName: serviceName ,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+  href: "account-home-ceo",
+  text: "Home"
+  },
+  {
+    href: "#",
+    text: "Payments"
+    },
+  {
+  href: "#",
+  text: "Manage your account",
+  active: true
+  },
+  {
+    href: "#",
+    text: "View guidence"
+    },
+  {
+  href: "#3",
+  text: "Sign out"
+  }
+  ]
+  }) }}
+  
+  {% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -13,14 +46,16 @@
   }) }}
 
 {% endblock %}
-
 {% block content %}
+
+
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <span class="govuk-caption-l"></span>
-    <h1 class="govuk-heading-l">Person responsible for {{data['who_list_2']}} </h1>
+      <span class="govuk-caption-l">Invite user to manage EPR account</span>
+    <h1 class="govuk-heading-l">Enter their details </h1>
 
 
     <!-- <p>Use this form to set up user research testing with matching data.</p> -->
@@ -33,7 +68,7 @@
             <span class="govuk-label">First name</span>
         </label>
         <input class="govuk-input govuk-input--width-20" name="d_f_name2" id="d_f_name2" type="text" value=""
-          data-error="Enter a first name" value="">
+          data-error="Enter a first name" value="{{data['d_f_name2']}}">
       </div>
 
       <div class="govuk-form-group">
@@ -41,30 +76,75 @@
           <span class="govuk-label">Last name</span>
       </label>
       <input class="govuk-input govuk-input--width-20" name="d_l_name2" id="d_l_name2" type="text" value=""
-        data-error="Enter a last name" value="">
+        data-error="Enter a last name" value="{{data['d_l_name2']}}">
     </div>
 
-    <div class="govuk-form-group">
-      <label for="contacts_email">
-        <span class="govuk-label">Role</span>
-    </label>
-    <input class="govuk-input govuk-input--width-20 " name="d_role2" id="d_role2" type="text" value=""
-      data-error="Enter a role" value="">
-  </div>
 
         <div class="govuk-form-group">
           <label for="contacts_email">
             <span class="govuk-label">Email address</span>
         </label>
         <input class="govuk-input govuk-input--width-30 " name="d_email2" id="d_email2" type="text" value=""
-          data-error="Enter an email address" value="">
+          data-error="Enter an email address" value="{{data['d_email2']}}">
       </div>
+      <div class="govuk-form-group">
+        <label for="contacts_email">
+          <span class="govuk-label">Role</span>
+      </label>
+      <input class="govuk-input govuk-input--width-20 " name="d_role2" id="d_role2" type="text" value=""
+        data-error="Enter a role" value="{{data['d_role2']}}">
+    </div>
+  
+
+      {{ govukRadios({
+        idPrefix: "who_list_2",
+        name: "who_list_2",
+        fieldset: {
+            legend: {
+              text: "What permissions should they have? ",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+        },
+        hint: {
+          text: ""
+          },
+          items: [
+          {
+          value: "finance admin",
+          html: "Finance admin
+          ",
+      
+          hint: {
+          text: "Managing finance relating to
+          waste"
+          }
+          },
+          {
+          value: "waste admin",
+          html: "Waste admin 
+          ",
+      
+          hint: {
+          text: "Managing waste data submissions"
+          }
+          }
+          ]
+          }) }}
+ 
+<!--
+      <div class="govuk-inset-text">
+        This person will get admin permissions. Once they set up their account, they will be able to add standard users. 
+      </div>
+ -->  
       <div class="govuk-button-group">
         <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
       </div>
   </div>
 </div>
 </form>
-
+<!--
+<p><a class="back-home" href="#">Cancel</a></p>   
+-->
 
 {% endblock %}
