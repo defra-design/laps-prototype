@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+
+{% endset%}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">Dear {{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</p> 
+
+    <p class="govuk-body">You registered {{data['local_authority'] }} for Local Authority Payments on DD Month YYYY. </p>
+
+    
+  
+    <p class="govuk-body">You still need to invite people to manage {{data['local_authority'] }}'s' EPR account on your behalf.</p>
+
+    <p class="govuk-body">The people you choose must be responsible for managing:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>finance relating to waste  </li>
+      <li>waste data submissions </li>
+    </ul>
+
+    <p class="govuk-body">These people will have admin accounts and be able to build their teams once the system is fully up and running.  </p>
+
+
+
+    <p class="govuk-body"><a href="#"
+        class="govuk-link">Log in to your account </p>
+
+    <h3 class="govuk-heading-m">Contact us</h3>
+
+    <p class="govuk-body">If you have any questions, email <a href="mailto:#">wEPR@defra.gov.uk</a></p>
+  </div>
+</div>
+
+{% endblock %}
