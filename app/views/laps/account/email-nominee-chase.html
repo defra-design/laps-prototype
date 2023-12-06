@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+
+{% endset%}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">Dear {{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} </p>
+   
+    <p class="govuk-body">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }} registered {{data['local_authority'] }} for Local Authority Payments on DD Month YYYY. 
+    </p>
+
+    <p class="govuk-body">On that date you were invited to create your own EPR account.  </p>
+
+    <p class="govuk-body">Create your EPR account so you can build your team when the system is fully up and running.   </p>
+
+    <h2 class="govuk-heading-m">Create your EPR account</h2>
+
+    <p class="govuk-body"><a href="#"
+        class="govuk-link">https://EPR-local-authorities.service.gov.uk/nominate?=12345  </a></p>
+
+    <h3 class="govuk-heading-m">Contact us</h3>
+
+    <p class="govuk-body">If you have any questions, email <a href="mailto:#">wEPR@defra.gov.uk</a></p>
+  </div>
+</div>
+
+{% endblock %}
