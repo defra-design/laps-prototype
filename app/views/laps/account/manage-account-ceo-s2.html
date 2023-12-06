@@ -51,6 +51,24 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+    aria-labelledby="govuk-notification-banner-title"
+    data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">You updated {{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} details.
+      </p>
+      <p class="govuk-body">They will receive an email informing them of this change.</p>
+    
+    </div>
+  </div>
+    
+
     <span class="govuk-caption-l"> {{data['local_authority']}}</span>
     <h1 class="govuk-heading-l">Manage account</h1>
 
@@ -114,72 +132,12 @@
   </div>
 </div>
 
-<!-- Single User view-->
-{% if (data['upload_another'] === 'No') %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
 
-
-<h3 class="govuk-heading-m">
-  Your EPR team</h3>
-
-<table class="govuk-table">
-  
-
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header" width="45%">Name</th>
-
-  <!--  <th scope="col" class="govuk-table__header">Responsibility</th> -->
-
-      <th scope="col" class="govuk-table__header">Permission</th>
-      <th scope="col" class="govuk-table__header">Status</th>
-      <th scope="col" class="govuk-table__header">Actions<span class="govuk-visually-hidden">Change</span></th>
- <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
-    
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} <br>
-        <span class="govuk-body">{{data['d_role']}}</span>
-        <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>
- 
-    <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
-      
-          <td class="govuk-table__cell"> {{data['who_list'] | capitalize }}</td>
-      <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-        Invited
-      </strong></td>
-      <td class="govuk-table__cell"><a class="govuk-link" href="#">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
-      </a></td>    
- <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
-      </a> </td>-->
-
-    </tr>
-
-
-
- 
-  </tbody>
-</table>
-<p class="govuk-body">  Choose 1 or 2 people to manage {{data['local_authority']}}'s EPR payments and data. </p>
-<p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-  
-  
-  <form class="govuk-form-group" method="post" action="/laps/account/role-details-2-ceo">
-    <button class="govuk-button" type="submit">Invite user</button>
-</form>
-
-
-
-  </div>
-</div>
 
 
 
 <!-- Two User view-->
-{% elif (data['upload_another'] === 'Yes') %}
+
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
 
@@ -207,11 +165,16 @@
         <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
           
               <td class="govuk-table__cell"> {{data['who_list'] | capitalize }}</td>
-          <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-            Invited
+          <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--green">
+            Active
           </strong></td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
-          </a></td>    
+          <td class="govuk-table__cell"><li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove">
+            Remove<span class="govuk-visually-hidden"> Remove</span>
+          </a></li>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="role-details-change.html">
+            Change<span class="govuk-visually-hidden">Change</span>
+          </a></li>
+         </td>    
      <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
           </a> </td>-->
 
@@ -229,7 +192,7 @@
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="cancel">
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">
             Cancel invitation<span class="govuk-visually-hidden">password</span>
           </a> </td>
        <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
@@ -246,43 +209,6 @@
 
 
 
-<!-- No User view-->
-{% else %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Your EPR team</h2>
-
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-      data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
-        </h2>
-      </div>
-
-      <div class="govuk-notification-banner__content">
-        <p class="govuk-notification-banner__heading">
-          Choose 1 or 2 people to manage {{data['local_authority']}}'s EPR payments and data.
-        </p>
-      </div>
-    </div>
-
-    <p class="govuk-body"> Choose senior colleagues responsible for:   </p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>finance relating to waste  </li>
-      <li>waste data submissions  </li>
-    </ul>
-
-    <div class="govuk-inset-text govuk-!-font-weight-bold">
-      These people will get full admin permissions and will be able to add other users. This will let them create teams with relevant permissions to manage EPR.  
-    </div>
- 
-
-    <form class="govuk-form-group" method="post" action="role-details-ceo">
-      <button class="govuk-button" type="submit">Invite user</button>
-  </form>
-    
-    {% endif %}
   </div>
 </div>
 

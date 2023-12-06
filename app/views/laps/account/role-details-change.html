@@ -61,7 +61,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <!-- <p>Use this form to set up user research testing with matching data.</p> -->
 
 
-      <form id="delegate-details" method="post" action="manage-account-ceo-s">
+      <form id="delegate-details" method="post" action="manage-account-ceo-s2">
 
         <div class="govuk-form-group">
           <label for="contacts_name">
@@ -84,7 +84,10 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           <label for="contacts_email">
             <span class="govuk-label">Email address</span>
           </label>
-          <input class="govuk-input govuk-input--width-30 " name="d_email" id="d_email" type="text"
+          <div id="authentication-code-hint" class="govuk-hint">
+            (SW placeholder) Text to be provided based on business rules around how to change
+          </div>
+          <input class="govuk-input govuk-input--width-30 " disabled="disabled" name="d_email" id="d_email" type="text"
             value="{{data['d_email']}}" data-error="Enter an email address" value="{{data['d_email']}}">
         </div>
         <div class="govuk-form-group">

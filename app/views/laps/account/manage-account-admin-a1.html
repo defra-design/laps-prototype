@@ -49,27 +49,25 @@
 
 {% block content %}
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+aria-labelledby="govuk-notification-banner-title"
+data-module="govuk-notification-banner">
+<div class="govuk-notification-banner__header">
+  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    Success
+  </h2>
+</div>
+<div class="govuk-notification-banner__content">
+  <p class="govuk-notification-banner__heading">You invited {{data['d_f_name_A'] | capitalize }} {{data['d_l_name_A'] | capitalize }} to your EPR team.
+  </p>
+  <p class="govuk-body">They will receive an email asking them to create their account.</p>
+
+</div>
+</div>
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">You cancelled the invitation to {{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }}.
-    </p>
-    <p class="govuk-body">They will receive an email informing them of this change.</p>
-  
-  </div>
-</div>
-  
-    
-    
     <span class="govuk-caption-l"> {{data['local_authority']}}</span>
     <h1 class="govuk-heading-l">Manage account</h1>
 
@@ -77,20 +75,20 @@
     <dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Name</dt>
-        <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</dd>
+        <dd class="govuk-summary-list__value">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} </dd>
       </div>
 
       
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Role</dt>
         <dd class="govuk-summary-list__value">
-          CEO
+          {{data['d_role']}}
         </dd>
       </div>
   
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Email</dt>
-        <dd class="govuk-summary-list__value" >{{data['contacts_email']}}</dd>
+        <dd class="govuk-summary-list__value" >{{data['d_email']}} </dd>
       </div>
      
 
@@ -98,11 +96,12 @@
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Permission</dt>
         <dd class="govuk-summary-list__value">
-          CEO admin
+          {{data['who_list'] | capitalize }}
         </dd>
       </div>
   
     </dl>
+
 
 
     <dl class="govuk-summary-list">
@@ -133,7 +132,6 @@
   </div>
 </div>
 
-
 <!-- Single User view-->
 
 <div class="govuk-grid-row">
@@ -143,9 +141,8 @@
 <h3 class="govuk-heading-m">
   Your EPR team</h3>
 
-<table class="govuk-table">
   
-
+<table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header" width="45%">Name</th>
@@ -161,17 +158,17 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} <br>
-        <span class="govuk-body">{{data['d_role']}}</span>
-        <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>
+      <th scope="row" class="govuk-table__header">{{data['d_f_name_A'] | capitalize }} {{data['d_l_name_A'] | capitalize }} <br>
+        <span class="govuk-body">{{data['d_role_A']}}</span>
+        <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email_A']}} </span>
  
     <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
       
-          <td class="govuk-table__cell"> {{data['who_list'] | capitalize }}</td>
+          <td class="govuk-table__cell"> {{data['who_list_A'] | capitalize }}</td>
       <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
         Invited
       </strong></td>
-      <td class="govuk-table__cell"><a class="govuk-link" href="#">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
+      <td class="govuk-table__cell"><a class="govuk-link" href="cancel-admin.html">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
       </a></td>    
  <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
       </a> </td>-->
@@ -183,15 +180,15 @@
  
   </tbody>
 </table>
-<p class="govuk-body">  Choose 1 or 2 people to manage {{data['local_authority']}}'s EPR payments and data. </p>
-<p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-  
-  
-  <form class="govuk-form-group" action="/laps/account/role-details-2-ceo">
+
+<p class="govuk-body">Choose people to manage 's EPR payments and data. </p>
+<div class="govuk-inset-text govuk-!-font-weight-bold">
+  These people will get full admin permissions and will be able to add other users. This will let them create teams with relevant permissions to manage EPR.  
+</div>
+
+  <form class="govuk-form-group" method="post" action="#">
     <button class="govuk-button" type="submit">Invite user</button>
 </form>
-
-
   </div>
 </div>
 
