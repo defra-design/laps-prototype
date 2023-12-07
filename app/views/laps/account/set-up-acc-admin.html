@@ -11,10 +11,7 @@
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
-  {{ govukBackLink({
-    href: "#",
-    text: "Back"
-  }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -23,18 +20,37 @@
     <div class="govuk-grid-column-two-thirds">
 
     <span class="govuk-caption-xl">Private beta</span>
-    <h1 class="govuk-heading-xl">Acc details for UR session</h1>
+    <h1 class="govuk-heading-xl">Register admin details for UR session</h1>
+
 
 
     <!--<p>Use this form to set up user research testing with matching CEO data.</p>-->
-    <form id="contact-details" method="post" action="account-home-admin">
+    <form id="contact-details" method="post" action="email-invite">
+
+      <h2 class="govuk-heading-m">CEO details</h2>
+      <div class="govuk-form-group">
+        <label for="contacts_name">
+          <span class="govuk-label">First name</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30" name="contacts_fname" id="contacts_fname" type="text"
+        data-error="Enter a first name" value='{{data["contacts_fname"]}}'>
+    </div>
+    <div class="govuk-form-group">
+      <label for="contacts_name">
+        <span class="govuk-label">Last name</span>
+    </label>
+    <input class="govuk-input govuk-input--width-30 " name="contacts_lname" id="contacts_nlame" type="text"
+      data-error="Enter a last name" value='{{data["contacts_lname"]}}'>
+  </div>
+
+
 
       <h2 class="govuk-heading-m">Admin user details</h2>
       <div class="govuk-form-group">
         <label for="contacts_name">
           <span class="govuk-label">First name</span>
       </label>
-      <input class="govuk-input govuk-input--width-20" name="d_f_name" id="d_f_name" type="text" value="{{data['d_f_name']}}"
+      <input class="govuk-input govuk-input--width-30" name="d_f_name" id="d_f_name" type="text" value="{{data['d_f_name']}}"
         data-error="Enter a first name" value="{{data['d_f_name']}}">
     </div>
 
@@ -42,7 +58,7 @@
         <label for="local_authority">
           <span class="govuk-label">Last name</span>
       </label>
-      <input class="govuk-input govuk-input--width-20" name="d_l_name" id="d_l_name" type="text" value="{{data['d_l_name']}}"
+      <input class="govuk-input govuk-input--width-30" name="d_l_name" id="d_l_name" type="text" value="{{data['d_l_name']}}"
         data-error="Enter a last name" value="{{data['d_l_name']}}">
     </div>
 
@@ -58,7 +74,7 @@
       <label for="contacts_email">
         <span class="govuk-label">Role</span>
     </label>
-    <input class="govuk-input govuk-input--width-20 " name="d_role" id="d_role" type="text" value="{{data['d_role']}}"
+    <input class="govuk-input govuk-input--width-30 " name="d_role" id="d_role" type="text" value="{{data['d_role']}}"
       data-error="Enter a role" value="{{data['d_role']}}">
   </div>
 
@@ -67,7 +83,7 @@
       <span class="govuk-label">Local authority</span>
   </label>
   <input class="govuk-input govuk-input--width-30 " name="local_authority" id="local_authority" type="text"
-    data-error="Enter a local authority name" value='{{data[' local_authority']}}'>
+    data-error="Enter a local authority name" value="{{data['local_authority']}}">
 </div>
 
   {{ govukRadios({

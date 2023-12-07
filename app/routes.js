@@ -35,6 +35,14 @@ router.post("/laps/account/create-password",  function(request, response) {
   response.redirect(301, "/laps/account/responsibility")
 });
 
+
+// Create password
+router.post("/laps/account/create-password-admin",  function(request, response) {
+  response.redirect(301, "/laps/account/success-admin")
+});
+
+
+
 //  Choose up to two people to manage 's EPR account
 router.post("/laps/account/responsibility",  function(request, response) {
   response.redirect(301, "/laps/account/role-details")
