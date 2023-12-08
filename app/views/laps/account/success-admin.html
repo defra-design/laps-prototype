@@ -24,14 +24,18 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 Success
               </h1>
               <div class="govuk-panel__body">
-                {{data['who_list'] | capitalize }} account created for<br><strong>{{data['local_authority']}}</strong>
+                EPR {{data['who_list'] | capitalize }} account created for<br><strong>{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }}</strong>
               </div>
             </h1>
           </div>
 
-          <p class="govuk-body">Your {{data['who_list'] | capitalize }}  has been created and you will recieve a confirmation email.</p>
+          <p class="govuk-body">You’ll receive an email to confirm that your EPR {{data['who_list'] | capitalize }} account is ready.</p>
           <h2 class="govuk-heading-m">What happens next</h2>
-          <p class="govuk-body">This will be a Finance admin account, during private beta you will be able to <a href="/laps/account/manage-account-admin" class="govuk-link">add other admin users</a>.</p>
+          <p class="govuk-body">You’ll only be able to add other admin level users during beta testing.</p>
+
+          <p class="govuk-body">You’ll be able to add standard users after beta testing.</p>
+          
+          <p class="govuk-body"><a href="/laps/account/manage-account-admin" class="govuk-link">Add other admin users</a></p>
    
       </div>
     </div>
