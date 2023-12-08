@@ -170,8 +170,12 @@ data-module="govuk-notification-banner">
       <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
         Invited
       </strong></td>
-      <td class="govuk-table__cell"><a class="govuk-link" href="#">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
-      </a></td>    
+      <td class="govuk-table__cell"><li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
+        Cancel invite<span class="govuk-visually-hidden">Cancel</span>
+      </a></li>
+    <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+        Resend invite<span class="govuk-visually-hidden">Resend</span>
+      </a></li></td>    
  <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
       </a> </td>-->
 
@@ -183,6 +187,9 @@ data-module="govuk-notification-banner">
   </tbody>
 </table>
 <p class="govuk-body">Choose 1 or 2 senior colleagues to manage {{data['local_authority']}}'s EPR payments and data. </p>
+<div class="govuk-inset-text govuk-!-font-weight-bold">
+  These people will have admin accounts. They’ll only be able to add other admin level users during beta testing.
+</div>
 <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
   
   
