@@ -175,6 +175,26 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
+        <span class="govuk-body">{{data['d_role2']}}</span>
+        <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
+    
+    <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
+      
+    <td class="govuk-table__cell"> {{data['who_list_2'] | capitalize }}</td>
+      <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
+        Invited
+      </strong></td>
+      <td class="govuk-table__cell">   <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
+        Cancel invite<span class="govuk-visually-hidden">Cancel</span>
+      </a></li>
+    <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+        Resend invite<span class="govuk-visually-hidden">Resend</span>
+      </a></li> </td>
+   <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
+      </a> </td> -->
+    </tr>
+    <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">{{data['d_f_name_A'] | capitalize }} {{data['d_l_name_A'] | capitalize }} <br>
         <span class="govuk-body">{{data['d_role_A']}}</span>
         <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email_A']}} </span>
@@ -199,7 +219,7 @@
   </tbody>
 </table>
 
-<p class="govuk-body">Choose colleagues to manage 's EPR payments and data. </p>
+
 <div class="govuk-inset-text govuk-!-font-weight-bold">
   These people will have admin accounts. They’ll only be able to add other admin level users during beta testing.
 </div>

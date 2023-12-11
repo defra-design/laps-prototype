@@ -152,17 +152,54 @@
   </div>
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">EPR team</h2>
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">EPR team</h2>
     
-
-    <p class="govuk-body">Choose colleagues responsible for: </p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>finance relating to waste  </li>
-      <li>waste data submissions  </li>
-    </ul>
+        
+        <table class="govuk-table">
+    
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" width="45%">Name</th>
+    
+          <!--  <th scope="col" class="govuk-table__header">Responsibility</th> -->
+    
+              <th scope="col" class="govuk-table__header">Permission</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Actions<span class="govuk-visually-hidden">Change</span></th>
+         <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
+            
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+    
+    
+    
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
+                <span class="govuk-body">{{data['d_role2']}}</span>
+                <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
+            
+            <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
+              
+            <td class="govuk-table__cell"> {{data['who_list_2'] | capitalize }}</td>
+              <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
+                Invited
+              </strong></td>
+              <td class="govuk-table__cell">   <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
+                Cancel invite<span class="govuk-visually-hidden">Cancel</span>
+              </a></li>
+            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                Resend invite<span class="govuk-visually-hidden">Resend</span>
+              </a></li> </td>
+           <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
+              </a> </td> -->
+            </tr>
+         
+          </tbody>
+        </table>
 
     <div class="govuk-inset-text govuk-!-font-weight-bold">
       These people will have admin accounts. They’ll only be able to add other admin level users during beta testing.

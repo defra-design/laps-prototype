@@ -1,73 +1,192 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Enter person’s details   – {{ serviceName }} – GOV.UK Prototype Kit
+Enter person’s details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Register for Local Authority Payments</span>
-    <h1 class="govuk-heading-l">Enter colleagues details  </h1>
+            <!-- ERROR LOGIC  error summary
+            {% if data['errorthispage'] == "true" %}
+            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+                data-module="govuk-error-summary">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+    
+                        <li>
+                            <a href="#select-error">Select admin permission they should have
+                                </p></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+             END OF ERROR LOGIC -->
 
-  
+    <span class="govuk-caption-l">Register for Local Authority Payments</span>
+    <h1 class="govuk-heading-l">Enter colleagues details </h1>
+
+
     <form id="delegate-details" method="post">
 
-        <div class="govuk-form-group">
-          <label for="contacts_name">
-            <span class="govuk-label">First name</span>
+           <!-- ERROR LOGIC  error summary -->
+           {% if data['errorthispage'] == "true" %}
+
+
+      <div class="govuk-form-group">
+        <label for="contacts_name">
+          <span class="govuk-label">First name</span>
         </label>
-        <input class="govuk-input govuk-input--width-30" name="d_f_name" id="d_f_name" type="text" value="{{data['d_f_name']}}"
-          data-error="Enter a first name" value="{{data['d_f_name']}}">
+        <input class="govuk-input govuk-input--width-30" name="d_f_name" id="d_f_name" type="text"
+          value="{{data['d_f_name']}}" data-error="Enter a first name" value="{{data['d_f_name']}}">
       </div>
+
+
+      
 
       <div class="govuk-form-group">
         <label for="local_authority">
           <span class="govuk-label">Last name</span>
-      </label>
-      <input class="govuk-input govuk-input--width-30" name="d_l_name" id="d_l_name" type="text" value="{{data['d_l_name']}}"
-        data-error="Enter a last name" value="{{data['d_l_name']}}">
-    </div>
-
-
-        <div class="govuk-form-group">
-          <label for="contacts_email">
-            <span class="govuk-label">Email address</span>
         </label>
-        <input class="govuk-input govuk-input--width-30 " name="d_email" id="d_email" type="text" value="{{data['d_email']}}"
-          data-error="Enter an email address" value="{{data['d_email']}}">
+        <input class="govuk-input govuk-input--width-30" name="d_l_name" id="d_l_name" type="text"
+          value="{{data['d_l_name']}}" data-error="Enter a last name" value="{{data['d_l_name']}}">
+      </div>
+
+
+      <div class="govuk-form-group">
+        <label for="contacts_email">
+          <span class="govuk-label">Email address</span>
+        </label>
+        <input class="govuk-input govuk-input--width-30 " name="d_email" id="d_email" type="text"
+          value="{{data['d_email']}}" data-error="Enter an email address" value="{{data['d_email']}}">
       </div>
       <div class="govuk-form-group">
         <label for="contacts_email">
           <span class="govuk-label">Role</span>
-      </label>
-      <input class="govuk-input govuk-input--width-30 " name="d_role" id="d_role" type="text" value="{{data['d_role']}}"
-        data-error="Enter a role" value="{{data['d_role']}}">
-    </div>
-  
-   
+        </label>
+        <input class="govuk-input govuk-input--width-30 " name="d_role" id="d_role" type="text"
+          value="{{data['d_role']}}" data-error="Enter a role" value="{{data['d_role']}}">
+      </div>
+
+
+
+
+
+ 
       {{ govukRadios({
-        idPrefix: "who_list",
-        name: "who_list",
-        fieldset: {
-            legend: {
-              text: "What permissions should they have? ",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-        },
+      idPrefix: "who_list",
+      name: "who_list",
+      fieldset: {
+      legend: {
+      text: "What permissions should they have? ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: ""
+      },
+      items: [
+      {
+      value: "finance admin",
+      html: "Finance admin
+      ",
+
+      hint: {
+      text: "Managing finance relating to
+      waste"
+      }
+      },
+      {
+      value: "waste admin",
+      html: "Waste admin
+      ",
+
+      hint: {
+      text: "Managing waste data submissions"
+      }
+      }
+      ]
+      }) }}
+
+
+
+
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+      </div>
+
+    </form>
+    <p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p>
+
+    {% else %}
+
+    <div class="govuk-form-group">
+      <label for="contacts_name">
+        <span class="govuk-label">First name</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30" name="d_f_name" id="d_f_name" type="text"
+        value="{{data['d_f_name']}}" data-error="Enter a first name" value="{{data['d_f_name']}}">
+    </div>
+
+
+    
+
+    <div class="govuk-form-group">
+      <label for="local_authority">
+        <span class="govuk-label">Last name</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30" name="d_l_name" id="d_l_name" type="text"
+        value="{{data['d_l_name']}}" data-error="Enter a last name" value="{{data['d_l_name']}}">
+    </div>
+
+
+    <div class="govuk-form-group">
+      <label for="contacts_email">
+        <span class="govuk-label">Email address</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30 " name="d_email" id="d_email" type="text"
+        value="{{data['d_email']}}" data-error="Enter an email address" value="{{data['d_email']}}">
+    </div>
+    <div class="govuk-form-group">
+      <label for="contacts_email">
+        <span class="govuk-label">Role</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30 " name="d_role" id="d_role" type="text"
+        value="{{data['d_role']}}" data-error="Enter a role" value="{{data['d_role']}}">
+    </div>
+
+
+
+
+
+
+    {{ govukRadios({
+    idPrefix: "who_list",
+    name: "who_list",
+    fieldset: {
+    legend: {
+    text: "What permissions should they have? ",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--m"
+    }
+    },
     hint: {
     text: ""
     },
@@ -84,7 +203,7 @@ Enter person’s details   – {{ serviceName }} – GOV.UK Prototype Kit
     },
     {
     value: "waste admin",
-    html: "Waste admin 
+    html: "Waste admin
     ",
 
     hint: {
@@ -93,21 +212,41 @@ Enter person’s details   – {{ serviceName }} – GOV.UK Prototype Kit
     }
     ]
     }) }}
-    
-  
-<!--
-    <div class="govuk-inset-text">
-      This person will get admin permissions. Once they set up their account, they will be able to add standard users. 
-    </div>
- -->
 
-      <div class="govuk-button-group">
-        <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
-      </div>
-  
-</form>
-<p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p>   
- 
+
+
+
+    <div class="govuk-button-group">
+      <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+    </div>
+
+  </form>
+  <p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p>
+
+
+
+    {% endif %}
+    <!--  END OF ERROR LOGIC -->
+
+
   </div>
+
 </div>
+<!-- ERROR LOGIC  drop down to toggle states  -->
+<!-- Best thing to do would be to replace 'errorthispage', 'errortypeone' and 'errortypetwo' with novel name for this page  -->
+<form method="post" action="#" class="for4" style=" float: left; position: relative; bottom:-80px;  ">
+
+  <select style="height:30px;" onchange="window.location.href='?'+this.value">
+
+      <option value="errorthispage=false&errortypeone=false&errortypetwo=false&" {% if (data['errorthispage'] !="true"
+          ) %}selected{% endif %}>Errors - Off</option>
+
+      <option value="errorthispage=true&errortypeone=true&errortypetwo=false&" {% if (data['errortypeone']=='true' and
+          data['errortypetwo'] !='true' ) %}selected{% endif %}>Error - On</option>
+
+  </select>
+
+</form>
+<!--  END OF ERROR LOGIC -->
+
 {% endblock %}
