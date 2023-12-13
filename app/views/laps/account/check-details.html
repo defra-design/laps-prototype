@@ -54,7 +54,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Role
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['d_role']}}
+              {{data['d_role'] | capitalize}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -132,7 +132,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Role
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['d_role']}}
+              {{data['d_role'] | capitalize }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/laps/account/role-details">
@@ -204,7 +204,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Role
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['d_role2']}}
+              {{data['d_role2'] | capitalize }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/laps/account/role-details-2">
