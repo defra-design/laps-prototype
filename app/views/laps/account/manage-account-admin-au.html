@@ -143,6 +143,9 @@
 <h3 class="govuk-heading-m">
   EPR team</h3>
 
+  <form class="govuk-form-group govuk-!-margin-bottom-0" method="post" action="#">
+    <button class="govuk-button" type="submit">Invite colleague</button>
+</form>
   
 <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -179,26 +182,6 @@
     </tr>
 
     <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
-            <span class="govuk-body">{{data['d_role2']}}</span>
-            <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
-        
-        <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
-          
-        <td class="govuk-table__cell"> {{data['who_list_2'] | capitalize }}</td>
-          <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-            Invited
-          </strong></td>
-          <td class="govuk-table__cell">   <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
-            Cancel invite<span class="govuk-visually-hidden">Cancel</span>
-          </a></li>
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-            Resend invite<span class="govuk-visually-hidden">Resend</span>
-          </a></li> </td>
-       <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
-          </a> </td> -->
-        </tr>
-    <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">{{data['d_f_name_A'] | capitalize }} {{data['d_l_name_A'] | capitalize }} <br>
         <span class="govuk-body">{{data['d_role_A']}}</span>
         <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email_A']}} </span>
@@ -220,18 +203,31 @@
       </a> </td>-->
 
     </tr>
+
+    <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
+            <span class="govuk-body">{{data['d_role2']}}</span>
+            <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
+        
+        <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
+          
+        <td class="govuk-table__cell"> {{data['who_list_2'] | capitalize }}</td>
+          <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
+            Invited
+          </strong></td>
+          <td class="govuk-table__cell">   <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
+            Cancel invite<span class="govuk-visually-hidden">Cancel</span>
+          </a></li>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+            Resend invite<span class="govuk-visually-hidden">Resend</span>
+          </a></li> </td>
+       <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
+          </a> </td> -->
+        </tr>
+
   </tbody>
 </table>
 
-
-<div class="govuk-inset-text govuk-!-font-weight-bold">
-  These people will have admin accounts. They’ll only be able to add other admin level users during private beta testing.
-</div>
-
-
-  <form class="govuk-form-group" method="post" action="#">
-    <button class="govuk-button" type="submit">Invite colleague</button>
-</form>
 
 <p class="govuk-body govuk-!-margin-top-9 govuk-!-margin-bottom-6">
   <a href="/laps/account/manage-account-admin-a1" class="govuk-link">((Demo page with Invited colleague shown))</a>
