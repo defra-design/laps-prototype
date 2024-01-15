@@ -1,0 +1,204 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ 
+What permissions should they have? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+            <!-- ERROR LOGIC  error summary -->
+            {% if data['errorthispage'] == "true" %}
+            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+                data-module="govuk-error-summary">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+    
+                      
+                 
+   
+
+              <li>
+                <a href="#who_list">Select if the user needs waste or finance permissions
+                    </p></a>
+            </li>
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+             <!-- END OF ERROR LOGIC -->
+
+    <span class="govuk-caption-l">Register for Local Authority Payments</span>
+  
+
+    <form id="delegate-details" method="post">
+
+           <!-- ERROR LOGIC  error summary -->
+           {% if data['errorthispage'] == "true" %}
+
+
+
+
+ 
+      {{ govukRadios({
+      idPrefix: "who_list",
+      name: "who_list",
+      fieldset: {
+      legend: {
+      text: "What permissions should they have? ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+        html: "All service permissions are Admin level in this early version of the service.
+        More permission levels will be available as the service develops."
+        },
+      items: [
+      {
+      value: "finance banking administration",
+      html: "Finance banking administration
+      ",
+
+      hint: {
+      text: "This person must be someone with authority to add or amend bank details.  
+
+      They must be employed as an S151 Officer, head of finance, or equivalent. 
+      
+      This person will also have all waste and finance administration permissions. 
+      
+      They will be able to add users with any permission. "
+      }
+      },
+      {
+      value: "waste and finance administration",
+      html: "Waste and finance administration
+      ",
+
+      hint: {
+      text: "This may be a head of waste, waste manager, waste accountant, or similar. 
+
+      They will be able to add users with the same permission. "
+      }
+      }
+      ],
+      errorMessage: {
+        text: "Select if the user needs waste or finance permissions"
+      }
+      }) }}
+
+
+
+
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+      </div>
+
+    </form>
+    <p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p>
+
+    {% else %}
+
+    
+
+
+
+
+
+    {{ govukRadios({
+    idPrefix: "who_list",
+    name: "who_list",
+    fieldset: {
+    legend: {
+    text: "What permissions should they have? ",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+    }
+    },
+    hint: {
+    html: "All service permissions are Admin level in this early version of the service.
+    More permission levels will be available as the service develops."
+    },
+    items: [
+    {
+    value: "finance banking administration",
+    html: "Finance banking administration
+    ",
+
+    hint: {
+    text: "This person must be someone with authority to add or amend bank details.  
+
+    They must be employed as an S151 Officer, head of finance, or equivalent. 
+    
+    This person will also have all waste and finance administration permissions. 
+    
+    They will be able to add users with any permission. "
+    }
+    },
+    {
+    value: "waste and finance administration",
+    html: "Waste and finance administration
+    ",
+
+    hint: {
+    text: "This may be a head of waste, waste manager, waste accountant, or similar. 
+
+    They will be able to add users with the same permission. "
+    }
+    }
+    ]
+    }) }}
+
+
+
+
+    <div class="govuk-button-group">
+      <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+    </div>
+
+  </form>
+  <p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p>
+
+
+
+    {% endif %}
+    <!--  END OF ERROR LOGIC -->
+
+
+  </div>
+
+</div>
+<!-- ERROR LOGIC  drop down to toggle states  -->
+<!-- Best thing to do would be to replace 'errorthispage', 'errortypeone' and 'errortypetwo' with novel name for this page  -->
+<form method="post" action="#" class="for4" style=" float: left; position: relative; bottom:-80px;  ">
+
+  <select style="height:30px;" onchange="window.location.href='?'+this.value">
+
+      <option value="errorthispage=false&errortypeone=false&errortypetwo=false&" {% if (data['errorthispage'] !="true"
+          ) %}selected{% endif %}>Errors - Off</option>
+
+      <option value="errorthispage=true&errortypeone=true&errortypetwo=false&" {% if (data['errortypeone']=='true' and
+          data['errortypetwo'] !='true' ) %}selected{% endif %}>Error - On</option>
+
+  </select>
+
+</form>
+<!--  END OF ERROR LOGIC -->
+
+{% endblock %}

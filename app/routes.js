@@ -45,8 +45,16 @@ router.post("/laps/account/create-password-admin",  function(request, response) 
 
 //  Choose up to two people to manage 's EPR account
 router.post("/laps/account/responsibility",  function(request, response) {
+  response.redirect(301, "/laps/account/permissions")
+});
+
+// NEW PAGE //
+router.post("/laps/account/permissions",  function(request, response) {
   response.redirect(301, "/laps/account/role-details")
 });
+
+
+
 
 
 // Choose who will manage [name]'s EPR account

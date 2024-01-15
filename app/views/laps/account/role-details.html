@@ -63,7 +63,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             </li>
 
             <li>
-              <a href="#d_role">Enter their role 
+              <a href="#d_role">Enter their job title
                   </p></a>
           </li>
           <li>
@@ -71,11 +71,12 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 </p></a>
         </li>
    
-
+<!--
               <li>
                 <a href="#who_list">Select if the user needs waste or finance permissions
                     </p></a>
             </li>
+          -->
                     </ul>
                 </div>
             </div>
@@ -143,10 +144,10 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
       <div class="govuk-form-group govuk-form-group--error">
         <label for="contacts_email">
-          <span class="govuk-label">Role</span>
+          <span class="govuk-label">Job title</span>
         </label>
         <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Enter their role
+          <span class="govuk-visually-hidden">Error:</span>Enter their job title
         </p>
         <p id="event-name-error" class="govuk-error-message">
           <span class="govuk-visually-hidden">Error:</span>Role must be 50 characters or less
@@ -158,7 +159,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 
 
-
+<!--
  
       {{ govukRadios({
       idPrefix: "who_list",
@@ -199,7 +200,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       }
       }) }}
 
-
+-->
 
 
       <div class="govuk-button-group">
@@ -240,7 +241,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </div>
     <div class="govuk-form-group">
       <label for="contacts_email">
-        <span class="govuk-label">Role</span>
+        <span class="govuk-label">Job title</span>
       </label>
       <input class="govuk-input govuk-input--width-30 " name="d_role" id="d_role" type="text"
         value="{{data['d_role']}}" data-error="Enter a role" value="{{data['d_role']}}">
@@ -250,7 +251,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 
 
-
+<!--
     {{ govukRadios({
     idPrefix: "who_list",
     name: "who_list",
@@ -287,7 +288,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     ]
     }) }}
 
-
+  -->
 
 
     <div class="govuk-button-group">
