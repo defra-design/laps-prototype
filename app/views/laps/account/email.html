@@ -1,7 +1,10 @@
 {% extends "layouts/main.html" %}
 {% set serviceName %}
-
 {% endset%}
+
+{% block pageTitle %}
+  Email {{ serviceName }}
+{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -21,7 +24,7 @@
       {{data['local_authority'] }} will be unable to receive EPR payments if it does not register for LAPs.
     </div>
 
-    <p class="govuk-body">You may want to refer to the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">terms and conditions (opens in new tab)</a>.</p>
+    <p class="govuk-body">You must accept <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">terms and conditions (opens in new tab)</a> as part of registration.</p>
   
     <h2 class="govuk-heading-m">Register for LAPs </h2>
 
@@ -31,6 +34,8 @@
     <h3 class="govuk-heading-m">Contact us</h3>
 
     <p class="govuk-body">If you have any questions, email <a href="mailto:#">wEPR@defra.gov.uk</a></p>
+
+    <p class="govuk-body">If you are not the CEO of {{data['local_authority'] }} (or acting on their behalf), contact us so we can update our records.</p> 
   </div>
 </div>
 
