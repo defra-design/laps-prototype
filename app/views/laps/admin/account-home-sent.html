@@ -1,10 +1,10 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Local authority list – {{ serviceName }} – GOV.UK Prototype Kit
+Local authority list – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 {% set serviceName %}
-  Administrator EPR account for local authority payments
+Administrator EPR account for local authority payments
 {% endset%}
 
 {% block header %}
@@ -39,7 +39,7 @@ text: "Sign out"
 
     <span class="govuk-caption-l">Private beta</span>
     <h1 class="govuk-heading-l">Local authority list</h1>
-<!--
+    <!--
     <div class="hmcts-search">
 
       <form action="./v1b" method="get">
@@ -102,10 +102,10 @@ text: "Sign out"
         <p class="govuk-body"><strong>Total:</strong> 6</p>
 
 
-       
+
         <form action="/laps/admin/invite">
           {{ govukButton({
-            text: ' Send invitation'
+          text: ' Send invitation'
           }) }}
         </form>
 
@@ -142,12 +142,15 @@ text: "Sign out"
                 </div>
               </td>
               <td class="govuk-table__cell"> Barnsley Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">Susan McCauley<br><span
                   class="govuk-caption-m govuk-!-font-size-16">susan.mccauley@cuthbertsons.com</span></td>
               <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell"><button type="submit" class="govuk-button govuk-button--warning"
+                  data-module="govuk-button">
+                  Remove
+                </button></td>
 
-              
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
@@ -162,13 +165,16 @@ text: "Sign out"
                 </div>
               </td>
               <td class="govuk-table__cell"> Birmingham City Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">Alison Proctor<br><span
                   class="govuk-caption-m govuk-!-font-size-16">alison.proctor@birminghamcc.gov.uk</span></td>
               <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell"><button type="submit" class="govuk-button govuk-button--warning"
+                  data-module="govuk-button">
+                  Remove
+                </button></td>
 
 
-              
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
@@ -183,13 +189,16 @@ text: "Sign out"
                 </div>
               </td>
               <td class="govuk-table__cell"> Bolton Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">Sheena Lambert<br><span
                   class="govuk-caption-m govuk-!-font-size-16">slambert@boltonbc.gov.uk</span></td>
               <td class="govuk-table__cell">CEO</td>
 
+              <td class="govuk-table__cell"><button type="submit" class="govuk-button govuk-button--warning"
+                  data-module="govuk-button">
+                  Remove
+                </button></td>
 
-              
             </tr>
 
             <tr class="govuk-table__row">
@@ -204,14 +213,17 @@ text: "Sign out"
                   </div>
                 </div>
               </td>
-              <td class="govuk-table__cell"> Bradford City Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell"> Bradford City Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
+                  ID: ********</span></td>
               <td class="govuk-table__cell">Donald Smith<br><span
                   class="govuk-caption-m govuk-!-font-size-16">bradfordcitycouncil.gov.uk </span></td>
               <td class="govuk-table__cell">CEO</td>
 
+              <td class="govuk-table__cell"><button type="submit" class="govuk-button govuk-button--warning"
+                  data-module="govuk-button">
+                  Remove
+                </button></td>
 
-              
             </tr>
 
             <tr class="govuk-table__row">
@@ -226,14 +238,17 @@ text: "Sign out"
                   </div>
                 </div>
               </td>
-              <td class="govuk-table__cell"> Bury Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell"> Bury Borough Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
+                  ID: ********</span></td>
               <td class="govuk-table__cell">Alexandria Browning<br><span
                   class="govuk-caption-m govuk-!-font-size-16">abrowning@buryborougcouncil.gov.uk </span></td>
 
               <td class="govuk-table__cell">CEO</td>
 
-              
+              <td class="govuk-table__cell"><button type="submit" class="govuk-button govuk-button--warning"
+                  data-module="govuk-button">
+                  Remove
+                </button></td>
             </tr>
 
             <tr class="govuk-table__row">
@@ -249,20 +264,23 @@ text: "Sign out"
                 </div>
               </td>
               <td class="govuk-table__cell">Calderdale Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">Maria-Elisa Gordo<br>
                 <span class="govuk-caption-m govuk-!-font-size-16">maria-elisa.gordo@calderdalebc.gov.uk </span>
               </td>
               <td class="govuk-table__cell">CEO</td>
 
-              
 
+              <td class="govuk-table__cell"><button type="submit" class="govuk-button govuk-button--warning"
+                  data-module="govuk-button">
+                  Remove
+                </button></td>
           </tbody>
         </table>
 
         <form action="/laps/admin/invite.html">
           {{ govukButton({
-            text: ' Send invitation'
+          text: ' Send invitation'
           }) }}
         </form>
       </div>
@@ -273,78 +291,175 @@ text: "Sign out"
         <span class="govuk-caption-m">Private beta</span>
         <h2 class="govuk-heading-m">Invitees</h2>
         <p class="govuk-body"><strong>Total:</strong> 4</p>
+
+
+        <form action="/laps/admin/reinvite">
+          {{ govukButton({
+          text: 'Resend invitation'
+          }) }}
+        </form>
+
+
         <table class="govuk-table">
+
+
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" width="50%">Authority</th>
-              <th scope="col" class="govuk-table__header"width="25%">Contact details</th>
+              <th scope="col" class="govuk-table__header">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      All</label>
+                  </div>
+                </div>
+              </th>
+              <th scope="col" class="govuk-table__header">Authority</th>
+              <th scope="col" class="govuk-table__header">Contact details</th>
               <th scope="col" class="govuk-table__header">Role</th>
-              <th scope="col" class="govuk-table__header">Sent</th>
-            
-              <th scope="col" class="govuk-table__header" width="20%"></th>
+              <th scope="col" class="govuk-table__header"></th>
+              <th scope="col" class="govuk-table__header"></th>
             </tr>
           </thead>
+
+
+
+
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Oldham Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span> </td>
-              <td class="govuk-table__cell">David Francis  <span class="govuk-caption-m govuk-!-font-size-16">david.francis@oldhamboroughcouncil.gov.uk </span>
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                    </label>
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">Oldham Borough Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
+                  ID: ********</span> </td>
+              <td class="govuk-table__cell">David Francis <span
+                  class="govuk-caption-m govuk-!-font-size-16">david.francis@oldhamboroughcouncil.gov.uk </span>
               </td>
               <td class="govuk-table__cell">CEO</td>
               <td class="govuk-table__cell">03/03/2024</td>
+
+              <td class="govuk-table__cell">
+                <div class="govuk-button-group">
+
+                 
+                  {{ govukButton({
+                  text: "Remove",
+                  classes: "govuk-button--warning"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+
+
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                        value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+  
+                <td class="govuk-table__cell">Rochdale Borough Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
+                    ID: ********</span> </td>
+                <td class="govuk-table__cell">Paul Farmer <span
+                    class="govuk-caption-m govuk-!-font-size-16">david.francis@oldhamboroughcouncil.gov.uk </span>
+                </td>
+                <td class="govuk-table__cell">CEO</td>
+                <td class="govuk-table__cell">03/03/2024</td>
+  
+                <td class="govuk-table__cell">
+                  <div class="govuk-button-group">
+  
+                 
+                    {{ govukButton({
+                    text: "Remove",
+                    classes: "govuk-button--warning"
+                    }) }}
+                  </div>
+                </td>
+              </tr>
+  
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                        value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+  
+                <td class="govuk-table__cell">Rotherham Borough Council<span
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span> </td>
+                <td class="govuk-table__cell">Rita Patel  <span class="govuk-caption-m govuk-!-font-size-16">rita.patel@rotherhambc.gov.uk </span>
+                </td>
+                <td class="govuk-table__cell">CEO</td>
+                <td class="govuk-table__cell">03/03/2024</td>
               
-              <td class="govuk-table__cell">   <form action="/laps/admin/oldham-reinvite">
-                {{ govukButton({
-                  text: ' Resend invitation',
-                  classes: "govuk-button--secondary"
-                }) }}
-              </form></td>
+                <td class="govuk-table__cell"><div class="govuk-button-group">
+  
+                 
+                  {{ govukButton({
+                  text: "Remove",
+                  classes: "govuk-button--warning"
+                  }) }}
+                </div></td>
+              </tr>
 
+   
 
-
-              
-            </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Rochdale Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span> </td>
-              <td class="govuk-table__cell">Paul Farmer  <span class="govuk-caption-m govuk-!-font-size-16">pfarmer2@Rochdalebc.gov.uk </span>
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                      value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                    </label>
+                  </div>
+                </div>
               </td>
-              <td class="govuk-table__cell">CEO</td>
-              <td class="govuk-table__cell">03/03/2024</td>
-             
-              <td class="govuk-table__cell"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Resend invitation
-              </button></td>
-            </tr>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Rotherham Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span> </td>
-              <td class="govuk-table__cell">Rita Patel  <span class="govuk-caption-m govuk-!-font-size-16">rita.patel@rotherhambc.gov.uk </span>
-              </td>
-              <td class="govuk-table__cell">CEO</td>
-              <td class="govuk-table__cell">03/03/2024</td>
-            
-              <td class="govuk-table__cell"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Resend invitation
-              </button></td>
-            </tr>
-            </tr>
-            <tr class="govuk-table__row">
               <td class="govuk-table__cell">South Tyneside Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span> </td>
-              <td class="govuk-table__cell">Maria-Elisa Gordo  <span class="govuk-caption-m govuk-!-font-size-16">maria-elisa.gordo@calderdalebc.gov.uk </span>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span> </td>
+              <td class="govuk-table__cell">Maria-Elisa Gordo <span
+                  class="govuk-caption-m govuk-!-font-size-16">maria-elisa.gordo@calderdalebc.gov.uk </span>
               </td>
               <td class="govuk-table__cell">CEO</td>
               <td class="govuk-table__cell">03/03/2024</td>
-            
-              <td class="govuk-table__cell"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Resend invitation
-              </button></td>
+              <td class="govuk-table__cell"><div class="govuk-button-group">
+  
+                 
+                {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}
+              </div</td>
             </tr>
-            </tr>
+
           </tbody>
         </table>
+        <form action="/laps/admin/reinvite">
+          {{ govukButton({
+          text: 'Resend invitation'
+          }) }}
+        </form>
       </div>
 
 
@@ -371,164 +486,209 @@ text: "Sign out"
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell"> Barnsley Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: E08000016</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: E08000016</span></td>
               <td class="govuk-table__cell">Susan McCauley<br><span
                   class="govuk-caption-m govuk-!-font-size-16">susan.mccauley@cuthbertsons.com</span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="/laps/admin/barnsley-bc" class="govuk-link">View</a></td>
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell"> {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
             </tr>
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell"> Birmingham City Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">Alison Proctor<br><span
                   class="govuk-caption-m govuk-!-font-size-16">alison.proctor@birminghamcc.gov.uk</span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-                  
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
+
             </tr>
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell"> Bolton Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">Sheena Lambert<br><span
                   class="govuk-caption-m govuk-!-font-size-16">slambert@boltonbc.gov.uk</span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
-              <td class="govuk-table__cell"> Bradford City Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell"> Bradford City Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
+                  ID: ********</span></td>
               <td class="govuk-table__cell">Donald Smith<br><span
                   class="govuk-caption-m govuk-!-font-size-16">bradfordcitycouncil.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
 
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell">Calderdale Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
-              <td class="govuk-table__cell">Coventry City Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">Coventry City Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
+                  ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell">Doncaster Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
-              <td class="govuk-table__cell">Dudley Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">Dudley Borough Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
+                  ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell"> Gateshead Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell">Kirklees Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell"> Knowsley Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
-              <td class="govuk-table__cell">Leeds City Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">Leeds City Council<span class="govuk-caption-m govuk-!-font-size-16">ONS ID:
+                  ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
-              <td class="govuk-table__cell">Liverpool City Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+              <td class="govuk-table__cell">Liverpool City Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
+                  ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell">Manchester City Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-              
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
+
             </tr>
 
             <tr class="govuk-table__row">
 
               <td class="govuk-table__cell">North Tyneside Borough Council<span
-                class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
+                  class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span></td>
               <td class="govuk-table__cell">First name Last name<br><span
                   class="govuk-caption-m govuk-!-font-size-16">email@council.gov.uk </span></td>
-                  <td class="govuk-table__cell">CEO</td>
-                  <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>          
+              <td class="govuk-table__cell">CEO</td>
+              <td class="govuk-table__cell">{{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--warning"
+                }) }}</td>
             </tr>
 
           </tbody>

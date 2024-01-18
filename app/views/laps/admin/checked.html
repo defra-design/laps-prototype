@@ -1,0 +1,206 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check file for upload – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% set serviceName %}
+Administrator EPR account for local authority payments
+{% endset%}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home",
+text: "Local authority list"
+
+},
+{
+href: "upload",
+text: "Upload contact details",
+active: true
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+{% if data.anerrorv == 'true' %}
+
+{% if data.uploaderrorv == '1' %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          
+              <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+                data-module="govuk-error-summary">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                  There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                  <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                      <a href="#select-error">Select yes if you want to upload the file
+                        </p></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+           
+    <span class="govuk-caption-l">Private beta</span>
+    <h1 class="govuk-heading-l">The file has been successfully validated</h1>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          File
+        </dt>
+        <dd class="govuk-summary-list__value">
+          CEO-Local-Authority-List.csv
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <form id="upload" method="post">
+      <!-- ERROR LOGIC  error class is added to whole section if error is ture  -->
+      
+      <div class="govuk-form-group govuk-form-group--error" id="select-error">
+        <fieldset class="govuk-fieldset" aria-describedby="whereDoYouLive-error">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to upload the file to the CEO database?
+            </h1>
+          </legend>
+          <p id="whereDoYouLive-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select yes if you want to upload the file
+          </p>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item" data-target="upload_file">
+              <input class="govuk-radios__input" id="Yes" type="radio" name="upload_file" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="doc_upload">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="No" type="radio" name="upload_file" value="No">
+              <label class="govuk-label govuk-radios__label" for="upload_file">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+        </div>
+    </form>
+  </div>
+</div>
+
+{% elif data.uploaderrorv == '2' %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+      <h1 class="govuk-heading-l">The file validation was unsuccessful</h1>
+
+ 
+      <h3 class="govuk-heading-m">What you need to do</h3>
+      <ol class="govuk-body">
+       <li>Retrieve the error report by downloading the <a href="/laps/admin/account-home" class="govuk-link">Upload-ValidationErrors-Report.csv</a> file.</li>
+          <li>Open your original spreadsheet and rectify any errors present in the document.</li>
+          <li>After verifying that all the information is accurate, proceed to re-upload the spreadsheet.</li>
+      </ol>
+ 
+  </div>
+</div>
+
+
+{% endif %}
+
+{% else %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Private beta</span>
+    <h1 class="govuk-heading-l">The file has been successfully validated</h1>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          File
+        </dt>
+        <dd class="govuk-summary-list__value">
+          CEO-Local-Authority-List.csv
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <form id="upload" method="post">
+    
+        <div class="govuk-form-group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to upload the file to the CEO database?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+            <div class="govuk-radios__item" data-target="upload_file">
+              <input class="govuk-radios__input" id="Yes" type="radio" name="upload_file" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="doc_upload">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="No" type="radio" name="upload_file" value="No">
+              <label class="govuk-label govuk-radios__label" for="upload_file">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+        </div>
+    </form>
+  </div>
+</div>
+
+{% endif %}
+
+<form method="post" action="#" class="for4" style=" float: left; margin-top: 50px;">
+  <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+    <option value="anerrorv=false&uploaderrorv=0&" {% if data.anerrorv=='false' %}selected{% endif %}>Default</option>
+
+    <option value="uploaderrorv=1&anerrorv=true&" {% if data.uploaderrorv=='1' and data.anerrorv=='true' %}selected{% endif
+      %}>Error - radio button not selected</option>
+
+    <option value="uploaderrorv=2&anerrorv=true&" {% if data.uploaderrorv=='2' and data.anerrorv=='true' %}selected{% endif
+      %}>Error - invalid file</option>
+
+
+  </select>
+</form>
+
+
+{% endblock %}

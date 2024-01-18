@@ -44,17 +44,17 @@ text: "Sign out"
                   Upload complete
                 </h1>
                 <div class="govuk-panel__body">
-                  Local authority database successfully updated.</strong>
+                  Local authority CEO database successfully updated.</strong>
                 </div>
               </div>
-              <p class="govuk-body">We’ve validated the data, and the file is now stored in the LAPS local authority  database.</p>
+         <!--     <p class="govuk-body">We’ve validated the data, and the file is now stored in the LAPS local authority  database.</p> -->
               <h2 class="govuk-heading-m">What happens next</h2>
               <p class="govuk-body">View the  <a href="/laps/admin/account-home" class="govuk-link">Local authority list</a>.</p>
              
             </div>
          </div>
 
-{% elif data.partialsuccess == 'true' %}
+{% elif data.partialsuccess != 'false' %}
 
 
 <div class="govuk-grid-row">
@@ -116,7 +116,7 @@ text: "Sign out"
 </div>
 
 {% endif %}
-
+<!---
 <form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
     <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
@@ -125,11 +125,11 @@ text: "Sign out"
         >Full success</option>
 
         <option value="partialsuccess=true&"
-                {% if data.partialsuccess == 'true' %}selected{% endif %}
+                {% if data.partialsuccess != 'false' %}selected{% endif %}
         >Partial success</option>
 
     </select>
 </form>
-
+-->
 
 {% endblock %}
