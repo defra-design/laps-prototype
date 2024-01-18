@@ -5,6 +5,25 @@
 
 // Add extra styles here
 
+
+.file-list__file {
+	border-bottom: 1px solid #cdcfd0;
+	padding: 1em;
+	font-size: 16px;
+	margin-bottom: 0.75em;
+	display: table;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.file-list__file div {
+	display: table-cell;
+	vertical-align: middle;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 .card {
   background-color: govuk-colour("light-grey");
   padding: 30px 30px 10px 30px;

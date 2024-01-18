@@ -211,8 +211,31 @@ router.post("/laps/admin/account-home-blk",  function(request, response) {
 
 // upload
 router.post("/laps/admin/upload",  function(request, response) {
-response.redirect(301, "/laps/admin/success")
+response.redirect(301, "/laps/admin/checked")
 });
+
+
+
+// Add another
+router.post("/laps/admin/checked", function (req, res) {
+  req.session.upload_file = req.body.upload_file;
+  console.log(req.body);
+
+  if (req.session.upload_file === "Yes") {
+    res.redirect(301, "/laps/admin/success");
+  }
+
+  else {
+    res.redirect(301, "/laps/admin/upload");
+  }
+});
+
+
+// Pause - Do you want to ...
+router.post("/laps/admin/checked",  function(request, response) {
+  response.redirect(301, "/laps/admin/success")
+  });
+  
 
 // change name
 router.post("/laps/admin/barnsley-cd",  function(request, response) {
