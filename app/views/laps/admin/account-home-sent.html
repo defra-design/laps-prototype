@@ -105,7 +105,7 @@ text: "Sign out"
 
         <form action="/laps/admin/invite">
           {{ govukButton({
-          text: ' Send invitation'
+          text: 'Send invitation'
           }) }}
         </form>
 
@@ -146,10 +146,14 @@ text: "Sign out"
               <td class="govuk-table__cell">Susan McCauley<br><span
                   class="govuk-caption-m govuk-!-font-size-16">susan.mccauley@cuthbertsons.com</span></td>
               <td class="govuk-table__cell">CEO</td>
-              <td class="govuk-table__cell"><button type="submit" class="govuk-button govuk-button--warning"
-                  data-module="govuk-button">
-                  Remove
-                </button></td>
+              <td class="govuk-table__cell">
+                <form action=""> 
+                  {{ govukButton({
+                    text: "Remove",
+                    classes: "govuk-button--warning"
+                  }) }}
+                </form>
+              </td>
 
             </tr>
             <tr class="govuk-table__row">
@@ -376,7 +380,7 @@ text: "Sign out"
                 <td class="govuk-table__cell">Rochdale Borough Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
                     ID: ********</span> </td>
                 <td class="govuk-table__cell">Paul Farmer <span
-                    class="govuk-caption-m govuk-!-font-size-16">david.francis@oldhamboroughcouncil.gov.uk </span>
+                    class="govuk-caption-m govuk-!-font-size-16">paul.farmer@rochdaleboroughcouncil.gov.uk </span>
                 </td>
                 <td class="govuk-table__cell">CEO</td>
                 <td class="govuk-table__cell">03/03/2024</td>

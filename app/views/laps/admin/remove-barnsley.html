@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Local authority list – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% set serviceName %}
+Administrator EPR account for local authority payments
+{% endset%}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home",
+text: "Local authority list",
+active: true
+},
+{
+href: "upload",
+text: "Upload contact details"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+  
+
+
+      <span class="govuk-caption-l">Private beta</span>
+      <h1 class="govuk-heading-l">Remove CEO details for Barnsley Borough Council </h1>
+
+     <!--    <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+             
+          </strong>
+        </div> -->
+    <!-- <p>Use this form to set up user research testing with matching data.</p> -->
+
+  
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Susan Mccauley
+             
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            CEO
+          </dd>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            susan.mccauley@barnsley.gov.uk
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Authority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Barnsley Borough Council
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+      <form class="govuk-form-group" method="post" action="/laps/admin/account-home-barnsley-removed">
+        <button class="govuk-button govuk-button--warning govuk-body"  type="submit">Remove CEO details from database</button>
+    </form>
+
+
+     
+
+  </div>
+</div>
+{% endblock %}
