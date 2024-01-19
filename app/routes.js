@@ -230,6 +230,20 @@ router.post("/laps/admin/checked", function (req, res) {
   }
 });
 
+// Remove
+router.post("/laps/admin/remove-barnsley", function (req, res) {
+  req.session.remove_ceo = req.body.remove_ceo;
+  console.log(req.body);
+
+  if (req.session.remove_ceo === "single") {
+    res.redirect(301, "/laps/admin/account-home-barnsley-removed");
+  }
+
+  else {
+    res.redirect(301, "/laps/admin/account-home-barnsley-removed");
+  }
+});
+
 
 // Pause - Do you want to ...
 router.post("/laps/admin/checked",  function(request, response) {
