@@ -222,7 +222,7 @@ router.post("/laps/admin/checked", function (req, res) {
   console.log(req.body);
 
   if (req.session.upload_file === "Yes") {
-    res.redirect(301, "/laps/admin/success");
+    res.redirect(301, "/laps/admin/account-home");
   }
 
   else {
