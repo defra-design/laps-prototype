@@ -64,15 +64,17 @@ text: "Sign out"
              
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
+
+      <!--  <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Role
           </dt>
           <dd class="govuk-summary-list__value">
             CEO
-          </dd>
+       
           </dd>
         </div>
+      -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Email address
@@ -81,6 +83,7 @@ text: "Sign out"
             susan.mccauley@barnsley.gov.uk
           </dd>
         </div>
+        <!--
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Authority
@@ -89,6 +92,7 @@ text: "Sign out"
             Barnsley Borough Council
           </dd>
         </div>
+      -->
       </dl>
 
 
@@ -110,13 +114,13 @@ text: "Sign out"
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="single" name="remove_ceo" type="radio" value="single" checked>
             <label class="govuk-label govuk-radios__label" for="remove_ceo">
-              Remove CEO from Barnsley Borough Council only
+              Remove CEO for Barnsley Borough Council only
             </label>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="all" name="remove_ce" type="radio" value="all">
             <label class="govuk-label govuk-radios__label" for="remove_ce0">
-              Remove CEO details for all the listed local authorities
+              Remove CEO for all the listed local authorities
             </label>
           </div>
       </div>
@@ -126,7 +130,7 @@ text: "Sign out"
 
 
       <form class="govuk-form-group" method="post" action="/laps/admin/account-home-barnsley-removed">
-        <button class="govuk-button govuk-button--warning govuk-body"  type="submit">Remove CEO details from database</button>
+        <button class="govuk-button govuk-button--warning govuk-body"  type="submit">Remove CEO from database</button>
     </form>
 
 
