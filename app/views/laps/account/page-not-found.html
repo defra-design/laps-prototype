@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Page not found</h1>
+    <p class="govuk-body">
+      If you typed the web address, check it is correct.
+    </p>
+    <p class="govuk-body">
+      If you pasted the web address, check you copied the entire address.
+    </p>
+    <p class="govuk-body">
+      If the web address is correct or you selected a link or button, contact the EPR account for Local Authority Payments helpline if you have any questions.
+    </p>
+    <p class="govuk-body">
+      Telephone:<br>
+      <strong class="govuk-!-font-weight-bold">0808 157 3900</strong>
+    </p>
+    <!--
+    <p class="govuk-body">
+      Textphone:<br>
+      <strong class="govuk-!-font-weight-bold">0808 157 3909</strong>
+    </p>
+    <p class="govuk-body">
+      Outside UK:<br>
+      <strong class="govuk-!-font-weight-bold">+44 0808 157 0192</strong>
+    </p> -->
+    <p class="govuk-body">
+      Opening times:<br>
+      <strong class="govuk-!-font-weight-bold">Monday to Friday: 8am to 8pm</strong>
+    </p>
+    <p class="govuk-body">
+      Closed Easter Sunday, Christmas Day, Boxing Day and New Year’s Day.
+    </p>
+  </div>
+</div>
+
+{% endblock %}
