@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Signout from Administrator EPR account for Local Authority Payments – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% set serviceName %}
+  Administrator EPR account for local authority payments
+{% endset%}
+
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home-blk",
+text: "Local authority list",
+active: true
+},
+{
+href: "upload",
+text: "Upload contact details"
+},
+{
+href: "sign-out",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l"> {{data['local_authority']}}</span>
+    <h1 class="govuk-heading-l">Signout from Administrator EPR account for Local Authority Payments</h1>
+
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue",
+        href: "signout"
+      }) }}
+    
+      <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}
