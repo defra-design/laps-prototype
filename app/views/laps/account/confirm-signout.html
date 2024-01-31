@@ -44,7 +44,10 @@
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
-
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -61,7 +64,7 @@
         href: "signout"
       }) }}
     
-      <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+    <!--  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a> -->
     </div>
 
   </div>

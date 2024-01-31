@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <!-- <span class="govuk-caption-xl">Private beta</span> -->
+    <h1 class="govuk-heading-xl">Sign in</h1>
+
+    <form id="signin-detail" method="post">
+
+        <div class="govuk-form-group">
+          <label for="signin_email">
+            <span class="govuk-label">Email address</span>
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="signin_email" id="signin_email" type="text"
+          data-error="Enter an email address" value="{{data[' signin_email']}}">
+      </div>
+ 
+        <div class="govuk-form-group">
+          <label for="signin_password">
+            <span class="govuk-label">Password</span>
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="signin_password" id="signin_password" type="text"
+          data-error="Enter a valid password" value="{{data[' signin_password']}}">
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Sign in
+        </button>
+      </div>
+      <!-- Details (accordeon) start-->
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Creating a LAPs account
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p class="govuk-body">You’ll need to ask an existing account holder in your organisation who is responsible for extended producer responsibility (EPR) for packaging to invite you. For more information, <a href="#" class="govuk-link"> view the guidance.</a></p>
+</div>
+</details>
+
+<!-- Details (accordeon) end-->
+  </div>
+</div>
+</form>
+
+
+
+{% endblock %}

@@ -14,6 +14,15 @@ const router = govukPrototypeKit.requests.setupRouter()
 //
 //
 
+// Sergio ;)
+
+// Signin
+router.post("/laps/account/signin",  function(request, response) {
+  response.redirect(301, "/laps/account/id-verification")
+});
+
+
+
 
 // Set up
 router.post("/laps/account/set-up",  function(request, response) {
@@ -157,9 +166,9 @@ router.post("/laps/account/set-up-acc",  function(request, response) {
   response.redirect(301, "/laps/account/account-home-ceo")
 });
 
-// Set up
+// Set up -- new to sign in
 router.post("/laps/account/set-up-acc-ceo",  function(request, response) {
-  response.redirect(301, "/laps/account/account-home-ceo")
+  response.redirect(301, "/laps/account/signin")
 });
 
 
