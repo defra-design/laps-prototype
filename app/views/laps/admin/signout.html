@@ -15,17 +15,20 @@ You have been successfully signed out of your Administrator EPR account – {{ s
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
    
-    <h1 class="govuk-heading-l">You have been successfully signed out of your Administrator EPR account</h1>
+    <h1 class="govuk-heading-l">You signed out of your LAPs Administrator account</h1>
 
-
+    <form action="sign-in">
+      {{ govukButton({
+        text: 'Sign in'
+      }) }}
+    </form>
+    <!--
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        <a class="govuk-link" href="sign-in">Sign to Administrator EPR account for Local Authority Payments</a>
+        <a class="govuk-link" href="sign-in">Sign in to LAPs Administrator account</a>
       </li>
-    
-    
-    
     </ul>
+    -->
   </div>
 </div>
 
