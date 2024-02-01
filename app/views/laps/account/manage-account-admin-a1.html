@@ -90,7 +90,7 @@ data-module="govuk-notification-banner">
       </div>
 
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Role</dt>
+        <dt class="govuk-summary-list__key">Job title</dt>
         <dd class="govuk-summary-list__value">
           {{data['d_role']}}
         </dd>
@@ -105,6 +105,11 @@ data-module="govuk-notification-banner">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Email</dt>
       <dd class="govuk-summary-list__value" >{{data['d_email']}} </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden">role</span>
+        </a>
+      </dd>
     </div>
    
     <div class="govuk-summary-list__row">
@@ -112,11 +117,7 @@ data-module="govuk-notification-banner">
       <dd class="govuk-summary-list__value">
         {{data['who_list'] | capitalize }}
       </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
-          Change<span class="govuk-visually-hidden">role</span>
-        </a>
-      </dd>
+  
     </div>
   </dl>
 

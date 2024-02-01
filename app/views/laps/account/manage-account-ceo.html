@@ -59,19 +59,34 @@
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Name</dt>
         <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="role-details-change-ceo">
+            Change<span class="govuk-visually-hidden">name</span>
+          </a>
+        </dd>
       </div>
 
       
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Role</dt>
+        <dt class="govuk-summary-list__key">Job title</dt>
         <dd class="govuk-summary-list__value">
-          CEO
+          {{data['role']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="role-details-change-ceo">
+            Change<span class="govuk-visually-hidden">job title</span>
+          </a>
         </dd>
       </div>
   
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Email</dt>
         <dd class="govuk-summary-list__value" >{{data['contacts_email']}}</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="role-details-change-ceo">
+            Change<span class="govuk-visually-hidden">email</span>
+          </a>
+        </dd>
       </div>
      
 

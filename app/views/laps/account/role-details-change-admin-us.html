@@ -69,77 +69,76 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
       <form id="delegate-details" method="post" action="manage-account-admin-auc">
 
-        <div class="govuk-form-group">
-          <label for="contacts_name">
-            <span class="govuk-label">First name</span>
-          </label>
-          <input class="govuk-input govuk-input--width-30" name="d_f_name_A" id="d_f_name_A" type="text"
-            value="{{data['d_f_name_A']}}" data-error="Enter a first name" value="{{data['d_f_name_A']}}">
-        </div>
 
-        <div class="govuk-form-group">
-          <label for="local_authority">
-            <span class="govuk-label">Last name</span>
-          </label>
-          <input class="govuk-input govuk-input--width-30" name="d_l_name_A" id="d_l_name_A" type="text"
-            value="{{data['d_l_name_A']}}" data-error="Enter a last name" value="{{data['d_l_name_A']}}">
-        </div>
-
-
-        <div class="govuk-form-group">
-          <label for="contacts_email">
-            <span class="govuk-label">Email address</span>
-          </label>
-          <div id="authentication-code-hint" class="govuk-hint">
+        <dl class="govuk-summary-list ">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Name</dt>
+            <dd class="govuk-summary-list__value">{{data['d_f_name_A'] | capitalize }} {{data['d_l_name_A'] | capitalize }}</dd>
           </div>
-          <input class="govuk-input govuk-input--width-30 " disabled="disabled" name="d_email_A" id="d_email_A" type="text"
-            value="{{data['d_email_A']}}" data-error="Enter an email address" value="{{data['d_email_A']}}">
-        </div>
-        <div class="govuk-form-group">
-          <label for="contacts_email">
-            <span class="govuk-label">Role</span>
-          </label>
-          <input class="govuk-input govuk-input--width-30 " name="d_role_A" id="d_role_A" type="text"
-            value="{{data['d_role_A']}}" data-error="Enter a role" value="{{data['d_role_A']}}">
-        </div>
-
+    
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Job title</dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_role_A']}}
+            </dd>
+          </div>
+    
+      
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Email</dt>
+            <dd class="govuk-summary-list__value" >{{data['d_email_A']}}</dd>
+          </div>
+         
+             
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Permission</dt>
+            <dd class="govuk-summary-list__value">
+              {{data['who_list_A'] | capitalize }}
+            </dd>
+          </div>
+      
+        </dl>
+        
 
         {{ govukRadios({
-        idPrefix: "who_list_A",
-        name: "who_list_A",
-        fieldset: {
-        legend: {
-        text: "What permissions should they have? ",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m"
-        }
-        },
-        hint: {
-        text: ""
-        },
-        items: [
-        {
-        value: "finance admin",
-        html: "Finance admin
-        ",
+          idPrefix: "who_list_A",
+          name: "who_list_A",
+          fieldset: {
+          legend: {
+          text: "What permissions should they have? ",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+          }
+          },
+          hint: {
+          text: ""
+          },
+          items: [
+          {
+          value: "finance admin",
+          html: "Finance admin
+          ",
+  
+          hint: {
+          text: "Managing finance relating to
+          waste"
+          }
+          },
+          {
+          value: "waste admin",
+          html: "Waste admin
+          ",
+  
+          hint: {
+          text: "Managing waste data submissions"
+          }
+          }
+          ]
+          }) }}
+  
 
-        hint: {
-        text: "Managing finance relating to
-        waste"
-        }
-        },
-        {
-        value: "waste admin",
-        html: "Waste admin
-        ",
-
-        hint: {
-        text: "Managing waste data submissions"
-        }
-        }
-        ]
-        }) }}
-
+       
 
         <!--
     <div class="govuk-inset-text">
