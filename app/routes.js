@@ -22,9 +22,7 @@ router.post("/laps/account/signin",  function(request, response) {
 });
 
 
-
-
-// Set up
+// CEO // Set up
 router.post("/laps/account/set-up",  function(request, response) {
   response.redirect(301, "/laps/account/email")
 });
@@ -35,14 +33,21 @@ router.post("/laps/account/set-up",  function(request, response) {
 //});
 
 
-// Email
+// CEO // Email
 router.post("/laps/account/email",  function(request, response) {
   response.redirect(301, "/laps/account/id-verification-ceo")
 });
 
-// Terms and conditions
+// CEO Check your email // href on button
+
+// CEO // Terms and conditions
 router.post("/laps/account/terms-and-conditions",  function(request, response) {
   response.redirect(301, "/laps/account/create-password")
+});
+
+// CEO // Create password
+router.post("/laps/account/create-password",  function(request, response) {
+  response.redirect(301, "/laps/account/check-your-details")
 });
 
 
@@ -51,13 +56,33 @@ router.post("/laps/account/check-your-details",  function(request, response) {
   response.redirect(301, "/laps/account/responsibility")
 });
 
-// Create password
-router.post("/laps/account/create-password",  function(request, response) {
-  response.redirect(301, "/laps/account/check-your-details")
-});
 
 
-// Create password
+
+
+  router.post("/laps/account/responsibility", function (req, res) {
+   req.session.who_list = req.body.who_list;
+    console.log(req.body);
+
+   if (req.session.who_list === "cannot") {
+     res.redirect(301, "/laps/account/success");
+  }
+ 
+   else {
+     res.redirect(301, "/laps/account/role-details");
+   }
+ });
+
+
+
+
+
+
+
+
+
+
+// ADMIN // Create password
 router.post("/laps/account/create-password-admin",  function(request, response) {
   response.redirect(301, "/laps/account/success-admin")
 });
@@ -79,30 +104,7 @@ router.post("/laps/account/permissions",  function(request, response) {
 //});
 
 
-// Choose who will manage [name]'s EPR account
-//
-// What is this person's area of responsibility?
- router.post("/laps/account/responsibility", function (req, res) {
-  var chooseAnEvent = req.session.data["who_list"];
 
-// Finance role
-  if (chooseAnEvent === "finance banking")  {
-    res.redirect("/laps/account/role-details");
-  }
-// Waste role
-  if (chooseAnEvent === "waste and finance") {
-    res.redirect("/laps/account/role-details");
-  }
-// Finance and waste role 
-  if (chooseAnEvent === "finance and waste data") {
-    res.redirect("/laps/account/role-details");
-  }
-// Cant do this right now
-  if (chooseAnEvent === "cannot") {
-    res.redirect("/laps/account/success");
-  }
-
-});
 
 
 
