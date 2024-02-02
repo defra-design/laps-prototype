@@ -87,7 +87,7 @@ router.post("/laps/account/permissions",  function(request, response) {
 
 // Finance role
   if (chooseAnEvent === "finance banking")  {
-    res.redirect("/laps/account/role-details");ss
+    res.redirect("/laps/account/role-details");
   }
 // Waste role
   if (chooseAnEvent === "waste and finance") {
