@@ -19,30 +19,70 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   <div class="govuk-grid-column-two-thirds">
 
 
+    <form id="delegate-details" method="post">
 
     <span class="govuk-caption-l">Register for Local Authority Payments</span>
     <h1 class="govuk-heading-l">Choose 1 or 2 colleagues to manage {{data['local_authority']}}'s EPR payments and data</h1>
  
 
     <p class="govuk-body"> Choose senior colleagues responsible for:   </p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>finance and banking administration  </li>
-      <li>waste and finance administration  </li>
-      <!--
-      <li>finance relating to waste  </li>
-      <li>waste data submissions  </li>
-      -->
-    </ul>
-<!--
+
+
+
+    {{ govukRadios({
+      idPrefix: "who_list",
+      name: "who_list",
+      fieldset: {
+     
+      },
+     
+      items: [
+      {
+      value: "finance banking",
+      html: "Finance banking 
+      ",
+  
+      hint: {
+      text: "This person must be someone with authority to add or amend bank details.  
+  
+      They must be employed as an S151 Officer, head of finance, or equivalent. 
+   "
+      }
+      },
+      {
+      value: "waste and finance",
+      html: "Waste and finance
+      ",
+  
+      hint: {
+      text: "This may be a head of waste, waste manager, waste accountant, or similar. 
+   "
+       } },
+      {
+        value: "cannot",
+        html: "I cannot choose anyone right now
+        ",
+    
+        hint: {
+        text: "Finish setting up your account without adding colleagues. 
+     "
+        }
+      }
+      ]
+      }) }}
+
+
     <div class="govuk-inset-text govuk-!-font-weight-bold">
-      These people will have admin accounts. They’ll only be able to add other admin level users during private beta testing. 
+      These colleagues will able to add other users during private beta testing. 
     </div>
-  -->
+  
     <form id="choose" method="post">
     <button class="govuk-button govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-8" type="submit">Continue</button>
 </form>
-<p><a class="back-home" href="/laps/account/success">I cannot choose anyone right now</a></p>   
+<!--
+<p><a class="back-home" href="/laps/account/success">I cannot choose anyone right now</a></p>   -->
   <!-- <p><a class="back-home" href="/laps/account/success-c">No, I will do it later</a></p> -->
+  
   </div>
 </div>
 

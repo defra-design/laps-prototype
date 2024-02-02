@@ -11,7 +11,10 @@
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
-
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -20,7 +23,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">Register for Local Authority Payments</span>
-    <h1 class="govuk-heading-l">Enter colleague 2's details </h1>
+      <h1 class="govuk-heading-l">Enter second colleague's details responsible for {{data['who_list_2'] }}</h1>
 
 
     <!-- <p>Use this form to set up user research testing with matching data.</p> -->
@@ -60,7 +63,7 @@
         data-error="Enter a role" value="{{data['d_role2']}}">
     </div>
   
-
+<!--
       {{ govukRadios({
         idPrefix: "who_list_2",
         name: "who_list_2",
@@ -77,12 +80,11 @@
           items: [
           {
           value: "finance admin",
-          html: "Finance admin
+          html: "Finance banking
           ",
       
           hint: {
-          text: "Managing finance relating to
-          waste"
+          text: "S151 Officer, head of finance, or equivalent"
           }
           },
           {
@@ -96,7 +98,7 @@
           }
           ]
           }) }}
- 
+        -->
 <!--
       <div class="govuk-inset-text">
         This person will get admin permissions. Once they set up their account, they will be able to add standard users. 

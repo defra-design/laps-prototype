@@ -29,19 +29,31 @@ router.post("/laps/account/set-up",  function(request, response) {
   response.redirect(301, "/laps/account/email")
 });
 
+// Email - old
+//router.post("/laps/account/email",  function(request, response) {
+ // response.redirect(301, "/laps/account/check-your-details")
+//});
+
+
 // Email
 router.post("/laps/account/email",  function(request, response) {
-  response.redirect(301, "/laps/account/check-your-details")
+  response.redirect(301, "/laps/account/id-verification-ceo")
 });
+
+// Terms and conditions
+router.post("/laps/account/terms-and-conditions",  function(request, response) {
+  response.redirect(301, "/laps/account/create-password")
+});
+
 
 // Check your details
 router.post("/laps/account/check-your-details",  function(request, response) {
-  response.redirect(301, "/laps/account/create-password")
+  response.redirect(301, "/laps/account/responsibility")
 });
 
 // Create password
 router.post("/laps/account/create-password",  function(request, response) {
-  response.redirect(301, "/laps/account/responsibility")
+  response.redirect(301, "/laps/account/check-your-details")
 });
 
 
@@ -52,10 +64,7 @@ router.post("/laps/account/create-password-admin",  function(request, response) 
 
 
 
-//  Choose up to two people to manage 's EPR account
-router.post("/laps/account/responsibility",  function(request, response) {
-  response.redirect(301, "/laps/account/permissions")
-});
+
 
 // NEW PAGE //
 router.post("/laps/account/permissions",  function(request, response) {
@@ -63,7 +72,11 @@ router.post("/laps/account/permissions",  function(request, response) {
 });
 
 
-
+//  Choose up to two people to manage 's EPR account
+//
+//router.post("/laps/account/responsibility",  function(request, response) {
+  //response.redirect(301, "/laps/account/role-details")
+//});
 
 
 // Choose who will manage [name]'s EPR account
@@ -73,11 +86,11 @@ router.post("/laps/account/permissions",  function(request, response) {
   var chooseAnEvent = req.session.data["who_list"];
 
 // Finance role
-  if (chooseAnEvent === "finance")  {
-    res.redirect("/laps/account/role-details");
+  if (chooseAnEvent === "finance banking")  {
+    res.redirect("/laps/account/role-details");ss
   }
 // Waste role
-  if (chooseAnEvent === "waste data") {
+  if (chooseAnEvent === "waste and finance") {
     res.redirect("/laps/account/role-details");
   }
 // Finance and waste role 
@@ -100,18 +113,18 @@ router.post("/laps/account/role-details",  function(request, response) {
 });
 
 // Add another
-  router.post("/laps/account/add-another", function (req, res) {
-    req.session.upload_another = req.body.upload_another;
-    console.log(req.body);
+ // router.post("/laps/account/add-another", function (req, res) {
+ //   req.session.upload_another = req.body.upload_another;
+ //   console.log(req.body);
 
-    if (req.session.upload_another === "Yes") {
-      res.redirect(301, "/laps/account/role-details-2");
-    }
+ //   if (req.session.upload_another === "Yes") {
+  //    res.redirect(301, "/laps/account/role-details-2");
+  //  }
  
-    else {
-      res.redirect(301, "/laps/account/check-details");
-    }
-  });
+ //   else {
+   //   res.redirect(301, "/laps/account/check-details");
+  //  }
+ // });
 
 // Check details
 router.post("/laps/account/check-details",  function(request, response) {
@@ -132,15 +145,15 @@ router.post("/laps/account/check-details",  function(request, response) {
 // Choose who will manage [name]'s EPR account
 //
 // What is this person's area of responsibility?
-router.post("/laps/account/responsibility-2", function (req, res) {
+router.post("/laps/account/add-another", function (req, res) {
   var chooseAnEvent = req.session.data["who_list_2"];
 
 // Finance role
-  if (chooseAnEvent === "finance")  {
+  if (chooseAnEvent === "finance banking")  {
     res.redirect("/laps/account/role-details-2");
   }
 // Waste role
-  if (chooseAnEvent === "waste data") {
+  if (chooseAnEvent === "waste and finance") {
     res.redirect("/laps/account/role-details-2");
   }
 // Finance and waste role 
@@ -148,7 +161,7 @@ router.post("/laps/account/responsibility-2", function (req, res) {
     res.redirect("/laps/account/role-details-2");
   }
 // Cant do this right now
-  if (chooseAnEvent === "cannot") {
+  if (chooseAnEvent === "no") {
     res.redirect("/laps/account/check-details");
   }
 

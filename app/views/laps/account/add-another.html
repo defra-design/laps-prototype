@@ -11,7 +11,10 @@
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
-
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -41,43 +44,58 @@
       <!--  END OF ERROR LOGIC -->
   
       <span class="govuk-caption-l">Register for Local Authority Payments</span>
-      <h1 class="govuk-heading-l">Do you want to add anyone else?</h1>
+      <h1 class="govuk-heading-l">Add another colleague to manage {{data['local_authority']}}'s pEPR payments and data?</h1>
   
-  
-      <form id="upload" method="post">
-       <!-- ERROR LOGIC  error class is added to whole section if error is ture  -->
-        {% if data['errorthispage'] == "true" %}
-        <div class="govuk-form-group govuk-form-group--error" id="select-error">
-          {% else %}
-          <div class="govuk-form-group">
-            {% endif %}
-            <!--  END OF ERROR LOGIC -->
-            <!-- ERROR LOGIC if there is an error then show which error is true  -->
-            {% if data['errorthispage'] == "true" %}
+      <form id="delegate-details-2" method="post">
+      {{ govukRadios({
+        idPrefix: "who_list_2",
+        name: "who_list_2",
+        fieldset: {
           
-            <p id="user_id-hint-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span>Select yes if you want to add another person
-            </p>
-            {% endif %}
-            <!--  END OF ERROR LOGIC -->
-              <div class="govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios" >
-                   <div class="govuk-radios__item" data-target="upload_another">
-                     <input class="govuk-radios__input" id="Yes" type="radio" name="upload_another" value="Yes">
-                     <label class="govuk-label govuk-radios__label" for="doc_upload">
-                       Yes
-                     </label>
-                   </div>
+        },
+        hint: {
+          text: ""
+          },
+          items: [
+          {
+            value: "finance banking",
+            html: "Finance banking 
+            ",
+        
+            hint: {
+            text: "This person must be someone with authority to add or amend bank details.  
+        
+            They must be employed as an S151 Officer, head of finance, or equivalent. 
+         "
+            }
+            },
+            {
+            value: "waste and finance",
+            html: "Waste and finance
+            ",
+        
+            hint: {
+            text: "This may be a head of waste, waste manager, waste accountant, or similar. 
+         "
+             } },
+            {
+              value: "no",
+              html: "No
+              ",
+          
+              hint: {
+              text: "
+           "
+              }
+            }
+          ]
+          }) }}
+
+
   
-                   <div class="govuk-radios__item">
-                     <input class="govuk-radios__input" id="No" type="radio" name="upload_another" value="No">
-                     <label class="govuk-label govuk-radios__label" for="upload_another">
-                       No
-                     </label>
-                   </div>
-              </div>
-      </div>
-  
-  
+ 
+ 
+
   
       <div class="govuk-button-group">
         <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
@@ -86,8 +104,7 @@
     </form>
    
   </div>
-  
-  </form>
+
   
   
   </div>

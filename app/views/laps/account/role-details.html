@@ -11,7 +11,10 @@ text: "Beta"
 },
 html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
-
+{{ govukBackLink({
+  href: "javascript:window.history.back()",
+  text: "Back"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -84,8 +87,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
              <!-- END OF ERROR LOGIC -->
 
     <span class="govuk-caption-l">Register for Local Authority Payments</span>
-    <h1 class="govuk-heading-l">Enter colleagues details </h1>
-
+   
+    <h1 class="govuk-heading-l">Enter first colleague's details responsible for {{data['who_list'] }}</h1>
 
     <form id="delegate-details" method="post">
 
@@ -208,8 +211,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       </div>
 
     </form>
+    <!--
     <p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p>
-
+    -->
     {% else %}
 
     <div class="govuk-form-group">
@@ -296,8 +300,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </div>
 
   </form>
+  <!--
   <p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p>
-
+  -->
 
 
     {% endif %}

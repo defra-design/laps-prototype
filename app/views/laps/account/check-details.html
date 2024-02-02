@@ -21,11 +21,11 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <span class="govuk-caption-l">Register for Local Authority Payments</span>
     <h1 class="govuk-heading-l">Check these details</h1>
 
-    {% if (data['upload_another'] === 'No') %}
+    {% if (data['who_list_2'] === 'no') %}
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Colleague 1 <!--{{data['who_list']}}--></h2>
+        <h2 class="govuk-summary-card__title">First Colleague <!--{{data['who_list']}}--></h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
               Remove <span class="govuk-visually-hidden"> delete name</span>
@@ -80,14 +80,14 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Permission
+              Responsibility
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['who_list'] | capitalize }} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden">Permissions</span>
+                Change<span class="govuk-visually-hidden">Responsibilitys</span>
               </a>
             </dd>
           </div>
@@ -99,11 +99,11 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       <a href="#" class="govuk-link">Add someone else</a>
     </p>
 
-    {% elif (data['upload_another'] === 'Yes') %}
+    {% else %}
     
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Colleague 1 <!-- {{data['who_list']}} --></h2>
+        <h2 class="govuk-summary-card__title">First colleague <!-- {{data['who_list']}} --></h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
               Remove <span class="govuk-visually-hidden"> delete name</span>
@@ -158,14 +158,14 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
      
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Permission
+              Responsibility
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['who_list'] | capitalize }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/laps/account/role-details">
-                Change<span class="govuk-visually-hidden">Permissions</span>
+                Change<span class="govuk-visually-hidden">Responsibilitys</span>
               </a>
             </dd>
           </div>
@@ -175,7 +175,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Colleague 2 <!-- {{data['who_list_2']}} --></h2>
+        <h2 class="govuk-summary-card__title">Secound colleague <!-- {{data['who_list_2']}} --></h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
               Remove <span class="govuk-visually-hidden"> delete name</span>
@@ -230,14 +230,14 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
        
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Permission
+              Responsibility
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['who_list_2'] | capitalize }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/laps/account/role-details-2">
-                Change<span class="govuk-visually-hidden">Permissions</span>
+                Change<span class="govuk-visually-hidden">Responsibilitys</span>
               </a>
             </dd>
           </div>
