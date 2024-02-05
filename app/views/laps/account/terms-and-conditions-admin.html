@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Register for Local Authority Payments</span>
+    <h1 class="govuk-heading-l">Terms and conditions</h1>
+
+ 
+
+    <p class="govuk-body">By creating your account, you confirm that:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you have read and agree to the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">terms and conditions (opens in new tab)</a></li>
+      
+    </ul>
+<form method="post">
+  <div class="govuk-button-group">
+    <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Confirm and continue</button>
+  </div>
+</div>
+</form>
+</div>
+</div>
+
+{% endblock %}

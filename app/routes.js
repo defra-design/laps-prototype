@@ -91,6 +91,10 @@ router.post("/laps/account/check-your-details", function (req, res) {
 
 
 
+// CEO // Terms and conditions
+router.post("/laps/account/terms-and-conditions-admin",  function(request, response) {
+  response.redirect(301, "/laps/account/create-password-admin")
+});
 
 
 
