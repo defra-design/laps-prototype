@@ -52,15 +52,21 @@
             <span class="govuk-label">Email address</span>
         </label>
         <input class="govuk-input govuk-input--width-30 " name="contacts_email" id="contacts_email" type="text"
-          data-error="Enter an email address" value='{{data[' contacts_email']}}'>
+          data-error="Enter an email address" value='{{data["contacts_email"]}}'>
       </div>
- 
+      <div class="govuk-form-group">
+        <label for="contacts_email">
+          <span class="govuk-label">Job title</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30" name="role" id="role" type="text"
+        data-error="role" value="CEO">
+    </div>
         <div class="govuk-form-group">
           <label for="local_authority">
             <span class="govuk-label">Local authority</span>
         </label>
         <input class="govuk-input govuk-input--width-30 " name="local_authority" id="local_authority" type="text"
-          data-error="Enter a local authority name" value='{{data[' local_authority']}}'>
+          data-error="Enter a local authority name" value='{{data["local_authority"]}}'>
       </div>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -104,7 +110,7 @@
     name: "who_list",
     fieldset: {
         legend: {
-          text: "What permissions should they have? ",
+          text: "What responsibility should they have? ",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--s"
         }
@@ -178,7 +184,7 @@ text: "Managing waste data submissions"
   name: "who_list_2",
   fieldset: {
       legend: {
-        text: "What permissions should they have? ",
+        text: "What responsibility should they have? ",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--s"
       }
