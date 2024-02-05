@@ -52,12 +52,24 @@ router.post("/laps/account/create-password",  function(request, response) {
 
 
 // Check your details
-router.post("/laps/account/check-your-details",  function(request, response) {
-  response.redirect(301, "/laps/account/responsibility")
+//router.post("/laps/account/check-your-details",  function(request, response) {
+//  response.redirect(301, "/laps/account/responsibility")
+// });
+
+
+// // Check your details
+router.post("/laps/account/check-your-details", function (req, res) {
+  req.session.check_details = req.body.check_details;
+  console.log(req.body);
+
+  if (req.session.check_details === "Yes") {
+    res.redirect(301, "/laps/account/responsibility");
+  }
+
+  else {
+    res.redirect(301, "/laps/account/incorrect-details");
+  }
 });
-
-
-
 
 
   router.post("/laps/account/responsibility", function (req, res) {
