@@ -151,11 +151,11 @@ router.post("/laps/account/add-another", function (req, res) {
   var chooseAnEvent = req.session.data["who_list_2"];
 
 // Finance role
-  if (chooseAnEvent === "finance banking")  {
+  if (chooseAnEvent === "adding and amending bank details")  {
     res.redirect("/laps/account/role-details-2");
   }
 // Waste role
-  if (chooseAnEvent === "waste and finance") {
+  if (chooseAnEvent === "managing waste data") {
     res.redirect("/laps/account/role-details-2");
   }
 // Finance and waste role 
