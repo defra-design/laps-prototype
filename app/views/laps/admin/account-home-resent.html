@@ -317,33 +317,19 @@ data-module="govuk-notification-banner">
         <p class="govuk-body"><strong>Total:</strong> 4</p>
 
 
-        <form action="/laps/admin/reinvite">
-          {{ govukButton({
-          text: 'Send reminder'
-          }) }}
-        </form>
-
+     
 
         <table class="govuk-table">
 
 
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
-                      value="hmrc">
-                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                      All</label>
-                  </div>
-                </div>
-              </th>
+           
               <th scope="col" class="govuk-table__header">Authority</th>
               <th scope="col" class="govuk-table__header">Contact details</th>
               <th scope="col" class="govuk-table__header">Role</th>
               <th scope="col" class="govuk-table__header">Sent</th>
-              <th scope="col" class="govuk-table__header"></th>
+              <th scope="col" class="govuk-table__header" width="200"></th>
             </tr>
           </thead>
 
@@ -352,21 +338,12 @@ data-module="govuk-notification-banner">
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
-                      value="hmrc">
-                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                    </label>
-                  </div>
-                </div>
-              </td>
+              
 
               <td class="govuk-table__cell">Oldham Borough Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
                   ID: ********</span> </td>
               <td class="govuk-table__cell">David Francis <span
-                  class="govuk-caption-m govuk-!-font-size-16">david.francis@oldhamboroughcouncil.gov.uk </span>
+                  class="govuk-caption-m govuk-!-font-size-16">david.francis@oldham.gov.uk </span>
               </td>
               <td class="govuk-table__cell">CEO</td>
               <td class="govuk-table__cell">21/03/2024</td>
@@ -374,11 +351,18 @@ data-module="govuk-notification-banner">
               <td class="govuk-table__cell">
                 <div class="govuk-button-group">
 
-                 
+                  <form action="">
                   {{ govukButton({
                   text: "Remove",
                   classes: "govuk-button--warning"
                   }) }}
+                  </form>
+                  <form action="/laps/admin/reinvite">
+                    {{ govukButton({
+                    text: 'Reinvite'
+                    }) }}
+                  </form>
+          
                 </div>
               </td>
             </tr>
@@ -386,50 +370,36 @@ data-module="govuk-notification-banner">
 
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
-                        value="hmrc">
-                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                      </label>
-                    </div>
-                  </div>
-                </td>
+          
   
                 <td class="govuk-table__cell">Rochdale Borough Council<span class="govuk-caption-m govuk-!-font-size-16">ONS
                     ID: ********</span> </td>
                 <td class="govuk-table__cell">Paul Farmer <span
-                    class="govuk-caption-m govuk-!-font-size-16">paul.farmer@rochdaleboroughcouncil.gov.uk </span>
+                    class="govuk-caption-m govuk-!-font-size-16">paul.farmer@rochdale.gov.uk </span>
                 </td>
                 <td class="govuk-table__cell">CEO</td>
-                <td class="govuk-table__cell">21/03/2024</td>
+                <td class="govuk-table__cell">03/03/2024</td>
   
                 <td class="govuk-table__cell">
                   <div class="govuk-button-group">
-  
-                 
+                  <form action="">
                     {{ govukButton({
                     text: "Remove",
                     classes: "govuk-button--warning"
                     }) }}
-                  </div>
+                    </form>
+                    <form action="">
+                      {{ govukButton({
+                      text: 'Reinvite'
+                      }) }}
+                    </form>
+                    </div>
                 </td>
               </tr>
   
 
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
-                        value="hmrc">
-                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-  
+             
                 <td class="govuk-table__cell">Rotherham Borough Council<span
                   class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span> </td>
                 <td class="govuk-table__cell">Rita Patel  <span class="govuk-caption-m govuk-!-font-size-16">rita.patel@rotherhambc.gov.uk </span>
@@ -437,29 +407,25 @@ data-module="govuk-notification-banner">
                 <td class="govuk-table__cell">CEO</td>
                 <td class="govuk-table__cell">03/03/2024</td>
               
-                <td class="govuk-table__cell"><div class="govuk-button-group">
-  
-                 
-                  {{ govukButton({
-                  text: "Remove",
-                  classes: "govuk-button--warning"
-                  }) }}
-                </div></td>
+                <td class="govuk-table__cell">  <div class="govuk-button-group">
+                  <form action="">
+                    {{ govukButton({
+                    text: "Remove",
+                    classes: "govuk-button--warning"
+                    }) }}
+                    </form>
+                    <form action="">
+                      {{ govukButton({
+                      text: 'Reinvite'
+                      }) }}
+                    </form>
+                    </div></td>
               </tr>
 
    
 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
-                      value="hmrc">
-                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                    </label>
-                  </div>
-                </div>
-              </td>
+           
               <td class="govuk-table__cell">South Tyneside Borough Council<span
                   class="govuk-caption-m govuk-!-font-size-16">ONS ID: ********</span> </td>
               <td class="govuk-table__cell">Maria-Elisa Gordo <span
@@ -467,24 +433,26 @@ data-module="govuk-notification-banner">
               </td>
               <td class="govuk-table__cell">CEO</td>
               <td class="govuk-table__cell">03/03/2024</td>
-              <td class="govuk-table__cell"><div class="govuk-button-group">
-  
-                 
-                {{ govukButton({
-                text: "Remove",
-                classes: "govuk-button--warning"
-                }) }}
-              </div</td>
+              <td class="govuk-table__cell">  <div class="govuk-button-group">
+                <form action="">
+                  {{ govukButton({
+                  text: "Remove",
+                  classes: "govuk-button--warning"
+                  }) }}
+                  </form>
+                  <form action="">
+                    {{ govukButton({
+                    text: 'Reinvite'
+                    }) }}
+                  </form>
+                  </div></td>
             </tr>
 
           </tbody>
         </table>
-        <form action="/laps/admin/reinvite">
-          {{ govukButton({
-          text: 'Send reminder'
-          }) }}
-        </form>
+    
       </div>
+
 
 
       <!-- Tab 3 Pending -->
