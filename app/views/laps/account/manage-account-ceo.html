@@ -92,7 +92,7 @@
 
 
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Responsibility </dt>
+        <dt class="govuk-summary-list__key">Permission </dt>
         <dd class="govuk-summary-list__value">
           CEO admin
         </dd>
@@ -130,7 +130,7 @@
 </div>
 
 <!-- Single User view-->
-{% if (data['who_list_2'] === 'no') %}
+{% if (data['upload_another'] === 'No') %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
@@ -151,9 +151,9 @@
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header" width="45%">Name</th>
 
-  <!--  <th scope="col" class="govuk-table__header">Responsibility</th> -->
+  <!--  <th scope="col" class="govuk-table__header">Permission</th> -->
 
-  <th scope="col" class="govuk-table__header" width="21%" >Responsibility </th>
+  <th scope="col" class="govuk-table__header" width="21%" >Permission </th>
   <th scope="col" class="govuk-table__header">Status</th>
   <th scope="col" class="govuk-table__header" width="26%">Actions<span class="govuk-visually-hidden">Change</span></th>
  <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
@@ -194,9 +194,90 @@
   </div>
 </div>
 
-<!-- No User view-->
-{% elif (data['who_list'] === 'cannot') %}
+<!-- Two User view-->
+{% elif (data['upload_another'] === 'Yes') %}
 
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h3 class="govuk-heading-m">
+      Your pEPR team</h3>
+
+    <form class="govuk-form-group govuk-!-margin-bottom-0" action="#">
+      <button class="govuk-button" type="submit">Invite colleague</button>
+  </form>
+
+
+<table class="govuk-table">
+<thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" width="45%">Name</th>
+
+  <!--  <th scope="col" class="govuk-table__header">Permission</th> -->
+
+  <th scope="col" class="govuk-table__header" width="21%" >Permission </th>
+  <th scope="col" class="govuk-table__header">Status</th>
+  <th scope="col" class="govuk-table__header" width="26%">Actions<span class="govuk-visually-hidden">Change</span></th>
+ <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
+    
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} <br>
+        <span class="govuk-body">{{data['d_role']}}</span>
+        <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>
+ 
+    <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
+      
+          <td class="govuk-table__cell"> {{data['who_list'] }}</td>
+      <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
+        Invited
+      </strong></td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
+      </a></td>    
+ <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
+      </a> </td>-->
+
+    </tr>
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
+        <span class="govuk-body">{{data['d_role2']}}</span>
+        <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
+    
+    <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
+      
+    <td class="govuk-table__cell"> {{data['who_list_2'] }}</td>
+      <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
+        Invited
+      </strong></td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="cancel">
+        Cancel invitation<span class="govuk-visually-hidden">password</span>
+      </a> </td>
+   <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
+      </a> </td> -->
+    </tr>
+ 
+  </tbody>
+</table>
+
+
+  </div>
+</div>
+
+
+
+
+  </form>
+
+  
+
+
+<!-- No users view-->
+{% else %} 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">Your pEPR team</h2>
@@ -229,84 +310,11 @@
   </form>
 
 
-<!-- Two User view-->
-{% else %} 
-<div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-
-        <h3 class="govuk-heading-m">
-          Your pEPR team</h3>
-
-        <form class="govuk-form-group govuk-!-margin-bottom-0" action="#">
-          <button class="govuk-button" type="submit">Invite colleague</button>
-      </form>
-
-
-    <table class="govuk-table">
-    <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header" width="45%">Name</th>
-
-      <!--  <th scope="col" class="govuk-table__header">Responsibility</th> -->
-
-      <th scope="col" class="govuk-table__header" width="21%" >Responsibility </th>
-      <th scope="col" class="govuk-table__header">Status</th>
-      <th scope="col" class="govuk-table__header" width="26%">Actions<span class="govuk-visually-hidden">Change</span></th>
-     <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
-        
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} <br>
-            <span class="govuk-body">{{data['d_role']}}</span>
-            <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>
-     
-        <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
-          
-              <td class="govuk-table__cell"> {{data['who_list'] | capitalize }}</td>
-          <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-            Invited
-          </strong></td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="#">Cancel invitation<span class="govuk-visually-hidden">Cancel invitation</span>
-          </a></td>    
-     <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
-          </a> </td>-->
-
-        </tr>
-
-
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
-            <span class="govuk-body">{{data['d_role2']}}</span>
-            <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
-        
-        <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
-          
-        <td class="govuk-table__cell"> {{data['who_list_2'] | capitalize }}</td>
-          <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-            Invited
-          </strong></td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="cancel">
-            Cancel invitation<span class="govuk-visually-hidden">password</span>
-          </a> </td>
-       <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
-          </a> </td> -->
-        </tr>
-     
-      </tbody>
-    </table>
-
-
-      </div>
-    </div>
-
-
-
-
-
     
     {% endif %}
+
+    
+
   </div>
 </div>
 

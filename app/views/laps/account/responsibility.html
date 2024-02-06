@@ -28,11 +28,30 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <span class="govuk-caption-l">Register for Local Authority Payments</span>
 
-    <h1 class="govuk-heading-l">Invite colleagues to manage {{data['local_authority']}}'s pEPR payments and data</h1>
+    <h1 class="govuk-heading-l">Choose 1 or 2 colleagues to manage {{data['local_authority']}}'s pEPR payments and data</h1>
 
-    <p class="govuk-body"> Choose senior colleagues responsible for: </p>
+    <p class="govuk-body">Invite senior colleagues to manage {{data['local_authority']}}'s account on your behalf.</p>
 
+    <h2 class="govuk-heading-m">Adding and amending bank details</h2>
+    <p class="govuk-body">This senior colleague must be either:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>an S151 Officer </li>
+  <li>a Chief Financial Officer </li>
+  <li>in another other senior finance role </li>
+</ul>
+<p class="govuk-body">They will be given [ABC permission] access. </p>
+  
+    <h2 class="govuk-heading-m">Managing waste data</h2>
+    <p class="govuk-body">This senior colleague may be employed, for example as: </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>head of waste </li>
+      <li>waste manager </li>
+      <li>waste accountant </li>
+    </ul>
+    <p class="govuk-body">They will be given [DEF permission] access. </p>
 
+   
+<!--
 
     {{ govukRadios({
       idPrefix: "who_list",
@@ -73,18 +92,19 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       }
       ]
       }) }}
+    -->
 
-
+  
     <div class="govuk-inset-text govuk-!-font-weight-bold">
-      Your colleagues will be able to add more users as the service develops.
+      Your colleagues will be able to add more users as the service develops. 
     </div>
   
     
     <button class="govuk-button govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-8" type="submit">Continue</button>
 </form>
-<!--
-<p><a class="back-home" href="/laps/account/success">I cannot choose anyone right now</a></p>   -->
-  <!-- <p><a class="back-home" href="/laps/account/success-c">No, I will do it later</a></p> -->
+
+
+<p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p> 
   
   </div>
 </div>

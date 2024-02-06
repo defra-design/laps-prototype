@@ -18,9 +18,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 
 
-{% if (data['who_list_2'] === 'no') %}
-
-
+{% if (data['upload_another'] === 'No') %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -54,7 +52,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <p class="govuk-body">They will receive an email asking them to create their account.</p>
 
 
-    {% elif (data['who_list'] === 'cannot') %}
+    {% elif (data['upload_another'] === 'Yes') %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
     
@@ -66,18 +64,49 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               LAPs registration completed for <br><strong>{{data['local_authority']}}</strong>
             </div>
           </h1>
-        </div>
-
-        <p class="govuk-body">Your account has been created and you will receive a confirmation email.</p>
-        <h2 class="govuk-heading-m">What happens next</h2>
-        <p class="govuk-body">As you have not yet added anybody to manage the account. We'll send you reminder emails to have roles in place before November 2024.</p>
- 
-    </div>
-  </div>
-
     
+        </div>
+       
+           <p class="govuk-body">You will receive an email confirming this. </p> 
+   
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">You have invited:</p>
+       
+        <table class="govuk-table">
+     
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} <br>
+                <span class="govuk-body">{{data['d_role']}}</span><span
+                  class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span></th>
+            </tr>
+    
+    
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
+                <span class="govuk-body">{{data['d_role2']}}</span><span
+                class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span></th> 
+            </tr>
+         
+          </tbody>
+        </table>
+        <p class="govuk-body">They will receive an email asking them to create their account.</p>
+
+<!--
+    <ul class="govuk-list">
+      <li>
+        {{data['d_f_name'] | capitalize }}  {{data['d_l_name'] | capitalize }} <br><span
+                  class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>        
+      </li>    
+      <li>
+        {{data['d_f_name2'] | capitalize }}  {{data['d_l_name2'] | capitalize }}  <br><span
+        class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
+      </li>
+    </ul>
+      -->
 
       {% else %}
+
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
       
@@ -89,47 +118,14 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 LAPs registration completed for <br><strong>{{data['local_authority']}}</strong>
               </div>
             </h1>
-      
           </div>
-         
-             <p class="govuk-body">You will receive an email confirming this. </p> 
-     
-      <h2 class="govuk-heading-m">What happens next</h2>
-      <p class="govuk-body">You have invited:</p>
-         
-          <table class="govuk-table">
-       
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} <br>
-                  <span class="govuk-body">{{data['d_role']}}</span><span
-                    class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span></th>
-              </tr>
-      
-      
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
-                  <span class="govuk-body">{{data['d_role2']}}</span><span
-                  class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span></th> 
-              </tr>
-           
-            </tbody>
-          </table>
-          <p class="govuk-body">They will receive an email asking them to create their account.</p>
-  
-  <!--
-      <ul class="govuk-list">
-        <li>
-          {{data['d_f_name'] | capitalize }}  {{data['d_l_name'] | capitalize }} <br><span
-                    class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>        
-        </li>    
-        <li>
-          {{data['d_f_name2'] | capitalize }}  {{data['d_l_name2'] | capitalize }}  <br><span
-          class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
-        </li>
-      </ul>
-        -->
-     
+
+          <p class="govuk-body">Your account has been created and you will receive a confirmation email.</p>
+          <h2 class="govuk-heading-m">What happens next</h2>
+          <p class="govuk-body">As you have not yet added anybody to manage the account. We'll send you reminder emails to have roles in place before November 2024.</p>
+   
+      </div>
+    </div>
       {% endif %}
 
 <!--
@@ -147,5 +143,14 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
   </div>
 </div>
+
+
+
+
+
+
+
+ 
+
 
 {% endblock %}

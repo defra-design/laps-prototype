@@ -23,7 +23,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">Register for Local Authority Payments</span>
-      <h1 class="govuk-heading-l">Colleague responsible for {{data['who_list_2'] }}</h1>
+      <h1 class="govuk-heading-l">Enter colleague 2's details </h1>
 
 
     <!-- <p>Use this form to set up user research testing with matching data.</p> -->
@@ -63,13 +63,13 @@
         data-error="Enter a role" value="{{data['d_role2']}}">
     </div>
   
-<!--
+
       {{ govukRadios({
         idPrefix: "who_list_2",
         name: "who_list_2",
         fieldset: {
             legend: {
-              text: "What responsibility should they have? ",
+              text: "What responsibility do they have? ",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -79,26 +79,27 @@
           },
           items: [
           {
-          value: "finance admin",
-          html: "Finance banking
-          ",
-      
-          hint: {
-          text: "S151 Officer, head of finance, or equivalent"
-          }
-          },
-          {
-          value: "waste admin",
-          html: "Waste admin 
-          ",
-      
-          hint: {
-          text: "Managing waste data submissions"
-          }
-          }
+            value: "ABC permission",
+            html: "Adding and amending bank details  
+            ",
+        
+            hint: {
+            text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role  
+         "
+            }
+            },
+            {
+            value: "DEF permission",
+            html: "Managing waste data
+            ",
+        
+            hint: {
+            text: "For example, head of waste, waste manager, or waste accountant
+         "
+             } }
           ]
           }) }}
-        -->
+       
 <!--
       <div class="govuk-inset-text">
         This person will get admin permissions. Once they set up their account, they will be able to add standard users. 

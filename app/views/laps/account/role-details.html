@@ -88,7 +88,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <span class="govuk-caption-l">Register for Local Authority Payments</span>
    
-    <h1 class="govuk-heading-l">Colleague responsible for {{data['who_list'] }}</h1>
+    <h1 class="govuk-heading-l">Enter colleagues 1's details <!--{{data['who_list'] }}--></h1>
 
     <form id="delegate-details" method="post">
 
@@ -162,14 +162,14 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 
 
-<!--
+
  
       {{ govukRadios({
       idPrefix: "who_list",
       name: "who_list",
       fieldset: {
       legend: {
-      text: "What responsibility should they have? ",
+      text: "What responsibility do they have? ",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
       }
@@ -179,31 +179,31 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       },
       items: [
       {
-      value: "finance admin",
-      html: "Finance admin
-      ",
-
-      hint: {
-      text: "Managing finance relating to
-      waste"
-      }
-      },
-      {
-      value: "waste admin",
-      html: "Waste admin
-      ",
-
-      hint: {
-      text: "Managing waste data submissions"
-      }
-      }
+        value: "adding and amending bank details",
+        html: "Adding and amending bank details  
+        ",
+    
+        hint: {
+        text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role 
+     "
+        }
+        },
+        {
+        value: "managing waste data",
+        html: "Managing waste data
+        ",
+    
+        hint: {
+        text: "For example, head of waste, waste manager, or waste accountant 
+     "
+         } }
       ],
       errorMessage: {
         text: "Select if the user needs waste or finance permissions"
       }
       }) }}
 
--->
+
 
 
       <div class="govuk-button-group">
@@ -255,13 +255,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 
 
-<!--
+
     {{ govukRadios({
     idPrefix: "who_list",
     name: "who_list",
     fieldset: {
     legend: {
-    text: "What responsibility should they have? ",
+    text: "What responsibility do they have? ",
     isPageHeading: true,
     classes: "govuk-fieldset__legend--m"
     }
@@ -271,28 +271,26 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     },
     items: [
     {
-    value: "finance admin",
-    html: "Finance admin
-    ",
-
-    hint: {
-    text: "Managing finance relating to
-    waste"
-    }
-    },
-    {
-    value: "waste admin",
-    html: "Waste admin
-    ",
-
-    hint: {
-    text: "Managing waste data submissions"
-    }
-    }
+      value: "ABC permission",
+      html: "Adding and amending bank details  
+      ",
+  
+      hint: {
+      text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role "
+      }
+      },
+      {
+      value: "DEF permission",
+      html: "Managing waste data
+      ",
+  
+      hint: {
+      text: "For example, head of waste, waste manager, or waste accountant "
+       } }
     ]
     }) }}
 
-  -->
+ 
 
 
     <div class="govuk-button-group">
