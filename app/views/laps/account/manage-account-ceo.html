@@ -168,7 +168,19 @@
  
     <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
       
-          <td class="govuk-table__cell"> {{data['who_list'] | capitalize }}</td>
+          <td class="govuk-table__cell">      {% if (data['who_list'] == "Adding and amending bank details") %}
+
+            <p class="govuk-body">
+               Financial control
+            </p>
+        
+            {% elseif (data['who_list'] == "Managing waste data") %}
+        
+        <p class="govuk-body">
+          Waste data
+      </p>
+        
+        {% endif %}</td>
       <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
         Invited
       </strong></td>
@@ -231,7 +243,23 @@
  
     <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
       
-          <td class="govuk-table__cell"> {{data['who_list'] }}</td>
+          <td class="govuk-table__cell">
+            
+            {% if (data['who_list'] == "Adding and amending bank details") %}
+
+            <p class="govuk-body">
+               Financial control
+            </p>
+        
+            {% elseif (data['who_list'] == "Managing waste data") %}
+        
+        <p class="govuk-body">
+          Waste data
+      </p>
+        
+        {% endif %}
+     
+          </td>
       <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
         Invited
       </strong></td>
@@ -250,7 +278,19 @@
     
     <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
       
-    <td class="govuk-table__cell"> {{data['who_list_2'] }}</td>
+    <td class="govuk-table__cell">      {% if (data['who_list_2'] == "Adding and amending bank details") %}
+
+      <p class="govuk-body">
+         Financial control
+      </p>
+  
+      {% elseif (data['who_list_2'] == "Managing waste data") %}
+  
+  <p class="govuk-body">
+    Waste data
+</p>
+  
+  {% endif %}</td>
       <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
         Invited
       </strong></td>

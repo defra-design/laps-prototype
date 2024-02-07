@@ -87,7 +87,19 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Responsibility </dt>
             <dd class="govuk-summary-list__value">
-              {{data['who_list'] | capitalize }}
+              {% if (data['who_list'] == "Adding and amending bank details") %}
+
+    <p class="govuk-body">
+       Financial control
+    </p>
+
+    {% elseif (data['who_list'] == "Managing waste data") %}
+
+<p class="govuk-body">
+  Waste data
+</p>
+
+{% endif %}
             </dd>
           </div>
       
@@ -95,40 +107,39 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         
 
         {{ govukRadios({
-        idPrefix: "who_list",
-        name: "who_list",
-        fieldset: {
-        legend: {
-        text: "What responsibility should they have? ",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m"
-        }
-        },
-        hint: {
-        text: ""
-        },
-        items: [
-        {
-        value: "finance admin",
-        html: "Finance admin
-        ",
-
-        hint: {
-        text: "Managing finance relating to
-        waste"
-        }
-        },
-        {
-        value: "waste admin",
-        html: "Waste admin
-        ",
-
-        hint: {
-        text: "Managing waste data submissions"
-        }
-        }
-        ]
-        }) }}
+          idPrefix: "who_list",
+          name: "who_list",
+          fieldset: {
+          legend: {
+          text: "What responsibility do they have? ",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+          }
+          },
+          hint: {
+          text: ""
+          },
+          items: [
+          {
+            value: "Adding and amending bank details",
+            html: "Adding and amending bank details  
+            ",
+        
+            hint: {
+            text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role "
+            }
+            },
+            {
+            value: "Managing waste data",
+            html: "Managing waste data
+            ",
+        
+            hint: {
+            text: "For example, head of waste, waste manager, or waste accountant "
+             } }
+          ]
+          }) }}
+      
 
 
         <!--

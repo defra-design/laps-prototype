@@ -64,41 +64,39 @@
     </div>
   
 
-      {{ govukRadios({
-        idPrefix: "who_list_2",
-        name: "who_list_2",
-        fieldset: {
-            legend: {
-              text: "What responsibility do they have? ",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-        },
+    {{ govukRadios({
+      idPrefix: "who_list_2",
+      name: "who_list_2",
+      fieldset: {
+      legend: {
+      text: "What responsibility do they have? ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: ""
+      },
+      items: [
+      {
+        value: "Adding and amending bank details",
+        html: "Adding and amending bank details  
+        ",
+    
         hint: {
-          text: ""
-          },
-          items: [
-          {
-            value: "Adding and amending bank details",
-            html: "Adding and amending bank details  
-            ",
-        
-            hint: {
-            text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role  
-         "
-            }
-            },
-            {
-            value: "Managing waste data",
-            html: "Managing waste data
-            ",
-        
-            hint: {
-            text: "For example, head of waste, waste manager, or waste accountant
-         "
-             } }
-          ]
-          }) }}
+        text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role "
+        }
+        },
+        {
+        value: "Managing waste data",
+        html: "Managing waste data
+        ",
+    
+        hint: {
+        text: "For example, head of waste, waste manager, or waste accountant "
+         } }
+      ]
+      }) }}
        
 <!--
       <div class="govuk-inset-text">

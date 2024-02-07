@@ -92,41 +92,39 @@
     data-error="Enter a local authority name" value="{{data['local_authority']}}">
 </div>
 
-  {{ govukRadios({
-    idPrefix: "who_list",
-    name: "who_list",
-    fieldset: {
-        legend: {
-          text: "What responsibility should they have? ",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
+{{ govukRadios({
+  idPrefix: "who_list",
+  name: "who_list",
+  fieldset: {
+  legend: {
+  text: "What responsibility do they have? ",
+  isPageHeading: true,
+  classes: "govuk-fieldset__legend--m"
+  }
+  },
+  hint: {
+  text: ""
+  },
+  items: [
+  {
+    value: "Adding and amending bank details",
+    html: "Adding and amending bank details  
+    ",
+
+    hint: {
+    text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role "
+    }
     },
-hint: {
-text: ""
-},
-items: [
-{
-value: "finance admin",
-html: "Finance admin
-",
+    {
+    value: "Managing waste data",
+    html: "Managing waste data
+    ",
 
-hint: {
-text: "Managing finance relating to
-waste"
-}
-},
-{
-value: "waste admin",
-html: "Waste admin 
-",
-
-hint: {
-text: "Managing waste data submissions"
-}
-}
-]
-}) }}
+    hint: {
+    text: "For example, head of waste, waste manager, or waste accountant "
+     } }
+  ]
+  }) }}
 
     <div class="govuk-button-group">
       <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>

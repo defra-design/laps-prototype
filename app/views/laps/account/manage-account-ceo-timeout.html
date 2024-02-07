@@ -115,7 +115,7 @@
 
 
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Responsibility </dt>
+        <dt class="govuk-summary-list__key">Permission </dt>
         <dd class="govuk-summary-list__value">
           CEO admin
         </dd>
@@ -174,9 +174,9 @@
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header" width="45%">Name</th>
 
-  <!--  <th scope="col" class="govuk-table__header">Responsibility</th> -->
+  <!--  <th scope="col" class="govuk-table__header">Permission</th> -->
 
-      <th scope="col" class="govuk-table__header">Responsibility </th>
+      <th scope="col" class="govuk-table__header">Permission </th>
       <th scope="col" class="govuk-table__header">Status</th>
       <th scope="col" class="govuk-table__header">Actions<span class="govuk-visually-hidden">Change</span></th>
  <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
@@ -191,7 +191,19 @@
  
     <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
       
-          <td class="govuk-table__cell"> {{data['who_list'] | capitalize }}</td>
+          <td class="govuk-table__cell">{% if (data['who_list'] == "Adding and amending bank details") %}
+
+            <p class="govuk-body">
+               Financial control
+            </p>
+        
+            {% elseif (data['who_list'] == "Managing waste data") %}
+        
+        <p class="govuk-body">
+          Waste data
+      </p>
+        
+        {% endif %}</td>
       <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
         Invited
       </strong></td>
@@ -237,9 +249,9 @@
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header" width="45%">Name</th>
 
-      <!--  <th scope="col" class="govuk-table__header">Responsibility</th> -->
+      <!--  <th scope="col" class="govuk-table__header">Permission</th> -->
 
-      <th scope="col" class="govuk-table__header" width="21%" >Responsibility </th>
+      <th scope="col" class="govuk-table__header" width="21%" >Permission </th>
       <th scope="col" class="govuk-table__header">Status</th>
       <th scope="col" class="govuk-table__header" width="26%">Actions<span class="govuk-visually-hidden">Change</span></th>
      <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
@@ -254,7 +266,19 @@
      
         <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
           
-              <td class="govuk-table__cell"> {{data['who_list'] | capitalize }}</td>
+              <td class="govuk-table__cell">{% if (data['who_list'] == "Adding and amending bank details") %}
+
+                <p class="govuk-body">
+                   Financial control
+                </p>
+            
+                {% elseif (data['who_list'] == "Managing waste data") %}
+            
+            <p class="govuk-body">
+              Waste data
+          </p>
+            
+            {% endif %}</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
@@ -273,7 +297,19 @@
         
         <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
           
-        <td class="govuk-table__cell"> {{data['who_list_2'] | capitalize }}</td>
+        <td class="govuk-table__cell">{% if (data['who_list_2'] == "Adding and amending bank details") %}
+
+          <p class="govuk-body">
+             Financial control
+          </p>
+      
+          {% elseif (data['who_list_2'] == "Managing waste data") %}
+      
+      <p class="govuk-body">
+        Waste data
+    </p>
+      
+      {% endif %}</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
