@@ -32,6 +32,13 @@ text: "Sign out"
 
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -130,7 +137,7 @@ text: "Sign out"
 
 
       <form class="govuk-form-group" method="post" action="/laps/admin/account-home-barnsley-removed">
-        <button class="govuk-button govuk-button--warning govuk-body"  type="submit">Remove CEO from database</button>
+        <button class="govuk-button govuk-button--warning govuk-body"  type="submit">Remove from local authority</button>
     </form>
 
 
