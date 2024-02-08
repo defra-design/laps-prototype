@@ -2,7 +2,7 @@
 
 {% set pageName="Index" %}
 {% set serviceName %}
-  pEPR account for Local Authority Payments
+pEPR account for Local Authority Payments
 {% endset%}
 
 {% block content %}
@@ -18,181 +18,196 @@
 
     <h1 class="govuk-heading-m">Latest wireframe additions for Private Beta </h1>
     <h3 class="govuk-heading-s">Whats new:</h3>
+
+    <!-- SECTION ONE -->
+
     
 
-    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-      <div class="govuk-accordion__section">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-              CEO Uploads (Back office Admin)
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-          <p class="govuk-body">Defra Administrator needs to be able to upload and manage Local Authority CEO information in line with their corresponding Local Authority Organisation, in order to successfully invite them to the LAPs service.</p>
-          <ul class="govuk-list govuk-list--bullet">
-   
-            <li>
-              <a class="govuk-link" href="/laps/admin/sign-in">Sign in *administrator</a>
-            </li>
-        <!--    -->
-          </ul>
-        </div>
-      </div>
-      <div class="govuk-accordion__section">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-              CEO Register
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-         
-          <ul class="govuk-list govuk-list--bullet">
-   
-            <li>
-              <a class="govuk-link govuk-!-font-weight-bold" href="/laps/account/set-up">Set up file * populate with details first!</a>
-            </li>
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-            <li>
-              <a class="govuk-link" href="/laps/account/email">CEO Initial set up (email)</a>
-            </li>
+    <div class="card" style="background-color: #fff;  border: 1px solid #1D70B8;">
+      <h2 class="govuk-heading-m">Back office administration portal </h2>
+      <p class="govuk-body"><strong class="govuk-tag govuk-tag--light-blue">
+          Version (wip)
+        </strong> <strong class="govuk-tag govuk-tag--red">
+          To be signed off
+        </strong>  <strong class="govuk-tag govuk-tag--pink">
+          Updated Feb 2024
+        </strong></p>
+      <h2 class="govuk-heading-m govuk-link-">CEO Uploads</h2>
+      <p class="govuk-body">Defra Administrator needs to be able to upload and manage Local Authority CEO information in
+        line with their corresponding Local Authority Organisation, in order to successfully invite them to the LAPs
+        service.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="/laps/admin/sign-in">Sign in *administrator</a></li>
+      </ul>
+    </div>
 
-            <li>
-              <a class="govuk-link" href="/laps/account/id-verification-ceo">Check your email</a>
-            </li>
+    <!-- SECTION TWO -->
 
-            <li>
-              <a class="govuk-link" href="/laps/account/terms-and-conditions">Terms and conditions</a>
-            </li>
-            <li>
-              <a class="govuk-link" href="/laps/account/create-password">Create a password</a>
-            </li> 
+    <p class="govuk-body govuk-!-margin-bottom-4"></p>
+    
 
-            <li>
-              <a class="govuk-link" href="/laps/account/check-your-details">Check your details</a>
-            </li>
+    <div class="card" style="background-color: #fff;  border: 1px solid #1D70B8;">
+      <h2 class="govuk-heading-m">CEO</h2>
+      <p class="govuk-body"><strong class="govuk-tag govuk-tag--light-blue">
+          Version (wip)
+        </strong> <strong class="govuk-tag govuk-tag--red">
+          To be signed off
+        </strong>  <strong class="govuk-tag govuk-tag--pink">
+          Updated Feb 2024
+        </strong></p>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
-            
-            <li>
-              <a class="govuk-link" href="/laps/account/incorrect-details">Incorrect-details</a>
-            </li>
-           
-            <li>
-              <a class="govuk-link" href="/laps/account/responsibility">Invite colleagues to manage [authority]'s pEPR payments and data</a>
-            </li>
-          
-            <li>
-              <a class="govuk-link" href="/laps/account/role-details">Colleague responsible for</a>
-            </li> 
-            <li>
-              <a class="govuk-link" href="/laps/account/add-another">Add another colleague to manage [authority]'s pEPR payments and data?</a>
-            </li> 
-        <!--    <li>
-              <a class="govuk-link" href="/laps/account/responsibility-2">Second person role</a>
-            </li> -->
-            <li>
-              <a class="govuk-link" href="/laps/account/role-details-2">Colleague responsible for</a>
-            </li>
-            <li>
-              <a class="govuk-link" href="/laps/account/check-details">Check these details</a>
-            </li>
-            <li>
-              <a class="govuk-link" href="/laps/account/success">Success</a>
-            </li>  
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                Register
+              </span>
+            </h2>
+            <p class="govuk-body">Allows CEO to register the Local Authority with the LAPs
+              service and invite 1 or 2 senior colleagues.</p>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-2">
 
-            <li>
-              <a class="govuk-link" href="/laps/account/email-ceo-confirmation">CEO - Account set up confirmation (email) </a>
-            </li>  
-            <li>
-              <a class="govuk-link" href="/laps/account/email-ceo-chase">CEO - Account set up chase nominee's (email) </a>
-            </li>
+            <ul class="govuk-list govuk-list--bullet">
+
+              <li>
+                <a class="govuk-link govuk-!-font-weight-bold" href="/laps/account/set-up">Set up file * populate with
+                  details first!</a>
+              </li>
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              <li>
+                <a class="govuk-link" href="/laps/account/email">CEO Initial set up (email)</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/id-verification-ceo">Check your email</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/terms-and-conditions">Terms and conditions</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/create-password">Create a password</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/check-your-details">Check your details</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/incorrect-details">Incorrect-details</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/responsibility">Invite colleagues to manage [authority]'s pEPR
+                  payments and data</a>
+              </li>
+
+              <li>
+                <a class="govuk-link" href="/laps/account/role-details">Colleague responsible for</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/add-another">Add another colleague to manage [authority]'s
+                  pEPR payments and data?</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/role-details-2">Colleague responsible for</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/check-details">Check these details</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/success">Success</a>
+              </li>
+
+              <li>
+                <a class="govuk-link" href="/laps/account/email-ceo-confirmation">CEO - Account set up confirmation
+                  (email) </a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/email-ceo-chase">CEO - Account set up chase nominee's (email)
+                </a>
+              </li>
             </ul>
+          </div>
         </div>
-      </div>
-      <div class="govuk-accordion__section">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-              CEO Account management  
-            </span>
-          </h2>
-          
-        </div>
-        <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                Account management
+              </span>
+            </h2>
+            <p class="govuk-body">Allows CEO to view their account.</p>
+          </div>
+          <div id="accordion-default-content-3" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-3">
+          <!--  <strong class="govuk-tag govuk-tag--green">
+              CEO
+            </strong>
+            <p class="govuk-body govuk-!-static-margin-top-2"> Add, edit and delete.</p> -->
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+              <li>
+                <a class="govuk-link govuk-!-font-weight-bold" href="/laps/account/set-up-acc-ceo">CEO set up file *
+                  populate with details first!</a>
+              </li>
+            </ul>
 
-         
-      
-        
-              
-         <strong class="govuk-tag govuk-tag--green">
-          CEO
-        </strong> <p class="govuk-body govuk-!-static-margin-top-2"> Add, edit and delete.</p>
-       <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-         <li>
-            <a class="govuk-link govuk-!-font-weight-bold" href="/laps/account/set-up-acc-ceo">CEO set up file * populate with details first!</a>
-          </li>
-        </ul>
-        
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
               <li>
                 <a class="govuk-link" href="/laps/account/signin">Sign in (happy path)</a>
               </li>
-
-
-  
               <li>
-                <a class="govuk-link" href="/laps/account/id-verification">Check your email (happy path)</a> 
+                <a class="govuk-link" href="/laps/account/id-verification">Check your email (happy path)</a>
               </li>
-            <li>
-              <a class="govuk-link" href="/laps/account/account-home-ceo">Status - Colleagues invited (happy path)</a>
-            </li>
-
-            <li>
-              <a class="govuk-link" href="/laps/account/manage-account-ceo-s">Status Colleagues invited user active</a> 
-            </li>
-          <!--
-            <li>
-              <a class="govuk-link" href="#">Status - no-users invited</a>
-            </li>
-            <li>
-              <a class="govuk-link" href="#">Status user invited user active</a> 
-            </li>
--->
-</ul>
-
-
+              <li>
+                <a class="govuk-link" href="/laps/account/account-home-ceo">Status - Colleagues invited (happy path)</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/manage-account-ceo-s">Status Colleagues invited user
+                  active</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+    </div>
+
+    <p class="govuk-body govuk-!-margin-bottom-4"></p>
+    
+    <!-- SECTION THREE -->
 
 
+    <div class="card" style="background-color: #fff;  border: 1px solid #1D70B8;">
+      <h2 class="govuk-heading-m">Colleagues</h2>
+      <p class="govuk-body"><strong class="govuk-tag govuk-tag--light-blue">
+          Version (wip)
+        </strong> <strong class="govuk-tag govuk-tag--red">
+          To be signed off
+        </strong> <strong class="govuk-tag govuk-tag--pink">
+          Updated Feb 2024
+        </strong></p>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                Register colleague
+              </span>
+            </h2>
+            <p class="govuk-body">Allows invited colleague to register with the Local Authority and view their account.</p>
+          </div>
+          <div id="accordion-default-content-3" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-3">
 
 
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+              <li>
+                <a class="govuk-link govuk-!-font-weight-bold" href="/laps/account/set-up-acc-admin">Admin set up file *
+                  populate with details first!</a>
+              </li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <div class="govuk-accordion__section">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-              Finance / Waste admin register  
-            </span>
-          </h2>
-          
-        </div>
-        <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-
- 
-          <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-            <li>
-               <a class="govuk-link govuk-!-font-weight-bold" href="/laps/account/set-up-acc-admin">Admin set up file * populate with details first!</a>
-             </li>
-           </ul>
-           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-           
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
 
               <li>
@@ -203,97 +218,82 @@
               </li>
 
               <li>
-                <a class="govuk-link" href="/laps/account/id-verification-admin">Check your email (happy path)</a> 
+                <a class="govuk-link" href="/laps/account/id-verification-admin">Check your email (happy path)</a>
               </li>
               <li>
-                <a class="govuk-link" href="/laps/account/terms-and-conditions-admin">Terms and conditions (happy path)</a> 
+                <a class="govuk-link" href="/laps/account/terms-and-conditions-admin">Terms and conditions (happy
+                  path)</a>
               </li>
 
               <li>
                 <a class="govuk-link" href="/laps/account/create-password-admin">Create a password</a>
-                  </li>
-       
-           <li>
-            <a class="govuk-link" href="/laps/account/success-admin">Success</a>
+              </li>
+
+              <li>
+                <a class="govuk-link" href="/laps/account/success-admin">Success</a>
               </li>
               <li>
                 <a class="govuk-link" href="/laps/account/account-home-admin">Account home</a>
-                  </li>
-    
+              </li>
+
 
               <li>
-                <a class="govuk-link" href="/laps/account/manage-account-admin">Manage account</a> 
+                <a class="govuk-link" href="/laps/account/manage-account-admin">Manage account</a>
               </li>
-              </ul>
-              
-    <!--         
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        -->  
-        <!--  <ul class="govuk-list govuk-list--bullet govuk-list--spaced"> -->   
-         <!--     <li>
-              <a class="govuk-link" href="#"></a>Status - no-users invited (initial state upon sign up)
-         
-            </li>
-            -->
-        <!--
-            <li>
-              <a class="govuk-link" href="/laps/account/account-home-ceo">Status - users invited</a>
-            </li>
-            
-            <li>
-              <a class="govuk-link" href="#">Status user invited users active</a> 
-            </li>
-            -->
             </ul>
+                  </div>
         </div>
       </div>
+    </div>
 
-      <div class="govuk-accordion__section">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-             Common shutter pages for the service
-            </span>
-          </h2>
-          
-        </div>
-        <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+   <!-- SECTION FOUR -->
 
-          <ul class="govuk-list  govuk-list--spaced">
-            <li>
-              <strong class="govuk-tag govuk-tag--red">
-                All pages display placeholder content
-              </strong>
-             </li>
-           </ul>
-           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-           
+<p class="govuk-body govuk-!-margin-bottom-4"></p>
+   
+
+    <div class="card" style="background-color: #fff;  border: 1px solid #1D70B8;">
+      <h2 class="govuk-heading-m">  Common shutter pages for the service</h2>
+      <p class="govuk-body"><strong class="govuk-tag govuk-tag--light-blue">
+          Version (wip)
+        </strong> <strong class="govuk-tag govuk-tag--red">
+          To be signed off
+        </strong> <strong class="govuk-tag govuk-tag--pink">
+          Updated Jan 2024
+        </strong></p>
+        
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-
+      
               <li>
-                <a class="govuk-link" href="/laps/account/problem-with-the-service">Sorry, there is a problem with the service</a>
+                <a class="govuk-link" href="/laps/account/problem-with-the-service">Sorry, there is a problem with the
+                  service</a>
               </li>
               <li>
                 <a class="govuk-link" href="/laps/account/page-not-found">Page not found</a>
               </li>
-
+      
               <li>
                 <a class="govuk-link" href="/laps/account/service-is-unavilable">Sorry, the service is unavailable</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="/laps/account/manage-account-ceo-timeout">Timeout warning</a>
-                  </li>
-    
-                  <li>
-                    <a class="govuk-link" href="/laps/account/service-timeout">Service timeout</a>
-                      </li>
-           
-        
-            </ul>
+              </li>
+              <li>
+                <a class="govuk-link" href="/laps/account/manage-account-ceo-timeout">Timeout warning</a>
+              </li>
+      
+              <li>
+                <a class="govuk-link" href="/laps/account/service-timeout">Service timeout</a>
+              </li>
+          </div>
         </div>
+       </div>
       </div>
- 
-  </div>
+    </div>
+
+
+
+  </div> <!-- End -->
+
 </div>
+
 
 {% endblock %}
