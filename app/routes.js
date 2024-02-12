@@ -121,6 +121,20 @@ router.post("/laps/account/set-up-acc-ceo",  function(request, response) {
   response.redirect(301, "/laps/account/signin")
 });
 
+// CEO registered // MULTI LAs
+router.post("/laps/account/multi-la", function (req, res) {
+  req.session.which_la = req.body.which_la;
+  console.log(req.body);
+
+  if (req.session.which_la === "la-1") {
+    res.redirect(301, "/laps/account/account-home-ceo");
+  }
+
+  else {
+    res.redirect(301, "/laps/account/account-home-ceo");
+  }
+});
+
 // CEO registered // CEO change user details 
 router.post("/laps/account/role-details-change",  function(request, response) {
   response.redirect(301, "/laps/account/manage-account-ceo")
