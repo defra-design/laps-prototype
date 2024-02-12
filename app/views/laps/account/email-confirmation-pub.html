@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+
+{% endset%}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">Dear {{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} </p>
+    <p class="govuk-body">You’ve created your extended producer responsibility for packaging (pEPR) account.</p>
+ 
+    <p class="govuk-body">You can now invite other colleagues.   </p> 
+
+    
+    <p class="govuk-body"><a href="#" class="govuk-link">Log in to your account</a> </p>
+    <h3 class="govuk-heading-m">Contact us</h3>
+
+    <p class="govuk-body">If you have any questions, email <a href="mailto:#">pEPR@defra.gov.uk</a></p>
+  </div>
+</div>
+
+{% endblock %}
