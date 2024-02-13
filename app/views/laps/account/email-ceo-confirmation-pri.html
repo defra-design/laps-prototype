@@ -16,7 +16,7 @@
 
     <p class="govuk-body"><strong>To: </strong>{{data['contacts_email']}} </p>
     <p class="govuk-body"><strong>From: </strong>extended producer responsibility for packaging (pEPR) &lt;extended.producer.responsibility@notifications.service.gov.uk&gt;	</p>
-    <p class="govuk-body"><strong>Subject: </strong>NEED SUBJECT</p>
+    <p class="govuk-body"><strong>Subject: </strong>{{data['local_authority'] }} is registered for Local Authority Payments (LAPs)</p>
   </div>
 
   <div class="govuk-grid-column-full">
@@ -45,11 +45,11 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-   <h1 class="govuk-heading-l govuk-!-margin-top-7">NEED H1</h1> 
+   <h1 class="govuk-heading-l govuk-!-margin-top-7">{{data['local_authority'] }} is registered for Local Authority Payments (LAPs)</h1> 
 
     <p class="govuk-body">Dear {{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</p>
   
-    <p class="govuk-body">You have registered {{data['local_authority'] }} for Local Authority Payments.</p>
+    <p class="govuk-body">You have registered {{data['local_authority'] }} for LAPs.</p>
     
    
     <p class="govuk-body"><a href="#" class="govuk-link">Log in to your account</a> </p>
