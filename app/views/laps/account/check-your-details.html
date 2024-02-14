@@ -11,7 +11,7 @@
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
-
+  
   <nav class="hmrc-language-select" aria-label="Language switcher">
     <ul class="hmrc-language-select__list">
       <li class="hmrc-language-select__list-item">
@@ -25,13 +25,36 @@
       </li>
     </ul>
   </nav>
-
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
+  
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      {% if data['errorthispage'] == "true" %}
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#select-error">Select an option</a>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</div>
+{% endif %}
+
       <span class="govuk-caption-l">Register for Local Authority Payments</span>
     <h1 class="govuk-heading-l">Check your details</h1>
 
@@ -77,27 +100,39 @@
       </div>
 
     </dl>
-<!--
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          These details are incorrect
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-      Text to be provided based on business rules.</div>
-    </details>
 
-    <p class="govuk-body">By creating your account, you confirm that:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>you have read and agree to the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">terms and conditions (opens in new tab)</a></li>
-      <li>your information is correct</li>
-    </ul>
+<!-- ------------------------------------- (default)------------------------------------------------------------->
 
-  -->
+
 
   <form id="check" method="post">
-    
+    {% if data['errorthispage'] == "true" %}
+    <div class="govuk-form-group govuk-form-group--error">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Are these details correct?
+        </h1>
+      </legend>
+      <p id="select-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Select an option
+      </p>
+      <div class="govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+        <div class="govuk-radios__item" data-target="check_details">
+          <input class="govuk-radios__input" id="Yes" type="radio" name="check_details" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="check_details">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="No" type="radio" name="check_details" value="No">
+          <label class="govuk-label govuk-radios__label" for="check_details">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+    {% else %}
     <div class="govuk-form-group">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
         <h1 class="govuk-fieldset__heading">
@@ -120,6 +155,7 @@
         </div>
       </div>
     </div>
+    {% endif %}
     <div class="govuk-button-group">
       <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
     </div>
@@ -128,4 +164,24 @@
 </div>
 </div>
 
+
+<!-- -------------------------------------dropdown selction footer------------------------------------------------------------->
+
+<!-- ERROR LOGIC  drop down to toggle states  -->
+<!-- Best thing to do would be to replace 'errorthispage', 'errortypeone' and 'errortypetwo' with novel name for this page  -->
+<form method="post" action="#" class="for4" style=" float: left; position: relative; bottom:-80px;  ">
+
+  <select style="height:30px;" onchange="window.location.href='?'+this.value">
+
+      <option value="errorthispage=false&errortypeone=false&errortypetwo=false&" {% if (data['errorthispage'] !="true"
+          ) %}selected{% endif %}>Errors - Off</option>
+
+      <option value="errorthispage=true&errortypeone=true&errortypetwo=false&" {% if (data['errortypeone']=='true' and
+          data['errortypetwo'] !='true' ) %}selected{% endif %}>Error - On</option>
+
+  </select>
+
+</form>
+<!--  END OF ERROR LOGIC -->
 {% endblock %}
+

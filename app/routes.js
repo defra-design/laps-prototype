@@ -26,13 +26,15 @@ router.post("/laps/account/email",  function(request, response) {
 // CEO Register // Check your email
 // HTTP link on the page
 
-// CEO Register // Terms and conditions
-router.post("/laps/account/terms-and-conditions",  function(request, response) {
-  response.redirect(301, "/laps/account/create-password")
-});
+
 
 // CEO Register // Create password
 router.post("/laps/account/create-password",  function(request, response) {
+  response.redirect(301, "/laps/account/terms-and-conditions")
+});
+
+// CEO Register // Terms and conditions
+router.post("/laps/account/terms-and-conditions",  function(request, response) {
   response.redirect(301, "/laps/account/check-your-details")
 });
 
@@ -164,13 +166,14 @@ router.post("/laps/account/role-details-2-ceo",  function(request, response) {
 // Invited user // Check your email
 // HTTP link on the page
 
-// Invited user // Terms and conditions
-router.post("/laps/account/terms-and-conditions-admin",  function(request, response) {
-  response.redirect(301, "/laps/account/create-password-admin")
-});
 
 // Invited user // Create a password
 router.post("/laps/account/create-password-admin",  function(request, response) {
+  response.redirect(301, "/laps/account/terms-and-conditions-admin")
+});
+
+// Invited user // Terms and conditions
+router.post("/laps/account/terms-and-conditions-admin",  function(request, response) {
   response.redirect(301, "/laps/account/success-admin")
 });
 
