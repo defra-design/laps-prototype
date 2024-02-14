@@ -112,6 +112,18 @@ router.post("/laps/account/signin",  function(request, response) {
   response.redirect(301, "/laps/account/id-verification")
 });
 
+// CEO registered // forgotten password
+router.post("/laps/account/forgotten-password",  function(request, response) {
+  response.redirect(301, "/laps/account/id-verification")
+});
+
+// CEO registered // forgotten password
+router.post("/laps/account/forgotten-password",  function(request, response) {
+  response.redirect(301, "/laps/account/email-account-password-reset")
+});
+
+
+
 // CEO registered // Check your email
 // HTTP link on the page
 
