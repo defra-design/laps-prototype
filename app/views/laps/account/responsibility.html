@@ -13,6 +13,10 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 }) }}
 
 <nav class="hmrc-language-select" aria-label="Language switcher">
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
   <ul class="hmrc-language-select__list">
     <li class="hmrc-language-select__list-item">
       <span aria-current="true">English</span>
@@ -25,11 +29,6 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </li>
   </ul>
 </nav>
-
-{{ govukBackLink({
-  href: "javascript:window.history.back()",
-  text: "Back"
-}) }}
 
 {% endblock %}
 
