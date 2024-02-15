@@ -5,18 +5,16 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
-
 // Add your routes here
 
-//
-// CEO Register for a LAPS Account // ========================================================================  //
-//
 
+// << PRIVATE BETA >> 
+
+// CEO Register for a LAPS Account // Beta
 // CEO Register // Set up
 router.post("/laps/account/set-up",  function(request, response) {
   response.redirect(301, "/laps/account/email")
 });
-
 
 // CEO Register // Email
 router.post("/laps/account/email",  function(request, response) {
@@ -25,8 +23,6 @@ router.post("/laps/account/email",  function(request, response) {
 
 // CEO Register // Check your email
 // HTTP link on the page
-
-
 
 // CEO Register // Create password
 router.post("/laps/account/create-password",  function(request, response) {
@@ -92,15 +88,9 @@ router.post("/laps/account/check-details",  function(request, response) {
   response.redirect(301, "/laps/account/account-home-ceo")
 });
 
-//
-// <<<< END >>>> // CEO register // ======================================================================== //
-//
+// <<<< END >>>> // CEO register // 
 
-
-
-//
-// CEO registered with LAPs // ======================================================================== //                            
-//
+// CEO registered with LAPs ////                            
 
 // CEO registered // Set up -- new to sign in
 router.post("/laps/account/set-up-acc-ceo",  function(request, response) {
@@ -122,8 +112,6 @@ router.post("/laps/account/forgotten-password",  function(request, response) {
   response.redirect(301, "/laps/account/email-account-password-reset")
 });
 
-
-
 // CEO registered // Check your email
 // HTTP link on the page
 
@@ -136,7 +124,6 @@ router.post("/laps/account/set-up-acc-ceo",  function(request, response) {
 router.post("/laps/account/multi-la",  function(request, response) {
   response.redirect(301, "/laps/account/account-home-ceo")
 });
-
 
 // CEO registered // CEO change user details 
 router.post("/laps/account/role-details-change",  function(request, response) {
@@ -163,21 +150,12 @@ router.post("/laps/account/role-details-2-ceo",  function(request, response) {
   response.redirect(301, "/laps/account/manage-account-ceo-a")
 });
 
-//
-// <<<< END >>>> // CEO registered // ======================================================================== //
-//
+// <<<< END >>>> // CEO registered ////
 
-
-
-
-
-//
-// Invited user // ======================================================================== //   
-//
+// Invited user ////   
 
 // Invited user // Check your email
 // HTTP link on the page
-
 
 // Invited user // Create a password
 router.post("/laps/account/create-password-admin",  function(request, response) {
@@ -192,16 +170,11 @@ router.post("/laps/account/terms-and-conditions-admin",  function(request, respo
 // Invited user  // Success
 // HTTP link on the page
 
-//
-// <<<< END >>>> // Invited user // ======================================================================== //
-//
+// <<<< END >>>> // Invited user ////
 
 
 
-
-//
-// DEFRA ACCOUNT SUPPORT ADMIN PORTAL // ======================================================================== //
-//
+// DEFRA ACCOUNT SUPPORT ADMIN PORTAL ////
 
 // DEFRA ACCOUNT SUPPORT ADMIN PORTAL // Sign in
 router.post("/laps/admin/sign-in",  function(request, response) {
@@ -262,14 +235,12 @@ router.post("/laps/admin/barnsley-bcs",  function(request, response) {
   response.redirect(301, "/laps/admin/barnsley-bcs")
 });
 
-//
-// <<<< END >>>> // DEFRA ACCOUNT SUPPORT ADMIN PORTAL // ======================================================================== //
-//
+
+// <<<< END >>>> // DEFRA ACCOUNT SUPPORT ADMIN PORTAL ////
+
+// << PUBLIC BETA >> 
 
 
-// NEW PAGE // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< TO BE DELETED
-router.post("/laps/account/permissions",  function(request, response) {
-  response.redirect(301, "/laps/account/role-details")
-});
 
 
+module.exports = router

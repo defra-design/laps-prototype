@@ -15,10 +15,7 @@
   href: "account-home-ceo",
   text: "Home"
   },
-  {
-    href: "#",
-    text: "Payments"
-    },
+
   {
   href: "#",
   text: "Manage your account",
@@ -91,9 +88,9 @@
         <dt class="govuk-summary-list__key">Name</dt>
         <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="role-details-change-ceo">
+      <!--    <a class="govuk-link" href="role-details-change-ceo">
             Change<span class="govuk-visually-hidden">name</span>
-          </a>
+          </a> -->
         </dd>
       </div>
 
@@ -104,9 +101,9 @@
           {{data['role']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="role-details-change-ceo">
+         <!-- <a class="govuk-link" href="role-details-change-ceo">
             Change<span class="govuk-visually-hidden">job title</span>
-          </a>
+          </a> -->
         </dd>
       </div>
   
@@ -114,9 +111,9 @@
         <dt class="govuk-summary-list__key">Email</dt>
         <dd class="govuk-summary-list__value" >{{data['contacts_email']}}</dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="role-details-change-ceo">
+       <!--   <a class="govuk-link" href="role-details-change-ceo">
             Change<span class="govuk-visually-hidden">email</span>
-          </a>
+          </a> -->
         </dd>
       </div>
      
@@ -169,10 +166,11 @@
 
 <h3 class="govuk-heading-m">
 Your pEPR team</h3>
+<!--
 <form class="govuk-form-group govuk-!-margin-bottom-0" action="/laps/account/role-details-2-ceo">
   <button class="govuk-button" type="submit">Invite colleague</button>
 </form>
-
+-->
 
 <table class="govuk-table">
   
