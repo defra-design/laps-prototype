@@ -108,17 +108,14 @@ router.post("/laps/account/forgotten-password",  function(request, response) {
 });
 
 // CEO registered // forgotten password
-router.post("/laps/account/forgotten-password",  function(request, response) {
-  response.redirect(301, "/laps/account/email-account-password-reset")
-});
+//router.post("/laps/account/forgotten-password",  function(request, response) {
+//  response.redirect(301, "/laps/account/email-account-password-reset")
+// });
 
 // CEO registered // Check your email
 // HTTP link on the page
 
-// CEO registered // Set up -- new to sign in
-router.post("/laps/account/set-up-acc-ceo",  function(request, response) {
-  response.redirect(301, "/laps/account/signin")
-});
+
 
 // CEO registered // MULTI LAs
 router.post("/laps/account/multi-la",  function(request, response) {
