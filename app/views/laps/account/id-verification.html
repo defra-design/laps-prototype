@@ -40,7 +40,7 @@
 <!--first option uhp: Content page in case there is an error in the page-->
 <!--analogy example if windy go to the park (if sunny day)-->
 
-{% if data.uhptype == '1' %}
+{% if data.uhptype == 'x1' %}
 
 <!--layout setting start-->
 
@@ -151,7 +151,7 @@
 <!--Second option uhp: Content page in case there is an error in the page-->
 <!--analogy example if not windy go to the beach (if sunny)-->
 
-{% elif data.uhptype == '2' %}
+{% elif data.uhptype == 'x2' %}
 
 <!--layout setting start-->
 
@@ -251,7 +251,7 @@
 <!--Second option uhp: Content page in case there is an error in the page-->
 <!--analogy example if not windy go to the beach (if sunny)-->
 
-{% elif data.uhptype == '3' %}
+{% elif data.uhptype == 'x3' %}
 
 <!--layout setting start-->
 
@@ -326,7 +326,7 @@
 <!--layout setting end-->
 
 <!--end   Showing un happy paths (uhp) when uhp option is selected on the dropdown component on the footer--> 
-{% elif data.uhptype == '4' %}
+{% elif data.uhptype == 'x4' %}
 
 <!--layout setting start-->
 
@@ -337,7 +337,7 @@
 
 <!--Heading start-->
            
-<span class="govuk-caption-l">Local Authority Payments</span> 
+<span class="govuk-caption-l">Forgotten password Local Authority Payments</span> 
 <h1 class="govuk-heading-l">Check your email</h1>
 
 <!--Heading end-->
@@ -490,16 +490,16 @@
 
     <option value="uhp=false" {% if data.uhp=='false' %}selected{% endif %}>Default</option>
 
-    <option value="uhptype=1&uhp=true&" {% if data.uhptype=='1' and data.uhp=='true' %}selected{% endif
+    <option value="uhptype=x1&uhp=true&" {% if data.uhptype=='x1' and data.uhp=='true' %}selected{% endif
       %}>Error</option>
 
-    <option value="uhptype=2&uhp=true&" {% if data.uhptype=='2' and data.uhp=='true' %}selected{% endif
+    <option value="uhptype=x2&uhp=true&" {% if data.uhptype=='x2' and data.uhp=='true' %}selected{% endif
       %}>Request new code</option>
 
-      <option value="uhptype=3&uhp=true&" {% if data.uhptype=='3' and data.uhp=='true' %}selected{% endif
+      <option value="uhptype=x3&uhp=true&" {% if data.uhptype=='x3' and data.uhp=='true' %}selected{% endif
         %}>Multiple local authorities</option>
 
-        <option value="uhptype=4&uhp=true&" {% if data.uhptype=='4' and data.uhp=='true' %}selected{% endif
+        <option value="uhptype=x4&uhp=true&" {% if data.uhptype=='x4' and data.uhp=='true' %}selected{% endif
           %}>Forgotten password</option>
   </select>
 </form>
