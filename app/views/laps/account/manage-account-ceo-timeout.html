@@ -61,11 +61,13 @@
 
 {% block content %}
 
+
+
 {{ hmrcTimeoutDialog ({
   timeout: 70,
   countdown: 68,
   keepAliveUrl: "?continue=true",
-  signOutUrl: "signout",
+  signOutUrl: "?lang=English",
   language: "en"
 }) }}
 
