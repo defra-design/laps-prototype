@@ -1,33 +1,34 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Incorrect details – {{ serviceName }} – GOV.UK Prototype Kit
+Incorrect details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  {{ govukBackLink({
+  href: "javascript:window.history.back()",
+  text: "Back"
   }) }}
-  <nav class="hmrc-language-select" aria-label="Language switcher">
-    {{ govukBackLink({
-      href: "javascript:window.history.back()",
-      text: "Back"
-    }) }}
-    <ul class="hmrc-language-select__list">
-      <li class="hmrc-language-select__list-item">
-        <span aria-current="true">English</span>
-      </li>
-      <li class="hmrc-language-select__list-item">
-        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
-          <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
-          <span aria-hidden="true">Cymraeg</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">English</span>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"
+        data-journey-click="link - click:lang-select:Cymraeg">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <span aria-hidden="true">Cymraeg</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -36,10 +37,41 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Incorrect details</h1>
     <p class="govuk-body">
-      What to do ...
+      Contact us to change your:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>name</li>
+      <li>email address</li>
+      <li>local authority name </li>
+    </ul>
+    <h3 class="govuk-heading-s">Telephone</h3>
+    <ul class="govuk-list">
+      <li>Telephone: 020 7946 0101</li>
+      <li>Monday to Friday, 9am to 5pm</li>
+    </ul>
+    <p class="govuk-body">
+      Closed on weekends and bank holidays.
+    </p>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">Find out about call charges</a>
     </p>
 
-  </div>
+    <h3 class="govuk-heading-s">Email</h3>
+    <ul class="govuk-list">
+      <li><a class="govuk-link" href="#">name@example.com</a></li>
+      <li>We aim to respond within 2 working days</li>
+      <li>Please do not attach any files with your email.</li>
+    </ul>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+      text: "Sign out",
+      href: "signout"
+      }) }}
+    </div>
+    <!--  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a> -->
+  </div> 
 </div>
+
 
 {% endblock %}
