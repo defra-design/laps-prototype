@@ -16,18 +16,7 @@ href: "account-home-ceo",
 text: "Home",
 active: true
 },
-{
-  href: "#",
-  text: "Payments"
-  },
-{
-href: "manage-account-ceo",
-text: "Manage your account"
-},
-{
-  href: "#",
-  text: "View guidence"
-  },
+
 {
 href: "confirm-signout",
 text: "Sign out"
@@ -88,13 +77,20 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   </div>
 </div>
 
+<div class="app-wcag-22" id="wcag-consistent-contact" role="note">
+  <strong class="govuk-tag app-tag">
+  PRIVATE BETA
+</strong>
 
+  <p>
+    During this initial phase of the Private Beta, the account operates with limited functionality. As the service undergoes iterations, additional sections such as Payments, Manage account, and View guidence will be made available. You will receive email notifications when new functionality becomes accessible.</p>
+</div>
 
 <div class="govuk-grid-row govuk-!-margin-bottom-7">
 
   <div class="govuk-grid-column-one-half">
     <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-      <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state">Payments</a></h2>
+      <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state"></a>Payments</h2>
       <p class="govuk-body">In this section you can find: </p>
         <ul class="govuk-list govuk-list--bullet">
         <li>how much {% if (data['which_la'] == "la-2") %}{{data['local_authority_2']}}{% else %}
@@ -110,14 +106,14 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
   <div class="govuk-grid-column-one-half">
     <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-      <h2 class="govuk-heading-m"><a href="/laps/account/manage-account-ceo" class="govuk-link--no-visited-state">Manage
-          your account</a></h2>
+      <h2 class="govuk-heading-m"><a href="/laps/account/manage-account-ceo" class="govuk-link--no-visited-state"></a>Manage
+        account</h2>
       <p class="govuk-body">You can:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>view your details</li>
         <li>view your pEPR team </li>
-    <!-- <li>add and remove people</li>
-        <li>delegate</li> -->
+    <li>add and remove people</li>
+      
       </ul>
     </div>
   </div>
@@ -127,7 +123,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
   <div class="govuk-grid-column-one-half">
     <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-      <h2 class="govuk-heading-m govuk-link-"> <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">View guidence (opens in new tab)</a></h2>
+      <h2 class="govuk-heading-m govuk-link-"> <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank"></a>View guidence (opens in new tab)</h2>
       <p class="govuk-body">You can find out how:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>payments are calculated</li>
@@ -139,11 +135,11 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
   <div class="govuk-grid-column-one-half">
     <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-      <h2 class="govuk-heading-m"><a href="#" class="govuk-link--no-visited-state">Contact us</a></h2>
-      <p class="govuk-body">You can:</p>
+      <h2 class="govuk-heading-m"><a href="contact-us.html" class="govuk-link--no-visited-state">Contact us</a></h2>
+      <p class="govuk-body">Find contact details for:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>submit a query</li>
-        <li>find telephone contact details</li>
+        
+        <li>telephone and email </li>
         
       </ul>
     </div>

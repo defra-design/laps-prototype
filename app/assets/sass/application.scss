@@ -5,7 +5,19 @@
 
 // Add extra styles here
 
+// homepage text
 
+.app-wcag-22 {
+  margin-bottom: govuk-spacing(6);
+    outline: 4px solid $govuk-brand-colour;
+    outline-offset: -4px;
+  padding: 10px;
+  }
+
+  .app-tag {
+    margin-top: 1px;
+    margin-bottom: 10px;
+  }
 
 
 .file-list__file {
