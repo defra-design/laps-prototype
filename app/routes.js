@@ -122,6 +122,12 @@ router.post("/laps/account/multi-la",  function(request, response) {
   response.redirect(301, "/laps/account/account-home-ceo")
 });
 
+// CEO registered // change LAs
+router.post("/laps/account/change-la",  function(request, response) {
+  response.redirect(301, "/laps/account/account-home-ceo")
+});
+
+
 // CEO registered // CEO change user details 
 router.post("/laps/account/role-details-change",  function(request, response) {
   response.redirect(301, "/laps/account/manage-account-ceo")

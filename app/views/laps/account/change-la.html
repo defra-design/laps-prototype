@@ -1,8 +1,29 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
- 
-Which local authority do you want to signin to? – {{ serviceName }} – GOV.UK Prototype Kit
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home-ceo",
+text: "Home",
+active: true
+},
+
+{
+href: "confirm-signout",
+text: "Sign out"
+}
+]
+}) }}
+
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,6 +33,9 @@ text: "Beta"
 },
 html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
+
+
+
 <nav class="hmrc-language-select" aria-label="Language switcher">
   {{ govukBackLink({
     href: "javascript:window.history.back()",
@@ -22,7 +46,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       <span aria-current="true">English</span>
     </li>
     <li class="hmrc-language-select__list-item">
-      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"
+        data-journey-click="link - click:lang-select:Cymraeg">
         <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
         <span aria-hidden="true">Cymraeg</span>
       </a>
