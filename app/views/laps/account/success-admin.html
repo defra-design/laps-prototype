@@ -36,12 +36,12 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 Success
               </h1>
               <div class="govuk-panel__body">
-                EPR {{data['who_list'] | capitalize }} account created for<br><strong>{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }}</strong>
+                {{data['local_authority']}} LAPs <!-- {{data['who_list'] | capitalize }}--> account created for<br><strong>{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }}</strong>
               </div>
             </h1>
           </div>
 
-          <p class="govuk-body">You’ll receive an email to confirm that your EPR {{data['who_list'] | capitalize }} account is ready.</p>
+          <p class="govuk-body">We’ll send you a confirmation email.</p>
           <h2 class="govuk-heading-m">What happens next</h2>
       <!--    <p class="govuk-body">You’ll only be able to add other admin level users during private beta testing.</p>
 
@@ -57,7 +57,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </div> 
 -->
     <p class="govuk-body govuk-!-margin-bottom-6">
-      <a href="/laps/account/account-home-admin" class="govuk-link">Go to your pEPR account home page</a>
+      <a href="/laps/account/account-home-admin" class="govuk-link">Go to your pEPR account homepage</a>
     </p>
 
     <p class="govuk-body">
