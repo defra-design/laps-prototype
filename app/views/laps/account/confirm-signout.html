@@ -4,25 +4,7 @@
   Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block header %}
 
-{{ govukHeader({
-  homepageUrl: "/index.html",
-  serviceName: serviceName ,
-  serviceUrl: "/index.html",
-  navigation: [
-  {
-  href: "account-home-ceo",
-  text: "Home"
-  }, 
-  {
-  href: "confirm-signout",
-  text: "Sign out"
-  }
-  ]
-  }) }}
-  
-  {% endblock %}
 
 {% block beforeContent %}
   {{ govukPhaseBanner({

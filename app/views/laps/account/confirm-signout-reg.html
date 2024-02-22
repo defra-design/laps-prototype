@@ -36,44 +36,19 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Register for Local Authority Payments</span>
-    <h1 class="govuk-heading-l">Incorrect details</h1>
-    <p class="govuk-body">
-      Contact us to change your:
-    </p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>name</li>
-      <li>email address</li>
-      <li>local authority name </li>
-    </ul>
-    <h3 class="govuk-heading-s">Telephone</h3>
-    <ul class="govuk-list">
-      <li>Telephone: 020 7946 0101</li>
-      <li>Monday to Friday, 9am to 5pm</li>
-    </ul>
-    <p class="govuk-body">
-      Closed on weekends and bank holidays.
-    </p>
-    <p class="govuk-body">
-      <a class="govuk-link" href="#">Find out about call charges</a>
-    </p>
+    <h1 class="govuk-heading-l">Sign out from local authority payments </h1>
 
-    <h3 class="govuk-heading-s">Email</h3>
-    <ul class="govuk-list">
-      <li><a class="govuk-link" href="#">name@example.com</a></li>
-      <li>Do not include any attachments.</li>
-      <li>We aim to respond within 2 working days.</li>
-      
-    </ul>
 
     <div class="govuk-button-group">
       {{ govukButton({
-      text: "Sign out",
-      href: "confirm-signout-reg"
+        text: "Continue",
+        href: "signout"
       }) }}
-    </div>
+    
     <!--  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a> -->
-  </div> 
-</div>
+    </div>
 
+  </div>
+</div>
 
 {% endblock %}
