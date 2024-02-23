@@ -16,19 +16,7 @@
   text: "Home",
   active: true
   },
-  {
-    href: "#",
-    text: "Payments"
-    },
-  {
-  href: "manage-account-admin",
-  text: "Manage your account"
-
-  },
-  {
-    href: "#",
-    text: "View guidence"
-    },
+  
   {
   href: "confirm-signout",
   text: "Sign out"
@@ -64,11 +52,53 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-   <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
-   Home 
+  
+    <div class="app-wcag-22" id="wcag-consistent-contact" role="note">
+      <strong class="govuk-tag app-tag">
+      PRIVATE BETA
+    </strong>
+    
+      <p>
+        During this initial phase of the Private Beta, the account operates with limited functionality. As the service undergoes iterations, additional sections such as Payments, Manage account, and View guidence will be made available. You will receive email notifications when new functionality becomes accessible.</p>
+    </div>
+    
+
+
+
+
+
+    {% if (data['which_la'] == "la-1") %}
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+      <span class="govuk-caption-l">{{data['local_authority']}}</span>  
+      Home <span class="govuk-button-group" style="float: right;">
+        {{ govukButton({
+        text: "Change authority",
+        classes: "govuk-button--secondary",
+        href: "change-la"
+        }) }}
+      </span>
     </h1>
+    {% elif (data['which_la'] == "la-2") %}
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority_2']}}</span>
+      Home<span class="govuk-button-group" style="float: right;">
+        {{ govukButton({
+        text: "Change authority",
+        classes: "govuk-button--secondary",
+        href: "change-la"
+        }) }}
+      </span>
+    </h1>
+    {% else %}
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+      Home
+    </h1>
+    {% endif %}
   </div>
 </div>
+
+
+
+
 
 
 
@@ -76,63 +106,63 @@
 
   <div class="govuk-grid-column-one-half">
     <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-      <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state">Payments</a></h2>
-      <p class="govuk-body">You can view your:</p>
+      <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state"></a>Payments</h2>
+      <p class="govuk-body">In this section you can find: </p>
         <ul class="govuk-list govuk-list--bullet">
-         <li>extended producer responsibility (pEPR) for packaging estimated payment amount and schedule</li>
-         <li>breakdown of how your pEPR for packaging estimated payment is calculated</li>
-         <li>payment documents for 2024 to 2025</li>
-        </ul> 
+        <li>how much {% if (data['which_la'] == "la-2") %}{{data['local_authority_2']}}{% else %}
+          {{data['local_authority']}}{% endif %} will get for LAPs</li>
+          <li>an estimation for when you’ll get paid</li>  
+          <li>how your payment is calculated</li>
+          <li>payment documents for 2024 to 2025</li>
+      </ul>
+  <!--    <p class="govuk-body"><strong class="govuk-tag govuk-tag--red">This section is not live yet. Come back on 1 November to learn how much {% if (data['which_la'] == "la-2") %}{{data['local_authority_2']}}{% else %}
+        {{data['local_authority']}}{% endif %} will get for LAPs.</strong></p> -->
     </div>
   </div>
 
   <div class="govuk-grid-column-one-half">
     <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-      <h2 class="govuk-heading-m"><a href="/laps/account/manage-account-admin" class="govuk-link--no-visited-state">Manage your account</a></h2>
+      <h2 class="govuk-heading-m"><a href="/laps/account/manage-account-ceo" class="govuk-link--no-visited-state"></a>Manage
+        account</h2>
       <p class="govuk-body">You can:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>view your details</li>
-          <li>view your pEPR team </li>
-          <li>add and remove people</li>
-          <li>delegate</li>
-        </ul> 
-        <p><br></p>
-
+      <ul class="govuk-list govuk-list--bullet">
+        <li>view your details</li>
+        <li>view your pEPR team </li>
+    <li>add and remove people</li>
+      
+      </ul>
     </div>
   </div>
 </div>
 
+<div class="govuk-grid-row govuk-!-margin-bottom-7">
 
-
-
-  <div class="govuk-grid-row govuk-!-margin-bottom-7">
-
-    <div class="govuk-grid-column-one-half">
-      <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-        <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state">View guidance (opens in new tab)</a></h2>
-        <p class="govuk-body">You can find out how:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>payments are calculated</li>
-            <li>payments are made</li>
-            <li>the pEPR scheme works</li>
-          </ul> 
-      </div>
-    </div>
-  
-    <div class="govuk-grid-column-one-half">
-      <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-        <h2 class="govuk-heading-m"><a href="#" class="govuk-link--no-visited-state">Contact us</a></h2>
-        <p class="govuk-body">You can:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>submit a query</li>
-            <li>find telephone contact details</li>
-          </ul> 
-          
-        </div>
-  
-      </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
+      <h2 class="govuk-heading-m govuk-link-"> <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank"></a>View guidence (opens in new tab)</h2>
+      <p class="govuk-body">You can find out how:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>payments are calculated</li>
+        <li>payments are made</li>
+        <li>the pEPR scheme works</li>
+      </ul>
     </div>
   </div>
-  
+
+  <div class="govuk-grid-column-one-half">
+    <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
+      <h2 class="govuk-heading-m"><a href="contact-us.html" class="govuk-link--no-visited-state">Contact us</a></h2>
+      <p class="govuk-body">Find contact details for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        
+        <li>telephone and email </li>
+        
+      </ul>
+    </div>
+
+  </div>
+</div>
+</div>
+
 
 {% endblock %}
