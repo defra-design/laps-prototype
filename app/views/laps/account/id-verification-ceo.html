@@ -121,7 +121,7 @@
   </p> 
   <input class="govuk-input govuk-input--width-10 govuk-input--error" id="verification-code" name="verification-code" type="text" aria-describedby="verification-code-hint verification-code-error"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  <a href="id-verification-ceo?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Request a new code
     </a>
          
@@ -219,7 +219,7 @@
   <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
   
-  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  <a href="id-verification-ceo?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Request a new code
     </a>
 </div>
@@ -296,9 +296,9 @@
     Verification code
   </label>
   <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
-  value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
+  value="{{data['verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
   
-  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  <a href="id-verification-ceo?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Request a new code
     </a>
 </div>
@@ -325,12 +325,17 @@
 
 {% endif %}
 
+
+
+
+
+
 <!-- -------------------------------------dropdown selction footer------------------------------------------------------------->
 
 <form method="post" action="#" class="for4" style=" float: left; margin-top: 50px;">
   <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
-    <option value="uhp=false&uhptype=0&" {% if data.uhp=='false' %}selected{% endif %}>Default</option>
+    <option value="uhptype=1&uhptype=2&uhp=false&" {% if data.uhp=='false' %}selected{% endif %}>Default</option>
 
     <option value="uhptype=1&uhp=true&" {% if data.uhptype=='1' and data.uhp=='true' %}selected{% endif
       %}>Error</option>

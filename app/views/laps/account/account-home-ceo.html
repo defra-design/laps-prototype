@@ -58,6 +58,21 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+
+    <div class="app-wcag-22" id="wcag-consistent-contact" role="note">
+      <strong class="govuk-tag app-tag">
+      PRIVATE BETA
+    </strong>
+    
+      <p>
+        During this initial phase of the Private Beta, the account operates with limited functionality. As the service undergoes iterations, additional sections such as Payments, Manage account, and View guidence will be made available. You will receive email notifications when new functionality becomes accessible.</p>
+    </div>
+    
+
+
+
+
+
     {% if (data['which_la'] == "la-1") %}
     <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
       <span class="govuk-caption-l">{{data['local_authority']}}</span>  
@@ -87,14 +102,11 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   </div>
 </div>
 
-<div class="app-wcag-22" id="wcag-consistent-contact" role="note">
-  <strong class="govuk-tag app-tag">
-  PRIVATE BETA
-</strong>
 
-  <p>
-    During this initial phase of the Private Beta, the account operates with limited functionality. As the service undergoes iterations, additional sections such as Payments, Manage account, and View guidence will be made available. You will receive email notifications when new functionality becomes accessible.</p>
-</div>
+
+
+
+
 
 <div class="govuk-grid-row govuk-!-margin-bottom-7">
 
