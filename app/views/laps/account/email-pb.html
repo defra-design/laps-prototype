@@ -15,7 +15,7 @@
     <h2 class="govuk-heading-m govuk-!-margin-bottom-7">Inbox (1)</h2>
 
     <p class="govuk-body"><strong>To: </strong>{{data['contacts_email']}} </p>
-    <p class="govuk-body"><strong>From: </strong>extended producer responsibility for packaging (pEPR) &lt;extended.producer.responsibility@notifications.service.gov.uk&gt;	</p>
+    <p class="govuk-body"><strong>From: </strong>extended producer responsibility for packaging (EPR) &lt;extended.producer.responsibility@notifications.service.gov.uk&gt;	</p>
     <p class="govuk-body"><strong>Subject: </strong>Register {{data['local_authority'] }} for Local Authority Payments (LAPs)</p>
   </div>
 
@@ -49,14 +49,14 @@
 
     <p class="govuk-body">Dear {{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</p>
     
-    <p class="govuk-body">It’s now time to register for the LAPs scheme, part of the extended producer responsibility for packaging (pEPR).</p>
+    <p class="govuk-body">It’s now time to register for the LAPs scheme, part of the extended producer responsibility for packaging (EPR).</p>
 
     <p class="govuk-body">This is the easiest way to get payments to offset waste packaging collection and disposal costs.</p>
   <!--
     <p class="govuk-body">You need to do this so {{data['local_authority'] }} can receive payment for waste packaging collection and disposal costs.</p>
 
     <div class="govuk-inset-text govuk-!-font-weight-bold">
-      {{data['local_authority'] }} will be unable to receive pEPR payments if it does not register for LAPs.
+      {{data['local_authority'] }} will be unable to receive EPR payments if it does not register for LAPs.
     </div>
 -->
     <p class="govuk-body">You must accept the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">terms and conditions (opens in new tab)</a> as part of registration.</p>
@@ -72,13 +72,13 @@
     <h2 class="govuk-heading-m">Register for LAPs </h2>
 
     <p class="govuk-body"><a href="/laps/account/id-verification-ceo"
-        class="govuk-link">https://pEPR-local-authorities.service.gov.uk/register?=12345  </a></p>
+        class="govuk-link">https://EPR-local-authorities.service.gov.uk/register</a></p>
 
         <p class="govuk-body">This link will expire 10 days after the send date of this email.</p>
 
     <h3 class="govuk-heading-m">Contact us</h3>
 
-    <p class="govuk-body">If you have any questions, email <a href="mailto:#">pEPR@defra.gov.uk</a></p>
+    <p class="govuk-body">If you have any questions, email <a href="mailto:#">EPR@defra.gov.uk</a></p>
 
     <p class="govuk-body">If you are not the CEO of {{data['local_authority'] }} (or acting on their behalf), contact us so we can update our records.</p> 
   </div>
