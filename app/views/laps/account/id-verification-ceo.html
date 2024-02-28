@@ -42,7 +42,7 @@
 <!--first option uhp: Content page in case there is an error in the page-->
 <!--analogy example if windy go to the park (if sunny day)-->
 
-{% if data.uhptype == '1' %}
+{% if data.uhptype == 'y1' %}
 
 <!--layout setting start-->
 
@@ -58,12 +58,9 @@
                 </h2>
                 <div class="govuk-error-summary__body">
                   <ul class="govuk-list govuk-error-summary__list">
+                 
                     <li>
-                      <a href="#verification-code">Your code has expired</a>
-                        </a>
-                    </li>
-                    <li>
-                      <a href="#verification-code">Your code is invalid</a>
+                      <a href="#verification-code">Error message placeholder</a>
                     </li>
                   </ul>
                 </div>
@@ -113,15 +110,13 @@
   <!--<div id="verification-code" class="govuk-hint">
     It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
   </div>-->
+ 
   <p id="verification-code" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Expired code
-  </p>  
-  <p id="verification-code" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Invalid code
+    <span class="govuk-visually-hidden">Error:</span>Error message placeholder
   </p> 
   <input class="govuk-input govuk-input--width-10 govuk-input--error" id="verification-code" name="verification-code" type="text" aria-describedby="verification-code-hint verification-code-error"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="id-verification-ceo?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  <a href="id-verification-ceo?uhptype=y2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Request a new code
     </a>
          
@@ -153,7 +148,7 @@
 <!--Second option uhp: Content page in case there is an error in the page-->
 <!--analogy example if not windy go to the beach (if sunny)-->
 
-{% elif data.uhptype == '2' %}
+{% elif data.uhptype == 'y2' %}
 
 <!--layout setting start-->
 
@@ -219,7 +214,7 @@
   <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
   
-  <a href="id-verification-ceo?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  <a href="id-verification-ceo?uhptype=y2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Request a new code
     </a>
 </div>
@@ -239,7 +234,48 @@
 </div>
 </div>
 
+<!-- -------------------------------------Third option page------------------------------------------------------------->
 
+
+
+<!--Second option uhp: Content page in case there is an error in the page-->
+<!--analogy example if not windy go to the beach (if sunny)-->
+
+{% elif data.uhptype == 'y3' %}
+
+<!--layout setting start-->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Register for Local Authority Payments</span>
+    <h1 class="govuk-heading-l">Your invitation link has expired</h1>
+    <p class="govuk-body">
+      To register your authority, contact us at <a href="mailto:#">EPRCustomerService@defra.gov.uk</a> using the same email address as the original invitation to obtain a new invitation link.
+    </p>
+
+    <p class="govuk-body">
+      We aim to respond within 3 working days. </p>
+
+    <h3 class="govuk-heading-s">Talk to an advisor</h3>
+    <ul class="govuk-list">
+      <li>Telephone: 0300 060 0002</li>
+      <li>Monday to Friday 8:30am - 4:30pm (except public holidays)</li>
+    </ul>
+ 
+   
+    <h3 class="govuk-heading-s">Email</h3>
+    <ul class="govuk-list">
+      <li><a href="mailto:#">EPRCustomerService@defra.gov.uk</a></li>
+      We aim to respond within 3 working days.
+      <li></li>  
+    </ul>
+
+
+
+    <!--  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a> -->
+  </div> 
+</div>
 
 
 
@@ -298,7 +334,7 @@
   <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
   value="{{data['verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
   
-  <a href="id-verification-ceo?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  <a href="id-verification-ceo?uhptype=y2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Request a new code
     </a>
 </div>
@@ -335,15 +371,18 @@
 <form method="post" action="#" class="for4" style=" float: left; margin-top: 50px;">
   <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
-    <option value="uhptype=1&uhptype=2&uhp=false&" {% if data.uhp=='false' %}selected{% endif %}>Default</option>
+    <option value="uhptype=y1&uhptype=y2&uhptype=y3&uhp=false&" {% if data.uhp=='false' %}selected{% endif %}>Default</option>
 
-    <option value="uhptype=1&uhp=true&" {% if data.uhptype=='1' and data.uhp=='true' %}selected{% endif
+    <option value="uhptype=y1&uhp=true&" {% if data.uhptype=='y1' and data.uhp=='true' %}selected{% endif
       %}>Error</option>
 
-    <option value="uhptype=2&uhp=true&" {% if data.uhptype=='2' and data.uhp=='true' %}selected{% endif
+    <option value="uhptype=y2&uhp=true&" {% if data.uhptype=='y2' and data.uhp=='true' %}selected{% endif
       %}>Request new code</option>
 
-    
+      <option value="uhptype=y3&uhp=true&" {% if data.uhptype=='y3' and data.uhp=='true' %}selected{% endif
+        %}>Link has expired</option>
+  
+      
 
   </select>
 </form>

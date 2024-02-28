@@ -47,46 +47,35 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                     <ul class="govuk-list govuk-error-summary__list">
     
                       
-                        <li>
-                          <a href="#d_f_name">Enter their first name
-                              </p></a>
-                      </li>
+                  
                       <li>
-                        <a href="#d_f_name">First name must be 50 characters or less
+                        <a href="#d_f_name">Error message placeholder
                             </p></a>
                     </li>
 
-                      <li>
-                        <a href="#d_l_name">Enter their last name
-                            </p></a>
-                    </li>
+                    
                     <li>
-                      <a href="#d_l_name">Last name must be 50 characters or less
+                      <a href="#d_l_name">Error message placeholder
                           </p></a>
                   </li>
 
                   
-                  <li>
-                    <a href="#d_email">Enter their email address
-                        </p></a>
-                </li>
-                <li>
-                  <a href="#d_email">Their email address is not in the right format (name@authority.gov.uk)
-                      </p></a>
-              </li>
+        
               <li>
-                <a href="#d_email">Email address must be 100 characters or less 
+                <a href="#d_email">Error message placeholder 
                     </p></a>
             </li>
 
-            <li>
-              <a href="#d_role">Enter their job title
-                  </p></a>
-          </li>
+           
           <li>
-            <a href="#d_role">Role must be 50 characters or less 
+            <a href="#d_role">Error message placeholder 
                 </p></a>
         </li>
+
+        <li>
+          <a href="#">Error message placeholder 
+              </p></a>
+      </li>
    
 <!--
               <li>
@@ -114,11 +103,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <label for="contacts_name">
           <span class="govuk-label">First name</span>
         </label>
+       
         <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Enter their first name
-        </p>
-        <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>First name must be 50 characters or less
+          <span class="govuk-visually-hidden">Error:</span>Error message placeholder
         </p>
         <input class="govuk-input govuk-input--error govuk-input--width-30" name="d_f_name" id="d_f_name" type="text"
           value="{{data['d_f_name']}}" data-error="Enter a first name" value="{{data['d_f_name']}}">
@@ -131,11 +118,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <label for="local_authority">
           <span class="govuk-label">Last name</span>
         </label>
+    
         <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Enter their last name
-        </p>
-        <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Last name must be 50 characters or less
+          <span class="govuk-visually-hidden">Error:</span>Error message placeholder
         </p>
         <input class="govuk-input govuk-input--error govuk-input--width-30" name="d_l_name" id="d_l_name" type="text"
           value="{{data['d_l_name']}}" data-error="Enter a last name" value="{{data['d_l_name']}}">
@@ -146,14 +131,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <label for="contacts_email">
           <span class="govuk-label">Email address</span>
         </label>
+   
         <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Enter their email address
-        </p>
-        <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Their email address is not in the right format (name@authority.gov.uk)
-        </p>
-        <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Email address must be 100 characters or less 
+          <span class="govuk-visually-hidden">Error:</span>Error message placeholder 
         </p>
         <input class="govuk-input govuk-input--error govuk-input--width-30 " name="d_email" id="d_email" type="text"
           value="{{data['d_email']}}" data-error="Enter an email address" value="{{data['d_email']}}">
@@ -163,11 +143,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <label for="contacts_email">
           <span class="govuk-label">Job title</span>
         </label>
+       
         <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Enter their job title
-        </p>
-        <p id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Role must be 50 characters or less
+          <span class="govuk-visually-hidden">Error:</span>Error message placeholder
         </p>
         <input class="govuk-input govuk-input--error govuk-input--width-30 " name="d_role" id="d_role" type="text"
           value="{{data['d_role']}}" data-error="Enter a role" value="{{data['d_role']}}">
@@ -192,7 +170,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       text: ""
       },
       items: [
-      {
+      { 
         value: "Banking and finance",
       html: "Banking and finance  
       ",
@@ -202,6 +180,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       }
       },
       {
+     
       value: "Waste data management",
       html: "Waste data management
       ",
@@ -210,8 +189,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       text: "For example head of waste, waste manager, or waste accountant "
        } }
       ],
+     
       errorMessage: {
-        text: "Select if the user needs waste or finance permissions"
+        text: "Error message placeholder "
       }
       }) }}
 
