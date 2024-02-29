@@ -102,6 +102,11 @@ router.post("/laps/account/signin",  function(request, response) {
   response.redirect(301, "/laps/account/id-verification")
 });
 
+// CEO already registered // Registering another LA taken to Signin
+router.post("/laps/account/signin-registered",  function(request, response) {
+  response.redirect(301, "/laps/account/id-verification-ceo?uhptype=y4&uhp=true&")
+});
+
 // CEO registered // forgotten password
 router.post("/laps/account/forgotten-password",  function(request, response) {
   response.redirect(301, "/laps/account/id-verification")
