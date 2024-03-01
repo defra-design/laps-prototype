@@ -15,19 +15,13 @@ navigation: [
 href: "account-home-ceo",
 text: "Home"
 },
+
 {
 href: "#",
-text: "Payments"
-},
-{
-href: "#",
-text: "Manage your account",
+text: "Manage account",
 active: true
 },
-{
-href: "#",
-text: "View guidence"
-},
+
 {
 href: "#3",
 text: "Sign out"
@@ -66,13 +60,23 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-l">{{data['local_authority']}}</span>
-    <h1 class="govuk-heading-l">Invite colleague</h1>
-
-    <div class="govuk-inset-text govuk-!-font-weight-bold">
-      These people will have admin accounts. They’ll only be able to add other admin level users during private beta testing.
-    </div>
+    {% if (data['which_la'] == "la-1") %}
+    <h1 class="govuk-heading-l ">
+      <span class="govuk-caption-l">{{data['local_authority']}}</span>
+      Invite colleague 
+    </h1>
+    {% elif (data['which_la'] == "la-2") %}
+    <h1 class="govuk-heading-l "><span
+        class="govuk-caption-l">{{data['local_authority_2']}}</span>
+        Invite colleague 
+    </h1>
+    {% else %}
+    <h1 class="govuk-heading-l "><span class="govuk-caption-l">{{data['local_authority']}}</span>
+      Invite colleague 
+    </h1>
+    {% endif %}
  
+
     <!-- <p>Use this form to set up user research testing with matching data.</p> -->
 
 
@@ -119,32 +123,32 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           text: "What responsibility do they have? ",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
+        }
+        },
+        hint: {
+        text: ""
+        },
+        items: [
+        {
+          value: "Banking and finance",
+          html: "Banking and finance  
+          ",
+      
+          hint: {
+          text: "This senior colleague, who will be able to add and amend bank details, must be either an S151 Officer, Chief Financial Officer or in another senior finance role"
           }
           },
-          hint: {
-          text: ""
-          },
-          items: [
           {
-            value: "Adding and amending bank details",
-            html: "Adding and amending bank details  
-            ",
-        
-            hint: {
-            text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role "
-            }
-            },
-            {
-            value: "Managing waste data",
-            html: "Managing waste data
-            ",
-        
-            hint: {
-            text: "For example, head of waste, waste manager, or waste accountant "
-             } }
-          ]
-          }) }}
-
+          value: "Waste data management",
+          html: "Waste data management
+          ",
+      
+          hint: {
+          text: "For example head of waste, waste manager, or waste accountant "
+           } }
+        ]
+        }) }}
+   
 
         <!--
     <div class="govuk-inset-text">

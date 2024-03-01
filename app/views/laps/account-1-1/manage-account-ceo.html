@@ -62,7 +62,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 
     {% if (data['which_la'] == "la-1") %}
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+    <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">{{data['local_authority']}}</span>
       Manage account <span class="govuk-button-group" style="float: right;">
         {{ govukButton({
@@ -73,7 +73,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       </span>
     </h1>
     {% elif (data['which_la'] == "la-2") %}
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span
+    <h1 class="govuk-heading-l "><span
         class="govuk-caption-l">{{data['local_authority_2']}}</span>
       Manage account<span class="govuk-button-group" style="float: right;">
         {{ govukButton({
@@ -84,7 +84,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       </span>
     </h1>
     {% else %}
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+    <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>
       Manage account
     </h1>
     {% endif %}

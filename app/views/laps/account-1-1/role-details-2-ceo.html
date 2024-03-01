@@ -71,17 +71,17 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% if (data['which_la'] == "la-1") %}
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+      <h1 class="govuk-heading-l ">
         <span class="govuk-caption-l">{{data['local_authority']}}</span>
         Invite colleague 
       </h1>
       {% elif (data['which_la'] == "la-2") %}
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span
+      <h1 class="govuk-heading-l "><span
           class="govuk-caption-l">{{data['local_authority_2']}}</span>
           Invite colleague 
       </h1>
       {% else %}
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+      <h1 class="govuk-heading-l "><span class="govuk-caption-l">{{data['local_authority']}}</span>
         Invite colleague 
       </h1>
       {% endif %}
