@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <nav class="hmrc-language-select" aria-label="Language switcher">
+    {{ govukBackLink({
+      href: "javascript:window.history.back()",
+      text: "Back"
+    }) }}
+    <ul class="hmrc-language-select__list">
+      <li class="hmrc-language-select__list-item">
+        <span aria-current="true">English</span>
+      </li>
+      <li class="hmrc-language-select__list-item">
+        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+          <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+          <span aria-hidden="true">Cymraeg</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Register for packaging waste payments </span>
+      <h1 class="govuk-heading-l">Enter colleague 2's details </h1>
+
+
+    <!-- <p>Use this form to set up user research testing with matching data.</p> -->
+
+    <form id="delegate-details-2" method="post">
+  
+    
+        <div class="govuk-form-group">
+          <label for="contacts_name">
+            <span class="govuk-label">First name</span>
+        </label>
+        <input class="govuk-input govuk-input--width-30" name="d_f_name2" id="d_f_name2" type="text" value="{{data['d_f_name2']}}"
+          data-error="Enter a first name" value="{{data['d_f_name2']}}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label for="local_authority">
+          <span class="govuk-label">Last name</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30" name="d_l_name2" id="d_l_name2" type="text" value="{{data['d_l_name2']}}"
+        data-error="Enter a last name" value="{{data['d_l_name2']}}">
+    </div>
+
+
+        <div class="govuk-form-group">
+          <label for="contacts_email">
+            <span class="govuk-label">Email address</span>
+        </label>
+        <input class="govuk-input govuk-input--width-30 " name="d_email2" id="d_email2" type="text" value="{{data['d_email2']}}"
+          data-error="Enter an email address" value="{{data['d_email2']}}">
+      </div>
+      <div class="govuk-form-group">
+        <label for="contacts_email">
+          <span class="govuk-label">Job title</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30 " name="d_role2" id="d_role2" type="text" value="{{data['d_role2']}}"
+        data-error="Enter a role" value="{{data['d_role2']}}">
+    </div>
+  
+
+    {{ govukRadios({
+      idPrefix: "who_list_2",
+      name: "who_list_2",
+      fieldset: {
+      legend: {
+      text: "What responsibility do they have? ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: ""
+      },
+      items: [
+      {
+        value: "Banking and finance",
+        html: "Banking and finance  
+        ",
+    
+        hint: {
+        text: "This senior colleague, who will be able to add and amend bank details, must be either an S151 Officer, Chief Financial Officer or in another senior finance role"
+        }
+        },
+        {
+        value: "Waste data management",
+        html: "Waste data management
+        ",
+    
+        hint: {
+        text: "For example head of waste, waste manager, or waste accountant "
+         } }
+      ]
+      }) }}
+       
+<!--
+      <div class="govuk-inset-text">
+        This person will get admin permissions. Once they set up their account, they will be able to add standard users. 
+      </div>
+ -->  
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+      </div>
+  </div>
+</div>
+</form>
+<!--
+<p><a class="back-home" href="#">Cancel</a></p>   
+-->
+
+{% endblock %}

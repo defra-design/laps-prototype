@@ -1,0 +1,232 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "/index.html",
+  serviceName: serviceName ,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+  href: "account-home-ceo",
+  text: "Home"
+  },
+  {
+    href: "#",
+    text: "Payments"
+    },
+  {
+  href: "#",
+  text: "Manage your account",
+  active: true
+  },
+  {
+    href: "#",
+    text: "View guidence"
+    },
+  {
+  href: "#3",
+  text: "Sign out"
+  }
+  ]
+  }) }}
+  
+  {% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <!-- ERROR LOGIC  error summary -->
+        {% if data['errorthispage'] == "true" %}
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+
+                    <li>
+                        <a href="#select-error">Select a role
+                            </p></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+        <!--  END OF ERROR LOGIC -->
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+            Add user
+             </h1>
+    
+             <form  method="post"> 
+
+             <div class="govuk-form-group">
+                <label for="contacts_name">
+                  <span class="govuk-label">First name</span>
+              </label>
+              <input class="govuk-input govuk-input--width-20" name="d_f_name2" id="d_f_name2" type="text" value=""
+                data-error="Enter a first name" value="">
+            </div>
+      
+            <div class="govuk-form-group">
+              <label for="local_authority">
+                <span class="govuk-label">Last name</span>
+            </label>
+            <input class="govuk-input govuk-input--width-20" name="d_l_name2" id="d_l_name2" type="text" value=""
+              data-error="Enter a last name" value="">
+          </div>
+      
+          <div class="govuk-form-group">
+            <label for="contacts_email">
+              <span class="govuk-label">Role</span>
+          </label>
+          <input class="govuk-input govuk-input--width-20 " name="d_role2" id="d_role2" type="text" value=""
+            data-error="Enter a role" value="">
+        </div>
+        <div class="govuk-form-group">
+            <label for="contacts_email">
+              <span class="govuk-label">Email address</span>
+          </label>
+          <input class="govuk-input govuk-input--width-30 " name="d_email2" id="d_email2" type="text" value=""
+            data-error="Enter an email address" value="">
+        </div>
+      
+        <form id="who-list-2" method="POST">
+
+            <div class="govuk-radios govuk-!-margin-bottom-8" data-module="govuk-radios">
+                <!-- ERROR LOGIC  error class is added to whole section if error is ture  -->
+                {% if data['errorthispage'] == "true" %}
+                <div class="govuk-form-group govuk-form-group--error" id="select-error">
+                    {% else %}
+                    <div class="govuk-form-group">
+                        {% endif %}
+                        <!--  END OF ERROR LOGIC -->
+                        <!-- ERROR LOGIC if there is an error then show which error is true  -->
+                        {% if data['errorthispage'] == "true" %}
+
+                        <!--  END OF ERROR LOGIC -->
+                        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                        {{ govukRadios({
+                        idPrefix: "who_list_2",
+                        name: "who_list_2",
+                        fieldset: {
+                            legend: {
+                              text: "What is this person's area of responsibility?",
+                              isPageHeading: true,
+                              classes: "govuk-fieldset__legend--m"
+                            }
+                        },
+                        hint: {
+                        text: ""
+                        },
+                        items: [
+                        {
+                        value: "finance",
+                        html: "Finance
+                        ",
+
+                        hint: {
+                        text: ""
+                        }
+                        },
+                        {
+                        value: "waste data",
+                        html: "Waste data",
+
+                        hint: {
+                        text: " "
+                        }
+                        }
+                        ]
+                        }) }}
+
+                        {% else %}
+                        <!--  END OF ERROR LOGIC -->
+                        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                        
+                       
+
+                        {{ govukRadios({
+                            idPrefix: "who_list_2",
+                            name: "who_list_2",
+                            fieldset: {
+                                legend: {
+                                  text: "What is this person's area of responsibility?",
+                                  isPageHeading: true,
+                                  classes: "govuk-fieldset__legend--m"
+                                }
+                            },
+                        hint: {
+                        text: ""
+                        },
+                        items: [
+                        {
+                        value: "finance",
+                        html: "Finance
+                        ",
+
+                        hint: {
+                        text: ""
+                        }
+                        },
+                        {
+                        value: "waste data",
+                        html: "Waste data
+                        ",
+
+                        hint: {
+                        text: " "
+                        }
+                        }
+                        ]
+                        }) }}
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-button-group">
+                <button class="govuk-button govuk-body govuk-!-margin-bottom-8" type="submit">Continue</button><!-- <a class="govuk-link" href="/laps/account/check-details" value="">Cancel</a>-->
+              <!--<p><a class="back-home" href="/laps/account/account-home">Cancel - go to your EPR account homepage</a></p>
+           -->   </div></div>
+        </form>
+    </div>
+
+
+<!-- ERROR LOGIC  drop down to toggle states  -->
+<!-- Best thing to do would be to replace 'errorthispage', 'errortypeone' and 'errortypetwo' with novel name for this page  -->
+<form method="post" action="#" class="for4" style=" float: left; position: relative; bottom:-80px;  ">
+
+    <select style="height:30px;" onchange="window.location.href='?'+this.value">
+
+        <option value="errorthispage=false&errortypeone=false&errortypetwo=false&" {% if (data['errorthispage'] !="true"
+            ) %}selected{% endif %}>Errors - Off</option>
+
+        <option value="errorthispage=true&errortypeone=true&errortypetwo=false&" {% if (data['errortypeone']=='true' and
+            data['errortypetwo'] !='true' ) %}selected{% endif %}>Error - On</option>
+
+    </select>
+
+</form>
+<!--  END OF ERROR LOGIC -->
+</div>
+{% endblock %}

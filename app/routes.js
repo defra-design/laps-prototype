@@ -246,9 +246,31 @@ router.post("/laps/admin/barnsley-bcs",  function(request, response) {
 
 // <<<< END >>>> // DEFRA ACCOUNT SUPPORT ADMIN PORTAL ////
 
-// << PUBLIC BETA >> 
+// << PRIVATE  BETA  1.1 >> 
 
+// CEO registered // Set up -- new to sign in
+router.post("/laps/account-1-1/set-up-acc-ceo",  function(request, response) {
+  response.redirect(301, "/laps/account-1-1/signin")
+});
 
+// CEO registered // Signin
+router.post("/laps/account-1-1/signin",  function(request, response) {
+  response.redirect(301, "/laps/account-1-1/id-verification")
+});
 
+// CEO registered // MULTI LAs
+router.post("/laps/account-1-1/multi-la",  function(request, response) {
+  response.redirect(301, "/laps/account-1-1/account-home-ceo")
+});
+
+// CEO registered // change LAs
+router.post("/laps/account-1-1/change-la",  function(request, response) {
+  response.redirect(301, "/laps/account-1-1/account-home-ceo")
+});
+
+// CEO registered // CEO add user details
+router.post("/laps/account-1-1/role-details-2-ceo",  function(request, response) {
+  response.redirect(301, "/laps/account-1-1/manage-account-ceo-a")
+});
 
 module.exports = router

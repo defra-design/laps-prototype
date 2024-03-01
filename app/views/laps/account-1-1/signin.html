@@ -1,0 +1,194 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">English</span>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"
+        data-journey-click="link - click:lang-select:Cymraeg">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <span aria-hidden="true">Cymraeg</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<!-- -------------------------------------first option page------------------------------------------------------------->
+
+
+
+{% if data['errorthispage'] == "true" %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#email-input-error">Error message placeholder</a>
+            </li>
+            <li>
+              <a href="#password-input-error">Error message placeholder</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- <span class="govuk-caption-xl">Private beta</span> -->
+    <h1 class="govuk-heading-xl">Sign in</h1>
+
+    <form id="signin-detail" method="post">
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <label for="signin_email">
+          <span class="govuk-label">Email address</span>
+        </label>
+        <p id="email-input-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Error message placeholder
+        </p>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="signin_email" id="signin_email" type="text"
+          data-error="Enter an email address" value="{{data[' signin_email']}}">
+      </div>
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <label for="signin_password">
+          <span class="govuk-label">Password</span>
+        </label>
+        <p id="password-input-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Error message placeholder
+        </p>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="signin_password" id="signin_password"
+          type="text" data-error="Enter a valid password" value="{{data[' signin_password']}}">
+      </div>
+      <p class="govuk-body govuk-!-margin-top-4"><a href="./forgotten-password.html">I've forgotten my password</a></p>
+
+
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Sign in
+        </button>
+      </div>
+      <!-- Details (accordeon) start-->
+      <details class="govuk-details govuk-!-margin-top-6">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I need an account
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">Ask someone with an account in your organisation to invite you.</p>
+        </div>
+      </details>
+
+      <!-- Details (accordeon) end-->
+
+    </form>
+  </div>
+</div>
+
+
+<!-- ------------------------------------- (default)------------------------------------------------------------->
+
+{% else %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <span class="govuk-caption-xl">Private beta</span> -->
+    <h1 class="govuk-heading-xl">Sign in</h1>
+
+    <form id="signin-detail" method="post">
+
+      <div class="govuk-form-group">
+        <label for="signin_email">
+          <span class="govuk-label">Email address</span>
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="signin_email" id="signin_email" type="text"
+          data-error="Enter an email address" value="{{data[' signin_email']}}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label for="signin_password">
+          <span class="govuk-label">Password</span>
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="signin_password" id="signin_password"
+          type="text" data-error="Enter a valid password" value="{{data[' signin_password']}}">
+        <p class="govuk-body govuk-!-margin-top-4"><a href="#">I've forgotten my password</a></p>
+
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Sign in
+        </button>
+      </div>
+      <!-- Details (accordeon) start-->
+      <details class="govuk-details govuk-!-margin-top-6">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I need an account
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">Ask someone with an account in your organisation to invite you.</p>
+        </div>
+      </details>
+
+
+      <!-- Details (accordeon) end-->
+
+    </form>
+  </div>
+</div>
+
+{% endif %}
+
+
+
+<!-- -------------------------------------dropdown selction footer------------------------------------------------------------->
+
+<!-- ERROR LOGIC  drop down to toggle states  -->
+<!-- Best thing to do would be to replace 'errorthispage', 'errortypeone' and 'errortypetwo' with novel name for this page  -->
+<form method="post" action="#" class="for4" style=" float: left; position: relative; bottom:-80px;  ">
+
+  <select style="height:30px;" onchange="window.location.href='?'+this.value">
+
+    <option value="errorthispage=false&errortypeone=false&errortypetwo=false&" {% if (data['errorthispage'] !="true" )
+      %}selected{% endif %}>Errors - Off</option>
+
+    <option value="errorthispage=true&errortypeone=true&errortypetwo=false&" {% if (data['errortypeone']=='true' and
+      data['errortypetwo'] !='true' ) %}selected{% endif %}>Error - On</option>
+
+ 
+
+  </select>
+
+</form>
+<!--  END OF ERROR LOGIC -->
+
+
+{% endblock %}

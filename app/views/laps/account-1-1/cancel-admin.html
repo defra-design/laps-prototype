@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "/index.html",
+  serviceName: serviceName ,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+  href: "account-home-admin",
+  text: "Home"
+  },
+  {
+    href: "#",
+    text: "Payments"
+    },
+  {
+  href: "#",
+  text: "Manage your account",
+  active: true
+  },
+  {
+    href: "#",
+    text: "View guidence"
+    },
+  {
+  href: "#3",
+  text: "Sign out"
+  }
+  ]
+  }) }}
+  
+  {% endblock %}
+
+{% block beforeContent %}
+
+  
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <nav class="hmrc-language-select" aria-label="Language switcher">
+    <ul class="hmrc-language-select__list">
+      <li class="hmrc-language-select__list-item">
+        <span aria-current="true">English</span>
+      </li>
+      <li class="hmrc-language-select__list-item">
+        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+          <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+          <span aria-hidden="true">Cymraeg</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+        Cancel invitation
+         </h1>
+
+         <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            If you cancel this invitation, {{data['d_f_name_A'] | capitalize }} {{data['d_l_name_A'] | capitalize }} cannot join {{data['local_authority']}}'s' EPR team .
+
+If you want them to use the service in the future, you’ll need to invite them again.
+          </strong>
+        </div>
+        <form class="govuk-form-group" method="post" action="/laps/account/manage-account-admin-r">
+          <button class="govuk-button govuk-button--warning govuk-body govuk-!-margin-bottom-6" type="submit">Cancel invitation</button>
+      </form>
+   </div>
+</div>
+{% endblock %}

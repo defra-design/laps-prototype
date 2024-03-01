@@ -1,0 +1,321 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter person’s details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">English</span>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <span aria-hidden="true">Cymraeg</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+            <!-- ERROR LOGIC  error summary -->
+            {% if data['errorthispage'] == "true" %}
+            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+                data-module="govuk-error-summary">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+    
+                      
+                  
+                      <li>
+                        <a href="#d_f_name">Error message placeholder
+                            </p></a>
+                    </li>
+
+                    
+                    <li>
+                      <a href="#d_l_name">Error message placeholder
+                          </p></a>
+                  </li>
+
+                  
+        
+              <li>
+                <a href="#d_email">Error message placeholder 
+                    </p></a>
+            </li>
+
+           
+          <li>
+            <a href="#d_role">Error message placeholder 
+                </p></a>
+        </li>
+
+        <li>
+          <a href="#">Error message placeholder 
+              </p></a>
+      </li>
+   
+<!--
+              <li>
+                <a href="#who_list">Select if the user needs waste or finance permissions
+                    </p></a>
+            </li>
+          -->
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+             <!-- END OF ERROR LOGIC -->
+
+    <span class="govuk-caption-l">Register for packaging waste payments </span>
+   
+    <h1 class="govuk-heading-l">Enter colleague 1's details <!--{{data['who_list'] }}--></h1>
+
+    <form id="delegate-details" method="post">
+
+           <!-- ERROR LOGIC  error summary -->
+           {% if data['errorthispage'] == "true" %}
+
+
+           <div class="govuk-form-group govuk-form-group--error">
+        <label for="contacts_name">
+          <span class="govuk-label">First name</span>
+        </label>
+       
+        <p id="event-name-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span>Error message placeholder
+        </p>
+        <input class="govuk-input govuk-input--error govuk-input--width-30" name="d_f_name" id="d_f_name" type="text"
+          value="{{data['d_f_name']}}" data-error="Enter a first name" value="{{data['d_f_name']}}">
+      </div>
+
+
+      
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <label for="local_authority">
+          <span class="govuk-label">Last name</span>
+        </label>
+    
+        <p id="event-name-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span>Error message placeholder
+        </p>
+        <input class="govuk-input govuk-input--error govuk-input--width-30" name="d_l_name" id="d_l_name" type="text"
+          value="{{data['d_l_name']}}" data-error="Enter a last name" value="{{data['d_l_name']}}">
+      </div>
+
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <label for="contacts_email">
+          <span class="govuk-label">Email address</span>
+        </label>
+   
+        <p id="event-name-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span>Error message placeholder 
+        </p>
+        <input class="govuk-input govuk-input--error govuk-input--width-30 " name="d_email" id="d_email" type="text"
+          value="{{data['d_email']}}" data-error="Enter an email address" value="{{data['d_email']}}">
+      </div>
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <label for="contacts_email">
+          <span class="govuk-label">Job title</span>
+        </label>
+       
+        <p id="event-name-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span>Error message placeholder
+        </p>
+        <input class="govuk-input govuk-input--error govuk-input--width-30 " name="d_role" id="d_role" type="text"
+          value="{{data['d_role']}}" data-error="Enter a role" value="{{data['d_role']}}">
+      </div>
+
+
+
+
+
+ 
+      {{ govukRadios({
+      idPrefix: "who_list",
+      name: "who_list",
+      fieldset: {
+      legend: {
+      text: "What responsibility do they have? ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: ""
+      },
+      items: [
+      { 
+        value: "Banking and finance",
+      html: "Banking and finance  
+      ",
+  
+      hint: {
+      text: "This senior colleague, who will be able to add and amend bank details, must be either an S151 Officer, Chief Financial Officer or in another senior finance role"
+      }
+      },
+      {
+     
+      value: "Waste data management",
+      html: "Waste data management
+      ",
+  
+      hint: {
+      text: "For example head of waste, waste manager, or waste accountant "
+       } }
+      ],
+     
+      errorMessage: {
+        text: "Error message placeholder "
+      }
+      }) }}
+
+
+
+
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+      </div>
+
+    </form>
+    <!--
+    <p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p>
+    -->
+    {% else %}
+
+    <div class="govuk-form-group">
+      <label for="contacts_name">
+        <span class="govuk-label">First name</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30" name="d_f_name" id="d_f_name" type="text"
+        value="{{data['d_f_name']}}" data-error="Enter a first name" value="{{data['d_f_name']}}">
+    </div>
+
+
+    
+
+    <div class="govuk-form-group">
+      <label for="local_authority">
+        <span class="govuk-label">Last name</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30" name="d_l_name" id="d_l_name" type="text"
+        value="{{data['d_l_name']}}" data-error="Enter a last name" value="{{data['d_l_name']}}">
+    </div>
+
+
+    <div class="govuk-form-group">
+      <label for="contacts_email">
+        <span class="govuk-label">Email address</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30 " name="d_email" id="d_email" type="text"
+        value="{{data['d_email']}}" data-error="Enter an email address" value="{{data['d_email']}}">
+    </div>
+    <div class="govuk-form-group">
+      <label for="contacts_email">
+        <span class="govuk-label">Job title</span>
+      </label>
+      <input class="govuk-input govuk-input--width-30 " name="d_role" id="d_role" type="text"
+        value="{{data['d_role']}}" data-error="Enter a role" value="{{data['d_role']}}">
+    </div>
+
+
+
+
+
+
+    {{ govukRadios({
+    idPrefix: "who_list",
+    name: "who_list",
+    fieldset: {
+    legend: {
+    text: "What responsibility do they have? ",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--m"
+    }
+    },
+    hint: {
+    text: ""
+    },
+    items: [
+    {
+      value: "Banking and finance",
+      html: "Banking and finance",
+  
+      hint: {
+      text: "This senior colleague, who will be able to add and amend bank details, must be either an S151 Officer, Chief Financial Officer or in another senior finance role"
+      }
+      },
+      {
+      value: "Waste data management",
+      html: "Waste data management
+      ",
+  
+      hint: {
+      text: "For example head of waste, waste manager, or waste accountant "
+       } }
+    ]
+    }) }}
+
+ 
+
+
+    <div class="govuk-button-group">
+      <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+    </div>
+
+  </form>
+  <!--
+  <p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p>
+  -->
+
+
+    {% endif %}
+    <!--  END OF ERROR LOGIC -->
+
+
+  </div>
+
+</div>
+<!-- ERROR LOGIC  drop down to toggle states  -->
+<!-- Best thing to do would be to replace 'errorthispage', 'errortypeone' and 'errortypetwo' with novel name for this page  -->
+<form method="post" action="#" class="for4" style=" float: left; position: relative; bottom:-80px;  ">
+
+  <select style="height:30px;" onchange="window.location.href='?'+this.value">
+
+      <option value="errorthispage=false&errortypeone=false&errortypetwo=false&" {% if (data['errorthispage'] !="true"
+          ) %}selected{% endif %}>Errors - Off</option>
+
+      <option value="errorthispage=true&errortypeone=true&errortypetwo=false&" {% if (data['errortypeone']=='true' and
+          data['errortypetwo'] !='true' ) %}selected{% endif %}>Error - On</option>
+
+  </select>
+
+</form>
+<!--  END OF ERROR LOGIC -->
+
+{% endblock %}

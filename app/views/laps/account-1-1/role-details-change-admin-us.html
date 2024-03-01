@@ -1,0 +1,178 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home-admin",
+text: "Home"
+},
+{
+href: "#",
+text: "Payments"
+},
+{
+href: "manage-account-admin",
+text: "Manage your account",
+active: true
+},
+{
+href: "#",
+text: "View guidence"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">English</span>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <span aria-hidden="true">Cymraeg</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   
+    <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>Change colleagues details </h1>
+
+
+    <!-- <p>Use this form to set up user research testing with matching data.</p> -->
+
+
+      <form id="delegate-details" method="post" action="manage-account-admin-auc">
+
+
+        <dl class="govuk-summary-list ">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Name</dt>
+            <dd class="govuk-summary-list__value">{{data['d_f_name_A'] | capitalize }} {{data['d_l_name_A'] | capitalize }}</dd>
+          </div>
+    
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Job title</dt>
+            <dd class="govuk-summary-list__value">
+              {{data['d_role_A']}}
+            </dd>
+          </div>
+    
+      
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Email</dt>
+            <dd class="govuk-summary-list__value" >{{data['d_email_A']}}</dd>
+          </div>
+         
+             
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Responsibility </dt>
+            <dd class="govuk-summary-list__value">
+              {% if (data['who_list_A'] == "Adding and amending bank details") %}
+
+    <p class="govuk-body">
+       Financial control
+    </p>
+
+    {% elseif (data['who_list_A'] == "Managing waste data") %}
+
+<p class="govuk-body">
+  Waste data
+</p>
+
+{% endif %}
+            </dd>
+          </div>
+      
+        </dl>
+        
+
+        {{ govukRadios({
+          idPrefix: "who_list_A",
+          name: "who_list_A",
+          fieldset: {
+          legend: {
+          text: "What responsibility do they have? ",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+          }
+          },
+          hint: {
+          text: ""
+          },
+          items: [
+          {
+            value: "Adding and amending bank details",
+            html: "Adding and amending bank details  
+            ",
+        
+            hint: {
+            text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role "
+            }
+            },
+            {
+            value: "Managing waste data",
+            html: "Managing waste data
+            ",
+        
+            hint: {
+            text: "For example, head of waste, waste manager, or waste accountant "
+             } }
+          ]
+          }) }}
+      
+
+       
+
+        <!--
+    <div class="govuk-inset-text">
+      This person will get admin permissions. Once they set up their account, they will be able to add standard users. 
+    </div>
+ -->
+
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+        </div>
+
+      </form>
+
+    </div>
+    </div>
+
+  {% endblock %}

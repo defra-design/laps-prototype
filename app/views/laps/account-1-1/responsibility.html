@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Choose up to two people to manage {{data['local_authority']}}'s EPR account – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">English</span>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <span aria-hidden="true">Cymraeg</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form id="delegate-details" method="post">
+
+    <span class="govuk-caption-l">Register for packaging waste payments </span>
+
+    <h1 class="govuk-heading-l">Choose 1 or 2 colleagues to manage {{data['local_authority']}}'s EPR payments and data</h1>
+
+    <p class="govuk-body">Invite senior colleagues to manage {{data['local_authority']}}'s account on your behalf. They will perform specific tasks in this early part of the service. </p>
+
+    <h2 class="govuk-heading-m">Banking and finance</h2>
+    <p class="govuk-body">This senior colleague, who will be able to add and amend bank details, must be either:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>an S151 Officer </li>
+  <li>a Chief Financial Officer </li>
+  <li>in another senior finance role </li>
+</ul>
+
+  
+    <h2 class="govuk-heading-m">Waste data management
+    </h2>
+    <p class="govuk-body">This senior colleague may be employed, for example as: </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>head of waste </li>
+      <li>waste manager </li>
+      <li>waste accountant </li>
+    </ul>
+
+
+   
+<!--
+
+    {{ govukRadios({
+      idPrefix: "who_list",
+      name: "who_list",
+      fieldset: {
+     
+      },
+     
+      items: [
+      {
+      value: "adding and amending bank details",
+      html: "Adding and amending bank details  
+      ",
+  
+      hint: {
+      text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role  
+   "
+      }
+      },
+      {
+      value: "managing waste data",
+      html: "Managing waste data
+      ",
+  
+      hint: {
+      text: "For example, head of waste, waste manager, or waste accountant
+   "
+       } },
+      {
+        value: "cannot",
+        html: "I’ll do this later 
+        ",
+    
+        hint: {
+        text: "You’ll be able to add colleagues using your account 
+     "
+        }
+      }
+      ]
+      }) }}
+    -->
+
+  
+    <div class="govuk-inset-text govuk-!-font-weight-bold">
+      Your colleagues will be able to add more users as the service develops. 
+    </div>
+  
+    
+    <button class="govuk-button govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-8" type="submit">Continue</button>
+</form>
+
+
+<p><a class="back-home" href="/laps/account/success-c">I cannot choose anyone right now</a></p> 
+  
+  </div>
+</div>
+
+{% endblock %}

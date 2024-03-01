@@ -1,0 +1,505 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <nav class="hmrc-language-select" aria-label="Language switcher">
+    <ul class="hmrc-language-select__list">
+      <li class="hmrc-language-select__list-item">
+        <span aria-current="true">English</span>
+      </li>
+      <li class="hmrc-language-select__list-item">
+        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+          <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+          <span aria-hidden="true">Cymraeg</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- -------------------------------------first option page------------------------------------------------------------->
+
+
+<!--Start   Showing un happy paths (uhp) when uhp option is selected on the dropdown component on the footer--> 
+<!-- analogy example if a sunny day-->
+
+{% if data.uhp == 'true' %}
+
+<!--first option uhp: Content page in case there is an error in the page-->
+<!--analogy example if windy go to the park (if sunny day)-->
+
+{% if data.uhptype == 'x1' %}
+
+<!--layout setting start-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<!--Error summary banner start-->    
+      
+              <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+                data-module="govuk-error-summary">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                  There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                  <ul class="govuk-list govuk-error-summary__list">
+                
+                    <li>
+                      <a href="#verification-code">Error message placeholder</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+<!--Error summary banner end--> 
+
+<!--Heading start-->
+           
+   <span class="govuk-caption-l">Packaging waste payments</span> 
+    <h1 class="govuk-heading-l">Check your email</h1>
+
+<!--Heading end-->
+
+<!--Parapragh extra guidance for user start-->
+
+<p class="govuk-body-l">We have sent a 6 digit security code to your email: {{data['contacts_email']}}</p>
+
+  <p class="govuk-body">Your email might take a few minutes to arrive.</p>
+  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p>
+  <p class="govuk-body">  The code will expire after 10 minutes.</p>
+  
+<!--Parapragh extra extra guidance for user end-->
+
+<!-- Details (accordeon) start-->
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If your verication code has not arrived
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Follow business rules to be confirmed.
+  </div>
+</details>
+-->
+<!-- Details (accordeon) end-->
+
+
+<!-- Error input text start-->
+
+<div class="govuk-form-group govuk-form-group--error">
+  <label class="govuk-label govuk-!-font-weight-bold" for="verification-code">
+    Verification code
+  </label>
+  <!--<div id="verification-code" class="govuk-hint">
+    It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
+  </div>-->
+
+  <p id="verification-code" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span>Error message placeholder
+  </p> 
+  <input class="govuk-input govuk-input--width-10 govuk-input--error" id="verification-code" name="verification-code" type="text" aria-describedby="verification-code-hint verification-code-error"
+  value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Request a new code
+    </a> 
+</div>
+
+<!-- Error input text end-->
+
+<!-- Button start -->
+
+<a href="./account-home-ceo.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+  </a>
+
+<!-- Button end -->
+
+
+
+</div>
+</div>
+
+<!--layout setting end-->
+
+
+
+<!-- -------------------------------------Second option page------------------------------------------------------------->
+
+
+
+<!--Second option uhp: Content page in case there is an error in the page-->
+<!--analogy example if not windy go to the beach (if sunny)-->
+
+{% elif data.uhptype == 'x2' %}
+
+<!--layout setting start-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<!--Notification banner start--> 
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      You have been sent a new code
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Your email might take a few minutes to arrive. If you do not get an email, check your spam folder. 
+    </p>
+  </div>
+</div>
+
+<!--Notification banner end-->
+
+<!--Heading start-->
+           
+       <span class="govuk-caption-l">Packaging waste payments</span> 
+    <h1 class="govuk-heading-l">Check your email</h1>
+
+<!--Heading end-->
+
+
+<!--Parapragh extra guidance for user start-->
+
+<p class="govuk-body-l">We have sent a 6 digit security code to your email: {{data['contacts_email']}}</p>
+
+  <p class="govuk-body">Your email might take a few minutes to arrive.</p>
+  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p>
+  <p class="govuk-body">  The code will expire after 10 minutes.</p>
+
+<!--Parapragh extra guidance for user end-->
+
+<!-- Details (accordeon) start-->
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If your verication code has not arrived
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Follow business rules to be confirmed.
+  </div>
+</details>
+-->
+<!-- Details (accordeon) end-->
+
+<!--Text input start-->
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="verification-code">
+    Verification code
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
+  value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Request a new code
+    </a>
+</div>
+
+<!-- Text input end -->
+
+<!-- Button start -->
+
+<a href="./account-home-ceo.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+  </a>
+
+<!-- Button end -->
+
+
+
+</div>
+</div>
+
+<!--layout setting end-->
+
+<!--end   Showing un happy paths (uhp) when uhp option is selected on the dropdown component on the footer--> 
+
+<!--start   Showing happy paths (hp) when a hp option is selected on the dropdown component on the footer, default option--> 
+<!-- analogy example if not sunny day, stay home-->
+
+<!-- -------------------------------------Second option page------------------------------------------------------------->
+
+
+
+<!--Second option uhp: Content page in case there is an error in the page-->
+<!--analogy example if not windy go to the beach (if sunny)-->
+
+{% elif data.uhptype == 'x3' %}
+
+<!--layout setting start-->
+
+<!--layout setting start-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<!--Heading start-->
+           
+<span class="govuk-caption-l">Packaging waste payments</span> 
+<h1 class="govuk-heading-l">Check your email</h1>
+
+<!--Heading end-->
+
+<!--Parapragh extra guidance for user start-->
+
+<p class="govuk-body-l">We have sent a 6 digit security code to your email: {{data['contacts_email']}}</p>
+
+  <p class="govuk-body">Your email might take a few minutes to arrive.</p>
+  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p>
+  <p class="govuk-body">  The code will expire after 10 minutes.</p>
+
+<!--Parapragh extra guidance for user end-->
+
+<!-- Details (accordeon) start-->
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If your verication code has not arrived
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Follow business rules to be confirmed.
+  </div>
+</details>
+-->
+<!-- Details (accordeon) end-->
+
+<!--Text input start-->
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="verification-code">
+    Verification code
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
+  value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Request a new code
+    </a>
+</div>
+
+<!-- Text input end -->
+
+<!-- Button start -->
+
+<a href="./multi-la.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+  </a>
+
+<!-- Button end -->
+
+
+
+
+</div>
+</div>
+
+
+<!--layout setting end-->
+
+<!--end   Showing un happy paths (uhp) when uhp option is selected on the dropdown component on the footer--> 
+{% elif data.uhptype == 'x4' %}
+
+<!--layout setting start-->
+
+<!--layout setting start-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<!--Heading start-->
+           
+<span class="govuk-caption-l">Packaging waste payments</span> 
+<h1 class="govuk-heading-l">Check your email</h1>
+
+<!--Heading end-->
+
+<!--Parapragh extra guidance for user start-->
+
+<p class="govuk-body-l">We have sent a 6 digit security code to your email: {{data['contacts_email']}}</p>
+
+  <p class="govuk-body">Your email might take a few minutes to arrive.</p>
+  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p>
+  <p class="govuk-body">  The code will expire after 10 minutes.</p>
+
+<!--Parapragh extra guidance for user end-->
+
+<!-- Details (accordeon) start-->
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If your verication code has not arrived
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Follow business rules to be confirmed.
+  </div>
+</details>
+-->
+<!-- Details (accordeon) end-->
+
+<!--Text input start-->
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="verification-code">
+    Verification code
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
+  value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Request a new code
+    </a>
+</div>
+
+<!-- Text input end -->
+
+<!-- Button start -->
+
+<a href="./create-new-password" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+  </a>
+
+<!-- Button end -->
+
+
+
+
+</div>
+</div>
+
+
+<!--layout setting end-->
+
+<!--end   Showing un happy paths (uhp) when uhp option is selected on the dropdown component on the footer--> 
+
+
+{% endif %}
+
+<!--start   Showing happy paths (hp) when a hp option is selected on the dropdown component on the footer, default option--> 
+<!-- analogy example if not sunny day, stay home-->
+
+<!-- -------------------------------------third option page (default)------------------------------------------------------------->
+
+{% else %}
+
+<!--layout setting start-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<!--Heading start-->
+           
+       <span class="govuk-caption-l">Packaging waste payments</span> 
+    <h1 class="govuk-heading-l">Check your email</h1>
+
+<!--Heading end-->
+
+<!--Parapragh extra guidance for user start-->
+
+<p class="govuk-body-l">We have sent a 6 digit security code to your email: {{data['contacts_email']}}</p>
+
+  <p class="govuk-body">Your email might take a few minutes to arrive.</p>
+  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p>
+  <p class="govuk-body">  The code will expire after 10 minutes.</p>
+
+<!--Parapragh extra guidance for user end-->
+
+<!-- Details (accordeon) start-->
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If your verication code has not arrived
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Follow business rules to be confirmed.
+  </div>
+</details>
+-->
+<!-- Details (accordeon) end-->
+
+<!--Text input start-->
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="verification-code">
+    Verification code
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
+  value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Request a new code
+    </a>
+</div>
+
+<!-- Text input end -->
+
+<!-- Button start -->
+<a href="./account-home-ceo.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+  </a>
+<!-- Button end -->
+
+
+
+
+</div>
+</div>
+
+<!--layout setting end-->
+
+<!-- end   of theShowing happy paths (hp) when a hp option is selected on the dropdown component on the footer, default option--> 
+
+{% endif %}
+
+<!-- -------------------------------------dropdown selction footer------------------------------------------------------------->
+
+<form method="post" action="#" class="for4" style=" float: left; margin-top: 50px;">
+  <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+    <option value="uhp=false" {% if data.uhp=='false' %}selected{% endif %}>Default</option>
+<!--
+    <option value="uhptype=x1&uhp=true&" {% if data.uhptype=='x1' and data.uhp=='true' %}selected{% endif
+      %}>Error</option>
+    -->
+<!--
+    <option value="uhptype=x2&uhp=true&" {% if data.uhptype=='x2' and data.uhp=='true' %}selected{% endif
+      %}>Request new code</option>
+    -->
+      <option value="uhptype=x3&uhp=true&" {% if data.uhptype=='x3' and data.uhp=='true' %}selected{% endif
+        %}>Multiple local authorities</option>
+<!--
+        <option value="uhptype=x4&uhp=true&" {% if data.uhptype=='x4' and data.uhp=='true' %}selected{% endif
+          %}>Forgotten password</option>
+
+        -->
+  </select>
+</form>
+
+
+{% endblock %}
