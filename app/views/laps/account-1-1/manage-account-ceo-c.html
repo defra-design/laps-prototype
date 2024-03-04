@@ -1,173 +1,176 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
 
 {{ govukHeader({
-  homepageUrl: "/index.html",
-  serviceName: serviceName ,
-  serviceUrl: "/index.html",
-  navigation: [
-  {
-  href: "account-home-ceo",
-  text: "Home"
-  },
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home-ceo",
+text: "Home"
+},
 
-  {
-  href: "#",
-  text: "Manage account",
-  active: true
-  },
+{
+href: "#",
+text: "Manage account",
+active: true
+},
 
-  {
-  href: "#3",
-  text: "Sign out"
-  }
-  ]
-  }) }}
-  
-  {% endblock %}
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-  <nav class="hmrc-language-select" aria-label="Language switcher">
-    <ul class="hmrc-language-select__list">
-      <li class="hmrc-language-select__list-item">
-        <span aria-current="true">English</span>
-      </li>
-      <li class="hmrc-language-select__list-item">
-        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
-          <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
-          <span aria-hidden="true">Cymraeg</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">English</span>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"
+        data-journey-click="link - click:lang-select:Cymraeg">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <span aria-hidden="true">Cymraeg</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    
+
     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">You cancelled the invitation to {{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }}.
-    </p>
-    <p class="govuk-body">They will receive an email informing them of this change.</p>
-  
-  </div>
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">You cancelled the invitation to {{data['d_f_name2'] | capitalize
+          }} {{data['d_l_name2'] | capitalize }}.
+        </p>
+        <p class="govuk-body">They will receive an email informing them of this change.</p>
+
+      </div>
 </div>
-  
-    
-{% if (data['which_la'] == "la-1") %}
-<h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">{{data['local_authority']}}</span>
-  Manage account <span class="govuk-button-group" style="float: right;">
-    {{ govukButton({
-    text: "Change authority",
-    classes: "govuk-button--secondary",
-    href: "#"
-    }) }}
-  </span>
-</h1>
-{% elif (data['which_la'] == "la-2") %}
-<h1 class="govuk-heading-l "><span
-    class="govuk-caption-l">{{data['local_authority_2']}}</span>
-  Manage account<span class="govuk-button-group" style="float: right;">
-    {{ govukButton({
-    text: "Change authority",
-    classes: "govuk-button--secondary",
-    href: "#"
-    }) }}
-  </span>
-</h1>
-{% else %}
-<h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>
-  Manage account
-</h1>
-{% endif %}
 </div>
-<div class="govuk-grid-column-two-thirds">
 
-<h2 class="govuk-heading-m">Your details</h2>
-<dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Name</dt>
-    <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] |
-      capitalize }}</dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="role-details-change-ceo">
-        Change<span class="govuk-visually-hidden">name</span>
-      </a>
-    </dd>
-  </div>
+      <div class="govuk-grid-column-full">
 
+        {% if (data['which_la'] == "la-1") %}
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">{{data['local_authority']}}</span>
+          Manage account <span class="govuk-button-group" style="float: right;">
+            {{ govukButton({
+            text: "Change authority",
+            classes: "govuk-button--secondary",
+            href: "#"
+            }) }}
+          </span>
+        </h1>
+        {% elif (data['which_la'] == "la-2") %}
+        <h1 class="govuk-heading-l "><span class="govuk-caption-l">{{data['local_authority_2']}}</span>
+          Manage account<span class="govuk-button-group" style="float: right;">
+            {{ govukButton({
+            text: "Change authority",
+            classes: "govuk-button--secondary",
+            href: "#"
+            }) }}
+          </span>
+        </h1>
+        {% else %}
+        <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+          Manage account
+        </h1>
+        {% endif %}
+      </div>
 
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Job title</dt>
-    <dd class="govuk-summary-list__value">
-      {{data['role']}}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="role-details-change-ceo-job-title.html">
-        Change<span class="govuk-visually-hidden">job title</span>
-      </a>
-    </dd>
-  </div>
+      <div class="govuk-grid-column-two-thirds">
 
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Email</dt>
-    <dd class="govuk-summary-list__value">{{data['contacts_email']}}</dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="role-details-change-ceo-email.html">
-        Change<span class="govuk-visually-hidden">email</span>
-      </a>
-    </dd>
-  </div>
-
-
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Permission </dt>
-    <dd class="govuk-summary-list__value">
-      CEO admin
-    </dd>
-  </div>
-
-</dl>
+        <h2 class="govuk-heading-m">Your details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Name</dt>
+            <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] |
+              capitalize }}</dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="role-details-change-ceo">
+                Change<span class="govuk-visually-hidden">name</span>
+              </a>
+            </dd>
+          </div>
 
 
-<dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Job title</dt>
+            <dd class="govuk-summary-list__value">
+              {{data['role']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="role-details-change-ceo-job-title.html">
+                Change<span class="govuk-visually-hidden">job title</span>
+              </a>
+            </dd>
+          </div>
 
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Password</dt>
-    <dd class="govuk-summary-list__value">
-      *****************
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="role-details-change-ceo-password.html">
-        Change<span class="govuk-visually-hidden">password</span>
-      </a>
-    </dd>
-  </div>
-</dl>
-<!--
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Email</dt>
+            <dd class="govuk-summary-list__value">{{data['contacts_email']}}</dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="role-details-change-ceo-email.html">
+                Change<span class="govuk-visually-hidden">email</span>
+              </a>
+            </dd>
+          </div>
+
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Permission </dt>
+            <dd class="govuk-summary-list__value">
+              CEO admin
+            </dd>
+          </div>
+
+        </dl>
+
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Password</dt>
+            <dd class="govuk-summary-list__value">
+              *****************
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="role-details-change-ceo-password.html">
+                Change<span class="govuk-visually-hidden">password</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        <!--
 <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
@@ -180,89 +183,94 @@
 </details>
 -->
 
-</div>
-</div>
+      </div>
+    </div>
 
-<!-- Single User view-->
+    <!-- Single User view-->
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
 
 
-<h3 class="govuk-heading-m">
-Your team</h3>
-<!--
+        <h3 class="govuk-heading-m">
+          Your team</h3>
+        <!--
 <form class="govuk-form-group govuk-!-margin-bottom-0" action="/laps/account/role-details-2-ceo">
   <button class="govuk-button" type="submit">Invite colleague</button>
 </form>
 -->
 
-<table class="govuk-table">
-  
+        <table class="govuk-table">
 
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header" width="45%">Name</th>
 
-  <!--  <th scope="col" class="govuk-table__header">Permission</th> -->
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" width="45%">Name</th>
 
-       <th scope="col" class="govuk-table__header" width="21%" >Permission </th>
-          <th scope="col" class="govuk-table__header">Status</th>
-          <th scope="col" class="govuk-table__header" width="26%">Actions<span class="govuk-visually-hidden">Change</span></th>
- <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
-    
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} <br>
-        <span class="govuk-body">{{data['d_role']}}</span>
-        <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>
- 
-    <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
-      
-          <td class="govuk-table__cell">{% if (data['who_list'] == "Banking and finance") %}
+              <!--  <th scope="col" class="govuk-table__header">Permission</th> -->
 
-            <p class="govuk-body">
-              Banking and finance
-            </p>
-  
-            {% elseif (data['who_list'] == "Waste data management") %}
-  
-            <p class="govuk-body">
-              Waste data management
-            </p>
-  
-            {% endif %}</td>
-      <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-        Invited
-      </strong></td>
-      <td class="govuk-table__cell"><li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
-        Cancel invite<span class="govuk-visually-hidden">Cancel</span>
-      </a></li>
-    <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-        Resend invite<span class="govuk-visually-hidden">Resend</span>
-      </a></li></td>    
- <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
+              <th scope="col" class="govuk-table__header" width="21%">Permission </th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header" width="26%">Actions<span
+                  class="govuk-visually-hidden">Change</span></th>
+              <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
+
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] |
+                capitalize }} <br>
+                <span class="govuk-body">{{data['d_role']}}</span>
+                <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span>
+
+                <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
+
+              <td class="govuk-table__cell">{% if (data['who_list'] == "Banking and finance") %}
+
+                <p class="govuk-body">
+                  Banking and finance
+                </p>
+
+                {% elseif (data['who_list'] == "Waste data management") %}
+
+                <p class="govuk-body">
+                  Waste data management
+                </p>
+
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--blue">
+                  Invited
+                </strong></td>
+              <td class="govuk-table__cell">
+                <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
+                    Cancel invite<span class="govuk-visually-hidden">Cancel</span>
+                  </a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                    Resend invite<span class="govuk-visually-hidden">Resend</span>
+                  </a></li>
+              </td>
+              <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
       </a> </td>-->
 
-    </tr>
+            </tr>
 
 
 
- 
-  </tbody>
-</table>
+
+          </tbody>
+        </table>
 
 
-<p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-  
-  
-
-
-  </div>
-</div>
+        <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
 
 
 
-{% endblock %}
+
+      </div>
+    </div>
+
+
+
+    {% endblock %}
