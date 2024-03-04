@@ -194,19 +194,21 @@
      
         <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
           
-              <td class="govuk-table__cell"> {% if (data['who_list'] == "Adding and amending bank details") %}
+        <td class="govuk-table__cell">
 
-                <p class="govuk-body">
-                   Financial control
-                </p>
-            
-                {% elseif (data['who_list'] == "Managing waste data") %}
-            
-            <p class="govuk-body">
-              Waste data
+          {% if (data['who_list'] == "Banking and finance") %}
+
+          <p class="govuk-body">
+            Banking and finance
           </p>
-            
-            {% endif %}</td>
+
+          {% elseif (data['who_list'] == "Waste data management") %}
+
+          <p class="govuk-body">
+            Waste data management
+          </p>
+
+          {% endif %}</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
@@ -229,19 +231,19 @@
         
         <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
           
-        <td class="govuk-table__cell"> {% if (data['who_list_2'] == "Adding and amending bank details") %}
+        <td class="govuk-table__cell"> {% if (data['who_list_2'] == "Banking and finance") %}
 
           <p class="govuk-body">
-             Financial control
+            Banking and finance
           </p>
-      
-          {% elseif (data['who_list_2'] == "Managing waste data") %}
-      
-      <p class="govuk-body">
-        Waste data
-    </p>
-      
-      {% endif %}</td>
+
+          {% elseif (data['who_list_2'] == "Waste data management") %}
+
+          <p class="govuk-body">
+            Waste data management
+          </p>
+
+          {% endif %}</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>

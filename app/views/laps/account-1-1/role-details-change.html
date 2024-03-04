@@ -15,19 +15,13 @@ navigation: [
 href: "account-home-ceo",
 text: "Home"
 },
+
 {
 href: "#",
-text: "Payments"
-},
-{
-href: "#",
-text: "Manage your account",
+text: "Manage account",
 active: true
 },
-{
-href: "#",
-text: "View guidence"
-},
+
 {
 href: "confirm-signout",
 text: "Sign out"
@@ -61,7 +55,161 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 {% block content %}
 
 
+<!-- -------------------------------------first option page------------------------------------------------------------->
 
+
+
+{% if data['errorthispage'] == "true" %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+     <!-- ERROR LOGIC  error summary -->
+     {% if data['errorthispage'] == "true" %}
+     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+         data-module="govuk-error-summary">
+         <h2 class="govuk-error-summary__title" id="error-summary-title">
+             There is a problem
+         </h2>
+         <div class="govuk-error-summary__body">
+             <ul class="govuk-list govuk-error-summary__list">
+
+               
+           
+               <li>
+                 <a href="#d_f_name">Error message placeholder
+                     </p></a>
+             </li>
+
+             
+             <li>
+               <a href="#d_l_name">Error message placeholder
+                   </p></a>
+           </li>
+
+
+             </ul>
+         </div>
+     </div>
+     {% endif %}
+      <!-- END OF ERROR LOGIC -->
+   
+  
+
+         
+          <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>Change colleagues details </h1>
+      
+      
+          <!-- <p>Use this form to set up user research testing with matching data.</p> -->
+      
+      
+            <form id="delegate-details" method="post" action="manage-account-ceo-s2">
+             
+              <dl class="govuk-summary-list ">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Name</dt>
+                  <dd class="govuk-summary-list__value">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }}</dd>
+                </div>
+          
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Job title</dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['d_role']}}
+                  </dd>
+                </div>
+          
+            
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Email</dt>
+                  <dd class="govuk-summary-list__value" >{{data['d_email']}}</dd>
+                </div>
+               
+                   
+        
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Responsibility </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if (data['who_list'] == "Banking and finance") %}
+      
+                    <p class="govuk-body">
+                      Banking and finance
+                    </p>
+        
+                    {% elseif (data['who_list'] == "Waste data management") %}
+        
+                    <p class="govuk-body">
+                      Waste data management
+                    </p>
+        
+                    {% endif %}
+      
+      
+                  </dd>
+                </div>
+            
+              </dl>
+              
+      
+        
+      {{ govukRadios({
+        idPrefix: "who_list",
+        name: "who_list",
+        fieldset: {
+        legend: {
+        text: "What responsibility do they have? ",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+        }
+        },
+        hint: {
+        text: ""
+        },
+        items: [
+        { 
+          value: "Banking and finance",
+        html: "Banking and finance  
+        ",
+    
+        hint: {
+        text: "This senior colleague, who will be able to add and amend bank details, must be either an S151 Officer, Chief Financial Officer or in another senior finance role"
+        }
+        },
+        {
+       
+        value: "Waste data management",
+        html: "Waste data management
+        ",
+    
+        hint: {
+        text: "For example head of waste, waste manager, or waste accountant "
+         } }
+        ],
+       
+        errorMessage: {
+          text: "Error message placeholder "
+        }
+        }) }}
+      
+      
+              <!--
+          <div class="govuk-inset-text">
+            This person will get admin permissions. Once they set up their account, they will be able to add standard users. 
+          </div>
+       -->
+      
+              <div class="govuk-button-group">
+                <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+              </div>
+      
+            </form>
+      
+          </div>
+          </div>
+
+<!-- ------------------------------------- (default)------------------------------------------------------------->
+
+{% else %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -99,19 +247,21 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Responsibility </dt>
             <dd class="govuk-summary-list__value">
-              {% if (data['who_list'] == "Adding and amending bank details") %}
+              {% if (data['who_list'] == "Banking and finance") %}
 
-    <p class="govuk-body">
-       Financial control
-    </p>
+              <p class="govuk-body">
+                Banking and finance
+              </p>
+  
+              {% elseif (data['who_list'] == "Waste data management") %}
+  
+              <p class="govuk-body">
+                Waste data management
+              </p>
+  
+              {% endif %}
 
-    {% elseif (data['who_list'] == "Managing waste data") %}
 
-<p class="govuk-body">
-  Waste data
-</p>
-
-{% endif %}
             </dd>
           </div>
       
@@ -133,21 +283,20 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           },
           items: [
           {
-            value: "Adding and amending bank details",
-            html: "Adding and amending bank details  
-            ",
+            value: "Banking and finance",
+            html: "Banking and finance",
         
             hint: {
-            text: "They must be employed as an S151 Officer, Chief Financial Officer, or in another senior finance role "
+            text: "This senior colleague, who will be able to add and amend bank details, must be either an S151 Officer, Chief Financial Officer or in another senior finance role"
             }
             },
             {
-            value: "Managing waste data",
-            html: "Managing waste data
+            value: "Waste data management",
+            html: "Waste data management
             ",
         
             hint: {
-            text: "For example, head of waste, waste manager, or waste accountant "
+            text: "For example head of waste, waste manager, or waste accountant "
              } }
           ]
           }) }}
@@ -169,4 +318,53 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </div>
     </div>
 
-  {% endblock %}
+
+{% endif %}
+
+
+
+<!-- -------------------------------------dropdown selction footer------------------------------------------------------------->
+
+<!-- ERROR LOGIC  drop down to toggle states  -->
+<!-- Best thing to do would be to replace 'errorthispage', 'errortypeone' and 'errortypetwo' with novel name for this page  -->
+<form method="post" action="#" class="for4" style=" float: left; position: relative; bottom:-80px;  ">
+
+  <select style="height:30px;" onchange="window.location.href='?'+this.value">
+
+    <option value="errorthispage=false&errortypeone=false&errortypetwo=false&" {% if (data['errorthispage'] !="true" )
+      %}selected{% endif %}>Errors - Off</option>
+
+    <option value="errorthispage=true&errortypeone=true&errortypetwo=false&" {% if (data['errortypeone']=='true' and
+      data['errortypetwo'] !='true' ) %}selected{% endif %}>Error - On</option>
+
+ 
+
+  </select>
+
+</form>
+<!--  END OF ERROR LOGIC -->
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,19 +15,13 @@
   href: "account-home-ceo",
   text: "Home"
   },
-  {
-    href: "#",
-    text: "Payments"
-    },
+
   {
   href: "#",
-  text: "Manage your account",
+  text: "Manage account",
   active: true
   },
-  {
-    href: "#",
-    text: "View guidence"
-    },
+
   {
   href: "#3",
   text: "Sign out"
@@ -63,14 +57,42 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l"> {{data['local_authority']}}</span>
-    <h1 class="govuk-heading-l">Manage account</h1>
+    {% if (data['which_la'] == "la-1") %}
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">{{data['local_authority']}}</span>
+      Manage account <span class="govuk-button-group" style="float: right;">
+        {{ govukButton({
+        text: "Change authority",
+        classes: "govuk-button--secondary",
+        href: "#"
+        }) }}
+      </span>
+    </h1>
+    {% elif (data['which_la'] == "la-2") %}
+    <h1 class="govuk-heading-l "><span
+        class="govuk-caption-l">{{data['local_authority_2']}}</span>
+      Manage account<span class="govuk-button-group" style="float: right;">
+        {{ govukButton({
+        text: "Change authority",
+        classes: "govuk-button--secondary",
+        href: "#"
+        }) }}
+      </span>
+    </h1>
+    {% else %}
+    <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+      Manage account
+    </h1>
+    {% endif %}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-m">Your details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Name</dt>
-        <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</dd>
+        <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] |
+          capitalize }}</dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="role-details-change-ceo">
             Change<span class="govuk-visually-hidden">name</span>
@@ -78,29 +100,29 @@
         </dd>
       </div>
 
-      
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Job title</dt>
         <dd class="govuk-summary-list__value">
           {{data['role']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="role-details-change-ceo">
+          <a class="govuk-link" href="role-details-change-ceo-job-title.html">
             Change<span class="govuk-visually-hidden">job title</span>
           </a>
         </dd>
       </div>
-  
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Email</dt>
-        <dd class="govuk-summary-list__value" >{{data['contacts_email']}}</dd>
+        <dd class="govuk-summary-list__value">{{data['contacts_email']}}</dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="role-details-change-ceo">
+          <a class="govuk-link" href="role-details-change-ceo-email.html">
             Change<span class="govuk-visually-hidden">email</span>
           </a>
         </dd>
       </div>
-     
+
 
 
       <div class="govuk-summary-list__row">
@@ -109,25 +131,25 @@
           CEO admin
         </dd>
       </div>
-  
+
     </dl>
 
 
     <dl class="govuk-summary-list">
-    
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Password</dt>
         <dd class="govuk-summary-list__value">
           *****************
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="role-details-change-ceo-password.html">
             Change<span class="govuk-visually-hidden">password</span>
           </a>
         </dd>
       </div>
     </dl>
-
+    <!--
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -138,9 +160,10 @@
         Text to be provided based on business rules.
       </div>
     </details>
+-->
+
   </div>
 </div>
-
 
 
 
@@ -176,19 +199,21 @@
      
         <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
           
-              <td class="govuk-table__cell">{% if (data['who_list'] == "Adding and amending bank details") %}
+        <td class="govuk-table__cell">
 
-                <p class="govuk-body">
-                   Financial control
-                </p>
-            
-                {% elseif (data['who_list'] == "Managing waste data") %}
-            
-            <p class="govuk-body">
-              Waste data
+          {% if (data['who_list'] == "Banking and finance") %}
+
+          <p class="govuk-body">
+            Banking and finance
           </p>
-            
-            {% endif %}</td>
+
+          {% elseif (data['who_list'] == "Waste data management") %}
+
+          <p class="govuk-body">
+            Waste data management
+          </p>
+
+          {% endif %}</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--green">
             Active
           </strong></td>
@@ -212,19 +237,19 @@
         
         <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
           
-        <td class="govuk-table__cell">{% if (data['who_list_2'] == "Adding and amending bank details") %}
+        <td class="govuk-table__cell"> {% if (data['who_list_2'] == "Banking and finance") %}
 
           <p class="govuk-body">
-             Financial control
+            Banking and finance
           </p>
-      
-          {% elseif (data['who_list_2'] == "Managing waste data") %}
-      
-      <p class="govuk-body">
-        Waste data
-    </p>
-      
-      {% endif %}</td>
+
+          {% elseif (data['who_list_2'] == "Waste data management") %}
+
+          <p class="govuk-body">
+            Waste data management
+          </p>
+
+          {% endif %}</td>
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
@@ -245,11 +270,11 @@
      
       </tbody>
     </table>
-
+<!--
     <p class="govuk-body govuk-!-margin-top-9 govuk-!-margin-bottom-6">
       <a href="/laps/account-1-1/manage-account-ceo-a" class="govuk-link">((Demo page with Invited colleagues shown))</a>
     </p>
-
+  -->
 
 
   </div>

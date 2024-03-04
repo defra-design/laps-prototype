@@ -15,19 +15,13 @@ navigation: [
 href: "account-home-ceo",
 text: "Home"
 },
-{
-href: "#",
-text: "Payments"
-},
+
 {
 href: "manage-account-admin",
-text: "Manage your account",
+text: "Manage account",
 active: true
 },
-{
-href: "#",
-text: "View guidence"
-},
+
 {
 href: "#3",
 text: "Sign out"
@@ -65,7 +59,140 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 {% block content %}
 
 
+<!-- -------------------------------------first option page------------------------------------------------------------->
 
+
+
+{% if data['errorthispage'] == "true" %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+     <!-- ERROR LOGIC  error summary -->
+     {% if data['errorthispage'] == "true" %}
+     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+         data-module="govuk-error-summary">
+         <h2 class="govuk-error-summary__title" id="error-summary-title">
+             There is a problem
+         </h2>
+         <div class="govuk-error-summary__body">
+             <ul class="govuk-list govuk-error-summary__list">
+
+               
+           
+               <li>
+                 <a href="#d_f_name">Error message placeholder
+                     </p></a>
+             </li>
+
+             
+             <li>
+               <a href="#d_l_name">Error message placeholder
+                   </p></a>
+           </li>
+
+
+             </ul>
+         </div>
+     </div>
+     {% endif %}
+      <!-- END OF ERROR LOGIC -->
+   
+  
+      
+     
+      
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+        
+            {% if (data['which_la'] == "la-1") %}
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+              <span class="govuk-caption-l">{{data['local_authority']}}</span>  
+              Change your job title  
+            </h1>
+            {% elif (data['which_la'] == "la-2") %}
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority_2']}}</span>
+              Change your job title  
+            </h1>
+            {% else %}
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+              Change your job title  
+            </h1>
+            {% endif %}
+            <!-- <p>Use this form to set up user research testing with matching data.</p> -->
+        
+        
+              <form id="contact-details" method="post" action="manage-account-ceo-up">
+        
+                <div class="govuk-form-group govuk-form-group--error">
+                  <label for="contacts_email">
+                    <span class="govuk-label">Job title</span>
+                  </label>
+                  <p id="event-name-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span>Error message placeholder
+                  </p>
+                  <input class="govuk-input govuk-input--width-30 " name="role" id="role" type="text"
+                    value="{{data['role']}}" data-error="Enter a role" value="{{data['role']}}">
+                </div>
+        
+        <!--
+                {{ govukRadios({
+                idPrefix: "who_list",
+                name: "who_list",
+                fieldset: {
+                legend: {
+                text: "What permissions do you need? ",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+                },
+                hint: {
+                text: ""
+                },
+                items: [
+                {
+                value: "finance admin",
+                html: "Finance admin",
+        
+        
+                hint: {
+                text: "Managing finance relating to
+                waste"
+                }
+                },
+                {
+                value: "waste admin",
+                html: "Waste admin
+                ",
+        
+                hint: {
+                text: "Managing waste data submissions"
+                }
+                }
+                ]
+                }) }}
+              -->
+        
+                <!--
+            <div class="govuk-inset-text">
+              This person will get admin permissions. Once they set up their account, they will be able to add standard users. 
+            </div>
+         -->
+        
+                <div class="govuk-button-group">
+                  <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+                </div>
+        
+              </form>
+        
+            </div>
+            </div>
+
+<!-- ------------------------------------- (default)------------------------------------------------------------->
+
+{% else %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -150,4 +277,45 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </div>
     </div>
 
-  {% endblock %}
+
+{% endif %}
+
+
+
+<!-- -------------------------------------dropdown selction footer------------------------------------------------------------->
+
+<!-- ERROR LOGIC  drop down to toggle states  -->
+<!-- Best thing to do would be to replace 'errorthispage', 'errortypeone' and 'errortypetwo' with novel name for this page  -->
+<form method="post" action="#" class="for4" style=" float: left; position: relative; bottom:-80px;  ">
+
+  <select style="height:30px;" onchange="window.location.href='?'+this.value">
+
+    <option value="errorthispage=false&errortypeone=false&errortypetwo=false&" {% if (data['errorthispage'] !="true" )
+      %}selected{% endif %}>Errors - Off</option>
+
+    <option value="errorthispage=true&errortypeone=true&errortypetwo=false&" {% if (data['errortypeone']=='true' and
+      data['errortypetwo'] !='true' ) %}selected{% endif %}>Error - On</option>
+
+ 
+
+  </select>
+
+</form>
+<!--  END OF ERROR LOGIC -->
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
