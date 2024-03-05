@@ -227,7 +227,21 @@ data-module="govuk-notification-banner">
  
     <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
       
-          <td class="govuk-table__cell"> {{data['who_list_A'] | capitalize }}</td>
+          <td class="govuk-table__cell">      
+            {% if (data['who_list_A'] == "Banking and finance") %}
+  
+            <p class="govuk-body">
+              Banking and finance
+            </p>
+  
+            {% elseif (data['who_list_A'] == "Waste data management") %}
+  
+            <p class="govuk-body">
+              Waste data management
+            </p>
+  
+            {% endif %}</td>
+
       <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
         Invited
       </strong></td>
