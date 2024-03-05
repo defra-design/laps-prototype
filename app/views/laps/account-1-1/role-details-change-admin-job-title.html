@@ -66,7 +66,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   <div class="govuk-grid-column-two-thirds">
 
    
-    <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>Change your name </h1>
+    <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>Change your details </h1>
 
 
     <!-- <p>Use this form to set up user research testing with matching data.</p> -->
@@ -91,6 +91,22 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         </div>
 
 
+        <div class="govuk-form-group">
+          <label for="contacts_email">
+            <span class="govuk-label">Email address</span>
+          </label>
+          <div id="authentication-code-hint" class="govuk-hint">
+          </div>
+          <input class="govuk-input govuk-input--width-30 "  name="d_email" id="d_email" type="text"
+            value="{{data['d_email']}}" data-error="Enter an email address" value="{{data['d_email']}}">
+        </div>
+        <div class="govuk-form-group">
+          <label for="contacts_email">
+            <span class="govuk-label">Job title</span>
+          </label>
+          <input class="govuk-input govuk-input--width-30 " name="d_role" id="d_role" type="text"
+            value="{{data['d_role']}}" data-error="Enter a role" value="{{data['d_role']}}">
+        </div>
 
 <!--
            {{ govukRadios({

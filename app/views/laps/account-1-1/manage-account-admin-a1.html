@@ -17,10 +17,10 @@ navigation: [
   },
 
   {
-  href: "#",
-  text: "Manage account",
-  active: true
-  },
+    href: "manage-account-admin",
+    text: "Manage account",
+    active: true
+    },
 
   {
   href: "#3",
@@ -79,81 +79,82 @@ data-module="govuk-notification-banner">
     <h1 class="govuk-heading-l">Manage account</h1>
 
     <h2 class="govuk-heading-m">Your details</h2>
-    
+
     <dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
     
     
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Name</dt>
+          <dd class="govuk-summary-list__value">
+            {{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="role-details-change-admin">
+              Change<span class="govuk-visually-hidden">name</span>
+            </a>
+          </dd>
+        </div>
+ 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Job title</dt>
+          <dd class="govuk-summary-list__value">
+            {{data['d_role']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="role-details-change-admin-job-title.html">
+              Change<span class="govuk-visually-hidden">role</span>
+            </a>
+          </dd>
+        </div>
+ 
+  
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Name</dt>
-        <dd class="govuk-summary-list__value">
-          {{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} 
-        </dd>
+        <dt class="govuk-summary-list__key">Email</dt>
+        <dd class="govuk-summary-list__value" >{{data['d_email']}} </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden">name</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Job title</dt>
-        <dd class="govuk-summary-list__value">
-          {{data['d_role']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="role-details-change-admin-email">
             Change<span class="govuk-visually-hidden">role</span>
           </a>
         </dd>
+      
       </div>
+     
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Permission </dt>
+        <dd class="govuk-summary-list__value">
+          {% if (data['who_list'] == "Banking and finance") %}
 
+          <p class="govuk-body">
+            Banking and finance
+          </p>
 
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Email</dt>
-      <dd class="govuk-summary-list__value" >{{data['d_email']}} </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
-          Change<span class="govuk-visually-hidden">role</span>
-        </a>
-      </dd>
-    </div>
-   
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Permission </dt>
-      <dd class="govuk-summary-list__value">
-        {% if (data['who_list'] == "Adding and amending bank details") %}
+          {% elseif (data['who_list'] == "Waste data management") %}
 
-            <p class="govuk-body">
-               Financial control
-            </p>
+          <p class="govuk-body">
+            Waste data management
+          </p>
+
+          {% endif %}
+        </dd>
         
-            {% elseif (data['who_list'] == "Managing waste data") %}
-        
-        <p class="govuk-body">
-          Waste data
-      </p>
-        
-        {% endif %}
-      </dd>
-  
-    </div>
-  </dl>
+      </div>
+    </dl>
 
 
-  <dl class="govuk-summary-list">
-  
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Password</dt>
-      <dd class="govuk-summary-list__value">
-        *****************
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
-          Change<span class="govuk-visually-hidden">password</span>
-        </a>
-      </dd>
-    </div>
-  </dl>
+    <dl class="govuk-summary-list">
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Password</dt>
+        <dd class="govuk-summary-list__value">
+          *****************
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="role-details-change-admin-password.html">
+            Change<span class="govuk-visually-hidden">password</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
   <!--
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
@@ -216,38 +217,6 @@ data-module="govuk-notification-banner">
 
     </tr>
 
-    <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
-      <span class="govuk-body">{{data['d_role2']}}</span>
-      <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
-  
-  <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
-    
-  <td class="govuk-table__cell">{% if (data['who_list_2'] == "Adding and amending bank details") %}
-
-    <p class="govuk-body">
-       Financial control
-    </p>
-
-    {% elseif (data['who_list_2'] == "Managing waste data") %}
-
-<p class="govuk-body">
-  Waste data
-</p>
-
-{% endif %}</td>
-    <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-      Invited
-    </strong></td>
-    <td class="govuk-table__cell">   <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
-      Cancel invite<span class="govuk-visually-hidden">Cancel</span>
-    </a></li>
-  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-      Resend invite<span class="govuk-visually-hidden">Resend</span>
-    </a></li> </td>
- <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
-    </a> </td> -->
-  </tr>
 
 
 
@@ -278,7 +247,7 @@ data-module="govuk-notification-banner">
 
 
 <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-6">
-  <a href="/laps/account/manage-account-admin-au" class="govuk-link">((Demo page with Active colleague shown))</a>
+  <a href="/laps/account-1-1/manage-account-admin-au" class="govuk-link">((Demo page with Active colleague shown))</a>
 </p>
   </div>
 </div>

@@ -1,62 +1,56 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
 
 {{ govukHeader({
-  homepageUrl: "/private-beta-1-1.html",
-  serviceName: serviceName ,
-  serviceUrl: "/private-beta-1-1",
+homepageUrl: "/private-beta-1-1.html",
+serviceName: serviceName ,
+serviceUrl: "/private-beta-1-1",
 navigation: [
-  {
-  href: "account-home-admin",
-  text: "Home"
-  },
-  {
-    href: "#",
-    text: "Payments"
-    },
-  {
-  href: "manage-account-admin",
-  text: "Manage your account",
-  active: true
-  },
-  {
-    href: "#",
-    text: "View guidence"
-    },
-  {
-  href: "#3",
-  text: "Sign out"
-  }
-  ]
-  }) }}
-  
-  {% endblock %}
+{
+href: "account-home-admin",
+text: "Home"
+},
+
+{
+href: "manage-account-admin",
+text: "Manage account",
+active: true
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-  <nav class="hmrc-language-select" aria-label="Language switcher">
-    <ul class="hmrc-language-select__list">
-      <li class="hmrc-language-select__list-item">
-        <span aria-current="true">English</span>
-      </li>
-      <li class="hmrc-language-select__list-item">
-        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
-          <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
-          <span aria-hidden="true">Cymraeg</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">English</span>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"
+        data-journey-click="link - click:lang-select:Cymraeg">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <span aria-hidden="true">Cymraeg</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -67,28 +61,54 @@ navigation: [
   <div class="govuk-grid-column-two-thirds">
 
     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-aria-labelledby="govuk-notification-banner-title"
-data-module="govuk-notification-banner">
-<div class="govuk-notification-banner__header">
-  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-    Success
-  </h2>
-</div>
-<div class="govuk-notification-banner__content">
-  <p class="govuk-notification-banner__heading">You updated your details.
-  </p>
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">Your details have been updated 
+        </p>
+        <p class="govuk-body">We’ll send you a confirmation email of this change.
+        </p>
+      </div>
+    </div>
+    </div>
+
+    <div class="govuk-grid-column-full">
 
 
-</div>
-</div>
-    <span class="govuk-caption-l"> {{data['local_authority']}}</span>
-    <h1 class="govuk-heading-l">Manage account</h1>
-
-    <h2 class="govuk-heading-m">Your details</h2>
-
-
-
-
+      {% if (data['which_la'] == "la-1") %}
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">{{data['local_authority']}}</span>
+        Manage account <span class="govuk-button-group" style="float: right;">
+          {{ govukButton({
+          text: "Change authority",
+          classes: "govuk-button--secondary",
+          href: "#"
+          }) }}
+        </span>
+      </h1>
+      {% elif (data['which_la'] == "la-2") %}
+      <h1 class="govuk-heading-l "><span class="govuk-caption-l">{{data['local_authority_2']}}</span>
+        Manage account<span class="govuk-button-group" style="float: right;">
+          {{ govukButton({
+          text: "Change authority",
+          classes: "govuk-button--secondary",
+          href: "#"
+          }) }}
+        </span>
+      </h1>
+      {% else %}
+      <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+        Manage account
+      </h1>
+      {% endif %}
+    </div>
+ 
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Your details</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
     
@@ -108,10 +128,10 @@ data-module="govuk-notification-banner">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Job title</dt>
           <dd class="govuk-summary-list__value">
-            {{data['d_role'] }}
+            {{data['d_role']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="role-details-change-admin">
+            <a class="govuk-link" href="role-details-change-admin-job-title.html">
               Change<span class="govuk-visually-hidden">role</span>
             </a>
           </dd>
@@ -122,34 +142,31 @@ data-module="govuk-notification-banner">
         <dt class="govuk-summary-list__key">Email</dt>
         <dd class="govuk-summary-list__value" >{{data['d_email']}} </dd>
         <dd class="govuk-summary-list__actions">
-             <a class="govuk-link" href="role-details-change-admin">
-               Change<span class="govuk-visually-hidden">role</span>
-             </a> 
-           </dd>
+          <a class="govuk-link" href="role-details-change-admin-email">
+            Change<span class="govuk-visually-hidden">role</span>
+          </a>
+        </dd>
+      
       </div>
      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Permission </dt>
         <dd class="govuk-summary-list__value">
-          {% if (data['who_list'] == "Adding and amending bank details") %}
+          {% if (data['who_list'] == "Banking and finance") %}
 
-            <p class="govuk-body">
-               Financial control
-            </p>
-        
-            {% elseif (data['who_list'] == "Managing waste data") %}
-        
-        <p class="govuk-body">
-          Waste data
-      </p>
-        
-        {% endif %}
+          <p class="govuk-body">
+            Banking and finance
+          </p>
+
+          {% elseif (data['who_list'] == "Waste data management") %}
+
+          <p class="govuk-body">
+            Waste data management
+          </p>
+
+          {% endif %}
         </dd>
-        <dd class="govuk-summary-list__actions">
-       <!--   <a class="govuk-link" href="role-details-change-admin">
-            Change<span class="govuk-visually-hidden">role</span>
-          </a> -->
-        </dd>
+        
       </div>
     </dl>
 
@@ -162,99 +179,80 @@ data-module="govuk-notification-banner">
           *****************
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="role-details-change-admin-password.html">
             Change<span class="govuk-visually-hidden">password</span>
           </a>
         </dd>
       </div>
     </dl>
-
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          My details are incorrect
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        Text to be provided based on business rules.
-      </div>
-    </details>
-  </div>
-</div>
-
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-m">EPR team </h2>
-
-    
-    <table class="govuk-table">
-
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header" width="45%">Name</th>
-
-      <!--  <th scope="col" class="govuk-table__header">Permission</th> -->
-
-      <th scope="col" class="govuk-table__header" width="21%" >Permission </th>
-      <th scope="col" class="govuk-table__header">Status</th>
-      <th scope="col" class="govuk-table__header" width="26%">Actions<span class="govuk-visually-hidden">Change</span></th>
-     <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
-        
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-
-
-
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
-            <span class="govuk-body">{{data['d_role2']}}</span>
-            <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
-        
-        <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
-          
-        <td class="govuk-table__cell">{% if (data['who_list_2'] == "Adding and amending bank details") %}
-
-          <p class="govuk-body">
-             Financial control
-          </p>
-      
-          {% elseif (data['who_list_2'] == "Managing waste data") %}
-      
-      <p class="govuk-body">
-        Waste data
-    </p>
-      
-      {% endif %}</td>
-          <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-            Invited
-          </strong></td>
-          <td class="govuk-table__cell">   <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
-            Cancel invite<span class="govuk-visually-hidden">Cancel</span>
-          </a></li>
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-            Resend invite<span class="govuk-visually-hidden">Resend</span>
-          </a></li> </td>
-       <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
-          </a> </td> -->
-        </tr>
-     
-      </tbody>
-    </table>
-
-    <div class="govuk-inset-text govuk-!-font-weight-bold">
-      These people will have admin accounts. They’ll only be able to add other admin level users during private beta testing.
+<!--
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            My details are incorrect
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Text to be provided based on business rules.
+        </div>
+      </details> 
+    -->
     </div>
-    
- 
-
-    <form class="govuk-form-group" method="post" action="role-details-admin">
-      <button class="govuk-button" type="submit">Invite colleague </button>
-  </form>
-    
-
   </div>
-</div>
 
-{% endblock %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m">Team members</h2>
+  
+      <form class="govuk-form-group govuk-!-margin-bottom-0" method="post" action="role-details-admin">
+        <button class="govuk-button" type="submit">Invite colleague </button>
+    </form>
+      
+      
+      <table class="govuk-table">
+     
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" width="45%">Name</th>
+  
+        <!--  <th scope="col" class="govuk-table__header">Permission</th> -->
+  
+        <th scope="col" class="govuk-table__header" width="21%" >Permission </th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header" width="26%">Actions<span class="govuk-visually-hidden">Change</span></th>
+       <!--     <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove</span></th> -->
+          
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+  
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}<br>
+              <span class="govuk-body">CEO</span>
+              <span class="govuk-caption-m govuk-!-font-size-16">{{data['contacts_email']}} </span>
+       
+          <!--      <td class="govuk-table__cell">{{data['who_list'] | capitalize }}</td> -->
+            
+                <td class="govuk-table__cell">CEO Admin</td>
+            <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--green">
+              Active
+            </strong></td>
+            <td class="govuk-table__cell">
+           </td>    
+       <!--     <td class="govuk-table__cell"><a class="govuk-link" href="/laps/account/remove">Remove<span class="govuk-visually-hidden">Remove</span>
+            </a> </td>-->
+      
+          </tr>
+  
+        </tbody>
+      </table>
+  
+  
+  
+  
+  
+    </div>
+  </div>
+  
+  {% endblock %}

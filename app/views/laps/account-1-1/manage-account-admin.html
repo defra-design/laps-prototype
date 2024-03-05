@@ -114,7 +114,7 @@ navigation: [
             {{data['d_role']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="role-details-change-admin">
+            <a class="govuk-link" href="role-details-change-admin-job-title.html">
               Change<span class="govuk-visually-hidden">role</span>
             </a>
           </dd>
@@ -124,30 +124,32 @@ navigation: [
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Email</dt>
         <dd class="govuk-summary-list__value" >{{data['d_email']}} </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="role-details-change-admin-email">
+            Change<span class="govuk-visually-hidden">role</span>
+          </a>
+        </dd>
+      
       </div>
      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Permission </dt>
         <dd class="govuk-summary-list__value">
-          {% if (data['who_list'] == "Adding and amending bank details") %}
+          {% if (data['who_list'] == "Banking and finance") %}
 
-            <p class="govuk-body">
-               Financial control
-            </p>
-        
-            {% elseif (data['who_list'] == "Managing waste data") %}
-        
-        <p class="govuk-body">
-          Waste data
-      </p>
-        
-        {% endif %}
+          <p class="govuk-body">
+            Banking and finance
+          </p>
+
+          {% elseif (data['who_list'] == "Waste data management") %}
+
+          <p class="govuk-body">
+            Waste data management
+          </p>
+
+          {% endif %}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="role-details-change-admin">
-            Change<span class="govuk-visually-hidden">role</span>
-          </a>
-        </dd>
+        
       </div>
     </dl>
 
@@ -160,7 +162,7 @@ navigation: [
           *****************
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="role-details-change-admin-password.html">
             Change<span class="govuk-visually-hidden">password</span>
           </a>
         </dd>
