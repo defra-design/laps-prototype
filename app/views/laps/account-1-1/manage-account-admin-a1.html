@@ -7,27 +7,21 @@
 {% block header %}
 
 {{ govukHeader({
-  homepageUrl: "/index.html",
+  homepageUrl: "/private-beta-1-1.html",
   serviceName: serviceName ,
-  serviceUrl: "/index.html",
-  navigation: [
+  serviceUrl: "/private-beta-1-1",
+navigation: [
   {
   href: "account-home-admin",
   text: "Home"
   },
-  {
-    href: "#",
-    text: "Payments"
-    },
+
   {
   href: "#",
-  text: "Manage your account",
+  text: "Manage account",
   active: true
   },
-  {
-    href: "#",
-    text: "View guidence"
-    },
+
   {
   href: "#3",
   text: "Sign out"
@@ -75,7 +69,7 @@ data-module="govuk-notification-banner">
   </h2>
 </div>
 <div class="govuk-notification-banner__content">
-  <p class="govuk-notification-banner__heading">You invited {{data['d_f_name_A'] | capitalize }} {{data['d_l_name_A'] | capitalize }} to your EPR team .
+  <p class="govuk-notification-banner__heading">You invited {{data['d_f_name_A'] | capitalize }} {{data['d_l_name_A'] | capitalize }} to your EPR team.
   </p>
   <p class="govuk-body">They will receive an email asking them to create their account.</p>
 
@@ -160,6 +154,7 @@ data-module="govuk-notification-banner">
       </dd>
     </div>
   </dl>
+  <!--
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -170,6 +165,7 @@ data-module="govuk-notification-banner">
         Text to be provided based on business rules.
       </div>
     </details>
+  -->
   </div>
 </div>
 
@@ -180,7 +176,7 @@ data-module="govuk-notification-banner">
 
 
 <h3 class="govuk-heading-m">
-  Your team </h3>
+  Team members </h3>
   <form class="govuk-form-group govuk-!-margin-bottom-0" method="post" action="#">
     <button class="govuk-button" type="submit">Invite colleague</button>
 </form>

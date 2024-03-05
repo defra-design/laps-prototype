@@ -7,27 +7,21 @@
 {% block header %}
 
 {{ govukHeader({
-  homepageUrl: "/index.html",
+  homepageUrl: "/private-beta-1-1.html",
   serviceName: serviceName ,
-  serviceUrl: "/index.html",
-  navigation: [
+  serviceUrl: "/private-beta-1-1",
+navigation: [
   {
   href: "account-home-ceo",
   text: "Home"
   },
-  {
-    href: "#",
-    text: "Payments"
-    },
+
   {
   href: "#",
-  text: "Manage your account",
+  text: "Manage account",
   active: true
   },
-  {
-    href: "#",
-    text: "View guidence"
-    },
+
   {
   href: "#3",
   text: "Sign out"
@@ -79,73 +73,102 @@
   
   </div>
 </div>
-  
-    
-    
-    <span class="govuk-caption-l"> {{data['local_authority']}}</span>
-    <h1 class="govuk-heading-l">Manage account</h1>
+</div>
 
-    <h2 class="govuk-heading-m">Your details</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Name</dt>
-        <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] | capitalize }}</dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="role-details-change-ceo">
-            Change<span class="govuk-visually-hidden">name</span>
-          </a>
-        </dd>
-      </div>
+<div class="govuk-grid-column-full">
 
-      
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Job title</dt>
-        <dd class="govuk-summary-list__value">
-          {{data['role']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="role-details-change-ceo">
-            Change<span class="govuk-visually-hidden">job title</span>
-          </a>
-        </dd>
-      </div>
-  
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Email</dt>
-        <dd class="govuk-summary-list__value" >{{data['contacts_email']}}</dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="role-details-change-ceo">
-            Change<span class="govuk-visually-hidden">email</span>
-          </a>
-        </dd>
-      </div>
-     
+  {% if (data['which_la'] == "la-1") %}
+  <h1 class="govuk-heading-l">
+    <span class="govuk-caption-l">{{data['local_authority']}}</span>
+    Manage account <span class="govuk-button-group" style="float: right;">
+      {{ govukButton({
+      text: "Change authority",
+      classes: "govuk-button--secondary",
+      href: "#"
+      }) }}
+    </span>
+  </h1>
+  {% elif (data['which_la'] == "la-2") %}
+  <h1 class="govuk-heading-l "><span class="govuk-caption-l">{{data['local_authority_2']}}</span>
+    Manage account<span class="govuk-button-group" style="float: right;">
+      {{ govukButton({
+      text: "Change authority",
+      classes: "govuk-button--secondary",
+      href: "#"
+      }) }}
+    </span>
+  </h1>
+  {% else %}
+  <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+    Manage account
+  </h1>
+  {% endif %}
+</div>
 
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Permission </dt>
-        <dd class="govuk-summary-list__value">
-          CEO admin
-        </dd>
-      </div>
-  
-    </dl>
+<div class="govuk-grid-column-two-thirds">
+  <h2 class="govuk-heading-m">Your details</h2>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Name</dt>
+      <dd class="govuk-summary-list__value">{{data['contacts_fname'] | capitalize }} {{data['contacts_lname'] |
+        capitalize }}</dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="role-details-change-ceo">
+          Change<span class="govuk-visually-hidden">name</span>
+        </a>
+      </dd>
+    </div>
 
 
-    <dl class="govuk-summary-list">
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Password</dt>
-        <dd class="govuk-summary-list__value">
-          *****************
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden">password</span>
-          </a>
-        </dd>
-      </div>
-    </dl>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Job title</dt>
+      <dd class="govuk-summary-list__value">
+        {{data['role']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="role-details-change-ceo-job-title.html">
+          Change<span class="govuk-visually-hidden">job title</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Email</dt>
+      <dd class="govuk-summary-list__value">{{data['contacts_email']}}</dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="role-details-change-ceo-email.html">
+          Change<span class="govuk-visually-hidden">email</span>
+        </a>
+      </dd>
+    </div>
+
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Permission </dt>
+      <dd class="govuk-summary-list__value">
+        CEO admin
+      </dd>
+    </div>
+
+  </dl>
+
+
+  <dl class="govuk-summary-list">
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Password</dt>
+      <dd class="govuk-summary-list__value">
+        *****************
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="role-details-change-ceo-password.html">
+          Change<span class="govuk-visually-hidden">password</span>
+        </a>
+      </dd>
+    </div>
+  </dl>
+    <!--
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -156,6 +179,7 @@
         Text to be provided based on business rules.
       </div>
     </details>
+    -->
   </div>
 </div>
 
@@ -165,7 +189,7 @@
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m">Your team</h2>
+        <h2 class="govuk-heading-m">Team members</h2>
 
        
           <button class="govuk-button" type="submit">Invite colleague </button>
@@ -247,7 +271,7 @@
           <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
             Invited
           </strong></td>
-          <td class="govuk-table__cell"> <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="/laps/account/cancel">
+          <td class="govuk-table__cell"> <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="/laps/account-1-1/cancel">
             Cancel invite<span class="govuk-visually-hidden">Cancel</span>
           </a></li>
         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">

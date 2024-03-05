@@ -273,4 +273,13 @@ router.post("/laps/account-1-1/role-details-2-ceo",  function(request, response)
   response.redirect(301, "/laps/account-1-1/manage-account-ceo-a")
 });
 
+// Delegate registered // MULTI LAs
+router.post("/laps/account-1-1/multi-la-admin",  function(request, response) {
+  response.redirect(301, "/laps/account-1-1/account-home-admin")
+});
+
+router.post("/laps/account-1-1/set-up-acc-admin",  function(request, response) {
+  response.redirect(301, "/laps/account-1-1/signin")
+});
+
 module.exports = router

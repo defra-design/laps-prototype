@@ -7,28 +7,22 @@
 {% block header %}
 
 {{ govukHeader({
-  homepageUrl: "/index.html",
+  homepageUrl: "/private-beta-1-1.html",
   serviceName: serviceName ,
-  serviceUrl: "/index.html",
-  navigation: [
+  serviceUrl: "/private-beta-1-1",
+navigation: [
   {
   href: "account-home-admin",
   text: "Home",
   active: true
   },
-  {
-    href: "#",
-    text: "Payments"
-    },
+
   {
   href: "manage-account-admin",
-  text: "Manage your account"
+  text: "Manage account"
 
   },
-  {
-    href: "#",
-    text: "View guidence"
-    },
+
   {
   href: "confirm-signout",
   text: "Sign out"
@@ -38,101 +32,151 @@
   
   {% endblock %}
 
-{% block beforeContent %}
+  {% block beforeContent %}
   {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  tag: {
+  text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
+  
+  
+  
   <nav class="hmrc-language-select" aria-label="Language switcher">
+  
     <ul class="hmrc-language-select__list">
+  
       <li class="hmrc-language-select__list-item">
         <span aria-current="true">English</span>
       </li>
       <li class="hmrc-language-select__list-item">
-        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"
+          data-journey-click="link - click:lang-select:Cymraeg">
           <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
           <span aria-hidden="true">Cymraeg</span>
         </a>
       </li>
     </ul>
   </nav>
-{% endblock %}
-
-{% block content %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-   <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
-   Home 
-    </h1>
-  </div>
-</div>
-
-
-
-<div class="govuk-grid-row govuk-!-margin-bottom-7">
-
-  <div class="govuk-grid-column-one-half">
-    <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-      <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state">Payments</a></h2>
-      <p class="govuk-body">You can view your:</p>
-        <ul class="govuk-list govuk-list--bullet">
-         <li>extended producer responsibility (EPR) for packaging estimated payment amount and schedule</li>
-         <li>breakdown of how your EPR for packaging estimated payment is calculated</li>
-         <li>payment documents for 2024 to 2025</li>
-        </ul> 
+  {% endblock %}
+  
+  {% block content %}
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+  
+      <div class="app-wcag-22" id="wcag-consistent-contact" role="note">
+        <strong class="govuk-tag app-tag">
+        PRIVATE BETA
+      </strong>
+      
+        <p>
+          This is an early phase of the service, so some features are unavailable. You’ll be able to use more features as the service develops. These include managing your account and updating bank details. We’ll notify you by email when these features are available.    </div>
+      
+  
+  
+  
+  
+  
+      {% if (data['which_la'] == "la-1") %}
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+        <span class="govuk-caption-l">{{data['local_authority']}}</span>  
+        Home <span class="govuk-button-group" style="float: right;">
+          {{ govukButton({
+          text: "Change authority",
+          classes: "govuk-button--secondary",
+          href: "change-la"
+          }) }}
+        </span>
+      </h1>
+      {% elif (data['which_la'] == "la-2") %}
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority_2']}}</span>
+        Home<span class="govuk-button-group" style="float: right;">
+          {{ govukButton({
+          text: "Change authority",
+          classes: "govuk-button--secondary",
+          href: "change-la"
+          }) }}
+        </span>
+      </h1>
+      {% else %}
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-7"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+        Home
+      </h1>
+      {% endif %}
     </div>
   </div>
-
-  <div class="govuk-grid-column-one-half">
-    <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-      <h2 class="govuk-heading-m"><a href="/laps/account-1-1/manage-account-admin" class="govuk-link--no-visited-state">Manage your account</a></h2>
-      <p class="govuk-body">You can:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>view your details</li>
-          <li>view your EPR team </li>
-          <li>add and remove people</li>
-          <li>delegate</li>
-        </ul> 
-        <p><br></p>
-
-    </div>
-  </div>
-</div>
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
   <div class="govuk-grid-row govuk-!-margin-bottom-7">
-
     <div class="govuk-grid-column-one-half">
-      <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-        <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state">View guidance (opens in new tab)</a></h2>
-        <p class="govuk-body">You can find out how:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>payments are calculated</li>
-            <li>payments are made</li>
-            <li>the EPR scheme works</li>
-          </ul> 
+      
+        <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
+          <h2 class="govuk-heading-m govuk-link-"><a href="#" class="govuk-link--no-visited-state"></a>Payments</h2>
+          <p class="govuk-body">This section is not available yet.</p> <p class="govuk-body">We'll email you in November 2024 to tell you how much your authority will receive. </p>
+        </ul>
+      <!--     <ul class="govuk-list govuk-list--bullet">
+          <li>how much {% if (data['which_la'] == "la-2") %}{{data['local_authority_2']}}{% else %}
+            {{data['local_authority']}}{% endif %} will get for LAPs</li>
+            <li>an estimation for when you’ll get paid</li>  
+            <li>how your payment is calculated</li>
+            <li>payment documents for 2024 to 2025</li>
+       <p class="govuk-body"><strong class="govuk-tag govuk-tag--red">This section is not live yet. Come back on 1 November to learn how much {% if (data['which_la'] == "la-2") %}{{data['local_authority_2']}}{% else %}
+          {{data['local_authority']}}{% endif %} will get for LAPs.</strong></p> -->
       </div>
     </div>
   
     <div class="govuk-grid-column-one-half">
       <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
-        <h2 class="govuk-heading-m"><a href="#" class="govuk-link--no-visited-state">Contact us</a></h2>
-        <p class="govuk-body">You can:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>submit a query</li>
-            <li>find telephone contact details</li>
-          </ul> 
-          
-        </div>
-  
+        <h2 class="govuk-heading-m"><a href="/laps/account-1-1/manage-account-admin" class="govuk-link--no-visited-state">Manage
+          account</a></h2>
+          <p class="govuk-body">You can: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>view your details and team members </li>
+          <li>add and remove colleagues from your account </li>
+      <li>give appropriate permissions to your colleagues</li>
+        
+        </ul>
       </div>
     </div>
   </div>
   
-
-{% endblock %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-7">
+  
+    <div class="govuk-grid-column-one-half">
+      <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
+        <h2 class="govuk-heading-m govuk-link-"> <a href="https://www.gov.uk/guidance/extended-producer-responsibility-for-packaging-who-is-affected-and-what-to-do" class="govuk-link" rel="noreferrer noopener" target="_blank">Guidance (opens in new tab)</a></h2>
+     
+  
+        <p class="govuk-body">Learn about your responsibilities and what’s available.</p>   
+    <!--   <ul class="govuk-list govuk-list--bullet">
+          <li>payments are calculated</li>
+          <li>payments are made</li>
+          <li>the EPR scheme works</li>
+        </ul> -->
+      </div>
+    </div>
+  
+    <div class="govuk-grid-column-one-half">
+      <div class="card" style="background-color: #F3F2F1; border-bottom: 5px solid #1D70B8;">
+        <h2 class="govuk-heading-m"><a href="contact-us.html" class="govuk-link--no-visited-state">Contact us</a></h2>
+        <p class="govuk-body">Get in touch using: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          
+          <li>telephone </li>
+          
+          <li>email </li>
+        </ul>
+      </div>
+  
+    </div>
+  </div>
+  </div>
+  
+  
+  {% endblock %}

@@ -7,27 +7,21 @@
 {% block header %}
 
 {{ govukHeader({
-  homepageUrl: "/index.html",
+  homepageUrl: "/private-beta-1-1.html",
   serviceName: serviceName ,
-  serviceUrl: "/index.html",
-  navigation: [
+  serviceUrl: "/private-beta-1-1",
+navigation: [
   {
   href: "account-home-admin",
   text: "Home"
   },
-  {
-    href: "#",
-    text: "Payments"
-    },
+
   {
   href: "manage-account-admin",
-  text: "Manage your account",
+  text: "Manage account",
   active: true
   },
-  {
-    href: "#",
-    text: "View guidence"
-    },
+  
   {
   href: "#3",
   text: "Sign out"
@@ -64,15 +58,40 @@
 
 
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+   
+    {% if (data['which_la'] == "la-1") %}
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">{{data['local_authority']}}</span>
+      Manage account <span class="govuk-button-group" style="float: right;">
+        {{ govukButton({
+        text: "Change authority",
+        classes: "govuk-button--secondary",
+        href: "#"
+        }) }}
+      </span>
+    </h1>
+    {% elif (data['which_la'] == "la-2") %}
+    <h1 class="govuk-heading-l "><span
+        class="govuk-caption-l">{{data['local_authority_2']}}</span>
+      Manage account<span class="govuk-button-group" style="float: right;">
+        {{ govukButton({
+        text: "Change authority",
+        classes: "govuk-button--secondary",
+        href: "#"
+        }) }}
+      </span>
+    </h1>
+    {% else %}
+    <h1 class="govuk-heading-l"><span class="govuk-caption-l">{{data['local_authority']}}</span>
+      Manage account
+    </h1>
+    {% endif %}
+  </div>
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l"> {{data['local_authority']}}</span>
-    <h1 class="govuk-heading-l">Manage account</h1>
 
     <h2 class="govuk-heading-m">Your details</h2>
-
-
-
-
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-0 ">
     
@@ -147,7 +166,7 @@
         </dd>
       </div>
     </dl>
-
+<!--
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -158,12 +177,13 @@
         Text to be provided based on business rules.
       </div>
     </details>
+    -->
   </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-m">Your team</h2>
+    <h2 class="govuk-heading-m">Team members</h2>
 
     <form class="govuk-form-group govuk-!-margin-bottom-0" method="post" action="role-details-admin">
       <button class="govuk-button" type="submit">Invite colleague </button>
@@ -205,41 +225,6 @@
     
         </tr>
 
-
-
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">{{data['d_f_name2'] | capitalize }} {{data['d_l_name2'] | capitalize }} <br>
-            <span class="govuk-body">{{data['d_role2']}}</span>
-            <span class="govuk-caption-m govuk-!-font-size-16">{{data['d_email2']}} </span>
-        
-        <!--     <td class="govuk-table__cell">{{data['who_list_2'] | capitalize }}</td> -->
-          
-        <td class="govuk-table__cell">{% if (data['who_list_2'] == "Adding and amending bank details") %}
-
-          <p class="govuk-body">
-             Financial control
-          </p>
-      
-          {% elseif (data['who_list_2'] == "Managing waste data") %}
-      
-      <p class="govuk-body">
-        Waste data
-    </p>
-      
-      {% endif %}</td>
-          <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-            Invited
-          </strong></td>
-          <td class="govuk-table__cell">   <li class="govuk-summary-list__actions-list-item"> <a class="govuk-link" href="#">
-            Cancel invite<span class="govuk-visually-hidden">Cancel</span>
-          </a></li>
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-            Resend invite<span class="govuk-visually-hidden">Resend</span>
-          </a></li> </td>
-       <!--   <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">Remove</span>
-          </a> </td> -->
-        </tr>
-     
       </tbody>
     </table>
 

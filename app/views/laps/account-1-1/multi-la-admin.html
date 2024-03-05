@@ -1,33 +1,8 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block header %}
-
-{{ govukHeader({
-  homepageUrl: "/private-beta-1-1.html",
-  serviceName: serviceName ,
-  serviceUrl: "/private-beta-1-1",
-navigation: [
-{
-href: "account-home-ceo",
-text: "Home",
-active: true
-},
-{
-href: "manage-account-ceo",
-text: "Manage account"
-},
-
-{
-href: "confirm-signout",
-text: "Sign out"
-}
-]
-}) }}
-
+ 
+Which local authority do you want to signin to? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -37,21 +12,14 @@ text: "Beta"
 },
 html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
-
-
-
 <nav class="hmrc-language-select" aria-label="Language switcher">
-  {{ govukBackLink({
-    href: "javascript:window.history.back()",
-    text: "Back"
-  }) }}
+
   <ul class="hmrc-language-select__list">
     <li class="hmrc-language-select__list-item">
       <span aria-current="true">English</span>
     </li>
     <li class="hmrc-language-select__list-item">
-      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"
-        data-journey-click="link - click:lang-select:Cymraeg">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
         <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
         <span aria-hidden="true">Cymraeg</span>
       </a>
@@ -81,7 +49,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#choose-error">Select a local authority to manage</a>
+              <a href="#choose-error">Error message placeholder</a>
             </li>
            
           </ul>
@@ -91,20 +59,16 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <div class="govuk-form-group govuk-form-group--error">
       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          
-          
-          
-          
-          
+          <span class="govuk-caption-l">Packaging waste payments</span> 
           <h1 class="govuk-fieldset__heading">
             Choose a local authority to manage
           </h1>
         </legend>
-       <!-- <div id="contact-hint" class="govuk-hint">
+      <!--  <div id="contact-hint" class="govuk-hint">
           Select which local authority payments you want to manage.
         </div> -->
         <p id="choose-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Select a local authority
+          <span class="govuk-visually-hidden">Error:</span>Error message placeholder
         </p>
     <form id="which" method="post">
    
@@ -151,16 +115,18 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <div class="govuk-form-group ">
       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <span class="govuk-caption-l">Packaging waste payments</span> 
           <h1 class="govuk-fieldset__heading">
             Choose a local authority to manage
           </h1>
         </legend>
-  <!--      <div id="contact-hint" class="govuk-hint">
+      <!--  <div id="contact-hint" class="govuk-hint">
           Select which local authority payments you want to manage.
         </div> -->
   
     <form id="which" method="post">
-
+   
+       
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item" data-target="which_la">
               <input class="govuk-radios__input" id="la-1" type="radio" name="which_la" value="la-1">

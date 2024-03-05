@@ -7,27 +7,20 @@
 {% block header %}
 
 {{ govukHeader({
-  homepageUrl: "/index.html",
+  homepageUrl: "/private-beta-1-1.html",
   serviceName: serviceName ,
-  serviceUrl: "/index.html",
-  navigation: [
+  serviceUrl: "/private-beta-1-1",
+navigation: [
   {
   href: "account-home-ceo",
   text: "Home"
   },
   {
-    href: "#",
-    text: "Payments"
-    },
-  {
   href: "#",
-  text: "Manage your account",
+  text: "Manage account",
   active: true
   },
-  {
-    href: "#",
-    text: "View guidence"
-    },
+ 
   {
   href: "#3",
   text: "Sign out"
@@ -129,7 +122,7 @@
 
 
 
-      <form class="govuk-form-group" method="post" action="/laps/account/manage-account-ceo-s1">
+      <form class="govuk-form-group" method="post" action="/laps/account-1-1/manage-account-ceo-s1">
         <button class="govuk-button govuk-button--warning govuk-body"  type="submit">Remove user</button>
     </form>
 
