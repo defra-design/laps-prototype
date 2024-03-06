@@ -71,12 +71,12 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             <a href="#d_role">Error message placeholder 
                 </p></a>
         </li>
-
+<!--
         <li>
           <a href="#">Error message placeholder 
               </p></a>
       </li>
-   
+    -->
 <!--
               <li>
                 <a href="#who_list">Select if the user needs waste or finance permissions
@@ -91,8 +91,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <span class="govuk-caption-l">Register for packaging waste payments </span>
    
-    <h1 class="govuk-heading-l">Enter colleague 1's details <!--{{data['who_list'] }}--></h1>
-
+    <h1 class="govuk-heading-l">Choose someone from banking and finance  <!--{{data['who_list'] }}--></h1>
+<p class="govuk-body">This senior colleague, who will be able to add and amend bank details, must be either an S151 Officer, Chief Financial Officer or in another senior finance role. </p>
     <form id="delegate-details" method="post">
 
            <!-- ERROR LOGIC  error summary -->
@@ -143,17 +143,18 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <label for="contacts_email">
           <span class="govuk-label">Job title</span>
         </label>
-       
+
         <p id="event-name-error" class="govuk-error-message">
           <span class="govuk-visually-hidden">Error:</span>Error message placeholder
         </p>
         <input class="govuk-input govuk-input--error govuk-input--width-30 " name="d_role" id="d_role" type="text"
           value="{{data['d_role']}}" data-error="Enter a role" value="{{data['d_role']}}">
+    
       </div>
 
 
 
-
+<!--
 
  
       {{ govukRadios({
@@ -196,7 +197,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       }) }}
 
 
-
+-->
 
       <div class="govuk-button-group">
         <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
@@ -246,7 +247,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 
 
-
+<!--
 
     {{ govukRadios({
     idPrefix: "who_list",
@@ -281,7 +282,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     ]
     }) }}
 
- 
+ -->
 
 
     <div class="govuk-button-group">

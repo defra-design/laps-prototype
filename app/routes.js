@@ -56,7 +56,7 @@ router.post("/laps/account/responsibility",  function(request, response) {
 
 // CEO Register // Enter colleagues 1's details
 router.post("/laps/account/role-details",  function(request, response) {
-  response.redirect(301, "/laps/account/add-another")
+  response.redirect(301, "/laps/account/role-details-2")
 });
 
 // CEO Register // Do you want to add anyone else?
