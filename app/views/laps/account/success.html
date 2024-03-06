@@ -30,41 +30,6 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 {% block content %}
 
 
-
-{% if (data['upload_another'] === 'No') %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
-        <h1 class="govuk-panel__title">
-          Success
-        </h1>
-        <div class="govuk-panel__body">
-          Account created for <br><strong>{{data['local_authority']}}</strong>
-        </div>
-      </h1>
-
-    </div>
-    <p class="govuk-body">We’ll send you a confirmation email.</p> 
-   
-    <h2 class="govuk-heading-m">Invitation sent </h2>
-    <p class="govuk-body">You have invited:</p>
-    
-    <table class="govuk-table">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">{{data['d_f_name'] | capitalize }} {{data['d_l_name'] | capitalize }} <br>
-            <span class="govuk-body">{{data['d_role']}}</span><span
-              class="govuk-caption-m govuk-!-font-size-16">{{data['d_email']}} </span></th>
-        </tr>
-     
-      </tbody>
-    </table>
-    <h2 class="govuk-heading-m">What happens next</h2>
-    <p class="govuk-body">We’ll send them an account creation email.</p>
-
-
-    {% elif (data['upload_another'] === 'Yes') %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
     
@@ -118,28 +83,6 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     </ul>
       -->
 
-      {% else %}
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-      
-          <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
-              <h1 class="govuk-panel__title">
-                Success
-              </h1>
-              <div class="govuk-panel__body">
-                Account created for <br><strong>{{data['local_authority']}}</strong>
-              </div>
-            </h1>
-          </div>
-
-          <p class="govuk-body">We’ll send you a confirmation email.</p>
-   
-          <h2 class="govuk-heading-m">What happens next</h2>
-          <p class="govuk-body">You’ll be able to invite colleagues to {{data['local_authority']}}'s account as this service develops.</p>
-          <p class="govuk-body">We’ll let you know by email when this feature is available. </p>
-   
-      {% endif %}
 
 <!--
     <div class="govuk-button-group">
