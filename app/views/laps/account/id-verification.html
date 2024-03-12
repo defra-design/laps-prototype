@@ -117,18 +117,22 @@
   </p> 
   <input class="govuk-input govuk-input--width-10 govuk-input--error" id="verification-code" name="verification-code" type="text" aria-describedby="verification-code-hint verification-code-error"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Request a new code
-    </a> 
+
 </div>
 
 <!-- Error input text end-->
 
 <!-- Button start -->
+<div class="govuk-button-group govuk-!-margin-top-7" >
 
-<a href="./account-home-ceo.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-  Continue
-  </a>
+  <a href="./account-home-ceo.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+    Continue
+    </a>
+    <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Request a new code
+      </a> 
+</div>
+
 
 <!-- Button end -->
 
@@ -156,16 +160,17 @@
   <div class="govuk-grid-column-two-thirds">
 
 <!--Notification banner start--> 
-
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      You have been sent a new code
+      Success
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      Your email might take a few minutes to arrive. If you do not get an email, check your spam folder. 
+    <h3 class="govuk-notification-banner__heading">
+      We have sent a 6 digit security code to: {{data['contacts_email']}}
+    </h3>
+    <p class="govuk-body">Your email might take a few minutes to arrive. If you do not get an email, check your spam folder. The code will expire after 10 minutes.
     </p>
   </div>
 </div>
@@ -214,18 +219,21 @@
   <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
   
-  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Request a new code
-    </a>
+ 
 </div>
 
 <!-- Text input end -->
 
 <!-- Button start -->
+<div class="govuk-button-group govuk-!-margin-top-7" >
+  <a href="./account-home-ceo.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+    Continue
+    </a>
+    <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Request a new code
+      </a>
+</div>
 
-<a href="./account-home-ceo.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-  Continue
-  </a>
 
 <!-- Button end -->
 
@@ -297,19 +305,22 @@
   </label>
   <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
-  
-  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Request a new code
-    </a>
+
 </div>
 
 <!-- Text input end -->
 
 <!-- Button start -->
+<div class="govuk-button-group govuk-!-margin-top-7" >
+  <a href="./multi-la.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+    Continue
+    </a>
+    
+    <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Request a new code
+      </a>
 
-<a href="./multi-la.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-  Continue
-  </a>
+</div>
 
 <!-- Button end -->
 
@@ -373,18 +384,22 @@
   <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
   
-  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Request a new code
-    </a>
+
 </div>
 
 <!-- Text input end -->
 
 <!-- Button start -->
+<div class="govuk-button-group govuk-!-margin-top-7" >
 
-<a href="./create-new-password" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-  Continue
-  </a>
+    <a href="./create-new-password" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+      Continue
+      </a>
+      <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Request a new code
+        </a>
+</div>
+
 
 <!-- Button end -->
 
@@ -454,18 +469,22 @@
   </label>
   <input class="govuk-input govuk-input--width-10" id="verification-code" name="verification-code" type="text"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
-  
-  <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Request a new code
-    </a>
+
 </div>
 
 <!-- Text input end -->
 
 <!-- Button start -->
-<a href="./account-home-ceo.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-  Continue
-  </a>
+<div class="govuk-button-group govuk-!-margin-top-7" >
+  <a href="./account-home-ceo.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+    Continue
+    </a>
+  
+    <a href="./id-verification?uhptype=2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Request a new code
+      </a>
+</div>
+
 <!-- Button end -->
 
 
