@@ -48,22 +48,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <!--Notification banner start--> 
 
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      You have been sent a code
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading"> Check {{data['contacts_email']}} for the six digit code.
-      Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.
-    </p>
-  </div>
-</div>
-
-<!--Notification banner end-->
 
 <!--Error summary banner start-->    
       
@@ -83,13 +68,30 @@
               </div>
 
 <!--Error summary banner end--> 
+    <!--Notification banner start--> 
 
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          We have sent a 6 digit security code to your email: {{data['contacts_email']}}
+        </h3>
+        <p class="govuk-body">Your email might take a few minutes to arrive. If you do not get an email, check your spam folder. The code will expire after 10 minutes.
+        </p>
+      </div>
+    </div>
+    
+<!--Notification banner end-->
 
 
 <!--Heading start-->
            
  <span class="govuk-caption-l">Register for packaging waste payments </span> 
-    <h1 class="govuk-heading-l">Request a code</h1>
+ <h1 class="govuk-heading-l">Enter verification code</h1>
 
 <!--Heading end-->
 
@@ -97,8 +99,8 @@
 <!--
 <p class="govuk-body-l">Check {{data['contacts_email']}} for the six digit code.</p>
   <p class="govuk-body">Your email might take a few minutes to arrive.</p>
-  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p> -->
-  <p class="govuk-body">  The code will expire after 10 minutes.</p>
+  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p> 
+  <p class="govuk-body">The code will be sent to {{data['contacts_email']}} The code will expire after 10 minutes.</p> -->
   
 <!--Parapragh extra extra guidance for user end-->
 
@@ -134,7 +136,7 @@
   <input class="govuk-input govuk-input--width-10 govuk-input--error" id="verification-code" name="verification-code" type="text" aria-describedby="verification-code-hint verification-code-error"
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="id-verification-ceo?uhptype=y2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Request a code
+    Request a new code
     </a>
          
 </div>
@@ -174,15 +176,19 @@
 
 <!--Notification banner start--> 
 
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      You have been sent a code
+      Success
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading"> Check {{data['contacts_email']}} for the six digit code.
-      Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.
+    <h3 class="govuk-notification-banner__heading">
+      We have sent a 6 digit security code to your email: {{data['contacts_email']}}
+    </h3>
+    <p class="govuk-body">Your email might take a few minutes to arrive. If you do not get an email, check your spam folder. The code will expire after 10 minutes.
     </p>
   </div>
 </div>
@@ -192,7 +198,7 @@
 <!--Heading start-->
            
 <span class="govuk-caption-l">Register for packaging waste payments </span> 
-<h1 class="govuk-heading-l">Request a code</h1>
+<h1 class="govuk-heading-l">Enter verification code</h1>
 
 <!--Heading end-->
 
@@ -201,9 +207,9 @@
  <!--
 <p class="govuk-body-l">Check {{data['contacts_email']}} for the six digit code.</p>
   <p class="govuk-body">Your email might take a few minutes to arrive.</p>
-  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p> -->
-  <p class="govuk-body">  The code will expire after 10 minutes.</p>
-
+  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p>
+  <p class="govuk-body">The code will be sent to {{data['contacts_email']}} The code will expire after 10 minutes.</p>
+-->
 <!--Parapragh extra guidance for user end-->
 
 <!-- Details (accordeon) start-->
@@ -231,7 +237,7 @@
   value="{{data[' verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
   
   <a href="id-verification-ceo?uhptype=y2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Request a code
+    Request a new code
     </a>
 </div>
 
@@ -298,24 +304,29 @@
   <div class="govuk-grid-column-two-thirds">
 <!--Notification banner start--> 
 
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      You have been sent a code
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">Check {{data['contacts_email']}} for the six digit code.
-      Your email might take a few minutes to arrive. If you do not get an email, check your spam folder. 
-    </p>
-  </div>
-</div>
+    <!--Notification banner start--> 
 
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          We have sent a 6 digit security code to your email: {{data['contacts_email']}}
+        </h3>
+        <p class="govuk-body">Your email might take a few minutes to arrive. If you do not get an email, check your spam folder. The code will expire after 10 minutes.
+        </p>
+      </div>
+    </div>
+    
+<!--Notification banner end-->
 <!--Notification banner end-->
 <!--Heading start-->
            
 <span class="govuk-caption-l">Register for packaging waste payments </span> 
-<h1 class="govuk-heading-l">Request a code</h1>
+<h1 class="govuk-heading-l">Enter verification code</h1>
 
 <!--Heading end-->
 
@@ -324,8 +335,8 @@
 <p class="govuk-body-l">Check {{data['contacts_email']}} for the six digit code.</p>
 
   <p class="govuk-body">Your email might take a few minutes to arrive.</p>
-  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p> -->
-  <p class="govuk-body">  The code will expire after 10 minutes.</p>
+  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p> 
+  <p class="govuk-body">The code will be sent to {{data['contacts_email']}}. The code will expire after 10 minutes.</p> -->
 
 <!--Parapragh extra guidance for user end-->
 
@@ -339,7 +350,7 @@
   value="{{data['verification-code']}}">&nbsp;&nbsp;&nbsp;&nbsp;
   
   <a href="id-verification-ceo?uhptype=y2&uhp=true&" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Request a code
+    Request a new code
     </a>
 </div>
 
@@ -377,15 +388,15 @@
 <!--Heading start-->
            
 <span class="govuk-caption-l">Register for packaging waste payments </span> 
-<h1 class="govuk-heading-l">Request a code</h1>
+<h1 class="govuk-heading-l">Request verification code</h1>
 
 <!--Heading end-->
 
-<!--Parapragh extra guidance for user start
-<p class="govuk-body-l">Check {{data['contacts_email']}} for the six digit code.</p>
+<!--Parapragh extra guidance for user start -->
+<p class="govuk-body-l">The six digit code will be sent by email to:<br> {{data['contacts_email']}}</p>
   <p class="govuk-body">Your email might take a few minutes to arrive.</p>
-  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p> -->
-  <p class="govuk-body">  The code will expire after 10 minutes.</p>
+  <p class="govuk-body"> If you do not receive this email, check your spam folder.</p>
+  <p class="govuk-body">The code will expire after 10 minutes.</p>
 
 <!--Parapragh extra guidance for user end-->
 
@@ -405,7 +416,7 @@
 <!-- Details (accordeon) end-->
 
 <!--Text input start-->
-
+<!--
 <div class="govuk-form-group">
   <label class="govuk-label govuk-!-font-weight-bold" for="verification-code">
     Verification code
@@ -417,12 +428,12 @@
     Request a code
     </a>
 </div>
-
+-->
 <!-- Text input end -->
 
 <!-- Button start -->
 
-<a href="#" role="button" disabled aria-disabled="true" draggable="false" class="govuk-button" data-module="govuk-button">
+<a href="id-verification-ceo?uhptype=y2&uhp=true&" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
   Continue
   </a>
 
