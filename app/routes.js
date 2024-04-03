@@ -3,7 +3,7 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 
-const govukPrototypeKit = require('govuk-prototype-kit')
+const govukPrototypeKit = require("govuk-prototype-kit")
 const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
@@ -48,13 +48,13 @@ router.post("/laps/account/check-your-details", function (req, res) {
   }
 });
  
-// CEO Register // Choose 1 or 2 colleagues to manage [authority]'s pEPR payments and data
+// CEO Register // Choose 1 or 2 colleagues to manage [authority]"s pEPR payments and data
 
 router.post("/laps/account/responsibility",  function(request, response) {
   response.redirect(301, "/laps/account/role-details")
 });
 
-// CEO Register // Enter colleagues 1's details
+// CEO Register // Enter colleagues 1"s details
 router.post("/laps/account/role-details",  function(request, response) {
   response.redirect(301, "/laps/account/role-details-2")
 });
@@ -73,7 +73,7 @@ router.post("/laps/account/add-another", function (req, res) {
      }
   });
 
-// CEO Register // Enter colleague 2's details
+// CEO Register // Enter colleague 2"s details
 router.post("/laps/account/role-details-2",  function(request, response) {
   response.redirect(301, "/laps/account/check-details")
 });
@@ -281,5 +281,67 @@ router.post("/laps/account-1-1/multi-la-admin",  function(request, response) {
 router.post("/laps/account-1-1/set-up-acc-admin",  function(request, response) {
   response.redirect(301, "/laps/account-1-1/signin")
 });
+
+// *****************************
+// *****************************
+// *****************************
+// *****************************
+// *****************************
+// *****************************
+// *****************************
+// PRN ROUTING
+// *****************************
+
+// Routing for Page
+router.post("/packing-recovery-notes/account-creation/build/general/registered-charity-question", function (req, res) {
+  var registeredCharity = req.session.data["registered-charity"]
+
+  if (registeredCharity == "Yes"){
+      res.redirect("../not-affected/charity")
+  }
+  else if (registeredCharity == "No"){
+      res.redirect("registered-with-companies-house")
+  }
+})
+
+// Routing for Page
+router.post("/packing-recovery-notes/account-creation/build/general/registered-with-companies-house", function (req, res) {
+  var registeredCH = req.session.data["registered-companies-house"]
+
+  if (registeredCH == "Yes"){
+      res.redirect("/packing-recovery-notes/account-creation/build/companies-house/about-your-organisation/companies-house-number")
+  }
+  else if (registeredCH == "No"){
+      res.redirect("/packing-recovery-notes/account-creation/build/non-companies-house/about-your-business/type-of-organisation")
+  }
+})
+
+
+// Routing for Page
+router.post("*/uk-nation-ch", function (req, res) {
+  var userGroup = req.session.data["user-group"]
+
+  if (userGroup == "compliance-scheme") {
+      res.redirect("../about-you/role-in-organisation")
+  }
+  else {
+      res.redirect("uk-nation")
+  }
+})
+
+// Routing for Page
+router.post("*/authorised-person", function (req, res) {
+  var authorisedPerson = req.session.data["form-role-in-organisation"]
+
+  if (authorisedPerson == "none-of-the-above") {
+      res.redirect("../authorised-details-on-behalf/consent-from-authorised-person")
+  }
+  else {
+      res.redirect("full-name")
+  }
+})
+
+
+
 
 module.exports = router
