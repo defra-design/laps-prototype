@@ -292,55 +292,55 @@ router.post("/laps/account-1-1/set-up-acc-admin",  function(request, response) {
 // PRN ROUTING
 // *****************************
 
-// Routing for Page
-router.post("/packing-recovery-notes/account-creation/build/general/registered-charity-question", function (req, res) {
-  var registeredCharity = req.session.data["registered-charity"]
 
+// Routing for Page
+router.post('*/registered-charity-question', function (req, res) {
+  var registeredCharity = req.session.data['registered-charity']
+  
   if (registeredCharity == "Yes"){
-      res.redirect("../not-affected/charity")
+      res.redirect('../not-affected/charity')
   }
   else if (registeredCharity == "No"){
-      res.redirect("registered-with-companies-house")
+      res.redirect('registered-with-companies-house')
   }
 })
 
 // Routing for Page
-router.post("/packing-recovery-notes/account-creation/build/general/registered-with-companies-house", function (req, res) {
-  var registeredCH = req.session.data["registered-companies-house"]
-
+router.post('*/registered-with-companies-house', function (req, res) {
+  var registeredCH = req.session.data['registered-companies-house']
+  
   if (registeredCH == "Yes"){
-      res.redirect("/packing-recovery-notes/account-creation/build/companies-house/about-your-organisation/companies-house-number")
+      res.redirect('../companies-house/about-your-organisation/companies-house-number')
   }
   else if (registeredCH == "No"){
-      res.redirect("/packing-recovery-notes/account-creation/build/non-companies-house/about-your-business/type-of-organisation")
+      res.redirect('../non-companies-house/about-your-business/type-of-organisation')
   }
 })
 
 
 // Routing for Page
-router.post("*/uk-nation-ch", function (req, res) {
-  var userGroup = req.session.data["user-group"]
-
+router.post('*/uk-nation-ch', function (req, res) {
+  var userGroup = req.session.data['user-group']
+  
   if (userGroup == "compliance-scheme") {
-      res.redirect("../about-you/role-in-organisation")
+      res.redirect('../about-you/role-in-organisation')
   }
   else {
-      res.redirect("uk-nation")
+      res.redirect('uk-nation')
   }
 })
 
 // Routing for Page
-router.post("*/authorised-person", function (req, res) {
-  var authorisedPerson = req.session.data["form-role-in-organisation"]
-
+router.post('*/authorised-person', function (req, res) {
+  var authorisedPerson = req.session.data['form-role-in-organisation']
+  
   if (authorisedPerson == "none-of-the-above") {
-      res.redirect("../authorised-details-on-behalf/consent-from-authorised-person")
+      res.redirect('../authorised-details-on-behalf/consent-from-authorised-person')
   }
   else {
-      res.redirect("full-name")
+      res.redirect('full-name')
   }
 })
-
 
 
 

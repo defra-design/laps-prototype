@@ -1,0 +1,142 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Success – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% set serviceName %}
+Administrator EPR account for packaging waste payments
+{% endset%}
+
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: serviceName ,
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "account-home",
+text: "Local authority list"
+
+},
+{
+href: "upload",
+text: "Upload contact details",
+active: true
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<!--
+{% if data.partialsuccess != 'true' %}
+-->
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">
+                 Success
+                </h1>
+                <div class="govuk-panel__body">
+                  </strong>
+                </div>
+              </div>
+            
+              <h2 class="govuk-heading-m">What happens next</h2>
+
+              <p class="govuk-body">  The recipient will receive an email from Defra so they can finish setting up their account.</p>
+
+              <p class="govuk-body">View the  <a href="/laps/admin/account-home-sent#past-month" class="govuk-link">Local authority list</a>.</p>
+             
+            </div>
+         </div>
+<!--
+{% elif data.partialsuccess == 'true' %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+        <h1 class="govuk-heading-l">Some of the emails failed to sent successfully </h1>
+
+      
+
+        <h3 class="govuk-heading-m">What went wrong </h3>
+
+        <p class="govuk-body">There were issues with the following email addresses:</p>
+
+        <p class="govuk-body">All other emails were sent successfully.</p>
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                
+                <th scope="col" class="govuk-table__header">Authority</th>
+                <th scope="col" class="govuk-table__header" style="width:400px;">Contact details</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+          
+            <tr class="govuk-table__row">
+               
+                <td class="govuk-table__cell"> Bury Borough Council</td>
+              <td class="govuk-table__cell">Alexandria Browning<br><span
+                  class="govuk-caption-m govuk-!-font-size-16">abrowning@buryborougcouncil.gov.uk </span></td>
+            </tr>
+            <tr class="govuk-table__row">
+               
+                <td class="govuk-table__cell">Calderdale Borough Council</td>
+                <td class="govuk-table__cell">Maria-Elisa Gordo<br>
+                    <span class="govuk-caption-m govuk-!-font-size-16">maria-elisa.gordo@calderdalebc.gov.uk </span></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <h3 class="govuk-heading-m">What you need to do</h3>
+        <ol class="govuk-body">
+            <li>Correct the email address in the uploaded spreadsheet.</a>.</li>
+            <li>Once you’ve made sure all the information is correct, you’ll need to upload the spreadsheet again.</li>
+        </ol>
+
+        <div class="govuk-inset-text">
+            <p class="govuk-body">All other emails were sent successfully.</p></div>
+
+        <p class="govuk-body">View the <a href="/laps/admin/account-home-sent#past-month" class="govuk-link">Local authority list</a>.</p>
+        -->    
+        <!--
+        <p class="govuk-body">You’ll need to update the missing information.</p>
+        <p class="govuk-body">Once all the details in the template are correct, you’ll need to <a href="/v1b/caseworkerdetails?anerror=false&uploaderror=0&">upload it again</a>.</p>
+     
+-->
+    </div>
+</div>
+<!--
+{% endif %}
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="partialsuccess=false&"
+                {% if data.partialsuccess != 'true' %}selected{% endif %}
+        >Full success</option>
+
+        <option value="partialsuccess=true&"
+                {% if data.partialsuccess == 'true' %}selected{% endif %}
+        >Partial success</option>
+
+    </select>
+</form>
+-->
+
+{% endblock %}
