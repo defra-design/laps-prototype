@@ -17,9 +17,18 @@ text: "Beta"
 },
 html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../../homepage.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../enrol-as-a-producer.html">Enrol to report packaging data</a>
+    </li>
 
+  </ol>
+</div>
 
-    <a class="govuk-back-link" href="../about-you/telephone-number.html">Back</a>
 
 
 {% endblock %}
@@ -30,43 +39,16 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-    <form method="POST" action="../../epr/homepage">
-
+    <form method="POST" action="#">
+        <span class="govuk-caption-xl ">EPR for packaging: Enrol to report packaging data </span>
     <h1 class="govuk-heading-l ">Check your details</h1>
 
     <h2 class="govuk-heading-m ">Your organisation</h2>
     
     <dl class="govuk-summary-list">
 
-        <!-- REGISTERED AS CHARITY -->
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                A registered charity?
-            </dt>
-            <dd class="govuk-summary-list__value">
-                {{ data['registered-charity'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="../../general/registered-as-a-charity.html">
-                Change<span class="govuk-visually-hidden"> if you are a registered charity</span>
-            </a>
-            </dd>
-        </div>
 
-        <!-- REGISTERED WITH COMPANIES HOUSE -->
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Registered with Companies House?
-            </dt>
-            <dd class="govuk-summary-list__value">
-                {{ data['registered-companies-house'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="../../general/registered-with-companies-house.html">
-                Change<span class="govuk-visually-hidden"> if you are registered with companies house</span>
-            </a>
-            </dd>
-        </div>
+  
 
         <!-- COMPANIES HOUSE NUMBER -->
         <div class="govuk-summary-list__row">
@@ -77,9 +59,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 000134567
             </dd>
             <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="../about-your-organisation/companies-house-number.html">
-                Change<span class="govuk-visually-hidden"> Companies House number</span>
-            </a>
+            
             </dd>
         </div>
 
@@ -95,7 +75,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         </div>
 
         <!-- UK NATION -->
-        {% if (data['uk-nation-question'] == "yes") %}
+     
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
                 UK nation
@@ -109,19 +89,36 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             </a>
             </dd>
         </div>
-        {% endif %}
+       
          
     </dl>
 
     <p class="govuk-body govuk-!-margin-bottom-6 govuk-!-margin-top-6">
         If the address is wrong, you’ll need to <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house" target="_blank">change them on Companies House (opens in a new tab)</a>.
     </p>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+
+    <h1 class="govuk-heading-m">Declaration</h1>
+
+      <p class="govuk-body">By confirming your details, you agree that the information you’ve given is complete and correct.</p>
+      <p class="govuk-body">You also agree that you would like the regulator to approve an account for your organisation. </p>
+
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          You can be fined or prosecuted if you give the wrong information.
+        </strong>
+
+        </div>
+<!-- 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-2">You</h2>
 
+        
     <dl class="govuk-summary-list govuk-!-margin-bottom-8">
-
-        <!-- ROLE -->
+        ROLE
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
                 Role
@@ -136,7 +133,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             </dd>
         </div>
 
-        <!-- NAME -->
+        NAME
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
             Name
@@ -151,7 +148,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             </dd>
         </div>
 
-        <!-- TELEPHONE -->
+         TELEPHONE 
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
             Telephone
@@ -165,13 +162,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             </a>
             </dd>
         </div>
-        
-    </dl>
-
-    <h1 class="govuk-heading-m">Declaration</h1>
-
-    <p class="govuk-body">By confirming your details, you agree that the information you’ve given is complete and correct.</p>
- 
+  
+    </dl>  --> 
 
     {{ govukButton({
       text: "Confirm and create account"

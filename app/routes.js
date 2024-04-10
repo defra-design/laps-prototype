@@ -289,7 +289,7 @@ router.post("/laps/account-1-1/set-up-acc-admin",  function(request, response) {
 // *****************************
 // *****************************
 // *****************************
-// PRN ROUTING
+// Account creation (enrollment)
 // *****************************
 
 
@@ -339,6 +339,20 @@ router.post('*/authorised-person', function (req, res) {
   }
   else {
       res.redirect('full-name')
+  }
+})
+
+
+// Routing for compliance scheme
+router.post('*/compliance-scheme-or-not', function (req, res) {
+    
+  var complianceScheme = req.session.data['compliance-scheme']
+  
+  if (complianceScheme == "yes"){
+      res.redirect('selected-yes')
+  }
+  else if (complianceScheme == "no") {
+      res.redirect('../confirm-declaration/check-your-answers')
   }
 })
 

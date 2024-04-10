@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+EPR for packaging
+{% endset%}
+
+{% set serviceName = "Create an EPR for packaging account" %}
+
+{% block pageTitle %}
+Create an EPR for packaging account
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../homepage.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../enrol-as-a-producer.html">Enrol to report packaging data</a>
+    </li>
+
+  </ol>
+</div>
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST" action="compliance-scheme-or-not">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="uk-nation-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-xl ">EPR for packaging: Enrol to report packaging data </span>
+            <h1 class="govuk-fieldset__heading">
+              Are you using a compliance scheme?
+
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="compliance-scheme-yes" name="compliance-scheme" type="radio" value="yes" {{ checked("compliance-scheme", "yes") }}>
+              <label class="govuk-label govuk-radios__label" for="compliance-scheme-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="compliance-scheme-no" name="compliance-scheme" type="radio" value="no" {{ checked("compliance-scheme", "no") }}>
+              <label class="govuk-label govuk-radios__label" for="compliance-scheme-no">
+                No
+              </label>
+            </div>
+          </div>
+          <br><br>
+
+          
+         
+        </fieldset> 
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What is compliance scheme?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Compliance schemes are third parties that help organisations meet the<br>
+           EPR for packaging requierements.
+           <br><br>
+           Compliance schemes can: <br> 
+           <ul>
+            <li>register you </li>
+            <li>pay your registration fees</li>
+            <li>buy PRNs (packaging waste recucling notes) or PERNs(packaging <br>
+            waste export recycling notes)to meet your recygling obligations</li>
+            <li>report your packaging data </li>
+          </ul>  
+          <br>
+          A compliance scheme cannot pay your waste managment fee.
+          </div>
+        </details>
+      </div>
+      {{ govukButton({
+        text: "Continue"
+      })}}
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

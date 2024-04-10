@@ -1,0 +1,148 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+EPR for packaging
+{% endset%}
+
+{% set serviceName = "EPR for packaging" %}
+
+{% block pageTitle %}
+Create an EPR for packaging account
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../../homepage.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../enrol-as-a-producer.html">Enrol to report packaging data</a>
+    </li>
+
+  </ol>
+</div>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST" action="../about-your-organisation/uk-nation">
+      <span class="govuk-caption-xl ">EPR for packaging: Enrol to report packaging data</span>
+      <h1 class="govuk-heading-l">Confirm your organisation’s details from Companies House</h1>
+      <div class="govuk-inset-text">
+        <h2 class="govuk-heading-m">Compliance Co</h2>
+        <div class="govuk-!-margin-bottom-4">
+          <p class="govuk-body govuk-!-margin-bottom-1">Company number:</p>
+          <p class="govuk-body">00123456</p>
+        </div>
+        <div class="">
+          <p class="govuk-body govuk-!-margin-bottom-1">Registered address:</p>
+          <p class="govuk-body govuk-!-margin-bottom-1">1 Francis Crick Avenue, <br>Cambridge Biomedical Campus, <br>Cambridge, <br>United Kingdom, <br>CB2 0AA</p>
+        </div>
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            These details are wrong
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">If these details aren’t correct, you should:</p>
+          <ul class="govuk-list govuk-list--bullet">
+         <!--   <li>check the Companies House number and make sure it’s accurate - if you entered it incorrectly, you can <a href="./companies-house-number.html" class="govuk-link">change your number</a></li>
+          -->  <li>check Companies House to see if your organisation’s details are  correct, if they aren’t <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house" target="_blank">you can change them on Companies House (opens in a new tab)</a></li>
+          </ul>
+        </div>
+      </details>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      
+        <!--  <a class="govuk-link" href="../../homepage.html">Cancel</a> -->
+      </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+{% block footer %}
+<footer class="govuk-footer " role="contentinfo">
+    <div class="govuk-width-container ">
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          
+          <h2 class="govuk-heading-m">Get help</h2>
+  
+          <p class="govuk-body">Email: <a class="govuk-link govuk-link--no-visited-state" href="mailto:eprcustomerservice@defra.gov.uk">eprcustomerservice@defra.gov.uk</a></p>
+  
+          <p class="govuk-body govuk-!-margin-bottom-2">Telephone: 0300 060 0002</p>
+  
+          <p class="govuk-body">Monday to Friday, 8am to 4:30pm</p>
+
+          <h2 class="govuk-visually-hidden">Support links</h2>
+          <ul class="govuk-footer__inline-list govuk-!-margin-top-7">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="#">
+                Cookies
+              </a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="#">
+                Policy
+              </a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="#">
+                Accessibility statement
+              </a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/manage-prototype/clear-data">
+                Clear data
+              </a>
+            </li>
+          </ul>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            class="govuk-footer__licence-logo"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 483.2 195.7"
+            height="17"
+            width="41">
+            <path
+              fill="currentColor"
+              d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145" />
+          </svg>
+          <span class="govuk-footer__licence-description">
+            All content is available under the
+            <a
+              class="govuk-footer__link"
+              href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+              rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+          </span>
+        </div>
+        <div class="govuk-footer__meta-item">
+          <a
+            class="govuk-footer__link govuk-footer__copyright-logo"
+            href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock %}
