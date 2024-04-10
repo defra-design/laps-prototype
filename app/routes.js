@@ -343,7 +343,10 @@ router.post('*/authorised-person', function (req, res) {
 })
 
 
+// *****************************
 // Routing for compliance scheme
+// *****************************
+
 router.post('*/compliance-scheme-or-not', function (req, res) {
     
   var complianceScheme = req.session.data['compliance-scheme']
@@ -355,6 +358,7 @@ router.post('*/compliance-scheme-or-not', function (req, res) {
       res.redirect('../confirm-declaration/check-your-answers')
   }
 })
+
 
 
 
