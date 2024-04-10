@@ -9,6 +9,12 @@
 {% endblock %}
 
 {% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 
 {% if (data['manual'] == "yes") %}
     <a class="govuk-back-link" href="../about-your-business/business-address-manual.html">Back</a>

@@ -1,14 +1,24 @@
 {% extends "layouts/main.html" %}
 
-{% set serviceName = "Create an account to report packaging data" %}
+{% set serviceName %}
+EPR for packaging
+{% endset%}
 
-{% set title = "Create an account to report packaging data" %}
+{% set serviceName = "Create an EPR for packaging account" %}
 
 {% block pageTitle %}
-    {{title}} - GOV.UK
+Create an EPR for packaging account
 {% endblock %}
 
+
+
 {% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 
 <a class="govuk-back-link" href="./check-your-answers.html">Back</a>
 
@@ -19,7 +29,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form method="POST" action="../../../../landing-page/v2/cs-submit-behalf-lp-england?account-created-notification=true">
+    <form method="POST" action="../../epr/homepage">
       <h1 class="govuk-heading-l">Declaration</h1>
 
       <p class="govuk-body">By confirming your details, you agree that the information you’ve given is complete and correct.</p>

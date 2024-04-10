@@ -1,16 +1,22 @@
 {% extends "layouts/main.html" %}
 
 {% set serviceName %}
-  Report packaging data
+EPR for packaging
 {% endset%}
 
-{% set serviceName = "Report packaging data" %}
+{% set serviceName = "Create an EPR for packaging account" %}
 
 {% block pageTitle %}
-  Create an account - Report packaging data
+Create an EPR for packaging account
 {% endblock %}
 
 {% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 
 <a class="govuk-back-link" href="./sign-in.html">Back</a>
 

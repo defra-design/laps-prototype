@@ -11,14 +11,8 @@ Create an EPR for packaging account
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-tag: {
-text: "Beta"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
 
-<a class="govuk-back-link" href="./companies-house-number.html">Back</a>
+<a class="govuk-back-link" href="../homepage.html">Back</a>
 
 {% endblock %}
 
@@ -28,6 +22,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form method="POST" action="uk-nation-ch">
+      <span class="govuk-caption-xl ">EPR for packaging: Subscribe as an exporter </span>
       <h1 class="govuk-heading-l">Confirm your organisation’s details from Companies House</h1>
       <div class="govuk-inset-text">
         <h2 class="govuk-heading-m">Compliance Co</h2>
