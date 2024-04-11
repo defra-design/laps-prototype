@@ -165,9 +165,22 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            You’ve created an account for  {{ data['trading-name'] }}.
+          </h3>
+          <p> You have been sent a confirmation email.</p>
+        </div>
+      </div>
     
     <span class="govuk-caption-xl ">EPR for packaging</span>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Compliance Co</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7"> {{ data['trading-name'] }}</h1>
 
     <div class="govuk-inset-text">
       Your organisation has not enroled in any EPR (Extended Producer Responsibility) for packaging workstreams.

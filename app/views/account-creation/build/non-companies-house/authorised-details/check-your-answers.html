@@ -1,12 +1,15 @@
 {% extends "layouts/main.html" %}
 
-{% set serviceName = "Create an account to report packaging data" %}
+{% set serviceName %}
+EPR for packaging
+{% endset%}
 
-{% set title = "Check you details" %}
+{% set serviceName = "Create an EPR for packaging account" %}
 
 {% block pageTitle %}
-    {{title}} - GOV.UK
+Create an EPR for packaging account
 {% endblock %}
+
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -26,7 +29,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-    <form method="POST" action="./declaration">
+    <form method="POST" action="../../epr/homepage-non">
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Check your details</h1>
 
@@ -152,9 +155,15 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 </div>
             </dl>
 
+            
+    <h1 class="govuk-heading-m">Declaration</h1>
+
+    <p class="govuk-body">By confirming your details, you agree that the information you’ve given is complete and correct.</p>
+ 
+
 
     {{ govukButton({
-      text: "Continue"
+      text: "Confirm and create account"
     })}}
 
     </form>
