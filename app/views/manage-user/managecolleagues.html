@@ -19,13 +19,23 @@ EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
 navigation: [
 {
 href: "#",
-text: "Home",
+text: "EPR home",
 active: true
 },
 {
     href: "#",
-    text: "Manage Profile"
+    text: "Organisation details"
     },
+
+    {
+        href: "manage-account-ac",
+        text: "Manage account"
+        },
+{
+  href: "my-profile-ceo",
+text: "My profile"
+},
+
 {
 href: "#",
 text: "Sign out"
@@ -122,6 +132,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   
       }
   </style>
+
  <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
@@ -163,17 +174,30 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     
     <!-- <span class="govuk-caption-xl ">EPR for packaging</span> -->
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Manage Colleagues<br/>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Manage Colleagues<br>
     
-      <p class="govuk-body-s">Invite colleagues to workon Green limited, assign them roles and set their permissions.</p>
    
 </h1>
+<p class="govuk-body-s">Invite colleagues to workon Green limited, assign them roles and set their permissions.</p>
 
-<p class="govuk-!-margin-bottom-3">
-  <a href="#" class="govuk-link govuk-link--no-visited-state">II. Permission details</a>
-</p>
     
-
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Permission details
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">
+      <h3 class="govuk-heading-m">PRN prmission</h3>
+    </p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><b>Basic:</b> record waste data, raise PRNs</li>
+  <li><b>Admin:</b> record waste data, raise PRNs, manage team</li>
+  <li><b>Principal:</b> record waste data, submit data, raise PRNs, Upload and edit org data, Manage team</li>
+</ul>.
+  </div>
+</details>
 
 
 
@@ -246,13 +270,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       <div class="govuk-footer__meta">
         <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
           
-          <!-- <h2 class="govuk-heading-m">Get help</h2> -->
+          <h2 class="govuk-heading-m">Get help</h2>
   
-          <!-- <p class="govuk-body">Email: <a class="govuk-link govuk-link--no-visited-state" href="mailto:eprcustomerservice@defra.gov.uk">eprcustomerservice@defra.gov.uk</a></p>
+          <p class="govuk-body">Email: <a class="govuk-link govuk-link--no-visited-state" href="mailto:eprcustomerservice@defra.gov.uk">eprcustomerservice@defra.gov.uk</a></p>
   
           <p class="govuk-body govuk-!-margin-bottom-2">Telephone: 0300 060 0002</p>
   
-          <p class="govuk-body">Monday to Friday, 8am to 4:30pm</p> -->
+          <p class="govuk-body">Monday to Friday, 8am to 4:30pm</p>
 
           <h2 class="govuk-visually-hidden">Support links</h2>
           <ul class="govuk-footer__inline-list govuk-!-margin-top-7">
