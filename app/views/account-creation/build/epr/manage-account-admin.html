@@ -1,0 +1,156 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+EPR for packaging
+{% endset%}
+
+{% set serviceName = "EPR for packaging" %}
+
+{% block pageTitle %}
+EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+    homepageUrl: "/index.html",
+    serviceName: serviceName ,
+    serviceUrl: "/index.html",
+navigation: [
+{
+href: "homepage-s-admin",
+text: "EPR home",
+active: true
+},
+{
+    href: "#",
+    text: "Organisation details"
+    },
+
+    {
+        href: "manage-account-admin",
+        text: "Manage account"
+        },
+{
+href: "my-profile-admin",
+text: "My profile"
+},
+
+{
+href: "#",
+text: "Sign out"
+}
+]
+}) }}
+
+
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="homepage-s-admin.html">EPR home</a>
+    </li>
+
+    
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Manage account</a>
+    </li>
+
+
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <h1 class="govuk-heading-l">  <span class="govuk-caption-l">
+      EPR for packaging: Compliance Co  </span>
+     Manage account
+    </h1>
+ 
+  </div>
+  <div class="govuk-grid-column-full">
+    
+
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Your details</th>
+              <th scope="col" class="govuk-table__header">Permissions</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="my-profile-ac" class="govuk-link">  {{ data['first-name-admin'] }} {{ data['last-name-admin'] }}</a><br>Admin</td>
+              <td class="govuk-table__cell">Invite and manage users</td>
+            </tr>
+          </tbody>
+        </table>
+
+        
+        
+        <h2 class="govuk-heading-m">Your team</h2>
+        {{ govukButton({
+          text: "Add a team member",
+          href: "#"
+        }) }}
+      </br>
+ 
+        <h3 class="govuk-heading-s">Team members</h3>
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">Permissions</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Sarah Rogers</a><br>Account creator</th>
+              <td class="govuk-table__cell">Create an account, enrol for EPR for packaging workstreams,<br>
+                invite and manage users, view, enter and submit data</td>
+            </tr>
+    <!--
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Joanne Wilson</a></th>
+              <td class="govuk-table__cell">Manage team and upload data</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Robert Smith</a></th>
+              <td class="govuk-table__cell">Upload data only</td>
+            </tr>
+          -->
+          </tbody>
+        </table>
+  
+    
+    
+      </div>
+    </div>
+    
+    {% endblock %}
+    

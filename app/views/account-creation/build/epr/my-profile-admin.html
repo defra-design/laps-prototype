@@ -1,0 +1,198 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+EPR for packaging
+{% endset%}
+
+{% set serviceName = "EPR for packaging" %}
+
+{% block pageTitle %}
+EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "/index.html",
+  serviceName: serviceName ,
+  serviceUrl: "/index.html",
+navigation: [
+{
+href: "homepage-s-admin",
+text: "EPR home",
+active: true
+},
+{
+  href: "#",
+  text: "Organisation details"
+  },
+
+  {
+      href: "manage-account-admin",
+      text: "Manage account"
+      },
+{
+href: "my-profile-admin",
+text: "My profile"
+},
+
+{
+href: "#",
+text: "Sign out"
+}
+]
+}) }}
+
+
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="homepage-s-admin.html">EPR home</a>
+    </li>
+
+    
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">My profile</a>
+    </li>
+
+
+  </ol>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <h1 class="govuk-heading-l">   <span class="govuk-caption-l">
+      EPR for packaging: Compliance Co  </span>
+      My profile
+    </h1>
+ 
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <dl class="govuk-summary-list ">
+
+            <!-- NAME -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  {{ data['first-name-admin'] }} {{ data['last-name-admin'] }}
+              </dd>
+                  <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                  </dd>
+              </div>
+      
+
+              <!-- ROLE     
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Role
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Admin
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> role in organisation</span>
+                </a>
+                </dd>
+            </div> -->
+      
+    
+             <!-- EMAIL -->
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Email</dt>
+              <dd class="govuk-summary-list__value">{{ data['azure-email-admin'] }}</dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">email</span>
+                </a>
+              </dd>
+            </div>
+            <!-- TELEPHONE
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Telephone
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['personal-telephone-number'] }}
+            </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> email</span>
+                </a>
+                </dd>
+            </div>
+             -->
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Permissions </dt>
+        <dd class="govuk-summary-list__value">
+          Admin, invite and manage users
+        </dd>
+      </div>
+
+    </dl>
+
+
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Password</dt>
+        <dd class="govuk-summary-list__value">
+          *****************
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">password</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <!--
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          My details are incorrect
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Text to be provided based on business rules.
+      </div>
+    </details>
+-->
+
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
