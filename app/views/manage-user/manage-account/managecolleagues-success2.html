@@ -177,7 +177,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         Invitation sent
       </h1>
       <div class="govuk-panel__body">
-        to sarah.phillps@greenltd.uk
+        to {{data['inviteEmail']}}
       </div>
     </h1>
 
@@ -216,12 +216,6 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 </details>
 -->
 
-
-  <div class="govuk-grid-column-one-half">
-   
-
-  </div>
-</div>
 <!--
 <div style="text-align: end;">
   <h2 class="govuk-heading-m"></h2>
@@ -233,24 +227,49 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 </div>
 -->
-</div>
+
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Colleagues</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Name</th>
-      <th scope="col" class="govuk-table__header">Permissions</th>
+      <th scope="col" class="govuk-table__header">Email</th>
+      <th scope="col" class="govuk-table__header">Role</th>
       <th scope="col" class="govuk-table__header govuk-table__header--numeric">Workstream &nbsp;&nbsp;&nbsp;&nbsp;</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
-        <a href="#" class="govuk-body-s govuk-link govuk-link--no-visited-state">Sarah Rogers</a>
         <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah.rogers@greenuk.com</div>
       </th>
       <td class="govuk-table__cell govuk-body-s">Principal user</td>
       <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">RPD, PERN &nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <div class="govuk-body-s" style="margin: 5px 0 0 0;">{{data['inviteEmail']}}</div>
+      </th>
+
+      <td class="govuk-table__cell govuk-body-s">
+        <div>{{data['organisationAdmin']}}</div>
+        <div>{{data['rpdpr']}}</div>
+        <div>{{data['prn']}}</div>
+      </td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
+
+        {% if (data['organisationAdmin'] == "Organisation administrator") %}
+        <p class="govuk-body govuk-hint">This person will be able to invite and remove colleagues</p>
+        {% endif %}
+        {% if (data['rpdpr'] == "Report packaging data producer role") %}
+        <p class="govuk-body govuk-hint">This person will be able to upload data only</p>
+        {% endif %}
+        {% if (data['prn'] == "PRN reprocessor roles") %}
+        <p class="govuk-body govuk-hint">This person will be able to record waste data and raise PRNs</p>
+        {% endif %}
+
+      </td>
     </tr>
     <!--
     <tr class="govuk-table__row">
@@ -278,7 +297,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   </tbody>
 </table>
 
- 
+ </div>
 
 {% endblock %}
 

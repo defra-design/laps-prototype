@@ -87,25 +87,28 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               Check colleague invitation
             </h1>
           </legend>
-        
-
-
           <dl class="govuk-summary-list" style="margin-top: 20px;">
-
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+          </div>
             <div class="govuk-summary-list__row" >
             </div>
-    
             <!-- EMAIL DETAILS -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Email
                 </dt>
                 <dd class="govuk-summary-list__value">
-                 sarah.philips@greenltd.uk
+                  {{ data['inviteEmail'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> Email</span>
+                  <a class="govuk-link" href="../manage-account/invite-colleagues.html">
+                  Change
               </a>
               </dd>
                
@@ -118,18 +121,22 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                     Colleagues roles
                 </dt>
                 <dd class="govuk-summary-list__value">
+                  {% if (data['organisationAdmin'] == "Organisation administrator") %}
                   <p class="govuk-body">Organisation administrator</p>
                   <p class="govuk-body govuk-hint">This person will be able to invite and remove colleagues</p>
-
+                  {% endif %}
+                  {% if (data['rpdpr'] == "Report packaging data producer role") %}
                   <p class="govuk-body"> Report packaging data producer role</p>
                   <p class="govuk-body govuk-hint">This person will be able to upload data only</p>
-
+                  {% endif %}
+                  {% if (data['prn'] == "PRN reprocessor roles") %}
                   <p class="govuk-body">PRN reprocessor roles</p>
                   <p class="govuk-body govuk-hint">This person will be able to record waste data and raise PRNs</p>
+                  {% endif %}
                 </dd>
                 
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
+                    <a class="govuk-link" href="../manage-account/invite-colleagues.html">
                     Change<span class="govuk-visually-hidden">Colleagues roles</span>
                 </a>
                 </dd>
