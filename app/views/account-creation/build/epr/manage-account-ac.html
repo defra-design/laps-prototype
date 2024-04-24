@@ -19,8 +19,7 @@ EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
 navigation: [
 {
 href: "homepage",
-text: "EPR home",
-active: true
+text: "EPR home"
 },
 {
     href: "#",
@@ -29,7 +28,8 @@ active: true
 
     {
         href: "manage-account-ac",
-        text: "Manage account"
+        text: "Manage account",
+        active: true
         },
 {
 href: "my-profile-ac",
@@ -100,7 +100,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
-                <a href="my-profile-ac" class="govuk-link">  {{ data['first-name'] }} {{ data['last-name'] }}</a><br>Account creator</td>
+                <a href="my-profile-ac" class="govuk-link">  {{ data['first-name'] }} {{ data['last-name'] }}</a><br>Principle admin</td>
               <td class="govuk-table__cell">Create an account, enrol for EPR for packaging workstreams,<br> 
                 invite and manage users, 
                 view, enter and submit data </td>

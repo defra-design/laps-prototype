@@ -18,7 +18,7 @@ EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
     serviceUrl: "/index.html",
 navigation: [
 {
-href: "../../homepage",
+href: "../../homepage-expo",
 text: "EPR home",
 active: true
 },
@@ -26,15 +26,15 @@ active: true
     href: "#",
     text: "Organisation details"
     },
-
     {
-        href: "#",
-        text: "Manage account"
-        },
+      href: "../../manage-account-ac",
+      text: "Manage account"
+      },
 {
-href: "#",
+href: "../../my-profile-ac",
 text: "My profile"
 },
+
 
 {
 href: "#",
@@ -135,7 +135,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
  <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="../../homepage">EPR home</a>
+        <a class="govuk-breadcrumbs__link" href="../../homepage-expo">EPR home</a>
       </li>
 
       <li class="govuk-breadcrumbs__list-item">
@@ -195,137 +195,131 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               CB2 0AA - 000134567 </p>
 </h1>
 
-            <div class="cards">
-                <div class="card-container" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Waste
-                            <span class="govuk-caption-m" style="padding-top: 10px">Record waste and view waste records</span>
-                        </h3>
-                        <div class="card-container2" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                    Record waste
-                                </p>
+  
+<div class="cards">
 
-                                <p class="govuk-!-margin-bottom-3">
-                                    View, edit, download or delete waste records
-                                </p>
-                                <p><br></p>
-                            </div></div>
-                    </div>
-                </div>
+  <!--
+    <div class="card-container" id="cardAmount">
+        <div class="card-body" style="width: 425px; border-bottom: 0px;">
+            <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
+                Waste
+                <span class="govuk-caption-m" style="padding-top: 10px">Record waste and view waste records</span>
+            </h3>
+            <div class="card-container2" id="cardAmount">
+                <div class="card-body" style="width: 330px;">
+                    <p class="govuk-!-margin-bottom-3">
+                        Record waste
+                    </p>
 
-
-
-
-
-
-                <div class="card-container3" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Manage PERN
-                            <span class="govuk-caption-m" style="padding-top: 10px">Create PERNs, edit drafts and view sent PERNs</span>
-                        </h3>
-                        <div class="card-container4" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                    Create a PERN
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    View and edit draft PERNs
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    View issued PERNs<br><br>
-                                </p>
-                                <p></p>
-                            </div></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <br>
-
-
-            <div class="cards">
-                <div class="card-container" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Returns
-                            <span class="govuk-caption-m" style="padding-top: 10px">Submit quarterly returns<br><br></span>
-                        </h3>
-                        <div class="card-container2" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                   Submit a return
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    <a href="#" class="govuk-link govuk-link--no-visited-state"></a>
-                                </p>
-                                <p><br><br></p>
-                            </div></div>
-                    </div>
-                </div>
-
-
-                <div class="card-container3" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Accreditation
-                            <span class="govuk-caption-m" style="padding-top: 10px">Apply for accreditation, check your status and view all applications</span>
-                        </h3>
-                        <div class="card-container4" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                    <a href="#">Apply for new accreditation</a>
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    My accreditations
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                  View all applications
-                                </p>
-                                <p></p>
-                            </div></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <br>
-
-            <div class="cards">
-                <div class="card-container" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Account
-                            <span class="govuk-caption-m" style="padding-top: 10px">Create and manage users</span>
-                        </h3>
-                        <div class="card-container2" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                    Create a new user
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    Manage a user
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                   View my account details
-                                </p>
-                            </div></div>
-                    </div>
-                </div>
-
-
-            </div>
-
+                    <p class="govuk-!-margin-bottom-3">
+                        View, edit, download or delete waste records
+                    </p>
+                    <p><br></p>
+                </div></div>
+        </div>
     </div>
 
-  <div class="govuk-grid-column-one-half">
-   
+    <div class="card-container3" id="cardAmount">
+        <div class="card-body" style="width: 425px; border-bottom: 0px;">
+            <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
+                Manage PRN
+                <span class="govuk-caption-m" style="padding-top: 10px">Create PRNs, edit drafts and view sent PRNs</span>
+            </h3>
+            <div class="card-container4" id="cardAmount">
+                <div class="card-body" style="width: 330px;">
+                    <p class="govuk-!-margin-bottom-3">
+                        Create a PRN
+                    </p>
+                    <p class="govuk-!-margin-bottom-3">
+                        View and edit draft PRNs
+                    </p>
+                    <p class="govuk-!-margin-bottom-3">
+                        View issued PRNs<br><br>
+                    </p>
+                    <p></p>
+                </div></div>
+        </div>
+    </div>
 
-  </div>
+</div>
+
+<br>
+
+
+<div class="cards">
+    <div class="card-container" id="cardAmount">
+        <div class="card-body" style="width: 425px; border-bottom: 0px;">
+            <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
+                Returns
+                <span class="govuk-caption-m" style="padding-top: 10px">Submit quarterly returns<br><br></span>
+            </h3>
+            <div class="card-container2" id="cardAmount">
+                <div class="card-body" style="width: 330px;">
+                    <p class="govuk-!-margin-bottom-3">
+                       Submit a return
+                    </p>
+                    <p class="govuk-!-margin-bottom-3">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state"></a>
+                    </p>
+                    <p><br><br></p>
+                </div></div>
+        </div>
+    </div>
+
+-->   <div class="cards">
+    <div class="card-container" id="cardAmount">
+        <div class="card-body" style="width: 425px; border-bottom: 0px;">
+            <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
+                Accreditation
+                <span class="govuk-caption-m" style="padding-top: 10px">Apply for accreditation, check your status and view all applications</span>
+            </h3>
+            <div class="card-container4" id="cardAmount">
+                <div class="card-body" style="width: 330px;">
+                    <p class="govuk-!-margin-bottom-3">
+                      <a href="#">Apply for new accreditation</a>
+                    </p>
+                    <p class="govuk-!-margin-bottom-3">
+                        My accreditations
+                    </p>
+                    <p class="govuk-!-margin-bottom-3">
+                      View all applications
+                    </p>
+                    <p></p>
+                </div></div>
+        </div>
+    </div>
+
+<div class="cards">
+    <div class="card-container" id="cardAmount">
+        <div class="card-body" style="width: 425px; border-bottom: 0px;">
+            <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
+                Account
+                <span class="govuk-caption-m" style="padding-top: 10px">Create and manage users</span>
+            </h3>
+            <div class="card-container2" id="cardAmount">
+                <div class="card-body" style="width: 330px;">
+                    <p class="govuk-!-margin-bottom-3">
+                      <a href="../../manage-account-ac">Add a team member</a>
+                    </p>
+                    <p class="govuk-!-margin-bottom-3">
+                      <a href="../../manage-account-ac">Manage account</a>
+                    </p>
+                    <p class="govuk-!-margin-bottom-3">
+                      <a href="../../my-profile-ac.html">My profile</a>
+                    </p>
+                </div></div>
+        </div>
+    </div>
+
+
+</div>
+
+</div>
+
+<div class="govuk-grid-column-one-half">
+
+
+</div>
 </div>
 </div>
 

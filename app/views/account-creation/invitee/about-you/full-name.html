@@ -27,7 +27,23 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    {% if  data['who_list_ac'] == "1"  %}
     <form method="POST" action="../../build/epr/homepage-s-admin">
+  {% elif data['who_list_ac'] == "2" %}
+  <form method="POST" action="../../build/epr/homepage-s-x">
+    {% else %}  
+    <form method="POST" action="../../build/epr/homepage-s-y">
+  {% endif %}
+
+
+
+
+
+<!--
+    <form method="POST" action="../../build/epr/homepage-s-admin">
+
+    -->
       <h1 class="govuk-heading-l">What is your name?</h1>
 
   
