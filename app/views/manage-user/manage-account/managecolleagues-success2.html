@@ -171,12 +171,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
     <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
       <h1 class="govuk-panel__title">
         Invitation sent
       </h1>
-      <div class="govuk-panel__body">
+      <div class="govuk-panel__body ">
         to {{data['inviteEmail']}}
       </div>
     </h1>
@@ -195,6 +196,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <button type="submit" class="govuk-button" data-module="govuk-button">
   Invite a colleague
 </button>
+
+</div></div>
 
 <!--    
 <details class="govuk-details">
@@ -242,18 +245,18 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
         <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah.rogers@greenuk.com</div>
-        <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah-rogers</div>
+        <div class="govuk-body-s" style="margin: 5px 0 0 0; text-decoration: underline;">Sarah Rogers</div>
       </th>
       <td class="govuk-table__cell govuk-body-s">RPD, PRN</td>
       <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">Principal user &nbsp;&nbsp;&nbsp;&nbsp;</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s"><a href="#">View</a></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s"><a href="#"></a></td>
     </tr>
 
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
-        <div class="govuk-body-s" style="margin: 5px 0 0 0;">
+        <div class="govuk-body-s" style="margin: 5px 0 0 0; display: flex;">
           {{data['inviteEmail']}}
-          <strong class="govuk-tag govuk-tag--yellow">
+          <strong class="govuk-tag govuk-tag--yellow govuk-body-s" style="font-size: 1rem;">
             Invited
           </strong>
         </div>
@@ -275,18 +278,18 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
 
         {% if (data['organisationAdmin'] == "Organisation administrator") %}
-        <p class="govuk-body-s">Able to invite and remove colleagues </p>
+        <span class="govuk-body-s">Able to invite and remove colleagues </span>,
         {% endif %}
         {% if (data['rpdpr'] == "Report packaging data producer role") %}
-        <p class="govuk-body-s">Able to upload data only</p>
+        <span class="govuk-body-s">Upload data only</span>,
         {% endif %}
         {% if (data['prn'] == "PRN reprocessor roles") %}
-        <p class="govuk-body-s">Able to record waste data and raise PRNs</p>
+        <span class="govuk-body-s">Record waste data and raise PRNs</span>
         {% endif %}
 
       </td>
       <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
-        <a href="#">View</a>
+        <a href="#">Delete</a>
       </td>
     </tr>
     <!--

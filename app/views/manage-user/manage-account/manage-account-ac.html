@@ -76,6 +76,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">  <span class="govuk-caption-l">
       EPR for packaging: Compliance Co  </span>
      Manage account
@@ -115,7 +117,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         }) }}
       </br>
 
-
+    </div></div>
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--m">Colleagues</caption>
         <thead class="govuk-table__head">
@@ -130,20 +132,21 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
               <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah.rogers@greenuk.com</div>
-              <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah-rogers</div>
+              <div class="govuk-body-s" style="margin: 5px 0 0 0; text-decoration: underline;">Sarah Rogers</div>
             </th>
             <td class="govuk-table__cell govuk-body-s">RPD, PRN</td>
             <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">Principal user &nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
-              <a href="#">View</a>
+              
             </td>
           </tr>
 
-          {% if (data['inviteEmail'] or data['organisationAdmin'] or data['rpdpr'] or data['prn']) %}
+          <!-- {% if (data['inviteEmail'] or data['organisationAdmin'] or data['rpdpr'] or data['prn']) %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-              <div class="govuk-body-s" style="margin: 5px 0 0 0;">{{data['inviteEmail']}}
-                <strong class="govuk-tag govuk-tag--yellow">
+              <div class="govuk-body-s" style="margin: 5px 0 0 0; display: flex;">
+                {{data['inviteEmail']}}
+                <strong class="govuk-tag govuk-tag--yellow govuk-body-s" style="font-size: 1rem;">
                   Invited
                 </strong>
               </div>
@@ -179,7 +182,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               <a href="#">View</a>
             </td>
           </tr>
-          {% endif %}
+          {% endif %} -->
           <!--
           <tr class="govuk-table__row">
             <th class="govuk-table__header">
