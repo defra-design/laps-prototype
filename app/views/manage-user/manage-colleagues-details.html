@@ -1,0 +1,319 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+EPR for packaging
+{% endset%}
+
+{% set serviceName = "EPR for packaging" %}
+
+{% block pageTitle %}
+EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+    homepageUrl: "/index.html",
+    serviceName: serviceName ,
+    serviceUrl: "/index.html",
+navigation: [
+{
+href: "#",
+text: "EPR home",
+active: true
+},
+{
+    href: "#",
+    text: "Organisation details"
+    },
+
+    {
+        href: "manage-account-ac",
+        text: "Manage account"
+        },
+{
+  href: "my-profile-ceo",
+text: "My profile"
+},
+
+{
+href: "#",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+
+<style media="screen">
+    .card {
+    background-color: #f3f2f1;
+    padding: 30px 30px 10px 30px;
+  
+  }
+  </style>
+  
+  <style type="text/css">
+      .card-container {
+  
+          background-color: #f8f8f8;
+          border: 1px solid #dee0e2;
+          border-bottom: 5px solid #1d70b8;
+          padding-bottom: 5px;
+          width: 450px;
+          margin-right: 50px;
+  
+  
+      }
+  
+      .cards {
+          display: flex;
+          flex-direction: row;
+  
+      }
+  </style>
+  
+  <style type="text/css">
+      .card-container2 {
+          margin-left: 2px;
+          margin-right: 2px;
+          padding-left: 20px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          background-color: #ffffff;
+          width: 425px;
+  
+  
+      }
+  </style>
+  
+  
+  <style type="text/css">
+      .card-container3 {
+  
+          background-color: #f8f8f8;
+          border: 1px solid #dee0e2;
+          border-bottom: 5px solid #1d70b8;
+          padding-bottom: 5px;
+          width: 450px;
+          margin-right: 0px;
+  
+  
+      }
+  
+      .cards {
+          display: flex;
+          flex-direction: row;
+  
+      }
+  </style>
+  
+  <style type="text/css">
+      .card-container4 {
+          margin-left: 2px;
+          margin-right: 2px;
+          padding-left: 20px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          background-color: #ffffff;
+          width: 425px;
+  
+  
+      }
+  </style>
+
+ <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">GreenUK Ltd</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/manage-user/managecolleagues.html">Manage User</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Edit User</a>
+      </li>
+ 
+    </ol>
+  </div>
+  <!--
+<nav class="hmrc-language-select" aria-label="Language switcher">
+   
+  <ul class="hmrc-language-select__list">
+
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">English</span>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"
+        data-journey-click="link - click:lang-select:Cymraeg">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <span aria-hidden="true">Cymraeg</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+-->
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    
+    <!-- <span class="govuk-caption-xl ">EPR for packaging</span> -->
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Edit Colleagues details<br/>
+    
+      <p class="govuk-body-s">Update your colleague's information and permissions or delete them from this account.</p>
+   
+</h1>
+
+
+    
+
+
+
+
+  <div class="govuk-grid-column-one-half">
+   
+
+  </div>
+</div>
+
+
+</div>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Colleagues details</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row govuk-table__header">
+     
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        Name
+      </th>
+      <td class="govuk-table__cell govuk-body-s">Joanne Wilson</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s"><a href="#" class="govuk-body-s govuk-link govuk-link--no-visited-state">Change</a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        Permissions
+      </th>
+      <td class="govuk-table__cell govuk-body-s">
+        Basic
+        <div>Record Data, Raise PERNs</div>
+      </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s"> &nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">
+        Email address
+      </th>
+      <td class="govuk-table__cell govuk-body-s">joanne.wilson@greenuk.com</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s"><a href="#" class="govuk-body-s govuk-link govuk-link--no-visited-state">Change</a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+       Invite Status
+      </th>
+      <td class="govuk-table__cell govuk-body-s">
+        <strong class="govuk-tag govuk-tag--yellow">
+          Invited &nbsp;
+          </strong>
+      </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s"> <a href="#" class="govuk-body-s govuk-link govuk-link--no-visited-state">Resend a invite</a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+  Delete User
+</button>
+
+ 
+
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        
+        <h2 class="govuk-heading-m">Get help</h2>
+
+        <p class="govuk-body">Email: <a class="govuk-link govuk-link--no-visited-state" href="mailto:eprcustomerservice@defra.gov.uk">eprcustomerservice@defra.gov.uk</a></p>
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Telephone: 0300 060 0002</p>
+
+        <p class="govuk-body">Monday to Friday, 8am to 4:30pm</p>
+
+        <h2 class="govuk-visually-hidden">Support links</h2>
+        <ul class="govuk-footer__inline-list govuk-!-margin-top-7">
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="#">
+              Cookies
+            </a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="#">
+              Policy
+            </a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="#">
+              Accessibility statement
+            </a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/manage-prototype/clear-data">
+              Clear data
+            </a>
+          </li>
+        </ul>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="govuk-footer__licence-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 483.2 195.7"
+          height="17"
+          width="41">
+          <path
+            fill="currentColor"
+            d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145" />
+        </svg>
+        <span class="govuk-footer__licence-description">
+          All content is available under the
+          <a
+            class="govuk-footer__link"
+            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+        </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a
+          class="govuk-footer__link govuk-footer__copyright-logo"
+          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

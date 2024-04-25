@@ -1,0 +1,246 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+EPR for packaging
+{% endset%}
+
+{% set serviceName = "EPR for packaging" %}
+
+{% block pageTitle %}
+EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+    homepageUrl: "/index.html",
+    serviceName: serviceName ,
+    serviceUrl: "/index.html",
+navigation: [
+{
+href: "homepage",
+text: "EPR home",
+active: true
+},
+{
+    href: "#",
+    text: "Organisation details"
+    },
+
+    {
+        href: "manage-account-ac",
+        text: "Manage account"
+        },
+{
+href: "my-profile-ac",
+text: "My profile"
+},
+
+{
+href: "#",
+text: "Sign out"
+}
+]
+}) }}
+
+
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="homepage">EPR home</a>
+    </li>
+
+    
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Manage account</a>
+    </li>
+
+
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">  <span class="govuk-caption-l">
+      EPR for packaging: Compliance Co  </span>
+     Manage account
+    </h1>
+  
+  <p class="govuk-body-m">Invite colleagues to work on Green limited, assign them roles and set their permissions.</p>
+
+    
+
+<!--
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Your details</th>
+              <th scope="col" class="govuk-table__header">Permissions</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="my-profile-ac" class="govuk-link">  {{ data['first-name'] }} {{ data['last-name'] }}</a><br>Account creator</td>
+              <td class="govuk-table__cell">Create an account, enrol for EPR for packaging workstreams,<br> 
+                invite and manage users, 
+                view, enter and submit data </td>
+            </tr>
+          </tbody>
+        </table>
+
+        -->
+        <!--
+        <h2 class="govuk-heading-m">Your team</h2>
+        -->
+        {{ govukButton({
+          text: "Invite a colleague",
+          href: "invite-colleagues.html"
+        }) }}
+      </br>
+
+    </div></div>
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Colleagues</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">Workstream</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Role &nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah.rogers@greenuk.com</div>
+              <div class="govuk-body-s" style="margin: 5px 0 0 0;"><a href="#">Sarah Rogers</a></div>
+            </th>
+            <td class="govuk-table__cell govuk-body-s">RPD, PRN</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">Principal user &nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
+              
+            </td>
+          </tr>
+
+          <!-- {% if (data['inviteEmail'] or data['organisationAdmin'] or data['rpdpr'] or data['prn']) %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-body-s" style="margin: 5px 0 0 0; display: flex;">
+                {{data['inviteEmail']}}
+                <strong class="govuk-tag govuk-tag--yellow govuk-body-s" style="font-size: 1rem;">
+                  Invited
+                </strong>
+              </div>
+            </th>
+      
+            <td class="govuk-table__cell govuk-body-s">
+              {% if (data['organisationAdmin'] == "Organisation administrator") %}
+              <span>Administrator</span>,
+              {% endif %}
+              {% if (data['rpdpr'] == "Report packaging data producer role") %}
+              <span>RPD</span>,
+              {% endif %}
+              {% if (data['prn'] == "PRN reprocessor roles") %}
+              <span>PRN</sapn>
+              {% endif %}
+              
+            </td>
+      
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
+      
+              {% if (data['organisationAdmin'] == "Organisation administrator") %}
+              <p class="govuk-body govuk-hint">This person will be able to invite and remove colleagues</p>
+              {% endif %}
+              {% if (data['rpdpr'] == "Report packaging data producer role") %}
+              <p class="govuk-body govuk-hint">This person will be able to upload data only</p>
+              {% endif %}
+              {% if (data['prn'] == "PRN reprocessor roles") %}
+              <p class="govuk-body govuk-hint">This person will be able to record waste data and raise PRNs</p>
+              {% endif %}
+      
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
+              <a href="#">View</a>
+            </td>
+          </tr>
+          {% endif %} -->
+          <!--
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">
+              
+                <a href="/manage-user/manage-colleagues-details.html" class="govuk-body-s govuk-link govuk-link--no-visited-state">Joanne Wilson &nbsp;<strong class="govuk-tag govuk-tag--yellow">
+                  Invited &nbsp;
+                  </strong></a>
+                <div class="govuk-body-s" style="margin: 5px 0 0 0;">joanne.wilson@greenuk.com  </div>
+      
+            </th>
+            <td class="govuk-table__cell govuk-body-s">Basic</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">PRN &nbsp;&nbsp;&nbsp;&nbsp;</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <a href="#" class="govuk-body-s govuk-link govuk-link--no-visited-state">Robert Smith &nbsp;<strong class="govuk-tag govuk-tag--pink">
+                Expired &nbsp;
+                </strong></a>
+              <div class="govuk-body-s" style="margin: 5px 0 0 0;">robert.smith@greenuk.com</div>
+            </th>
+            <td class="govuk-table__cell govuk-body-s">Admin</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">--- &nbsp;&nbsp;&nbsp;&nbsp;</td>
+          </tr> -->
+        </tbody>
+      </table>
+    <!--
+        <h3 class="govuk-heading-s">Team members</h3>
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">Permissions</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Sarah Rogers</a><br>Approved person</th>
+              <td class="govuk-table__cell">Submit data, manage the team</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Joanne Wilson</a></th>
+              <td class="govuk-table__cell">Manage team and upload data</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Robert Smith</a></th>
+              <td class="govuk-table__cell">Upload data only</td>
+            </tr>
+          </tbody>
+        </table>
+     -->  
+    </div>
+  </div>
+    
+    {% endblock %}
+    
