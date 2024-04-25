@@ -123,15 +123,17 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 <dd class="govuk-summary-list__value">
                   {% if (data['organisationAdmin'] == "Organisation administrator") %}
                   <p class="govuk-body">Organisation administrator</p>
-                  <p class="govuk-body govuk-hint">This person will be able to invite and remove colleagues</p>
+                  <p class="govuk-body govuk-hint">Able to invite and remove colleagues</p>
+                  <br>
                   {% endif %}
                   {% if (data['rpdpr'] == "Report packaging data producer role") %}
                   <p class="govuk-body"> Report packaging data producer role</p>
-                  <p class="govuk-body govuk-hint">This person will be able to upload data only</p>
+                  <p class="govuk-body govuk-hint">Able to upload data only</p>
+                  <br>
                   {% endif %}
                   {% if (data['prn'] == "PRN reprocessor roles") %}
                   <p class="govuk-body">PRN reprocessor roles</p>
-                  <p class="govuk-body govuk-hint">This person will be able to record waste data and raise PRNs</p>
+                  <p class="govuk-body govuk-hint">Able to record waste data and raise PRNs</p>
                   {% endif %}
                 </dd>
                 
@@ -150,7 +152,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       </div>
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Add a team member",
+          text: "Send an invite",
           href: "managecolleagues-success2.html"
         }) }}
         &nbsp;  &nbsp;  &nbsp;  

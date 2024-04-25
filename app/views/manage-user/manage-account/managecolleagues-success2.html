@@ -190,7 +190,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     
    
 </h1>
-<p class="govuk-body-l">Invite colleagues to workon Green limited, assign them roles and set their permissions.</p>
+<p class="govuk-body-m">Invite colleagues to work on Green limited, assign them roles and set their permissions.</p>
 
 <button type="submit" class="govuk-button" data-module="govuk-button">
   Invite a colleague
@@ -233,8 +233,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Email</th>
-      <th scope="col" class="govuk-table__header">Role</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Workstream &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col" class="govuk-table__header">Workstream</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Role &nbsp;&nbsp;&nbsp;&nbsp;</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
@@ -242,8 +242,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       <th scope="row" class="govuk-table__header">
         <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah.rogers@greenuk.com</div>
       </th>
-      <td class="govuk-table__cell govuk-body-s">Principal user</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">RPD, PERN &nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td class="govuk-table__cell govuk-body-s">RPD, PRN</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">Principal user &nbsp;&nbsp;&nbsp;&nbsp;</td>
     </tr>
 
     <tr class="govuk-table__row">
@@ -260,13 +260,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
 
         {% if (data['organisationAdmin'] == "Organisation administrator") %}
-        <p class="govuk-body govuk-hint">This person will be able to invite and remove colleagues</p>
+        <p class="govuk-body-s">Able to invite and remove colleagues</p>
         {% endif %}
         {% if (data['rpdpr'] == "Report packaging data producer role") %}
-        <p class="govuk-body govuk-hint">This person will be able to upload data only</p>
+        <p class="govuk-body-s">Able to upload data only</p>
         {% endif %}
         {% if (data['prn'] == "PRN reprocessor roles") %}
-        <p class="govuk-body govuk-hint">This person will be able to record waste data and raise PRNs</p>
+        <p class="govuk-body-s">Able to record waste data and raise PRNs</p>
         {% endif %}
 
       </td>

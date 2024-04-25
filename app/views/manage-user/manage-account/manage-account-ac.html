@@ -81,7 +81,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
      Manage account
     </h1>
   
-  <p class="govuk-body-l">Invite colleagues to workon Green limited, assign them roles and set their permissions.</p>
+  <p class="govuk-body-m">Invite colleagues to work on Green limited, assign them roles and set their permissions.</p>
 
     
 
@@ -110,7 +110,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <h2 class="govuk-heading-m">Your team</h2>
         -->
         {{ govukButton({
-          text: "Add a team member",
+          text: "Invite a colleague",
           href: "invite-colleagues.html"
         }) }}
       </br>
@@ -121,8 +121,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Email</th>
-            <th scope="col" class="govuk-table__header">Role</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Workstream &nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th scope="col" class="govuk-table__header">Workstream</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Role &nbsp;&nbsp;&nbsp;&nbsp;</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -130,8 +130,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             <th scope="row" class="govuk-table__header">
               <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah.rogers@greenuk.com</div>
             </th>
-            <td class="govuk-table__cell govuk-body-s">Principal user</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">RPD, PERN &nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="govuk-table__cell govuk-body-s">RPD, PRN</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">Principal user &nbsp;&nbsp;&nbsp;&nbsp;</td>
           </tr>
 
           {% if (data['inviteEmail'] or data['organisationAdmin'] or data['rpdpr'] or data['prn']) %}
