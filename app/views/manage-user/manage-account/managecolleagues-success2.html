@@ -225,7 +225,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   }) }}
 </br>
 
-</div>
+</div>  govuk-grid-column-two-thirds
 -->
 
 <table class="govuk-table">
@@ -235,6 +235,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       <th scope="col" class="govuk-table__header">Email</th>
       <th scope="col" class="govuk-table__header">Workstream</th>
       <th scope="col" class="govuk-table__header govuk-table__header--numeric">Role &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col" class="govuk-table__header"></th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
@@ -245,6 +246,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       </th>
       <td class="govuk-table__cell govuk-body-s">RPD, PRN</td>
       <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">Principal user &nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s"><a href="#">View</a></td>
     </tr>
 
     <tr class="govuk-table__row">
@@ -252,7 +254,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <div class="govuk-body-s" style="margin: 5px 0 0 0;">
           {{data['inviteEmail']}}
           <strong class="govuk-tag govuk-tag--yellow">
-            Invite
+            Invited
           </strong>
         </div>
       </th>
@@ -273,15 +275,18 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
 
         {% if (data['organisationAdmin'] == "Organisation administrator") %}
-        <p class="govuk-body-s">Able to invite and remove colleagues <a href="#">View</a></p>
+        <p class="govuk-body-s">Able to invite and remove colleagues </p>
         {% endif %}
         {% if (data['rpdpr'] == "Report packaging data producer role") %}
-        <p class="govuk-body-s">Able to upload data only <a href="#">View</a></p>
+        <p class="govuk-body-s">Able to upload data only</p>
         {% endif %}
         {% if (data['prn'] == "PRN reprocessor roles") %}
-        <p class="govuk-body-s">Able to record waste data and raise PRNs <a href="#">View</a></p>
+        <p class="govuk-body-s">Able to record waste data and raise PRNs</p>
         {% endif %}
 
+      </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
+        <a href="#">View</a>
       </td>
     </tr>
     <!--

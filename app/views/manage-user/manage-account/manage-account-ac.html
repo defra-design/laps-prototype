@@ -75,7 +75,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds-from-desktop">
+  <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">  <span class="govuk-caption-l">
       EPR for packaging: Compliance Co  </span>
      Manage account
@@ -123,27 +123,43 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             <th scope="col" class="govuk-table__header">Email</th>
             <th scope="col" class="govuk-table__header">Workstream</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Role &nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th scope="col" class="govuk-table__header"></th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
               <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah.rogers@greenuk.com</div>
+              <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah-rogers</div>
             </th>
             <td class="govuk-table__cell govuk-body-s">RPD, PRN</td>
             <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">Principal user &nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
+              <a href="#">View</a>
+            </td>
           </tr>
 
           {% if (data['inviteEmail'] or data['organisationAdmin'] or data['rpdpr'] or data['prn']) %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-              <div class="govuk-body-s" style="margin: 5px 0 0 0;">{{data['inviteEmail']}}</div>
+              <div class="govuk-body-s" style="margin: 5px 0 0 0;">{{data['inviteEmail']}}
+                <strong class="govuk-tag govuk-tag--yellow">
+                  Invited
+                </strong>
+              </div>
             </th>
       
             <td class="govuk-table__cell govuk-body-s">
-              <div>{{data['organisationAdmin']}}</div>
-              <div>{{data['rpdpr']}}</div>
-              <div>{{data['prn']}}</div>
+              {% if (data['organisationAdmin'] == "Organisation administrator") %}
+              <span>Administrator</span>,
+              {% endif %}
+              {% if (data['rpdpr'] == "Report packaging data producer role") %}
+              <span>RPD</span>,
+              {% endif %}
+              {% if (data['prn'] == "PRN reprocessor roles") %}
+              <span>PRN</sapn>
+              {% endif %}
+              
             </td>
       
             <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
@@ -158,6 +174,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               <p class="govuk-body govuk-hint">This person will be able to record waste data and raise PRNs</p>
               {% endif %}
       
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
+              <a href="#">View</a>
             </td>
           </tr>
           {% endif %}
