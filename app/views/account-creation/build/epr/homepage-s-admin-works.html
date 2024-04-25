@@ -18,7 +18,7 @@ EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
     serviceUrl: "/index.html",
 navigation: [
 {
-href: "../../homepage",
+href: "#",
 text: "EPR home",
 active: true
 },
@@ -28,11 +28,11 @@ active: true
     },
 
     {
-        href: "#",
+        href: "manage-account-admin",
         text: "Manage account"
         },
 {
-href: "#",
+href: "my-profile-admin",
 text: "My profile"
 },
 
@@ -134,11 +134,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   </style>
  <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
-  
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Report data as a reprocessor</a>
+        <a class="govuk-breadcrumbs__link" href="#">EPR home</a>
       </li>
- 
  
     </ol>
   </div>
@@ -177,152 +175,46 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           <h3 class="govuk-notification-banner__heading">
             You’ve created your account.
           </h3>
-          <p> You have been sent a confirmation email..</p>
+          <p> You have been sent a confirmation email.</p>
         </div>
       </div>
     
+      <span class="govuk-caption-xl ">EPR for packaging</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Compliance Co
+        <p class="govuk-body-s">1 Francis Crick Avenue,
+          Cambridge Biomedical Campus,
+          Cambridge,
+          United Kingdom,
+          CB2 0AA - 000134567 </p>
+      </h1>
+  
+      <div class="govuk-inset-text">
+        Your organisation has enroled with the following EPR workstream. You will be able to invite and manage users.
+        </div>
+  
+        <div class="cards">
+          <div class="card-container" id="cardAmount">
+              <div class="card-body" style="width: 425px; border-bottom: 0px;">
+                  <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
+                      Report data as a reprocessor
+                      <span class="govuk-caption-m" style="padding-top: 10px">Record waste and view waste records.  Create PRNs, edit drafts and view sent PRNs.<!-- Submit quarterly returns. Apply for accreditation, check your status and view all applications--><br></span>
+                  </h3>
+                  <div class="card-container2" id="cardAmount">
+                      <div class="card-body" style="width: 330px;">
+                        <p class="govuk-!-margin-bottom-3">
+                          <strong class="govuk-tag govuk-tag--green">
+                             ENROLED &nbsp;
+                             </strong><br><br>
+                             <a href="../epr/manage-account-admin" class="govuk-link govuk-link--no-visited-state">Manage account</a>
+                         </p>
+                          <p><br><br></p>
+                      </div></div>
+              </div>
+          </div>
+      </div>
 
-        <span class="govuk-caption-l">
-          EPR for packaging: Report data as a reprocessor  </span>
-        <h1 class="govuk-heading-xl">Compliance Co
-            <p class="govuk-body-s">1 Francis Crick Avenue,
-              Cambridge Biomedical Campus,
-              Cambridge,
-              United Kingdom,
-              CB2 0AA - 000134567 </p>
-
-</h1>
-            <div class="cards">
-                <div class="card-container" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Waste
-                            <span class="govuk-caption-m" style="padding-top: 10px">Record waste and view waste records</span>
-                        </h3>
-                        <div class="card-container2" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                    Record waste
-                                </p>
-
-                                <p class="govuk-!-margin-bottom-3">
-                                    View, edit, download or delete waste records
-                                </p>
-                                <p><br></p>
-                            </div></div>
-                    </div>
-                </div>
-
-
-
-
-
-
-                <div class="card-container3" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Manage PRN
-                            <span class="govuk-caption-m" style="padding-top: 10px">Create PRNs, edit drafts and view sent PRNs</span>
-                        </h3>
-                        <div class="card-container4" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                    Create a PRN
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    View and edit draft PRNs
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    View issued PRNs<br><br>
-                                </p>
-                                <p></p>
-                            </div></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <br>
-
-
-            <div class="cards">
-                <div class="card-container" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Returns
-                            <span class="govuk-caption-m" style="padding-top: 10px">Submit quarterly returns<br><br></span>
-                        </h3>
-                        <div class="card-container2" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                   Submit a return
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    <a href="#" class="govuk-link govuk-link--no-visited-state"></a>
-                                </p>
-                                <p><br><br></p>
-                            </div></div>
-                    </div>
-                </div>
-
-
-                <div class="card-container3" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Accreditation
-                            <span class="govuk-caption-m" style="padding-top: 10px">Apply for accreditation, check your status and view all applications</span>
-                        </h3>
-                        <div class="card-container4" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                  <a href="#">Apply for new accreditation</a>
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    My accreditations
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                  View all applications
-                                </p>
-                                <p></p>
-                            </div></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <br>
-
-            <div class="cards">
-                <div class="card-container" id="cardAmount">
-                    <div class="card-body" style="width: 425px; border-bottom: 0px;">
-                        <h3 class="govuk-heading-m" style="padding-left: 20px; margin-top: 20px;">
-                            Account
-                            <span class="govuk-caption-m" style="padding-top: 10px">Create and manage users</span>
-                        </h3>
-                        <div class="card-container2" id="cardAmount">
-                            <div class="card-body" style="width: 330px;">
-                                <p class="govuk-!-margin-bottom-3">
-                                    Create a new user
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                    Manage a user
-                                </p>
-                                <p class="govuk-!-margin-bottom-3">
-                                   View my account details
-                                </p>
-                            </div></div>
-                    </div>
-                </div>
-
-
-            </div>
-
-    </div>
-
-  <div class="govuk-grid-column-one-half">
-   
-
-  </div>
+  
+  
 </div>
 </div>
 
