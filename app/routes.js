@@ -326,7 +326,7 @@ router.post('*/uk-nation-ch', function (req, res) {
       res.redirect('../about-you/role-in-organisation')
   }
   else {
-      res.redirect('uk-nation')
+      res.redirect('../about-you/role-in-organisation?uk-nation-question=yes')
   }
 })
 

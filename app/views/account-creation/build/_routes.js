@@ -30,11 +30,10 @@ router.post('*/registered-with-companies-house', function (req, res) {
 router.post('*/uk-nation-ch', function (req, res) {
     var userGroup = req.session.data['user-group']
     
-    if (userGroup == "compliance-scheme") {
         res.redirect('../about-you/role-in-organisation')
     }
     else {
-        res.redirect('uk-nation')
+        res.redirect('../about-you/role-in-organisation?uk-nation-question=yes')
     }
 })
 

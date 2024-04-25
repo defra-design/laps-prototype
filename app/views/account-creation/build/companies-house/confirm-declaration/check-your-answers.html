@@ -95,7 +95,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         </div>
 
         <!-- UK NATION -->
-        {% if (data['uk-nation-question'] == "yes") %}
+        {% if (data['registered-with-companies-house'] == "no") %}
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
                 UK nation
@@ -104,7 +104,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 {{ data['uk-nation'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="../about-your-organisation/uk-nation.html">
+                <a class="govuk-link" href="../about-your-business/uk-nation">
                 Change<span class="govuk-visually-hidden"> UK nation</span>
             </a>
             </dd>
