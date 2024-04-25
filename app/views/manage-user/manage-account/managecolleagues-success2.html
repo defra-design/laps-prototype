@@ -170,7 +170,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
     <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
       <h1 class="govuk-panel__title">
@@ -241,6 +241,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
         <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah.rogers@greenuk.com</div>
+        <div class="govuk-body-s" style="margin: 5px 0 0 0;">sarah-rogers</div>
       </th>
       <td class="govuk-table__cell govuk-body-s">RPD, PRN</td>
       <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">Principal user &nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -248,25 +249,37 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
-        <div class="govuk-body-s" style="margin: 5px 0 0 0;">{{data['inviteEmail']}}</div>
+        <div class="govuk-body-s" style="margin: 5px 0 0 0;">
+          {{data['inviteEmail']}}
+          <strong class="govuk-tag govuk-tag--yellow">
+            Invite
+          </strong>
+        </div>
       </th>
 
       <td class="govuk-table__cell govuk-body-s">
-        <div>{{data['organisationAdmin']}}</div>
-        <div>{{data['rpdpr']}}</div>
-        <div>{{data['prn']}}</div>
+        {% if (data['organisationAdmin'] == "Organisation administrator") %}
+        <span>Administrator</span>,
+        {% endif %}
+        {% if (data['rpdpr'] == "Report packaging data producer role") %}
+        <span>RPD</span>,
+        {% endif %}
+        {% if (data['prn'] == "PRN reprocessor roles") %}
+        <span>PRN</sapn>
+        {% endif %}
+        
       </td>
 
       <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">
 
         {% if (data['organisationAdmin'] == "Organisation administrator") %}
-        <p class="govuk-body-s">Able to invite and remove colleagues</p>
+        <p class="govuk-body-s">Able to invite and remove colleagues <a href="#">View</a></p>
         {% endif %}
         {% if (data['rpdpr'] == "Report packaging data producer role") %}
-        <p class="govuk-body-s">Able to upload data only</p>
+        <p class="govuk-body-s">Able to upload data only <a href="#">View</a></p>
         {% endif %}
         {% if (data['prn'] == "PRN reprocessor roles") %}
-        <p class="govuk-body-s">Able to record waste data and raise PRNs</p>
+        <p class="govuk-body-s">Able to record waste data and raise PRNs <a href="#">View</a></p>
         {% endif %}
 
       </td>
@@ -274,7 +287,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <!--
     <tr class="govuk-table__row">
       <th class="govuk-table__header">
-        
+         
           <a href="/manage-user/manage-colleagues-details.html" class="govuk-body-s govuk-link govuk-link--no-visited-state">Joanne Wilson &nbsp;<strong class="govuk-tag govuk-tag--yellow">
             Invited &nbsp;
             </strong></a>
