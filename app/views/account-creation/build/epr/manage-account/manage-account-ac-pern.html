@@ -18,23 +18,23 @@ EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
     serviceUrl: "/index.html",
 navigation: [
 {
-href: "homepage",
-text: "EPR home"
-},
-{
-    href: "#",
-    text: "Organisation details"
-    },
-
-    {
-        href: "manage-account-ac",
+  href: "../homepage-expo",
+  text: "EPR home"
+  },
+  {
+      href: "#",
+      text: "Organisation details"
+      },
+      {
+        href: "#",
         text: "Manage account",
         active: true
         },
-{
-href: "my-profile-ac",
-text: "My profile"
-},
+  {
+  href: "../my-profile/my-profile-ac-pern",
+  text: "My profile"
+  },
+  
 
 {
 href: "#",
@@ -58,7 +58,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="homepage">EPR home</a>
+      <a class="govuk-breadcrumbs__link" href="../homepage-expo">EPR home</a>
     </li>
 
     
@@ -99,9 +99,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <a href="#">Sarah Rogers</a><br>Principle user &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td class="govuk-table__cell">Able to enrol for EPR for packaging workstreams, invite and remove team member's, Upload data only, Record waste data and raise PERNs </td>
+              <td class="govuk-table__cell govuk-!-width-one-third">
+                <a href="../my-profile/my-profile-ac-pern.html">  {{ data['first-name'] }} {{ data['last-name'] }}</a><br>Principle user </td>
+              <td class="govuk-table__cell">Enrol for workstreams, submit data, manage the team</td>
             </tr>
           </tbody>
         </table>
@@ -109,10 +109,10 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         
         
         <h2 class="govuk-heading-m">Your team</h2>
-        <p class="govuk-body-m">Invite team member to work on Green limited, assign them roles and set their permissions.</p>
+        <p class="govuk-body-m">Invite team member to join Compliance Co, assign roles and set permissions.</p>
         {{ govukButton({
           text: "Add a team member",
-          href: "/manage-account/invite-colleagues-pern"
+          href: "invite-colleagues-pern"
         }) }}
       </br>
     <!--

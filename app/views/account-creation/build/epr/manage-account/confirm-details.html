@@ -18,7 +18,7 @@ Enrol to report packaging data
     serviceUrl: "/index.html",
 navigation: [
 {
-href: "../../homepage.html",
+href: "../homepage-rep.html",
 text: "EPR home"
 },
 {
@@ -121,7 +121,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {% if (data['organisationAdmin'] == "Organisation administrator") %}
-                  <p class="govuk-body">Organisation - Administrator</p>
+                  <p class="govuk-body">Administration</p>
                   <p class="govuk-body govuk-hint">Add and remove team members</p>
                   <br>
                   {% endif %}
@@ -131,7 +131,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                   <br>
                   {% endif %}
                   {% if (data['prn'] == "PRN reprocessor roles") %}
-                  <p class="govuk-body">PRN - Reprocessor</p>
+                  <p class="govuk-body">PRN Reprocessing</p>
                   <p class="govuk-body govuk-hint">Record waste data, raise PRN's </p>
                   {% endif %}
                 </dd>

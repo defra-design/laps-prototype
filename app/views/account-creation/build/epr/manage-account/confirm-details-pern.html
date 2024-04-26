@@ -18,8 +18,8 @@ Enrol to report packaging data
     serviceUrl: "/index.html",
 navigation: [
 {
-href: "../../homepage.html",
-text: "Home",
+href: "../homepage-expo",
+text: "EPR home",
 active: false
 },
 {
@@ -33,7 +33,7 @@ active: false
         },
 {
 href: "#",
-text: "Manage profile"
+text: "My profile"
 },
 
 {
@@ -55,17 +55,16 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../../homepage.html">Home</a>
+      <a class="govuk-breadcrumbs__link" href="../homepage-expo">EPR home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="#">Manage account</a>
+      <a class="govuk-breadcrumbs__link" href="manage-account-ac-pern.html">Manage account</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="#">Invite team member</a>
+      <a class="govuk-breadcrumbs__link" href="#">Add team member</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="#">Confirm details</a>
-    </li>
+  
+
 
   </ol>
 </div>
@@ -122,13 +121,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {% if (data['organisationAdmin'] == "Organisation administrator") %}
-                  <p class="govuk-body">Organisation administrator</p>
-                  <p class="govuk-body govuk-hint">Able to invite and remove team members</p>
+                  <p class="govuk-body">Administration</p>
+                  <p class="govuk-body govuk-hint">Add and remove team members</p>
                   <br>
                   {% endif %}
                   {% if (data['rpdpr'] == "Report packaging data producer role") %}
-                  <p class="govuk-body"> Report packaging data producer role</p>
-                  <p class="govuk-body govuk-hint">Able to upload data only</p>
+                  <p class="govuk-body">PERN Exporter</p>
+                  <p class="govuk-body govuk-hint">Upload data only</p>
                   <br>
                   {% endif %}
                   {% if (data['prn'] == "PRN reprocessor roles") %}
@@ -152,7 +151,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       </div>
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Send an invite",
+          text: "Send invitation",
           href: "./managecolleagues-success2-pern"
         }) }}
         &nbsp;  &nbsp;  &nbsp;  

@@ -83,7 +83,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <fieldset class="govuk-fieldset" aria-describedby="uk-nation-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              What is your team member’s email?
+              What is your team member’s email address?
             </h1>
           </legend>
           <div id="uk-nation-hint" class="govuk-hint">
@@ -96,13 +96,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             
             <h1 class="govuk-fieldset__heading">
-              Select their permissions
+              What roles do you need them to do?
             </h1>
           
           </legend>
 
           <h3 class="govuk-heading-s">
-            Organisation
+            Administration
           </h3>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
@@ -110,15 +110,15 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               {{ checked("organisationAdmin", "Organisation administrator") }}
               >
               <label class="govuk-label govuk-checkboxes__label" for="organisationAdmin">
-                Administrator
+                Add and remove team members
               </label>
               <div id="organisationAdmin-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                Add and remove team members
+                
               </div>
             </div>
 
-            <h3 class="govuk-heading-s">
-              PRN Reprocessor
+            <h3 class="govuk-heading-s govuk-!-padding-top-3">
+              PRN Reprocessing
             </h3>
             <!-- <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="rpdpr" name="rpdpr" type="checkbox" value="Report packaging data producer role" aria-describedby="rpdpr-item-hint"  {{ checked("rpdpr", "Report packaging data producer role") }}>
@@ -134,10 +134,10 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               {{ checked("prn", "PRN reprocessor roles") }}
               >
               <label class="govuk-label govuk-checkboxes__label" for="prn">
-                Standard
+                Record waste data and raise PRN's
               </label>
               <div id="prn-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                Record waste data, raise PRN's
+               
               </div>
             </div>
             </div>
