@@ -101,19 +101,25 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           
           </legend>
 
-
+          <h3 class="govuk-heading-s">
+            Organisation
+          </h3>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="organisationAdmin" name="organisationAdmin" type="checkbox" value="Organisation administrator" aria-describedby="organisationAdmin-item-hint"
               {{ checked("organisationAdmin", "Organisation administrator") }}
               >
               <label class="govuk-label govuk-checkboxes__label" for="organisationAdmin">
-                Organisation - Administrator
+                Administrator
               </label>
               <div id="organisationAdmin-item-hint" class="govuk-hint govuk-checkboxes__hint">
                 Add and remove team members
               </div>
             </div>
+
+            <h3 class="govuk-heading-s">
+              PRN Reprocessor
+            </h3>
             <!-- <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="rpdpr" name="rpdpr" type="checkbox" value="Report packaging data producer role" aria-describedby="rpdpr-item-hint"  {{ checked("rpdpr", "Report packaging data producer role") }}>
               <label class="govuk-label govuk-checkboxes__label" for="rpdpr">
@@ -128,7 +134,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               {{ checked("prn", "PRN reprocessor roles") }}
               >
               <label class="govuk-label govuk-checkboxes__label" for="prn">
-                PRN - Reprocessor
+                Standard
               </label>
               <div id="prn-item-hint" class="govuk-hint govuk-checkboxes__hint">
                 Record waste data, raise PRN's
