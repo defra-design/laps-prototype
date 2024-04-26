@@ -18,27 +18,29 @@ Enrol to report packaging data
     serviceUrl: "/index.html",
 navigation: [
 {
-href: "../../homepage.html",
-text: "Home",
+href: "../homepage-rep",
+text: "EPR home",
 active: false
 },
 {
-    href: "#",
-    text: "Organisation details"
-    },
+  href: "#",
+  text: "Organisation details"
+  },
 
-    {
-        href: "#",
-        text: "Manage account"
-        },
+  {
+      href: "manage-account-ac",
+      text: "Manage account",
+      active: true
+      },
 {
-href: "#",
-text: "Manage profile"
+href: "../my-profile/my-profile-ac",
+text: "My profile"
 },
 
+
 {
 href: "#",
-text: "Signout"
+text: "Sign out"
 }
 ]
 }) }}
@@ -55,16 +57,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../../homepage.html">Home</a>
+      <a class="govuk-breadcrumbs__link" href="../homepage-rep.html">EPR home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="#">Manage account</a>
+      <a class="govuk-breadcrumbs__link" href="manage-account-ac">Manage account</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="#">Invite team member</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="#">Confirm details</a>
+      <a class="govuk-breadcrumbs__link" href="#">Add team member</a>
     </li>
 
   </ol>
@@ -78,82 +77,69 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form method="POST" action="./managecolleagues-success2">
+  <div class="govuk-grid-column-full">
+    <form method="POST" action="../manage-account/confirm-details">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="uk-nation-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Check team member invitation
+              What is your team member’s email?
             </h1>
           </legend>
-          <dl class="govuk-summary-list" style="margin-top: 20px;">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-              </dt>
-              <dd class="govuk-summary-list__value">
-              </dd>
-              <dd class="govuk-summary-list__actions">
-              </dd>
+          <div id="uk-nation-hint" class="govuk-hint">
+            We ask for this so we can invite them to join your team.
           </div>
-            <div class="govuk-summary-list__row" >
-            </div>
-            <!-- EMAIL DETAILS -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Email
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['inviteEmail'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="../manage-account/invite-team members.html">
-                  Change
-              </a>
-              </dd>
-               
-            </div>
-    
-            <!-- team memberS ROLES -->
-    
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    team members roles
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {% if (data['organisationAdmin'] == "Organisation administrator") %}
-                  <p class="govuk-body">Organisation administrator</p>
-                  <p class="govuk-body govuk-hint">Able to invite and remove team members</p>
-                  <br>
-                  {% endif %}
-                  {% if (data['rpdpr'] == "Report packaging data producer role") %}
-                  <p class="govuk-body"> Report packaging data producer role</p>
-                  <p class="govuk-body govuk-hint">Able to upload data only</p>
-                  <br>
-                  {% endif %}
-                  {% if (data['prn'] == "PRN reprocessor roles") %}
-                  <p class="govuk-body">PRN reprocessor roles</p>
-                  <p class="govuk-body govuk-hint">Able to record waste data and raise PRNs</p>
-                  {% endif %}
-                </dd>
-                
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="../manage-account/invite-team members.html">
-                    Change<span class="govuk-visually-hidden">team members roles</span>
-                </a>
-                </dd>
-            </div>
-             
-        </dl>
+          <div class="govuk-form-group">
+            <input class="govuk-input govuk-input--width-20" id="inviteEmail" name="inviteEmail" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email" value="{{data['inviteEmail']}}" >
+          </div>
 
-        
-      
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            
+            <h1 class="govuk-fieldset__heading">
+              Select their permissions
+            </h1>
+          
+          </legend>
+
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisationAdmin" name="organisationAdmin" type="checkbox" value="Organisation administrator" aria-describedby="organisationAdmin-item-hint"
+              {{ checked("organisationAdmin", "Organisation administrator") }}
+              >
+              <label class="govuk-label govuk-checkboxes__label" for="organisationAdmin">
+                Organisation - Administrator
+              </label>
+              <div id="organisationAdmin-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Add and remove team members
+              </div>
+            </div>
+            <!-- <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="rpdpr" name="rpdpr" type="checkbox" value="Report packaging data producer role" aria-describedby="rpdpr-item-hint"  {{ checked("rpdpr", "Report packaging data producer role") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="rpdpr">
+                Report packaging data producer role
+              </label>
+              <div id="rpdpr-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Able to upload data only
+              </div>
+            </div> -->
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="prn" name="prn" type="checkbox" value="PRN reprocessor roles" aria-describedby="prn-item-hint"
+              {{ checked("prn", "PRN reprocessor roles") }}
+              >
+              <label class="govuk-label govuk-checkboxes__label" for="prn">
+                PRN - Reprocessor
+              </label>
+              <div id="prn-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Record waste data, raise PRN's
+              </div>
+            </div>
+            </div>
         </fieldset>
       </div>
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Send an invite",
-          href: "./managecolleagues-success2"
+          text: "Continue"
         }) }}
         &nbsp;  &nbsp;  &nbsp;  
        

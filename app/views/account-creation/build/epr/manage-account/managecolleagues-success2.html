@@ -18,9 +18,8 @@ EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
     serviceUrl: "/index.html",
 navigation: [
 {
-href: "#",
-text: "EPR home",
-active: true
+href: "../homepage-rep",
+text: "EPR home"
 },
 {
     href: "#",
@@ -28,11 +27,13 @@ active: true
     },
 
     {
-        href: "manage-account-ac",
+        href: "#",
         text: "Manage account"
+        ,
+active: true
         },
 {
-  href: "my-profile-ceo",
+  href: "#",
 text: "My profile"
 },
 
@@ -133,20 +134,20 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       }
   </style>
 
- <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">GreenUK Ltd</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Manage User</a>
-      </li>
- 
-    </ol>
-  </div>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../homepage-rep.html">EPR home</a>
+    </li>
+
+    
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Manage account</a>
+    </li>
+
+
+  </ol>
+</div>
   <!--
 <nav class="hmrc-language-select" aria-label="Language switcher">
    
@@ -171,18 +172,21 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
-      <h1 class="govuk-panel__title">
-        Invitation sent
-      </h1>
-      <div class="govuk-panel__body ">
-        to {{data['inviteEmail']}}
-      </div>
-    </h1>
 
-  </div>
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            You have sent an invitation to {{data['inviteEmail']}}
+          </h3>
+        </div>
+      </div>
+
     
     <!-- <span class="govuk-caption-xl ">EPR for packaging</span> -->
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
@@ -202,58 +206,56 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <a href="#">Sarah Rogers</a><br>Principle user &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      <td class="govuk-table__cell">Able to enrol for EPR for packaging workstreams, invite and remove team member's, Upload data only, Record waste data and raise PRNs</td>
+      <td class="govuk-table__cell govuk-!-width-one-third">
+        <a href="#"> {{ data['first-name'] }} {{ data['last-name'] }}</a><br>Principle user &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td class="govuk-table__cell" > 	Enrol for workstreams, submit data, manage the team</td>
     </tr>
   </tbody>
 </table>
 <h2 class="govuk-heading-m">Your team</h2>
-<p class="govuk-body-m">Invite team member to work on Green limited, assign them roles and set their permissions.</p>
+<p class="govuk-body-m">Invite team member to join Compliance Co, assign roles and set permissions.</p>
 
 <button type="submit" class="govuk-button" data-module="govuk-button">
   Add a team member
 </button>
 
-
+<h3 class="govuk-heading-s">Invitations sent</h3>
 
 
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m"></caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Your team member's details</th>
+      <th scope="col" class="govuk-table__header">Email address</th>
       <th scope="col" class="govuk-table__header">Permissions</th>
       <th scope="col" class="govuk-table__header"></th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <a href="#"> {{data['inviteEmail']}}</a>
-        <strong class="govuk-tag govuk-tag--yellow">
-          Invited
-        </strong>
-        <br>
+      <td class="govuk-table__cell ">
+        {{data['inviteEmail']}}
+       
+      <!-- <br> -->  
         {% if (data['organisationAdmin'] == "Organisation administrator") %}
-        <span>Administrator</span>
+       <!-- <span>Administrator</span> -->
         {% endif %}
 
         {% if (data['organisationAdmin'] and data['prn']) %}
-          <span>,</span>
+        <!--  <span>,</span> -->
         {% endif %}
         {% if (data['prn'] == "PRN reprocessor roles") %}
-        <span>Standard user</sapn>
+        <!-- <span>Standard user</sapn> -->
         {% endif %}
       
       
       
       
       </td>
-      <td class="govuk-table__cell">
+      <td class="govuk-table__cell govuk-!-width-one-half">
         
         {% if (data['organisationAdmin'] == "Organisation administrator") %}
-        <span>Able to invite and remove team member's </span>
+        <span>Add and remove team members </span>
         {% endif %}
 
         {% if (data['organisationAdmin'] and data['prn']) %}
@@ -261,11 +263,11 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
       {% endif %}
        
         {% if (data['prn'] == "PRN reprocessor roles") %}
-        <span>Record waste data and raise PRNs</span>
+        <span>Record waste data, raise PRN's </span>
         {% endif %}
       </td>
       <td class="govuk-table__cell govuk-table__cell--numeric" >
-        <a href="#" style="color: red;">Delete</a>
+        <a href="#" style="color: red;">Cancel invitation</a>
       </td>
     </tr>
   </tbody>
