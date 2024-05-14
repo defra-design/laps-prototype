@@ -74,98 +74,53 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-third">
-    <form method="POST" action="../manage-account/confirm-details-pern">
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="uk-nation-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              What is your team member’s email address?
-            </h1>
-          </legend>
-          <div id="uk-nation-hint" class="govuk-hint">
-            We need this to invite them to your account.
-          </div>
-          <div class="govuk-form-group">
-            <input class="govuk-input govuk-input--width-20" id="inviteEmail" name="inviteEmail" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email" value="{{data['inviteEmail']}}" >
-          </div>
 
-          <!--
-
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            
-            <h1 class="govuk-fieldset__heading">
-              What roles do you need them to do?
-            </h1>
-          
-          </legend>
-          <div id="waste-hint" class="govuk-hint">
-            Select all that apply.
-          </div>
-
-          <h3 class="govuk-heading-s">
-            Administration
-          </h3>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisationAdmin" name="organisationAdmin" type="checkbox" value="Organisation administrator" aria-describedby="organisationAdmin-item-hint"
-              {{ checked("organisationAdmin", "Organisation administrator") }}
-              >
-              <label class="govuk-label govuk-checkboxes__label" for="organisationAdmin">
-                Add and remove team members
-              </label>
-              <div id="organisationAdmin-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                
-              </div>
-            </div>
-
-            <h3 class="govuk-heading-s govuk-!-padding-top-3">
-              PERN exporter
-            </h3>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="rpdpr" name="rpdpr" type="checkbox" value="Report packaging data producer role" aria-describedby="rpdpr-item-hint"  {{ checked("rpdpr", "Report packaging data producer role") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="rpdpr">
-                Upload data only
-              </label>
-              <div id="rpdpr-item-hint" class="govuk-hint govuk-checkboxes__hint">
-            
-              </div>
-            </div>  
-            -->
-            
-            <!--
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="prn" name="prn" type="checkbox" value="PRN reprocessor roles" aria-describedby="prn-item-hint"
-              {{ checked("prn", "PRN reprocessor roles") }}
-              >
-              <label class="govuk-label govuk-checkboxes__label" for="prn">
-                Record waste data and raise PERN's
-              </label>
-              <div id="prn-item-hint" class="govuk-hint govuk-checkboxes__hint">
-               
-              </div>
-             </div>
-
-              -->
-              <div class="govuk-button-group">
-                {{ govukButton({
-                  text: "Continue"
-                }) }}
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
         
-                <!--
-                &nbsp;  &nbsp;  &nbsp;  
-               -->
-              </div>
 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Will this person manage access across Compliance co’s EPR for account? 
+              </h1>
+            </legend>
+            <div id="changedName-hint" class="govuk-hint">
+              This includes changing your remove or cancel invites.
             </div>
-        </fieldset>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changedName">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+        </div>
+
+
       </div>
-
-    </form>
-  </div>
+    </div>
+  </main>
 </div>
-
 
 {% endblock %}
 
