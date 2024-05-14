@@ -4,11 +4,47 @@
 EPR for packaging
 {% endset%}
 
-{% set serviceName = "Create an EPR for packaging account" %}
+{% set serviceName = "EPR for packaging" %}
+
+{% block header %}
+
+{{ govukHeader({
+    homepageUrl: "/index.html",
+    serviceName: serviceName ,
+    serviceUrl: "/index.html",
+navigation: [
+{
+href: "../../homepage.html",
+text: "EPR home",
+active: true
+},
+{
+    href: "#",
+    text: "Organisation details"
+    },
+
+    {
+        href: "#",
+        text: "Manage account"
+        },
+{
+href: "#",
+text: "My profile"
+},
+
+{
+href: "#",
+text: "Sign out"
+}
+]
+}) }}
+
+{% endblock %}
 
 {% block pageTitle %}
-Create an EPR for packaging account
+Enrol to report packaging data
 {% endblock %}
+
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -17,8 +53,18 @@ text: "Beta"
 },
 html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../../homepage.html">EPR home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../enrol-as-an-exporter.html">Enrol as an exporter </a>
+    </li>
 
-<a class="govuk-back-link" href="./companies-house-number.html">Back</a>
+  </ol>
+</div>
+
 
 {% endblock %}
 
@@ -27,7 +73,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form method="POST" action="uk-nation-ch">
+    <form method="POST" action="../about-your-organisation/uk-nation">
+      <span class="govuk-caption-xl ">EPR for packaging: Enrol as an exporter  </span>
       <h1 class="govuk-heading-l">Confirm your organisation’s details from Companies House</h1>
       <div class="govuk-inset-text">
         <h2 class="govuk-heading-m">Compliance Co</h2>
@@ -50,8 +97,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
         <div class="govuk-details__text">
           <p class="govuk-body">If these details are wrong, you should:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>check the Companies House number and <a href="./companies-house-number.html" class="govuk-link">try again</a></li>
-            <li>check your organisation’s details are correct on Companies House and <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house" target="_blank">change them if necessary (opens in a new tab)</a></li>
+            <li>check your Companies House number and <a href="./companies-house-number.html" class="govuk-link">try again</a></li>
+            <li>check your organisation’s details are correct on Companies House and<a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house" target="_blank">update them if necessary (opens in a new tab)</a></li>
           </ul>
         </div>
       </details>
