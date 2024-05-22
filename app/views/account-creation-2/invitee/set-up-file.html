@@ -1,0 +1,150 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <nav class="hmrc-language-select" aria-label="Language switcher">
+    {{ govukBackLink({
+      href: "javascript:window.history.back()",
+      text: "Back"
+    }) }}
+    <ul class="hmrc-language-select__list">
+      <li class="hmrc-language-select__list-item">
+        <span aria-current="true">English</span>
+      </li>
+      <li class="hmrc-language-select__list-item">
+        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+          <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+          <span aria-hidden="true">Cymraeg</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Private beta</span>
+    <h1 class="govuk-heading-xl">User scenarios</h1>
+
+
+
+    <h3 class="govuk-heading-m">Enrol</h3>
+    
+    <form action="./azure-b2c/sign-in" method="post">
+
+    
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+      
+ 
+  {{ govukRadios({
+    idPrefix: "who_list_ac",
+    name: "who_list_ac",
+    fieldset: {
+    legend: {
+    text: "Select which enrol scenario you want to test",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--m"
+    }
+    },
+    hint: {
+    text: ""
+    },
+    items: [
+    {
+      value: "1",
+      html: "[ENROL] Principle Admin has invited Admin user to enrol to org
+      ",
+  
+      hint: {
+      text: "No workstreams present"
+      }
+      },
+      {
+      value: "2",
+      html: "[ENROL] Principle Admin has invited Admin user to enrol to org with Reprocessor workstream
+      ",
+  
+      hint: {
+      text: "PRN Workstream"
+       }
+       },
+       {
+        value: "3",
+        html: "[ENROL] Principle Admin has invited Admin user to enrol to org with Exporter workstream
+        ",
+    
+        hint: {
+        text: "PERN Workstream"
+         }
+         },
+         {
+          value: "4",
+          html: "[ADD USER] Principle Admin having enroled for Reprocessor workstream invites User
+          ",
+      
+          hint: {
+          text: "PRN Workstream"
+           }
+           },
+           {
+            value: "5",
+            html: "[ADD USER] Principle Admin having enroled for Exporter workstream invites User
+            ",
+        
+            hint: {
+            text: "PERN"
+             }
+             }                 
+    ]
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <div class="govuk-button-group">
+      <button class="govuk-button govuk-body govuk-!-margin-bottom-6" type="submit">Continue</button>
+    </div>
+
+  </div>
+</div>
+</form>
+
+<!--
+
+  ,
+         {
+          value: "4",
+          html: "Invite User to org with workstream
+          ",
+      
+          hint: {
+          text: "Single workstream (bypasses EPR home)"
+           }
+           },
+           {
+            value: "5",
+            html: "Invite User to org with multiple workstreams
+            ",
+        
+            hint: {
+            text: "Muliple workstreams (Start from EPR home)"
+             }
+             }
+-->
+
+{% endblock %}
