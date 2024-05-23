@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+EPR for packaging
+{% endset%}
+
+{% set serviceName = "Create an EPR for packaging account" %}
+
+{% block pageTitle %}
+Create an EPR for packaging account
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Account created for
+      </h1>
+      <div class="govuk-panel__body">
+        {{ data['trading-name'] }}<br><strong></strong>
+      </div>
+    </div>
+    <p class="govuk-body">We have sent you a confirmation email.</p>
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">
+      Use your EPR for packaging account to enrol: 
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>as an exporter </li>
+      <li>as a reprocessor </li>
+      <li>to report packaging data </li>
+    </ul>
+    <p class="govuk-body">
+      Once you’ve enrolled, you can: 
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>apply for accreditation </li>
+      <li>add team members to your account </li>
+        </ul>
+
+    <p class="govuk-body">
+      <a href="../../epr/homepage-non" class="govuk-link">Go to your EPR for packaging account homepage</a>.
+    </p>
+  </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
