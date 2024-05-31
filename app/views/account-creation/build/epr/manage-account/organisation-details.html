@@ -1,0 +1,177 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+EPR for packaging
+{% endset%}
+
+{% set serviceName = "EPR for packaging" %}
+
+{% block pageTitle %}
+EPR homepage | {{ serviceName }} | GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+    homepageUrl: "/index.html",
+    serviceName: serviceName ,
+    serviceUrl: "/index.html",
+navigation: [
+{
+href: "../homepage-rep",
+text: "EPR home"
+},
+{
+    href: "#",
+    text: "Organisation details"
+    },
+
+    {
+        href: "../manage-account/manage-account-ac",
+        text: "Manage account"
+        },
+{
+href: "my-profile-ac",
+text: "My profile",
+active: true
+},
+
+{
+href: "#",
+text: "Sign out"
+}
+]
+}) }}
+
+
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../homepage-rep.html">EPR home</a>
+    </li>
+
+    
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Organisation details</a>
+    </li>
+
+
+  </ol>
+</div>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <form method="POST" action="../../epr/homepage-s">
+
+    <h1 class="govuk-heading-l ">Organisation details
+    </h1>
+
+    <h2 class="govuk-heading-m ">Your organisation</h2>
+    
+    <dl class="govuk-summary-list">
+
+        <!-- REGISTERED AS CHARITY -->
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                A registered charity?
+            </dt>
+            <dd class="govuk-summary-list__value"> No
+                {{ data['registered-charity'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="../../general/registered-as-a-charity.html">
+                Change<span class="govuk-visually-hidden"> if you are a registered charity</span>
+            </a>
+            </dd>
+        </div>
+
+        <!-- REGISTERED WITH COMPANIES HOUSE -->
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Registered with Companies House?
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['registered-companies-house'] }} Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="../../general/registered-with-companies-house.html">
+                Change<span class="govuk-visually-hidden"> if you are registered with companies house</span>
+            </a>
+            </dd>
+        </div>
+
+        <!-- COMPANIES HOUSE NUMBER -->
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Companies House number
+            </dt>
+            <dd class="govuk-summary-list__value">
+                000134567
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="../about-your-organisation/companies-house-number.html">
+                Change<span class="govuk-visually-hidden"> Companies House number</span>
+            </a>
+            </dd>
+        </div>
+
+        <!-- COMPANIES HOUSE DETAILS -->
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Organisation details
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Compliance Co</p>
+                <p class="govuk-body">1 Francis Crick Avenue, <br>Cambridge Biomedical Campus, <br>Cambridge, <br>United Kingdom, <br>CB2 0AA</p>
+            </dd>
+        </div>
+
+        <!-- UK NATION -->
+        {% if (data['registered-with-companies-house'] == "no") %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                UK nation
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['uk-nation'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="../about-your-business/uk-nation">
+                Change<span class="govuk-visually-hidden"> UK nation</span>
+            </a>
+            </dd>
+        </div>
+        {% endif %}
+         
+    </dl>
+
+    <p class="govuk-body govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+        If the address is wrong, you’ll need to <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house" target="_blank">change them on Companies House (opens in a new tab)</a>.
+    </p>
+
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

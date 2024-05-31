@@ -18,29 +18,28 @@ Enrol to report packaging data
     serviceUrl: "/index.html",
 navigation: [
 {
-href: "../homepage-rep",
-text: "EPR home",
-active: false
+href: "../../homepage.html",
+text: "EPR home"
+
 },
 {
-  href: "#",
-  text: "Organisation details"
-  },
+    href: "#",
+    text: "Organisation details"
+    },
 
-  {
-      href: "manage-account-ac",
-      text: "Manage account",
-      active: true
-      },
+    {
+        href: "#",
+        text: "Manage account",
+        active: true
+        },
 {
-href: "../my-profile/my-profile-ac",
+href: "#",
 text: "My profile"
 },
 
-
 {
 href: "#",
-text: "Sign out"
+text: "Signout"
 }
 ]
 }) }}
@@ -57,10 +56,10 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../homepage-rep.html">EPR home</a>
+      <a class="govuk-breadcrumbs__link" href="../../homepage.html">EPR home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="manage-account-ac">Manage account</a>
+      <a class="govuk-breadcrumbs__link" href="#">Manage account</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="#">Add team member</a>
@@ -77,8 +76,8 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <form method="POST" action="../manage-account/confirm-details">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST" action="../manage-account/confirm-details-pern">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="uk-nation-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -86,7 +85,9 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
               What is your team member’s email address?
             </h1>
           </legend>
-          <div id="uk-nation-hint" class="govuk-hint">
+          <div id="uk-nation-hint" class="govuk-hint">CB2 0AA
+          
+          
             We need this to invite them to your account.
           </div>
           <div class="govuk-form-group">
@@ -103,38 +104,85 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
           <div id="waste-hint" class="govuk-hint">
             Select all that apply.
           </div>
+
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisationAdmin" name="organisationAdmin" type="checkbox" value="Organisation administrator" aria-describedby="organisationAdmin-item-hint"
-              {{ checked("organisationAdmin", "Organisation administrator") }}
-              >
+              <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
               <label class="govuk-label govuk-checkboxes__label" for="nationality">
                 Account administrator
               </label>
               <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                 Manage team members across Compliance Co EPR for packaging account
               </div>
+            </div> <!--
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
+              <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                PRN Signatory​
+              </label>
+              <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Issue PRNs, Upload and submit waste data, Raise PRN​, Upload waste date
+              </div>
+            </div>-->
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+              ​Standard User
+              </label>
+              <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Raise PRN​, upload waste date
+              </div>
             </div>
-            <!-- <div class="govuk-checkboxes__item">
+          </div>
+        </fieldset>
+      </div>
+
+
+<!--
+          <h3 class="govuk-heading-s">
+            Administration
+          </h3>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisationAdmin" name="organisationAdmin" type="checkbox" value="Organisation administrator" aria-describedby="organisationAdmin-item-hint"
+              {{ checked("organisationAdmin", "Organisation administrator") }}
+              >
+              <label class="govuk-label govuk-checkboxes__label" for="organisationAdmin">
+                Add and remove team members
+              </label>
+              <div id="organisationAdmin-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                
+              </div>
+            </div>
+
+            <h3 class="govuk-heading-s govuk-!-padding-top-3">
+              PERN exporter
+            </h3>
+            <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="rpdpr" name="rpdpr" type="checkbox" value="Report packaging data producer role" aria-describedby="rpdpr-item-hint"  {{ checked("rpdpr", "Report packaging data producer role") }}>
               <label class="govuk-label govuk-checkboxes__label" for="rpdpr">
-                Report packaging data producer role
+                Upload data only
               </label>
               <div id="rpdpr-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                Able to upload data only
+            
               </div>
-            </div> -->
+            </div> 
+            -->
+            
+            <!--
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="prn" name="prn" type="checkbox" value="PRN reprocessor roles" aria-describedby="prn-item-hint"
               {{ checked("prn", "PRN reprocessor roles") }}
               >
-              <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
-                ​Standard User
-                </label>
-                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                  Raise PRN​, upload waste date
-                </div>
+              <label class="govuk-label govuk-checkboxes__label" for="prn">
+                Record waste data and raise PERN's
+              </label>
+              <div id="prn-item-hint" class="govuk-hint govuk-checkboxes__hint">
+               
+              </div>
             </div>
+
+          -->
             </div>
         </fieldset>
       </div>
