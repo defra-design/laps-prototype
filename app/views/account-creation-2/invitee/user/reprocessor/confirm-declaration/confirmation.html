@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+EPR for packaging
+{% endset%}
+
+{% set serviceName = "Create an EPR for packaging account" %}
+
+{% block pageTitle %}
+Create an EPR for packaging account
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Success
+        
+      </h1>
+      <div class="govuk-panel__body">
+        You’ve created your account.<br><strong></strong>
+      </div>
+    </div>
+    <p class="govuk-body">We have sent you a confirmation email.</p>
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">
+      Now you’ve created your account, you’ll be able to: 
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>upload data and raise PRNs</li>
+     
+        </ul>
+
+        <p class="govuk-body govuk-!-margin-top-9">
+      <a href="/account-creation-2/build/epr/reprocessor/prn-epr/homepage-prn-user" class="govuk-link">Go to reprocessor homepage</a>.
+    </p>
+  </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
