@@ -103,34 +103,29 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             Select all that apply.
           </div>
 
-          <h3 class="govuk-heading-s">
-            Administration
-          </h3>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="organisationAdmin" name="organisationAdmin" type="checkbox" value="Organisation administrator" aria-describedby="organisationAdmin-item-hint"
               {{ checked("organisationAdmin", "Organisation administrator") }}
+
               >
               <label class="govuk-label govuk-checkboxes__label" for="organisationAdmin">
-                Add and remove team members
+                Account administrator 
               </label>
               <div id="organisationAdmin-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                
+                Manage team members across Compliance Co EPR for packaging account
               </div>
             </div>
-
-            <h3 class="govuk-heading-s govuk-!-padding-top-3">
-              PERN exporter
-            </h3>
+<!--
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="rpdpr" name="rpdpr" type="checkbox" value="Report packaging data producer role" aria-describedby="rpdpr-item-hint"  {{ checked("rpdpr", "Report packaging data producer role") }}>
               <label class="govuk-label govuk-checkboxes__label" for="rpdpr">
-                Upload data only
+                ​Standard User
               </label>
               <div id="rpdpr-item-hint" class="govuk-hint govuk-checkboxes__hint">
-            
+                Raise PERN​, upload waste date
               </div>
-            </div>  <!--
+            </div> 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="prn" name="prn" type="checkbox" value="PRN reprocessor roles" aria-describedby="prn-item-hint"
               {{ checked("prn", "PRN reprocessor roles") }}

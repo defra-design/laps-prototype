@@ -121,16 +121,17 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {% if (data['organisationAdmin'] == "Organisation administrator") %}
-                  <p class="govuk-body">Administration</p>
-                  <p class="govuk-body govuk-hint">Add and remove team members</p>
+                  <p class="govuk-body">Account administrator</p>
+                  <p class="govuk-body govuk-hint">Manage team members across Compliance Co EPR for packaging account</p>
                   <br>
                   {% endif %}
+                   <!--
                   {% if (data['rpdpr'] == "Report packaging data producer role") %}
-                  <p class="govuk-body">PERN exporter</p>
-                  <p class="govuk-body govuk-hint">Upload data only</p>
+                  <p class="govuk-body">​Standard User</p>
+                  <p class="govuk-body govuk-hint">Raise PERN​, upload waste date</p>
                   <br>
                   {% endif %}
-                  <!--
+                 
                   {% if (data['prn'] == "PRN reprocessor roles") %}
                   <p class="govuk-body">PERN exporter roles</p>
                   <p class="govuk-body govuk-hint">Able to record waste data and raise PERNs</p>
